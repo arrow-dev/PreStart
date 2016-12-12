@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PreStart.Pages.PrestartForm4">
+<StackLayout Orientation="Vertical">
+  <Label Text="STAY SAFE" TextColor="Red" FontSize="20" HorizontalTextAlignment="Center"></Label>
+<Label Text="What am I doing? What could go wrong? How could I do it Safer?" HorizontalTextAlignment="Center"></Label>
+
+<TableView Intent="Form">
+  <TableRoot Title="General Requirements">
+    <TableSection >
+     <SwitchCell Text="Is everyone fit for work?"> </SwitchCell>
+      <SwitchCell Text="Is the site secure?" ></SwitchCell>
+      <SwitchCell Text="Barricades required?" ></SwitchCell>
+      <SwitchCell Text="Is suitable access provided?"></SwitchCell>
+      <SwitchCell Text="Weather forecast considered?"></SwitchCell>
+      <SwitchCell Text="Specialist PPE required?"></SwitchCell>
+      <SwitchCell Text="Erosion &amp; Sediment Control implemented?"></SwitchCell>
+    <ViewCell>
+      <StackLayout Orientation="Vertical" VerticalOptions="Center">
+        <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+      </StackLayout>
+    </ViewCell>
+      
+    </TableSection>
+  </TableRoot>
+</TableView>
+</StackLayout>
+</ContentPage>
