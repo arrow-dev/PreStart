@@ -1,6 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PreStart.Pages.PrestartForm1">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             xmlns:local="clr-namespace:PreStart;assembly=PreStart"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="PreStart.Pages.PrestartForm1"
+             
+             Title="Basic Information"
+             Padding="{x:Static local:template.PagePadding}">
+
+
+  <StackLayout>
+    <Label Text="Pre-Start Meeting Information"
+           Font="{x:Static local:template.TitleFont}"
+           HorizontalOptions="Center"/>
+    <StackLayout Orientation="Horizontal">
+          <Label FontSize="14" Text="Contract Name:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Label FontSize="14" Text="Contract Number:" TextColor="Black"
+          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Label FontSize="14" Text="Location:" TextColor="Black"
+          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
+          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Label FontSize="14" Text="Location Number:" TextColor="Black"
+          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
+          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Label FontSize="14" Text="Operational Hazard ID:" TextColor="Black"
+          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
+          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
+        </StackLayout>
+        <StackLayout Padding="20">
+        <Button Text="Next" />
+    
+</StackLayout>
+    
+  </StackLayout>
+ 
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PreStart.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,8 @@ namespace PreStart
                     }
                 }
             };
-
-            MainPage = new NavigationPage(content);
+            var testing = new PrestartForm1();
+            MainPage = new NavigationPage(testing);
         }
 
         protected override void OnStart()
