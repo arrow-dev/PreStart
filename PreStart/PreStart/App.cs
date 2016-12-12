@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using PreStart.Pages;
 using Xamarin.Forms;
 
 namespace PreStart
@@ -11,23 +11,8 @@ namespace PreStart
     {
         public App()
         {
-            // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "PreStart",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
-
-            MainPage = new NavigationPage(content);
+           
+            MainPage = new PrestartForm2();
         }
 
         protected override void OnStart()
