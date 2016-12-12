@@ -1,9 +1,4 @@
 ﻿using PreStart.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 
 namespace PreStart
@@ -27,8 +22,8 @@ namespace PreStart
                     }
                 }
             };
-            var testing = new PrestartForm1();
-            MainPage = new NavigationPage(testing);
+
+            MainPage = new PrestartForm3();
         }
 
         protected override void OnStart()
