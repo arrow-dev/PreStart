@@ -1,29 +1,18 @@
-﻿using PreStart.Pages;
+﻿using PreStart.Abstractions;
+using PreStart.Pages;
+using PreStart.Services;
 using Xamarin.Forms;
 
 namespace PreStart
 {
     public class App : Application
     {
+        public static ICloudService CloudService { get; set; }
+
         public App()
         {
-            // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "PreStart",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
-
-            MainPage = new HazardForm();
+            CloudService = new AzureCloudService();
+            MainPage = new PrestartForm1();
         }
 
         protected override void OnStart()
