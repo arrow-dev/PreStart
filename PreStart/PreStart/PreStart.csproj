@@ -36,8 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Pages\HazardDetailPage.xaml.cs">
-      <DependentUpon>HazardDetailPage.xaml</DependentUpon>
+    <Compile Include="Pages\EditHazardDetailPage.xaml.cs">
+      <DependentUpon>EditHazardDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PrestartForm1.xaml.cs">
       <DependentUpon>PrestartForm1.xaml</DependentUpon>
@@ -97,7 +97,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\HazardDetailPage.xaml">
+    <EmbeddedResource Include="Pages\EditHazardDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
