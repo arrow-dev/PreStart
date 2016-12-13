@@ -8,6 +8,9 @@ namespace PreStart.Pages
         public PrestartForm1()
         {
             InitializeComponent();
+
         }
     }
+
+
 }

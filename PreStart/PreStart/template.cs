@@ -7,13 +7,16 @@ using Xamarin.Forms;
 
 namespace PreStart
 {
-    static class template
+    static class Template
     {
         public static readonly Thickness PagePadding =
             new Thickness(40, Device.OnPlatform(20, 20, 20), 40, 0);
 
         public static readonly Font TitleFont =
             Font.SystemFontOfSize(Device.OnPlatform(25, 20, 30), FontAttributes.Bold);
+
+        public static readonly Font ParaFont =
+            Font.SystemFontOfSize(Device.OnPlatform(10, 10, 10), FontAttributes.Italic);
 
         public static readonly Color BackgroundColor =
             Device.OnPlatform(Color.White, Color.Black, Color.Black);

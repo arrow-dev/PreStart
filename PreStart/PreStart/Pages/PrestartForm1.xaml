@@ -6,41 +6,99 @@
              x:Class="PreStart.Pages.PrestartForm1"
              
              Title="Basic Information"
-             Padding="{x:Static local:template.PagePadding}">
+             Padding="{x:Static local:Template.PagePadding}">
 
 
-  <StackLayout>
-    <Label Text="Pre-Start Meeting Information"
-           Font="{x:Static local:template.TitleFont}"
+  <StackLayout VerticalOptions="Center">
+    <Label Text="PRE-START MEETING RECORD"
+           Font="{x:Static local:Template.TitleFont}"
            HorizontalOptions="Center"/>
-    <StackLayout Orientation="Horizontal">
-          <Label FontSize="14" Text="Contract Name:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-          <Label FontSize="14" Text="Contract Number:" TextColor="Black"
-          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-          <Label FontSize="14" Text="Location:" TextColor="Black"
-          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
-          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-          <Label FontSize="14" Text="Location Number:" TextColor="Black"
-          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
-          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-          <Label FontSize="14" Text="Operational Hazard ID:" TextColor="Black"
-          HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
-          <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White" />
-        </StackLayout>
-        <StackLayout Padding="20">
-        <Button Text="Next" />
     
-</StackLayout>
+    <Label Text="Must have an Operational Hazard ID attached"
+           Font="{x:Static local:Template.ParaFont}"
+           HorizontalOptions="Center"/>
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Contract Name:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Contract Number:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout> 
+    
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Location:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Location Number:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+   
+   
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Department:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Project / Site:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Job Number:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Date:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Person in Charge of Site:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="STMS:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="TMP:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Site First Aider:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Quarry Manager in Charge(if applicable):" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Certificate Number:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+    
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Label FontSize="14" Text="Operational Hazard ID:" TextColor="Black" VerticalOptions="Center" 
+                 WidthRequest="150"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Label FontSize="14" Text="Site Plan / Emergency Response:" TextColor="Black"
+                 WidthRequest="150" VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+    </StackLayout>
+
+    
+      
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+          <Button TextColor="White" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="AUTO FILL"></Button>    
+          <Button TextColor="White" BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING"></Button>
+      </StackLayout>
     
   </StackLayout>
  
