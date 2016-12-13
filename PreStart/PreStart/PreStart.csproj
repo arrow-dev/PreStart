@@ -40,6 +40,9 @@
     <Compile Include="Abstractions\ICloudTable.cs" />
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Models\Hazard.cs" />
+    <Compile Include="Models\Prestart.cs" />
+    <Compile Include="Models\Task.cs" />
     <Compile Include="Pages\HazardDetailViewPage.xaml.cs">
       <DependentUpon>HazardDetailViewPage.xaml</DependentUpon>
     </Compile>
@@ -104,7 +107,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
