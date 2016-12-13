@@ -8,11 +8,11 @@ using Xamarin.Forms;
 
 namespace PreStart.Pages
 {
-    public partial class PrestartForm4 : ContentPage
-    {
-        public PrestartForm4()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class PrestartForm4 : ContentPage
+	{
+		public PrestartForm4 ()
+		{
+			InitializeComponent ();
+		}
+	}
 }
