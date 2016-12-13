@@ -7,7 +7,7 @@
     <TableRoot>
       <TableSection>
         <ViewCell>
-          <StackLayout Orientation="Vertical" >
+          <StackLayout Orientation="Vertical"  >
             <Label Text="HazardName" HorizontalOptions="Center" ></Label>
           </StackLayout>
         </ViewCell>
@@ -20,7 +20,7 @@
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static}">
             <Label Text="Risk Before"></Label>
             <StackLayout Orientation="Horizontal">
               <Label x:Name="LabelRiskBefore" Text="1"></Label>
