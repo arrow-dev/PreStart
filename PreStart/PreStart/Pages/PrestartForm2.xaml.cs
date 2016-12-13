@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace PreStart.Pages
 {
-    public partial class PrestartForm3 : ContentPage
+    public partial class PrestartForm2 : ContentPage
     {
-        public PrestartForm3()
+        public PrestartForm2()
         {
             InitializeComponent();
         }
