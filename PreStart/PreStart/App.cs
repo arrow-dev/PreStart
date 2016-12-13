@@ -23,7 +23,7 @@ namespace PreStart
                 }
             };
 
-            MainPage = new EditHazardDetailPage();
+            MainPage = new HazardDetailPage();
         }
 
         protected override void OnStart()
