@@ -35,13 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\BaseViewModel.cs" />
+    <Compile Include="Abstractions\ICloudService.cs" />
+    <Compile Include="Abstractions\ICloudTable.cs" />
+    <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="Pages\EditHazardDetailPage.xaml.cs">
-      <DependentUpon>EditHazardDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\HazardDetailPage.xaml.cs">
-      <DependentUpon>HazardDetailPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\PrestartForm1.xaml.cs">
       <DependentUpon>PrestartForm1.xaml</DependentUpon>
     </Compile>
@@ -51,8 +49,8 @@
     <Compile Include="Pages\PrestartForm3.xaml.cs">
       <DependentUpon>PrestartForm3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PrestartForm4.xaml.cs">
-      <DependentUpon>PrestartForm4.xaml</DependentUpon>
+    <Compile Include="Pages\TaskManagerPage.xaml.cs">
+      <DependentUpon>TaskManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="template.cs" />
@@ -94,22 +92,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartForm4.xaml">
+    <EmbeddedResource Include="Pages\TaskManagerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\EditHazardDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\HazardDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
