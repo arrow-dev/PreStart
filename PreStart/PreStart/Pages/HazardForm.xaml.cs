@@ -13,6 +13,19 @@ namespace PreStart.Pages
         public HazardForm()
         {
             InitializeComponent();
+
+            StepperRiskBefore.ValueChanged += OnStepperRiskBeforeChanged;
+            StepperRiskAfter.ValueChanged += OnStepperRiskAfterChanged;
+        }
+
+        private void OnStepperRiskAfterChanged(object sender, ValueChangedEventArgs e)
+        {
+            LabelRiskAfter.Text = StepperRiskAfter.Value.ToString();
+        }
+
+        private void OnStepperRiskBeforeChanged(object sender, ValueChangedEventArgs e)
+        {
+            LabelRiskBefore.Text = StepperRiskBefore.Value.ToString();
         }
     }
 }
