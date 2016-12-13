@@ -61,6 +61,9 @@
     <Compile Include="Pages\PrestartForm4.xaml.cs">
       <DependentUpon>PrestartForm4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TaskDetailPage.xaml.cs">
+      <DependentUpon>TaskDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TaskManagerPage.xaml.cs">
       <DependentUpon>TaskManagerPage.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,14 @@
     <Compile Include="Services\AzureCloudService.cs" />
     <Compile Include="Services\AzureCloudTable.cs" />
     <Compile Include="Template.cs" />
+    <Compile Include="ViewModels\HazardDetailViewModel.cs" />
+    <Compile Include="ViewModels\HazardFormViewModel.cs" />
+    <Compile Include="ViewModels\PrestartForm1ViewModel.cs" />
+    <Compile Include="ViewModels\PrestartForm2ViewModel.cs" />
+    <Compile Include="ViewModels\PrestartForm3ViewModel.cs" />
+    <Compile Include="ViewModels\PrestartForm4ViewModel.cs" />
+    <Compile Include="ViewModels\TaskDetailViewModel.cs" />
+    <Compile Include="ViewModels\TaskManagerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -138,7 +149,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <EmbeddedResource Include="Pages\TaskDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\HazardForm.xaml">
