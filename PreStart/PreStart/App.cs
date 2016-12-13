@@ -23,7 +23,7 @@ namespace PreStart
                 }
             };
 
-            MainPage = new PrestartForm4();
+            MainPage = new HazardDetailPage();
         }
 
         protected override void OnStart()
