@@ -23,5 +23,8 @@ namespace PreStart
 
         public static readonly Color ForegroundColor =
             Device.OnPlatform(Color.Black, Color.White, Color.White);
+
+        public static readonly  Thickness StackLayoutSection =
+            new Thickness(40, 0, 40, 20);
     }
 }

@@ -1,26 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.HazardForm">
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
   <TableView Intent="Form">
     <TableRoot>
       <TableSection>
         <ViewCell>
-          <StackLayout Orientation="Vertical" >
+          <StackLayout Orientation="Vertical"  >
             <Label Text="HazardName" HorizontalOptions="Center" ></Label>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="What could go wrong?"></Label>
             <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk Before"></Label>
             <StackLayout Orientation="Horizontal">
               <Label x:Name="LabelRiskBefore" Text="1"></Label>
@@ -31,14 +32,14 @@
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"></Label>
             <Editor VerticalOptions="Center"  HeightRequest="100"></Editor>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk After"></Label>
             <StackLayout Orientation="Horizontal">
               <Label x:Name="LabelRiskAfter" Text="1"></Label>

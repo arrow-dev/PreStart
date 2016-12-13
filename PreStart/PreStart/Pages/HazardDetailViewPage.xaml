@@ -1,47 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.HazardDetailViewPage">
   <TableView Intent="Form">
     <TableRoot>
       <TableSection>
-        <ViewCell>
-          <StackLayout Orientation="Vertical" >
-            <Label Text="HazardName" HorizontalOptions="Center" ></Label>
+        <ViewCell> 
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+            <Label Text="HazardName" HorizontalOptions="Center" Font="{x:Static local:Template.TitleFont}" ></Label>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
             <Label Text="What could go wrong?"></Label>
             <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
             <Label Text="Risk Before"></Label>
             <StackLayout Orientation="Horizontal">
-              <Label Text="1"></Label>
-              <Stepper Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
+              <Label x:Name="LabelRiskBefore"  Text="1"></Label>
+              <Stepper x:Name="StepperRiskBefore" Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
             </StackLayout>
 
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical">
-            <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"></Label>
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label>
+              <Label.FormattedText>
+                <FormattedString>
+                  <Span Text="How will you "/>
+                  <Span Text="Eliminate" FontAttributes="Bold"></Span>
+                  <Span Text=", "></Span>
+                  <Span Text="Isolate" FontAttributes="Bold"></Span>
+                  <Span Text=", or "></Span>
+                  <Span Text="Minimise " FontAttributes="Bold"></Span>
+                  <Span Text="the hazard? How can I make it safe?"></Span>
+                </FormattedString>
+              </Label.FormattedText>
+              
+            </Label>
             <Editor VerticalOptions="Center"  HeightRequest="100"></Editor>
           </StackLayout>
         </ViewCell>
-
+      
+   
+        
         <ViewCell>
-          <StackLayout Orientation="Vertical">
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk After"></Label>
             <StackLayout Orientation="Horizontal">
-              <Label Text="1"></Label>
-              <Stepper Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
+              <Label x:Name="LabelRiskAfter" Text="1"></Label>
+              <Stepper x:Name="StepperRiskAfter" Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
             </StackLayout>
 
 
@@ -49,7 +65,7 @@
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" VerticalOptions="Center">
+          <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
             <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
           </StackLayout>
         </ViewCell>
