@@ -40,6 +40,9 @@
     <Compile Include="Abstractions\ICloudTable.cs" />
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Models\Hazard.cs" />
+    <Compile Include="Models\Prestart.cs" />
+    <Compile Include="Models\Task.cs" />
     <Compile Include="Pages\HazardDetailViewPage.xaml.cs">
       <DependentUpon>HazardDetailViewPage.xaml</DependentUpon>
     </Compile>
@@ -54,6 +57,9 @@
     </Compile>
     <Compile Include="Pages\PrestartForm3.xaml.cs">
       <DependentUpon>PrestartForm3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrestartForm4.xaml.cs">
+      <DependentUpon>PrestartForm4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TaskManagerPage.xaml.cs">
       <DependentUpon>TaskManagerPage.xaml</DependentUpon>
@@ -73,12 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\PrestartForm2.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartForm3.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -104,7 +104,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +114,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\HazardDetailViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\PrestartForm3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\PrestartForm4.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

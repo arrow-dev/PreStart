@@ -1,105 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PreStart.Pages.PrestartForm2"
-           >
+             x:Class="PreStart.Pages.PrestartForm2">
+  <StackLayout Orientation="Vertical">
+    <Label Text="STAY SAFE" TextColor="Red" FontSize="20" HorizontalTextAlignment="Center"></Label>
+    <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" HorizontalTextAlignment="Center"></Label>
   
-
-     <TableView Intent="Form">
-       <TableRoot >
-
-         <TableSection Title="PRE-START MEETING RECORD" >
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap"  Text="Department:" WidthRequest="175"  ></Label>
-                 <Entry   HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
+    <TableView Intent="Form">
+      <TableRoot>
+        <TableSection>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20">
+              <Label Text="What is the Plan for the day?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20">
+              <Label Text="Who is Doing what on this site?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20">
+              <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20">
+              <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20">
+              <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20">
+              <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="40,0,40,20" VerticalOptions="Center">
+              <Button Text="Next" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+            </StackLayout>
            </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" Text="Projects/Site:" WidthRequest="175"   ></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" Text="Job #:" WidthRequest="175"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" WidthRequest="175" Text="Date:"> </Label>
-              <Label Text="date"></Label>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" WidthRequest="175" Text="Person in Charge of Site:"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label Text="STMS:" LineBreakMode="WordWrap" WidthRequest="175"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" WidthRequest="175" Text="TMP #:"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" Text="Site First Aider:" WidthRequest="175"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" WidthRequest="175" Text="Quarry Manager in charge(if applicable):"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20">
-               <Label LineBreakMode="WordWrap" WidthRequest="175" Text="Certificate Number"></Label>
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Horizontal" Padding="40, 0, 40, 20" >
-               <Label LineBreakMode="WordWrap" WidthRequest="175" Text="Site Plan/Emergency Response:" ></Label>
-                
-               <Entry HorizontalOptions="FillAndExpand" ></Entry>
-             </StackLayout>
-           </ViewCell>
-
-           <ViewCell >
-             <StackLayout Orientation="Vertical" Padding="40, 0, 40, 20" >
-             <Button TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Text="Next"></Button>
-             </StackLayout>
-           </ViewCell>
-         </TableSection>
-         
-       </TableRoot>
-       <!-- Done button here-->
-       
-     </TableView>
-
-
-
-  
-</ContentPage>  
+        </TableSection>
+      </TableRoot>
+    </TableView>
+  </StackLayout>
+</ContentPage>
