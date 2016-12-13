@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PreStart.Pages.PrestartForm4">
+             xmlns:local="clr-namespace:PreStart;assembly=PreStart"
+             x:Class="PreStart.Pages.PrestartForm4"
+             Padding="{x:Static local:Template.PagePadding}">
+  
   <StackLayout Orientation="Vertical">
-    <Label Text="STAY SAFE" TextColor="Red" FontSize="20" HorizontalTextAlignment="Center"></Label>
-    <Label Text="What am I doing? What could go wrong? How could I do it Safer?" HorizontalTextAlignment="Center"></Label>
+    <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
+    <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
 
     <TableView Intent="Form">
       <TableRoot Title="General Requirements">

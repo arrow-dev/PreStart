@@ -1,6 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PreStart.Pages.PrestartForm3">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             xmlns:local="clr-namespace:PreStart;assembly=PreStart"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="PreStart.Pages.PrestartForm3"
+             Padding="{x:Static local:Template.PagePadding}"
+             >
+  
+  <StackLayout VerticalOptions="Center">    
+  <StackLayout>
+    <Label Text ="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}"
+           HorizontalTextAlignment="Center"></Label>
+    <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
+           HorizontalTextAlignment="Center"></Label>
+  </StackLayout>
+  
+  
+ <TableView Intent="Form">
+      <TableRoot>
+        <TableSection>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <Label Text="What 'problems' did we have yesterday?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <Label Text="What opportunities for improvement were identified?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <Label Text="What will we do differently today?" VerticalOptions="Center"></Label>
+              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+           </ViewCell>
+        
+          <ViewCell>
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+              <Button Text="Next" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+            </StackLayout>
+           </ViewCell>
+  
+
+        </TableSection>
+      </TableRoot>
+    </TableView>
+  </StackLayout>
+  
 </ContentPage>
