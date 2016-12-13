@@ -23,7 +23,7 @@ namespace PreStart
                 }
             };
 
-            MainPage = new PrestartForm3();
+            MainPage = new TaskManagerPage();
         }
 
         protected override void OnStart()
