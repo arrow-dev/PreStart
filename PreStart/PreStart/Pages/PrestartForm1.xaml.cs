@@ -1,4 +1,5 @@
 ﻿
+using PreStart.ViewModels;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
@@ -8,7 +9,7 @@ namespace PreStart.Pages
         public PrestartForm1()
         {
             InitializeComponent();
-
+            BindingContext = new PrestartForm1ViewModel();
         }
     }
 
