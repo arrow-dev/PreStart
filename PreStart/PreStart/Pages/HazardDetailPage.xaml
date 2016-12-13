@@ -1,69 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PreStart.Pages.HazardDetailPage">
-<TableView Intent="Data">
-  <TableRoot>
-    <TableSection>
-    
-      <ViewCell>
-      <StackLayout Orientation=" Vertical">
-    <Label Text="Hazard Name:"></Label>
-       <Frame OutlineColor="Black" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-        <Label LineBreakMode="WordWrap" Text="Heavy Object"></Label>
-         </Frame>
-       </StackLayout>
-    </ViewCell>
-   
-      <ViewCell>
-        <StackLayout Orientation="Vertical">
-          <Label Text="What could go wrong?"></Label>
-          <Frame OutlineColor="Black" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" >
-            <Label LineBreakMode="WordWrap" Text="Someone might try to lift it by themselves"></Label>
-          </Frame>
-        </StackLayout>
-      </ViewCell>
-      
-      <ViewCell>
-      <StackLayout Orientation="Vertical">
-        <Label Text="Risk Before"></Label>
-        <StackLayout Orientation="Horizontal">
-         <Frame OutlineColor="Black" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-           <Label Text="1"></Label>
-         </Frame>
-      
-        </StackLayout>
-      </StackLayout>
-      </ViewCell>
-      
-      <ViewCell>
-        <StackLayout Orientation="Vertical">
-          <Label Text="How will you Eliminate, Isolate or Minimise the hazard? How can I make it safe?"></Label>
-        <Frame OutlineColor="Black" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-          <Label LineBreakMode="WordWrap" Text="Ask someone else for assistance when lifting the object"></Label>
-        </Frame>
-     
-        </StackLayout>
-      </ViewCell>
-      
-      <ViewCell>
-        <StackLayout Orientation="Vertical">
-          <Label Text="Risk After"></Label>
-          <StackLayout Orientation=" Horizontal">
-            <Frame OutlineColor="Black" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-            <Label Text="1"></Label>
-            </Frame>
+             x:Class="PreStart.Pages.EditHazardDetailPage">
+
+  <TableView Intent="Form">
+    <TableRoot>
+      <TableSection>
+        <ViewCell>
+          <StackLayout Orientation="Vertical" >
+            <Label Text="HazardName" HorizontalOptions="Center" ></Label>
           </StackLayout>
-        </StackLayout>
-      </ViewCell>
-      
-      <ViewCell>
-        <StackLayout Orientation="Vertical">
-          <Button Text="Edit" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
-        </StackLayout>
-      </ViewCell>
-      
-  </TableSection>
-  </TableRoot>
-</TableView>
+        </ViewCell>
+
+        <ViewCell>
+          <StackLayout Orientation="Vertical">
+            <Label Text="What could go wrong?"></Label>
+            <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+          </StackLayout>
+        </ViewCell>
+
+        <ViewCell>
+          <StackLayout Orientation="Vertical">
+            <Label Text="Risk Before"></Label>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="1"></Label>
+              <Stepper Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
+            </StackLayout>
+
+          </StackLayout>
+        </ViewCell>
+
+        <ViewCell>
+          <StackLayout Orientation="Vertical">
+            <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"></Label>
+            <Editor VerticalOptions="Center"  HeightRequest="100"></Editor>
+          </StackLayout>
+        </ViewCell>
+
+        <ViewCell>
+          <StackLayout Orientation="Vertical">
+            <Label Text="Risk After"></Label>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="1"></Label>
+              <Stepper Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
+            </StackLayout>
+
+
+          </StackLayout>
+        </ViewCell>
+
+        <ViewCell>
+          <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+          </StackLayout>
+        </ViewCell>
+
+      </TableSection>
+    </TableRoot>
+  </TableView>
 </ContentPage>

@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace PreStart.Pages
 {
-    public partial class EditHazardDetailPage : ContentPage
+    public partial class HazardForm : ContentPage
     {
-        public EditHazardDetailPage()
+        public HazardForm()
         {
             InitializeComponent();
         }
