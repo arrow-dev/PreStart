@@ -22,7 +22,7 @@
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="What 'problems' did we have yesterday?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.Problems, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>

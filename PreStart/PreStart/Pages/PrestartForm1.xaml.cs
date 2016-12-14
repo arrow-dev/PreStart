@@ -10,8 +10,6 @@ namespace PreStart.Pages
         {
             InitializeComponent();
             BindingContext = new PrestartForm1ViewModel();
-
-
         }
 
         

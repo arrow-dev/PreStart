@@ -1,9 +1,11 @@
 ﻿using PreStart.Abstractions;
+using PropertyChanged;
 using System;
 
 namespace PreStart.Models
 {
-    public class Prestart : TableData
+    [ImplementPropertyChanged]
+    public class Prestart : TableData 
     {
         public string Department { get; set; }
 

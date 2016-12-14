@@ -21,20 +21,20 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Contract Name:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Entry Text ="{Binding}" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
           <Label FontSize="14" Text="Contract Number:" TextColor="Black"
                  WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+          <Entry Text="{Binding}" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
     </StackLayout> 
     
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Location:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Entry Text="{Binding}" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
           <Label FontSize="14" Text="Location Number:" TextColor="Black"
                  WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+          <Entry Text="{Binding}" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
     </StackLayout>
    
    
@@ -42,10 +42,10 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Department:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
+          <Entry Text="{Binding Prestart.Department, Mode=TwoWay}" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>       
           <Label FontSize="14" Text="Project / Site:" TextColor="Black"
                  WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+          <Entry Text="{Binding Prestart.Project, Mode=TwoWay}" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
@@ -96,8 +96,8 @@
     
       
       <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-          <Button TextColor="White" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="AUTO FILL"></Button>    
-          <Button TextColor="White" BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING"></Button>
+          <Button Command ="{Binding PreFillCommand}" TextColor="White" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="AUTO FILL"></Button>    
+          <Button Command ="{Binding NextCommand}" TextColor="White" BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING"></Button>
       </StackLayout>
     
   </StackLayout>
