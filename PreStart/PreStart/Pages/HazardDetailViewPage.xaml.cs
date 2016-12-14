@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PreStart.ViewModels;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
@@ -14,20 +14,11 @@ namespace PreStart.Pages
         {
             InitializeComponent();
 
-            StepperRiskBefore.ValueChanged += OnStepperRiskBeforeValueChanged;
-            StepperRiskAfter.ValueChanged += OnStepperRiskAfterValueChanged;
+       
 
-            
+            BindingContext = new HazardDetailViewModel();
         }
 
-        private void OnStepperRiskAfterValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            LabelRiskAfter.Text = StepperRiskAfter.Value.ToString();
-        }
-
-        private void OnStepperRiskBeforeValueChanged(object sender, ValueChangedEventArgs e)
-        {
-          LabelRiskBefore.Text = StepperRiskBefore.Value.ToString();
-        }
+       
     }
 }
