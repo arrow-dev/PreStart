@@ -3,29 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.HazardForm">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
   <TableView Intent="Form">
     <TableRoot>
       <TableSection>
         <ViewCell>
-          <StackLayout Orientation="Vertical"  >
-            <Label Text="HazardName" HorizontalOptions="Center" ></Label>
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+            <Label Text="Hazard Description:" ></Label>
+            <Editor Text="{Binding Hazard.Description}"></Editor>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="What could go wrong?"></Label>
-            <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+            <Label Text="What could go wrong?:"></Label>
+            <Editor VerticalOptions="Center" HeightRequest="100" Text="{Binding Hazard.Repercussion}"></Editor>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="Risk Before"></Label>
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+            <Label Text="Risk Before:"></Label>
             <StackLayout Orientation="Horizontal">
-              <Label x:Name="LabelRiskBefore" Text="1"></Label>
-              <Stepper x:Name="StepperRiskBefore" Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
+              <Label x:Name="LabelRiskBefore"  Text="1"></Label>
+              <Stepper x:Name="StepperRiskBefore" Increment="1" Minimum="1" Maximum="25" Value="{Binding Hazard.RiskBefore}"></Stepper>
             </StackLayout>
 
           </StackLayout>
@@ -33,17 +34,32 @@
 
         <ViewCell>
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"></Label>
-            <Editor VerticalOptions="Center"  HeightRequest="100"></Editor>
+            <Label>
+              <Label.FormattedText>
+                <FormattedString>
+                  <Span Text="How will you "/>
+                  <Span Text="Eliminate" FontAttributes="Bold"></Span>
+                  <Span Text=", "></Span>
+                  <Span Text="Isolate" FontAttributes="Bold"></Span>
+                  <Span Text=", or "></Span>
+                  <Span Text="Minimise " FontAttributes="Bold"></Span>
+                  <Span Text="the hazard? How can I make it safe?"></Span>
+                </FormattedString>
+              </Label.FormattedText>
+
+            </Label>
+            <Editor VerticalOptions="Center" Text="{Binding Hazard.Response, Mode=TwoWay}"  HeightRequest="100"></Editor>
           </StackLayout>
         </ViewCell>
 
+
+
         <ViewCell>
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="Risk After"></Label>
+            <Label Text="Risk After:"></Label>
             <StackLayout Orientation="Horizontal">
               <Label x:Name="LabelRiskAfter" Text="1"></Label>
-              <Stepper x:Name="StepperRiskAfter" Increment="1" Minimum="1" Maximum="25" Value="1"></Stepper>
+              <Stepper x:Name="StepperRiskAfter" Increment="1" Minimum="1" Maximum="25" Value="{Binding Hazard.RiskAfter}" ></Stepper>
             </StackLayout>
 
 
@@ -51,7 +67,7 @@
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" VerticalOptions="Center">
+          <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
             <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
           </StackLayout>
         </ViewCell>
