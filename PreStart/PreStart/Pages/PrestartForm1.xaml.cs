@@ -12,7 +12,7 @@ namespace PreStart.Pages
             //Set the binding target to PrestartForm1 source
             BindingContext = new PrestartForm1ViewModel();
 
-
+            
         }
 
         
