@@ -30,6 +30,16 @@ namespace PreStart.ViewModels
 
             try
             {
+                //Get Prestart sync table context
+                var table =  await App.CloudService.GetTableAsync<Prestart>();
+
+                //Add Current Prestart to the table
+                await table.CreateItemAsync(Prestart);
+
+                //Sync with online table
+                await App.CloudService.SyncOfflineCacheAsync();
+
+                //Navigate to the task manager
                 Application.Current.MainPage = new TaskManagerPage();
             }
             catch (Exception ex)
