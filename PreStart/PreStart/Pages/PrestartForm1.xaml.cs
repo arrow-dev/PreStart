@@ -9,6 +9,7 @@ namespace PreStart.Pages
         public PrestartForm1()
         {
             InitializeComponent();
+            //Set the binding target to PrestartForm1 source
             BindingContext = new PrestartForm1ViewModel();
 
 

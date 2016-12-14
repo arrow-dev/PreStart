@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PreStart.Abstractions
 {
     public class BaseViewModel : INotifyPropertyChanged
@@ -28,6 +29,17 @@ namespace PreStart.Abstractions
             set { SetProperty(ref _propIsBusy, value, "IsBusy"); }
         }
 
+        protected void OnPropertyChanged(string propName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propName));
+
+            }
+
+        }
+
         protected void SetProperty<T>(ref T store, T value, string propName, Action onChanged = null)
         {
             if (EqualityComparer<T>.Default.Equals(store, value))
@@ -38,11 +50,6 @@ namespace PreStart.Abstractions
             OnPropertyChanged(propName);
         }
 
-        public void OnPropertyChanged(string propName)
-        {
-            if (PropertyChanged == null)
-                return;
-            PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
+       
     }
 }

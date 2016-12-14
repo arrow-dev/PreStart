@@ -3,6 +3,7 @@ using System;
 
 namespace PreStart.Models
 {
+    
     public class Prestart : TableData
     {
         public string Department { get; set; }
