@@ -5,6 +5,8 @@
              x:Class="PreStart.Pages.PrestartForm4"
              Padding="{x:Static local:Template.PagePadding}">
   
+  
+  
   <StackLayout Orientation="Vertical">
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
@@ -12,13 +14,13 @@
     <TableView Intent="Form">
       <TableRoot Title="General Requirements">
         <TableSection >
-          <SwitchCell Text="Is everyone fit for work?"> </SwitchCell>
-          <SwitchCell Text="Is the site secure?" ></SwitchCell>
-          <SwitchCell Text="Barricades required?" ></SwitchCell>
-          <SwitchCell Text="Is suitable access provided?"></SwitchCell>
-          <SwitchCell Text="Weather forecast considered?"></SwitchCell>
-          <SwitchCell Text="Specialist PPE required?"></SwitchCell>
-          <SwitchCell Text="Erosion &amp; Sediment Control implemented?"></SwitchCell>
+          <SwitchCell Text="Is everyone fit for work?" On="{Binding PreStart.FitForWork}" >  </SwitchCell>
+          <SwitchCell Text="Is the site secure?"  On="{Binding PreStart.FitForWork}" ></SwitchCell>
+          <SwitchCell Text="Barricades required?"  On="{Binding PreStart.FitForWork}" ></SwitchCell>
+          <SwitchCell Text="Is suitable access provided?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
+          <SwitchCell Text="Weather forecast considered?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
+          <SwitchCell Text="Specialist PPE required?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
+          <SwitchCell Text="Erosion &amp; Sediment Control implemented?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" VerticalOptions="Center">
               <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
