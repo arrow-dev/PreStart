@@ -14,16 +14,16 @@
     <TableView Intent="Form">
       <TableRoot Title="General Requirements">
         <TableSection >
-          <SwitchCell Text="Is everyone fit for work?" On="{Binding PreStart.FitForWork}" >  </SwitchCell>
-          <SwitchCell Text="Is the site secure?"  On="{Binding PreStart.FitForWork}" ></SwitchCell>
-          <SwitchCell Text="Barricades required?"  On="{Binding PreStart.FitForWork}" ></SwitchCell>
-          <SwitchCell Text="Is suitable access provided?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
-          <SwitchCell Text="Weather forecast considered?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
-          <SwitchCell Text="Specialist PPE required?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
-          <SwitchCell Text="Erosion &amp; Sediment Control implemented?"  On="{Binding PreStart.FitForWork}"></SwitchCell>
+          <SwitchCell Text="Is everyone fit for work?" On="{Binding PreStart.FitForWork, Mode=TwoWay}" >  </SwitchCell>
+          <SwitchCell Text="Is the site secure?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}" ></SwitchCell>
+          <SwitchCell Text="Barricades required?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}" ></SwitchCell>
+          <SwitchCell Text="Is suitable access provided?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Weather forecast considered?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Specialist PPE required?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Erosion &amp; Sediment Control implemented?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}"></SwitchCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" VerticalOptions="Center">
-              <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+              <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
             </StackLayout>
           </ViewCell>
 

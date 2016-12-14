@@ -28,6 +28,8 @@ namespace PreStart.Services
 
             // Push the Operations Queue to the mobile backend
             await Client.SyncContext.PushAsync();
+            
+            
 
             // Pull each sync table
             var prestartTable = await GetTableAsync<Prestart>(); await prestartTable.PullAsync();
@@ -40,10 +42,9 @@ namespace PreStart.Services
             // Short circuit - local database is already initialized
             if (Client.SyncContext.IsInitialized)
                 return;
-
+           
             // Create a reference to the local sqlite store
             var store = new MobileServiceSQLiteStore("offlinecache.db");
-
             // Define the database schema
             store.DefineTable<Prestart>();
             store.DefineTable<Models.Task>();
