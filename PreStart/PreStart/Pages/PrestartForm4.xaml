@@ -23,7 +23,7 @@
           <SwitchCell Text="Erosion &amp; Sediment Control implemented?"  On="{Binding PreStart.FitForWork, Mode=TwoWay}"></SwitchCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" VerticalOptions="Center">
-              <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+              <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
             </StackLayout>
           </ViewCell>
 

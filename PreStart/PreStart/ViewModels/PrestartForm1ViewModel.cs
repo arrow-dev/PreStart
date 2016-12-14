@@ -17,6 +17,31 @@ namespace PreStart.ViewModels
             Prestart = new Prestart();
         }
 
+        Command preFillCommand;
+
+        public Command PreFillCommand
+            => preFillCommand ?? (preFillCommand = new Command(async () => await ExecutePreFillCommand()));
+
+        async Task ExecutePreFillCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                //Get yesterday's form and prefill some properties
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
         Command nextCommand;
 
         public Command NextCommand

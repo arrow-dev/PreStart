@@ -15,42 +15,42 @@
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="What is the Plan for the day?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.Plan, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="Who is Doing what on this site?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.Doing, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical">
               <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" VerticalOptions="Center">
-              <Button Text="Next" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+              <Button Text="Next" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding NextCommand}"></Button>
             </StackLayout>
            </ViewCell>
         </TableSection>
