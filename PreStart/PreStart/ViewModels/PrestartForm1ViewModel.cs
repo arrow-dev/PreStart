@@ -1,58 +1,45 @@
-﻿using System;
-using PreStart.Abstractions;
+﻿using PreStart.Abstractions;
 using PreStart.Models;
+using PreStart.Pages;
+using System;
+using System.Diagnostics;
+using Xamarin.Forms;
+using Task = System.Threading.Tasks.Task;
 
 namespace PreStart.ViewModels
 {
     public class PrestartForm1ViewModel : BaseViewModel
     {
-        Prestart Prestart = new Prestart();
-
-        //string temp;
-        
+        public Prestart Prestart { get; set; }
 
         public PrestartForm1ViewModel()
         {
-           
+            Prestart = new Prestart();
         }
-        
-        //public string Temp
-        //{
-        //    get
-        //    {
-        //        temp = newPrestart.Department;
-        //        return temp;
-        //    }
 
-        //    set
-        //    {
-        //        if (newPrestart.Department != value)
-        //            newPrestart.Department = value;
-        //        OnPropertyChanged("Temp");
-        //    }
-        //}
+        Command nextCommand;
 
+        public Command NextCommand
+            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand()));
 
-        /// <summary>
-        ///just a test
-        /// </summary>
-        //private string testString;
+        async Task ExecuteNextCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
 
-        //public string TestString
-        //{
-        //    get
-        //    {
-        //        return testString;
-        //    }
-        //    set
-        //    {
-        //        if (testString != value)
-        //        {
-        //            testString = value;
-        //            OnPropertyChanged("TestString");
-        //        }
-        //    }
-        //}
-
+            try
+            {
+                Application.Current.MainPage = new PrestartForm2(Prestart);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
     }
 }
