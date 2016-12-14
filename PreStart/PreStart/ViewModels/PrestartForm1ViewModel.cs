@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using PreStart.Abstractions;
+using PreStart.Models;
 
 namespace PreStart.ViewModels
 {
-    class PrestartForm1ViewModel
+    public class PrestartForm1ViewModel : BaseViewModel
     {
-        
+        public Prestart Prestart { get; set; }
+
+        public PrestartForm1ViewModel()
+        {
+            Prestart = new Prestart();
+        }
     }
 }
