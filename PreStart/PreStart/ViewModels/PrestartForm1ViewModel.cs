@@ -18,7 +18,7 @@ namespace PreStart.ViewModels
         }
 
         Command nextCommand;
-        //Post a comment
+
         public Command NextCommand
             => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand()));
 
