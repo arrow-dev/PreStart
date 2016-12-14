@@ -6,5 +6,6 @@ namespace PreStart.Models
     public class Task : TableData
     {
         public string Description { get; set; }
+        public string PrestartId { get; set; }
     }
 }

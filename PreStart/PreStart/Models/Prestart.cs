@@ -1,12 +1,19 @@
 ﻿using PreStart.Abstractions;
 using PropertyChanged;
-using System;
 
 namespace PreStart.Models
 {
     [ImplementPropertyChanged]
     public class Prestart : TableData 
     {
+        public string ContractNumber { get; set; }
+
+        public string ContractName { get; set; }
+
+        public string Location { get; set; }
+
+        public string LotNo { get; set; }
+
         public string Department { get; set; }
 
         public string Project { get; set; }
@@ -14,8 +21,6 @@ namespace PreStart.Models
         public string JobNumber { get; set; }
 
         public string SiteManager { get; set; }
-
-        public DateTime Date { get; set; }
 
         public string StmsNumber { get; set; }
 
