@@ -6,8 +6,7 @@
 						 xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
 						 x:Class="PreStart.Pages.PrestartForm1"
 						 
-						 Title="Basic Information"
-						 Padding="{x:Static local:Template.PagePadding}">
+						 Title="Basic Information">
 
 
 	<StackLayout VerticalOptions="Center">
@@ -19,7 +18,7 @@
 					 Font="{x:Static local:Template.ParaFont}"
 					 HorizontalOptions="Center"/>
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="Contract Name:" TextColor="Black" VerticalOptions="Center"
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center">
@@ -37,7 +36,7 @@
 		</StackLayout> 
 		
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="Location:" TextColor="Black" VerticalOptions="Center" 
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}">
@@ -52,7 +51,7 @@
 	 
 	 
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="Department:" TextColor="Black" VerticalOptions="Center" 
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, Mode=TwoWay}">
@@ -65,7 +64,7 @@
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Project, Mode=TwoWay}"/>
 		</StackLayout>
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="Job Number:" TextColor="Black" VerticalOptions="Center" 
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, Mode=TwoWay}"/>       
@@ -74,7 +73,7 @@
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Date, Mode=TwoWay}"/>
 		</StackLayout>
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="Person in Charge of Site:" TextColor="Black" VerticalOptions="Center" 
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, Mode=TwoWay}"/>       
@@ -83,7 +82,7 @@
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber, Mode=TwoWay}"/>
 		</StackLayout>
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="TMP:" TextColor="Black" VerticalOptions="Center" 
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber, Mode=TwoWay}"/>       
@@ -92,7 +91,7 @@
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}"/>
 		</StackLayout>
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Label FontSize="14" Text="Quarry Manager in Charge(if applicable):" TextColor="Black" VerticalOptions="Center" 
 								 WidthRequest="150"/>
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, Mode=TwoWay}"/>       
@@ -101,7 +100,7 @@
 					<Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}"/>
 		</StackLayout>
 		
-		<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+		<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					
 					<Label FontSize="14" Text="Site Plan / Emergency Response:" TextColor="Black"
 								 WidthRequest="150" VerticalOptions="Center"/>
@@ -110,16 +109,10 @@
 
 		
 			
-			<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+			<StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
 					<Button TextColor="White" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="AUTO FILL" Command="{Binding PreFillCommand}"></Button>    
 					<Button TextColor="White" BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}"></Button>
 			</StackLayout>
-
-
-		<StackLayout Padding="0,20,0,0" Orientation="Horizontal">
-			<Label Text="Your department is:" />
-			<Label Text="{Binding Prestart.Department}" />
-		</StackLayout>
 		
 	</StackLayout>
  

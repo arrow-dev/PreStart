@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             x:Class="PreStart.Pages.PrestartForm3"
-             Padding="{x:Static local:Template.PagePadding}"
-             >
+             x:Class="PreStart.Pages.PrestartForm3">
   
   <StackLayout VerticalOptions="Center">    
   <StackLayout>
@@ -20,19 +18,19 @@
       <TableRoot>
         <TableSection>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What 'problems' did we have yesterday?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.Problems, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What opportunities for improvement were identified?" VerticalOptions="Center"></Label>
               <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What will we do differently today?" VerticalOptions="Center"></Label>
               <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>

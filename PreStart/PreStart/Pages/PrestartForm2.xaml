@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
-             x:Class="PreStart.Pages.PrestartForm2"
-             Padding="{x:Static local:Template.PagePadding}">
+             x:Class="PreStart.Pages.PrestartForm2">
   
   <StackLayout Orientation="Vertical">
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
@@ -13,37 +12,37 @@
       <TableRoot>
         <TableSection>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What is the Plan for the day?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.Plan, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="Who is Doing what on this site?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.Doing, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>

@@ -13,7 +13,7 @@
 
     <TableView Intent="Form">
       <TableRoot Title="General Requirements">
-        <TableSection >
+        <TableSection>
           <SwitchCell Text="Is everyone fit for work?" On="{Binding Prestart.FitForWork, Mode=TwoWay}" >  </SwitchCell>
           <SwitchCell Text="Is the site secure?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}" ></SwitchCell>
           <SwitchCell Text="Barricades required?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}" ></SwitchCell>
@@ -26,7 +26,6 @@
               <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
             </StackLayout>
           </ViewCell>
-
         </TableSection>
       </TableRoot>
     </TableView>

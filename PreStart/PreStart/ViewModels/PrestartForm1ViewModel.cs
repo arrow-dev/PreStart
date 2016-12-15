@@ -17,6 +17,11 @@ namespace PreStart.ViewModels
             Prestart = new Prestart();
         }
 
+        public PrestartForm1ViewModel(Prestart prestart)
+        {
+            Prestart = prestart;
+        }
+
         Command preFillCommand;
 
         public Command PreFillCommand
