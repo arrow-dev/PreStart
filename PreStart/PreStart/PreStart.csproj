@@ -40,6 +40,7 @@
     <Compile Include="Abstractions\ICloudTable.cs" />
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Behaviors\BehaviorsTest.cs" />
     <Compile Include="Models\Hazard.cs" />
     <Compile Include="Models\Prestart.cs" />
     <Compile Include="Models\Task.cs" />

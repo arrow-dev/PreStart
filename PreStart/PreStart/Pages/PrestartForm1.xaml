@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
+             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:behaviors1="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm1"
              
              Title="Basic Information"
@@ -10,7 +12,26 @@
              >
 
 
-  <StackLayout VerticalOptions="Center">
+  <RelativeLayout>
+    
+  <!--  The Floating Button  -->
+
+    <Button BackgroundColor="Teal"
+
+            Command="{Binding PreFillCommand}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=1,
+                                                                      Constant=-60}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Height,
+                                                                      Factor=1,
+                                                                      Constant=-60}"
+            Text="Refill"
+            TextColor="White" />
+  
+  <StackLayout VerticalOptions="Center" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
     <Label Text="PRE-START MEETING RECORD"
            Font="{x:Static local:Template.TitleFont}"
            HorizontalOptions="Center"
@@ -20,6 +41,15 @@
     <Label Text="Must have an Operational Hazard ID attached"
            Font="{x:Static local:Template.ParaFont}"
            HorizontalOptions="Center"/>
+    
+    <StackLayout Orientation="Horizontal">
+      <Label FontSize="14" Text="Date:" TextColor="Black"
+              WidthRequest="150" VerticalOptions="Center"/>
+      <Label FontSize="14" TextColor="Black"
+             WidthRequest="150" VerticalOptions="Center"
+             Text="{Binding DateString, Mode=OneWay}"/>
+    </StackLayout>
+    
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Contract Name:" TextColor="Black" VerticalOptions="Center"
@@ -34,7 +64,12 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Location:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}"/>       
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}">
+           <Entry.Behaviors>
+             <behaviors:BehaviorsTest/>
+           </Entry.Behaviors>
+          </Entry>
+               
           <Label FontSize="14" Text="Location Number:" TextColor="Black"
                  WidthRequest="150" VerticalOptions="Center"/>
           <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}"/>
@@ -54,59 +89,61 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Job Number:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, Mode=TwoWay}"/>       
-          <Label FontSize="14" Text="Date:" TextColor="Black"
-                 WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Date, Mode=TwoWay}"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, Mode=TwoWay}"/>
+      <Label FontSize="14" Text="STMS:" TextColor="Black"
+             WidthRequest="150" VerticalOptions="Center"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber, Mode=TwoWay}"/>
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Person in Charge of Site:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, Mode=TwoWay}"/>       
-          <Label FontSize="14" Text="STMS:" TextColor="Black"
-                 WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber, Mode=TwoWay}"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, Mode=TwoWay}"/>
+      <Label FontSize="14" Text="Site First Aider:" TextColor="Black"
+             WidthRequest="150" VerticalOptions="Center"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}"/>
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="TMP:" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber, Mode=TwoWay}"/>       
-          <Label FontSize="14" Text="Site First Aider:" TextColor="Black"
-                 WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber, Mode=TwoWay}"/>
+      <Label FontSize="14" Text="Certificate Number:" TextColor="Black"
+             WidthRequest="150" VerticalOptions="Center"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}"/> 
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
           <Label FontSize="14" Text="Quarry Manager in Charge(if applicable):" TextColor="Black" VerticalOptions="Center" 
                  WidthRequest="150"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, Mode=TwoWay}"/>       
-          <Label FontSize="14" Text="Certificate Number:" TextColor="Black"
-                 WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}"/>
+          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, Mode=TwoWay}"/>
+      <Label FontSize="14" Text="Site Plan / Emergency Response:" TextColor="Black"
+             WidthRequest="150" VerticalOptions="Center"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Plan, Mode=TwoWay}"/>
     </StackLayout>
     
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-          
-          <Label FontSize="14" Text="Site Plan / Emergency Response:" TextColor="Black"
-                 WidthRequest="150" VerticalOptions="Center"/>
-          <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Plan, Mode=TwoWay}"/>
-    </StackLayout>
+      <Button TextColor="White" BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}"></Button>
 
+
+    </StackLayout>
     
       
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-          <Button TextColor="White" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="AUTO FILL" Command="{Binding PreFillCommand}"></Button>    
-          <Button TextColor="White" BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}"></Button>
-      </StackLayout>
-    
+      
   
       <StackLayout Padding="0,20,0,0" Orientation="Horizontal">
-			<Label Text="Your department is:" />
-			<Label Text="{Binding Prestart.Department}" />
+			<Label Text="date is:" />
+			<Label Text="{Binding DateString}" />
 		</StackLayout>
     
   </StackLayout>
- 
+
+
+    
+
+
+
+
+  </RelativeLayout>
+
 </ContentPage>
