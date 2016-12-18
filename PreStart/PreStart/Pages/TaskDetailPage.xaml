@@ -19,7 +19,6 @@
          <ViewCell>
            <StackLayout Orientation="Horizontal">
              <Label Text="{Binding Description}"></Label>
-             
            </StackLayout>
          </ViewCell>
        </DataTemplate>

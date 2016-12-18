@@ -15,7 +15,6 @@
           <ViewCell>
             <StackLayout Orientation="Horizontal">
               <Label Text="{Binding Description}" HorizontalOptions="FillAndExpand"></Label>
-              <Label Text="{Binding HazardRating}"></Label>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

@@ -1,5 +1,4 @@
-﻿using PreStart.Abstractions;
-using PreStart.Pages;
+﻿using PreStart.Pages;
 using PreStart.Services;
 using Xamarin.Forms;
 
@@ -7,7 +6,7 @@ namespace PreStart
 {
     public class App : Application
     {
-        public static ICloudService CloudService { get; set; }
+        public static AzureCloudService CloudService { get; set; }
 
         public App()
         {

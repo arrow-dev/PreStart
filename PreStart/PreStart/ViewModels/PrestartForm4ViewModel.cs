@@ -41,7 +41,7 @@ namespace PreStart.ViewModels
                 await App.CloudService.SyncOfflineCacheAsync();
                 
                 //Navigate to the task manager
-                Application.Current.MainPage = new TaskManagerPage();
+                Application.Current.MainPage = new TaskManagerPage(Prestart.Id);
             }
             catch (Exception ex)
             {
