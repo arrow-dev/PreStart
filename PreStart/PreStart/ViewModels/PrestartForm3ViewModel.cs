@@ -30,7 +30,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                Application.Current.MainPage = new PrestartForm4(Prestart);
+                await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm4(Prestart));
             }
             catch (Exception ex)
             {

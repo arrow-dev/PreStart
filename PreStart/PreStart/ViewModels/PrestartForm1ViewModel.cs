@@ -3,6 +3,7 @@ using PreStart.Models;
 using PreStart.Pages;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
@@ -83,7 +84,6 @@ namespace PreStart.ViewModels
 
             try
             {
-                //Application.Current.MainPage = new PrestartForm2(Prestart);
                 await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm2(Prestart));
             }
             catch (Exception ex)
