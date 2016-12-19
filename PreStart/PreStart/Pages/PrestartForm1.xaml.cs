@@ -1,4 +1,5 @@
 ﻿
+using PreStart.Models;
 using PreStart.ViewModels;
 using Xamarin.Forms;
 
@@ -9,8 +10,17 @@ namespace PreStart.Pages
         public PrestartForm1()
         {
             InitializeComponent();
-            //Set the binding target to PrestartForm1 source
             BindingContext = new PrestartForm1ViewModel();
+        }
+        //Constructor for Back button
+        public PrestartForm1(Prestart prestart)
+        {
+            InitializeComponent();
+
+            BindingContext = new PrestartForm1ViewModel(prestart);
+            
+            
+                
         }
 
         

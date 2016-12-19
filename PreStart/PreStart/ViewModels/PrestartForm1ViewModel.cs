@@ -84,7 +84,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                Application.Current.MainPage = new PrestartForm2(Prestart);
+                await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm2(Prestart));
             }
             catch (Exception ex)
             {

@@ -5,18 +5,22 @@ using System;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
+using System.Threading.Tasks;
 
 namespace PreStart.ViewModels
 {
     public class PrestartForm2ViewModel : BaseViewModel
     {
         public Prestart Prestart { get; set; }
+        
 
         public PrestartForm2ViewModel(Prestart prestart)
         {
             Prestart = prestart;
         }
+        
 
+        //Command that navigate to next page.
         Command nextCommand;
 
         public Command NextCommand
@@ -30,7 +34,8 @@ namespace PreStart.ViewModels
 
             try
             {
-                Application.Current.MainPage = new PrestartForm3(Prestart);
+                await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm3(Prestart));
+
             }
             catch (Exception ex)
             {
@@ -41,5 +46,6 @@ namespace PreStart.ViewModels
                 IsBusy = false;
             }
         }
+        
     }
 }

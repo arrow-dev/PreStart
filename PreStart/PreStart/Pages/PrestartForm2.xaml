@@ -7,7 +7,8 @@
   <StackLayout Orientation="Vertical">
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
-  
+
+    
     <TableView Intent="Form">
       <TableRoot>
         <TableSection>

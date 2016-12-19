@@ -12,7 +12,8 @@
     <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
            HorizontalTextAlignment="Center"></Label>
   </StackLayout>
-  
+
+
   
  <TableView Intent="Form">
       <TableRoot>
@@ -26,13 +27,13 @@
           <ViewCell>
             <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What opportunities for improvement were identified?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.Improvements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What will we do differently today?" VerticalOptions="Center"></Label>
-              <Editor VerticalOptions="Center" HeightRequest="100"></Editor>
+              <Editor Text="{Binding Prestart.Differences, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
            </ViewCell>
         
