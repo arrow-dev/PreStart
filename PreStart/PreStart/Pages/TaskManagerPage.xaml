@@ -6,7 +6,11 @@
     <Label Text="Task Manager" FontSize="Large"></Label>
     <StackLayout Orientation="Horizontal">
       <Label Text="Tasks:  " VerticalOptions="Center"></Label>
-      <Button Text="+" VerticalOptions="Center"></Button>
+      <Button Text="+" VerticalOptions="Center" Clicked="AddBtn_OnClick"></Button>
+    </StackLayout>
+    <StackLayout x:Name="EditContainer" IsVisible="False">
+      <Editor Text="{Binding TaskName, Mode=TwoWay}"></Editor>
+      <Button Text="Save" Command="{Binding NewCommand}"></Button>
     </StackLayout>
     <ListView ItemsSource="{Binding Tasks}"
               RowHeight="50">

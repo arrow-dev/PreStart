@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using PreStart.ViewModels;
 using Xamarin.Forms;
+using Task = PreStart.Models.Task;
 
 namespace PreStart.Pages
 {
     public partial class TaskDetailPage : ContentPage
     {
-        public TaskDetailPage()
+        public TaskDetailPage(Task task)
         {
             InitializeComponent();
+            BindingContext = new TaskDetailViewModel(task);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PreStart.ViewModels;
+using System;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
@@ -9,6 +10,11 @@ namespace PreStart.Pages
         {
             InitializeComponent();
             BindingContext = new TaskManagerViewModel(id);
+        }
+
+        private void AddBtn_OnClick(object sender, EventArgs e)
+        {
+            EditContainer.IsVisible = true;
         }
     }
 }
