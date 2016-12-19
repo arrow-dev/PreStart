@@ -8,13 +8,11 @@ namespace PreStart.Services
 {
     public class AzureCloudTable<T> : ICloudTable<T> where T : TableData
     {
-        MobileServiceClient Client;
         IMobileServiceSyncTable<T> Table;
 
         public AzureCloudTable(MobileServiceClient client)
         {
-            Client = client;
-            Table = Client.GetSyncTable<T>();
+            Table = client.GetSyncTable<T>();
         }
 
         public async Task PullAsync()

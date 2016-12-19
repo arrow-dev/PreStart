@@ -11,16 +11,17 @@
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
 
+  
     <TableView Intent="Form">
       <TableRoot Title="General Requirements">
         <TableSection>
           <SwitchCell Text="Is everyone fit for work?" On="{Binding Prestart.FitForWork, Mode=TwoWay}" >  </SwitchCell>
-          <SwitchCell Text="Is the site secure?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}" ></SwitchCell>
-          <SwitchCell Text="Barricades required?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}" ></SwitchCell>
-          <SwitchCell Text="Is suitable access provided?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}"></SwitchCell>
-          <SwitchCell Text="Weather forecast considered?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}"></SwitchCell>
-          <SwitchCell Text="Specialist PPE required?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}"></SwitchCell>
-          <SwitchCell Text="Erosion &amp; Sediment Control implemented?"  On="{Binding Prestart.FitForWork, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Is the site secure?"  On="{Binding Prestart.SiteSecure, Mode=TwoWay}" ></SwitchCell>
+          <SwitchCell Text="Barricades required?"  On="{Binding Prestart.BarricadesRequired, Mode=TwoWay}" ></SwitchCell>
+          <SwitchCell Text="Is suitable access provided?"  On="{Binding Prestart.SuitableAccess, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Weather forecast considered?"  On="{Binding Prestart.WeatherForecastConsidered, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Specialist PPE required?"  On="{Binding Prestart.SpecialistPpeRequired, Mode=TwoWay}"></SwitchCell>
+          <SwitchCell Text="Erosion &amp; Sediment Control implemented?"  On="{Binding Prestart.ErosionAndSedimentControlImplemented, Mode=TwoWay}"></SwitchCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" VerticalOptions="Center">
               <Button Text="Done" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>

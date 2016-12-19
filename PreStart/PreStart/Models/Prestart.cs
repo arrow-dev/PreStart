@@ -32,6 +32,8 @@ namespace PreStart.Models
 
         public string CertificateNumber { get; set; }
 
+        public string EmergencyPlan { get; set; }
+
         public string Plan { get; set; }
 
         public string Doing { get; set; }
@@ -45,6 +47,10 @@ namespace PreStart.Models
         public string QualityChecks { get; set; }
 
         public string Problems { get; set; }
+
+        public string Improvements { get; set; }
+
+        public string Differences { get; set; }
 
         public string MinimumProductivityRequirements { get; set; }
 
