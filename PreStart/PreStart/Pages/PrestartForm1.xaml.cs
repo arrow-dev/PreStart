@@ -11,7 +11,6 @@ namespace PreStart.Pages
         {
             InitializeComponent();
             BindingContext = new PrestartForm1ViewModel();
-            Title = "TEST";
         }
         //Constructor for Back button
         public PrestartForm1(Prestart prestart)

@@ -10,7 +10,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace PreStart.ViewModels
 {
-    public class PrestartForm1ViewModel : BaseViewModel
+    public class PrestartForm1ViewModel : BaseViewModel 
     {
         
         public Prestart Prestart { get; set; }
@@ -84,6 +84,8 @@ namespace PreStart.ViewModels
 
             try
             {
+
+               
                 await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm2(Prestart));
             }
             catch (Exception ex)

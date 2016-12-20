@@ -1,18 +1,19 @@
-﻿using PreStart.Models;
+﻿using PreStart.Abstractions;
 using PreStart.Pages;
 using PreStart.Services;
+using PreStart.ViewModels;
 using Xamarin.Forms;
 
 namespace PreStart
 {
     public class App : Application
     {
-        public static AzureCloudService CloudService { get; set; }
+        public static ICloudService CloudService { get; set; }
 
         public App()
         {
             CloudService = new AzureCloudService();
-            MainPage = new NavigationPage(new HazardForm());
+            MainPage = new NavigationPage(new DemoPage());
         }
 
         protected override void OnStart()

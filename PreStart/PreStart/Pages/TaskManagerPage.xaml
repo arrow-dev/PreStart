@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PreStart.Pages.TaskManagerPage"
+             x:Name="TaskManager"
              Title="Task Manager">
   <StackLayout>
     
-    <StackLayout Orientation="Horizontal">
-      <Label Text="Tasks:  " VerticalOptions="Center"></Label>
-      <Button Text="+" VerticalOptions="Center" Clicked="AddBtn_OnClick"></Button>
+    <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
+      <Label Text="Tasks:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
+      <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" Clicked="AddBtn_OnClick" FontSize="20"></Button>
     </StackLayout>
-    <StackLayout x:Name="EditContainer" IsVisible="False">
-      <Editor Text="{Binding TaskName, Mode=TwoWay}"></Editor>
-      <Button Text="Save" Command="{Binding NewCommand}"></Button>
+    <StackLayout x:Name="EditContainer" IsVisible="False" Padding="40,0,40,0">
+      <Editor x:Name="Editor" Text="{Binding TaskName, Mode=TwoWay}" HeightRequest="200"></Editor>
+      <Button Text="Save" Clicked="AddBtn_OnClick" Command="{Binding NewCommand}"></Button>
     </StackLayout>
     <ListView ItemsSource="{Binding Tasks}"
               RowHeight="50">
@@ -19,7 +20,8 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding Description}" HorizontalOptions="FillAndExpand"></Label>
+              <Label Text="{Binding Description}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"></Label>
+              <Button Text="DELETE" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name= TaskManager}}" CommandParameter="{Binding Id}"></Button>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

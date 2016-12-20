@@ -9,7 +9,7 @@ namespace PreStart.Services
 {
     public class AzureCloudService : ICloudService
     {
-        public MobileServiceClient Client;
+        MobileServiceClient Client;
 
         public AzureCloudService()
         {
