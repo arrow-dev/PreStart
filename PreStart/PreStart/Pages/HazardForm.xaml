@@ -3,36 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.HazardForm">
+<StackLayout VerticalOptions="Center">
+    <StackLayout>
+    <Label Text ="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}"
+           HorizontalTextAlignment="Center"></Label>
+    <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
+           HorizontalTextAlignment="Center"></Label>
+  </StackLayout>
 
-  <TableView Intent="Form">
-    <TableRoot>
-      <TableSection>
-        <ViewCell>
+  <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
+    <BoxView HeightRequest="1" Color="Silver"></BoxView>
+    </StackLayout>
+
+
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
             <Label Text="Hazard Description:" ></Label>
             <Editor Text="{Binding Hazard.Description}"></Editor>
           </StackLayout>
-        </ViewCell>
+       
 
-        <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+        
             <Label Text="What could go wrong?:"></Label>
             <Editor VerticalOptions="Center" HeightRequest="100" Text="{Binding Hazard.Repercussion}"></Editor>
           </StackLayout>
-        </ViewCell>
+   
 
-        <ViewCell>
+        
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+           
             <Label Text="Risk Before:"></Label>
+            
             <StackLayout Orientation="Horizontal">
-              <Label x:Name="LabelRiskBefore"  Text="1"></Label>
-              <Stepper x:Name="StepperRiskBefore" Increment="1" Minimum="1" Maximum="25" Value="{Binding Hazard.RiskBefore}"></Stepper>
+              
+              <Label x:Name="LabelRiskBefore"  HeightRequest="30" WidthRequest="55" Text="1" VerticalOptions="CenterAndExpand" ></Label>
+              
+                <Slider x:Name="SliderRiskBefore" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="25" Minimum="1" Value="{Binding Hazard.RiskBefore}" ></Slider>
             </StackLayout>
 
           </StackLayout>
-        </ViewCell>
 
-        <ViewCell>
+
+        
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label>
               <Label.FormattedText>
@@ -50,29 +62,27 @@
             </Label>
             <Editor VerticalOptions="Center" Text="{Binding Hazard.Response, Mode=TwoWay}"  HeightRequest="100"></Editor>
           </StackLayout>
-        </ViewCell>
+        
 
 
 
-        <ViewCell>
+
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk After:"></Label>
             <StackLayout Orientation="Horizontal">
-              <Label x:Name="LabelRiskAfter" Text="1"></Label>
-              <Stepper x:Name="StepperRiskAfter" Increment="1" Minimum="1" Maximum="25" Value="{Binding Hazard.RiskAfter}" ></Stepper>
+              
+               <Label x:Name="LabelRiskAfter" Text="1" HeightRequest="30" WidthRequest="55Xa" VerticalOptions="CenterAndExpand"></Label>
+      
+              <Slider x:Name="SliderRiskAfter"     Maximum="25" Minimum="1" Value="{Binding Hazard.RiskAfter}" 
+                     HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Slider>
             </StackLayout>
 
 
           </StackLayout>
-        </ViewCell>
+  
 
-        <ViewCell>
           <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
             <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
           </StackLayout>
-        </ViewCell>
-
-      </TableSection>
-    </TableRoot>
-  </TableView>
+</StackLayout>
 </ContentPage>

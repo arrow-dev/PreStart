@@ -14,7 +14,18 @@ namespace PreStart.Pages
 
         private void AddBtn_OnClick(object sender, EventArgs e)
         {
-            EditContainer.IsVisible = true;
+            if (AddBtn.Text == "+")
+            {
+                AddBtn.Text = "-";
+                EditContainer.IsVisible = true;
+            }
+            else
+            {
+                AddBtn.Text = "+";
+                EditContainer.IsVisible = false;
+                Editor.Text = String.Empty;
+            }
         }
     }
 }
+

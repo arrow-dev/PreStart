@@ -1,4 +1,4 @@
-﻿using PreStart.Models;
+﻿using PreStart.Abstractions;
 using PreStart.Pages;
 using PreStart.Services;
 using PreStart.ViewModels;
@@ -8,7 +8,7 @@ namespace PreStart
 {
     public class App : Application
     {
-        public static AzureCloudService CloudService { get; set; }
+        public static ICloudService CloudService { get; set; }
 
         public App()
         {
