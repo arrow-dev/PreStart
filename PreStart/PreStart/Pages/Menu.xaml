@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PreStart.Pages;assembly=PreStart"
+             x:Class="PreStart.Pages.Menu"
+  MasterBehavior="Popover">
+  <MasterDetailPage.Master>
+    <ContentPage Title="Menu">
+      <StackLayout>
+        <Button Text="Option 1"></Button>
+        <Button Text="Option 2"></Button>
+        <Button Text="Option 3"></Button>
+        <Button Text="Option 4"></Button>
+      </StackLayout>
+    </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <local:PrestartForm1></local:PrestartForm1>
+  </MasterDetailPage.Detail>
+
+</MasterDetailPage>
