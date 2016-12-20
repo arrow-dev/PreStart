@@ -10,8 +10,9 @@
   <StackLayout Orientation="Vertical">
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
-
-  
+    
+<ActivityIndicator  IsVisible="{Binding IsBusy}" ></ActivityIndicator>
+ 
     <TableView Intent="Form">
       <TableRoot Title="General Requirements">
         <TableSection>

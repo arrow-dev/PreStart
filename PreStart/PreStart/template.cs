@@ -26,5 +26,8 @@ namespace PreStart
 
         public static readonly  Thickness StackLayoutSection =
             new Thickness(40, 0, 40, 20);
+
+
+        public  static readonly Thickness ButtonPadding = new Thickness(10, 5, 10, 5);
     }
 }
