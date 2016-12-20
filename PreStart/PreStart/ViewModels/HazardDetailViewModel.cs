@@ -3,6 +3,6 @@
 namespace PreStart.ViewModels
 {
     public class HazardDetailViewModel : BaseViewModel
-    {
+    {  
     }
 }
