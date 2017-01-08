@@ -11,6 +11,7 @@ namespace PreStart.Pages
 {
     public partial class DemoPage : MasterDetailPage
     {
+
         public DemoPage()
         {
             InitializeComponent();
@@ -19,10 +20,16 @@ namespace PreStart.Pages
             
         }
 
+
+
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
             var listitem = e.SelectedItem as MasterPageItem;
+            var prestartTable = await App.CloudService.GetTableAsync<Prestart>();
+            //var hazardTable = await App.CloudService.GetTableAsync<Hazard>();
+            var prestartItems = await prestartTable.ReadAllItemsAsync();
+            //var hazardItems = await hazardTable.ReadAllItemsAsync();
 
             if (listitem != null)
             {
@@ -36,11 +43,19 @@ namespace PreStart.Pages
                     case "Task":
                         var table = await App.CloudService.GetTableAsync<Prestart>();
                         var items = await table.ReadAllItemsAsync();
-                        items.OrderByDescending(I => I.CreatedAt);
-                        var item = items.Last();
+                        prestartItems.OrderByDescending(I => I.CreatedAt);
+                        var item = prestartItems.Last();
                         detailVar = (TaskManagerPage)Activator.CreateInstance(listitem.TargetType, item.Id);
                         break;
-                    
+                    case "Hazard":
+                        var h_table = await App.CloudService.GetTableAsync<Hazard>();
+                        var h_items = await h_table.ReadAllItemsAsync();
+                        h_items.OrderByDescending(I => I.CreatedAt);
+                        var i = h_items.Last();
+                        detailVar = new HazardDetailViewPage(i);
+                        //detailVar = (HazardDetailViewPage)Activator.CreateInstance(listitem.TargetType, i);
+
+                        break;
                 }
                 
                 Detail = detailVar;

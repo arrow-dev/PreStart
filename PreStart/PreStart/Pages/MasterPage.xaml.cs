@@ -48,7 +48,7 @@ namespace PreStart.Pages
 
                 Title = "Hazard",
 
-                TargetType = typeof(HazardForm)
+                TargetType = typeof(HazardDetailViewModel)
 
 
             });
