@@ -4,21 +4,20 @@
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.TaskDetailPage">
  <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
- <StackLayout Orientation="Horizontal">
-   <Label Text="Edit  Description" ></Label>
-   <Button HorizontalOptions="Center" Text="Edit" TextColor="White" BackgroundColor="Blue"  VerticalOptions="Center"></Button>
-   <Editor Text="{Binding Task.Description, Mode=TwoWay}" IsVisible="False"  ></Editor>
- </StackLayout>
-   <StackLayout Orientation="Horizontal">
-   <Label Text="Hazards"></Label>
-     <Button Text="+" VerticalOptions="Center"></Button>
+   <Label Text="Task Description:"></Label>
+   <Label Text="{Binding Task.Description}" ></Label>
+   <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
+     <Label Text="Hazards:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
+     <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" FontSize="20"></Button>
    </StackLayout>
-   <ListView ItemsSource="{Binding Hazards}" RowHeight="50">
+   <ListView ItemsSource="{Binding Hazards}"
+              RowHeight="50">
      <ListView.ItemTemplate>
        <DataTemplate>
          <ViewCell>
            <StackLayout Orientation="Horizontal">
-             <Label Text="{Binding Description}"></Label>
+             <Label Text="{Binding Description}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"></Label>
+             <Button Text="DELETE" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name= TaskManager}}" CommandParameter="{Binding Id}"></Button>
            </StackLayout>
          </ViewCell>
        </DataTemplate>
