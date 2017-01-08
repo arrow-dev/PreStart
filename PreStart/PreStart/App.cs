@@ -1,4 +1,5 @@
 ﻿using PreStart.Abstractions;
+using PreStart.Models;
 using PreStart.Pages;
 using PreStart.Services;
 using Xamarin.Forms;
@@ -12,7 +13,7 @@ namespace PreStart
         public App()
         {
             CloudService = new AzureCloudService();
-            MainPage = new NavigationPage(new PrestartForm1());
+            MainPage = new NavigationPage(new HazardDetailViewPage(new Hazard()));
         }
 
         protected override void OnStart()
