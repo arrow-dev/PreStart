@@ -40,9 +40,7 @@ namespace PreStart.Pages
                         var item = items.Last();
                         detailVar = (TaskManagerPage)Activator.CreateInstance(listitem.TargetType, item.Id);
                         break;
-                    case "Hazard":
-                        detailVar = (PrestartForm1)Activator.CreateInstance(listitem.TargetType);
-                        break;
+                    
                 }
                 
                 Detail = detailVar;

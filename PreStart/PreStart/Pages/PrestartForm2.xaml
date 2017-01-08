@@ -26,6 +26,13 @@
           </ViewCell>
           <ViewCell>
             <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
+              <Label Text="What Plant &amp; Equipment do we require?" VerticalOptions="Center"></Label>
+              <Editor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+            </StackLayout>
+          </ViewCell>
+
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
               <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"></Label>
               <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
             </StackLayout>
