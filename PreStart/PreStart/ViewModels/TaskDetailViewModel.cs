@@ -9,6 +9,7 @@ using PreStart.Pages;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using PreStart;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
