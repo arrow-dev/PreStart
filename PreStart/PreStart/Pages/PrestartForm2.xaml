@@ -3,65 +3,70 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm2">
-  
+
   <StackLayout Orientation="Vertical">
+
+
+
+    <!-- Use styles instead of all the markup extension here?? -->
+
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
 
-    
-    <TableView Intent="Form">
-      <TableRoot>
-        <TableSection>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="What is the Plan for the day?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.Plan, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="Who is Doing what on this site?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.Doing, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="What Plant &amp; Equipment do we require?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
 
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-              <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"></Label>
-              <Editor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
-            <StackLayout Orientation="Vertical" VerticalOptions="Center">
-              <Button Text="Next" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding NextCommand}"></Button>
-            </StackLayout>
-           </ViewCell>
-        </TableSection>
-      </TableRoot>
-    </TableView>
+
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}"  >
+          <Label Text="What is the Plan for the day?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}" ></Label>
+          <Editor Text="{Binding Prestart.Plan, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
+          <Label Text="Who is Doing what on this site?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"></Label>
+          <Editor Text="{Binding Prestart.Doing, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+          <Label Text="What Plant &amp; Equipment do we require?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"></Label>
+          <Editor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+          <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"
+                 TextColor="{x:Static local:Template.fhBlue}"></Label>
+
+          <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+          <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"
+                 TextColor="{x:Static local:Template.fhBlue}"></Label>
+          <Editor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}"  >
+          <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"
+                   TextColor="{x:Static local:Template.fhBlue}" ></Label>
+          <Editor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
+          <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"   ></Label>
+          <Editor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100"></Editor>
+        </StackLayout>
+
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+          <Button Text="Next" TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="Center" Command="{Binding NextCommand}"></Button>
+        </StackLayout>
+
+
+      </StackLayout>
+    </ScrollView>
   </StackLayout>
 </ContentPage>

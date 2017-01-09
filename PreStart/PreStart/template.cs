@@ -28,6 +28,12 @@ namespace PreStart
             new Thickness(40, 0, 40, 20);
 
 
-        public  static readonly Thickness ButtonPadding = new Thickness(10, 5, 10, 5);
+        public static readonly Color fhBlue = Color.FromHex("#0099C7");
+
+        public static readonly Color fhOrange = Color.FromHex("#FF671B");
+
+        public static readonly Color fhGrey = Color.FromHex("#666");
+
+        public static readonly Thickness ButtonPadding = new Thickness(10, 5, 10, 5);
     }
 }
