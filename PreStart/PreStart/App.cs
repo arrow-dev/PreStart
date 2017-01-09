@@ -15,7 +15,7 @@ namespace PreStart
             CloudService = new AzureCloudService();
             //MainPage = new HazardDetailViewPage();
             
-            MainPage = new NavigationPage(new DemoPage());
+            MainPage = new NavigationPage(new PrestartForm1());
         }
 
         protected override void OnStart()
