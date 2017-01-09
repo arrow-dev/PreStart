@@ -43,15 +43,15 @@ namespace PreStart.Pages
 
             });
 
-            masterPageItems.Add(new MasterPageItem
-            {
+            //masterPageItems.Add(new MasterPageItem
+            //{
 
-                Title = "Hazard",
+            //    Title = "Hazard",
 
-                TargetType = typeof(HazardDetailViewModel)
+            //    TargetType = typeof(HazardDetailViewModel)
 
 
-            });
+            //});
 
 
 

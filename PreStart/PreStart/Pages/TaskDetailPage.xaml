@@ -2,14 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
-             x:Class="PreStart.Pages.TaskDetailPage">
+             x:Class="PreStart.Pages.TaskDetailPage"
+             x:Name="TaskDetail"
+             Appearing="TaskDetailPage_OnAppearing">
  <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
    <Label Text="Task Description:"></Label>
-   <Label Text="{Binding Task.Description}" ></Label>
+   <Label Text="{Binding TaskName}" ></Label>
+   
+   
    <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
      <Label Text="Hazards:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
-     <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" FontSize="20"></Button>
+     <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" FontSize="20" Command="{Binding AddHazard}"></Button>
    </StackLayout>
+   
+   
+   
    <ListView ItemsSource="{Binding Hazards}"
               RowHeight="50">
      <ListView.ItemTemplate>
@@ -17,7 +24,7 @@
          <ViewCell>
            <StackLayout Orientation="Horizontal">
              <Label Text="{Binding Description}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"></Label>
-             <Button Text="DELETE" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name= TaskManager}}" CommandParameter="{Binding Id}"></Button>
+             <Button Text="DELETE" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name= TaskDetail}}" CommandParameter="{Binding Id}"></Button>
            </StackLayout>
          </ViewCell>
        </DataTemplate>

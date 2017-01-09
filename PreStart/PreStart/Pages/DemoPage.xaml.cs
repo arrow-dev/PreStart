@@ -47,15 +47,15 @@ namespace PreStart.Pages
                         var item = prestartItems.Last();
                         detailVar = (TaskManagerPage)Activator.CreateInstance(listitem.TargetType, item.Id);
                         break;
-                    case "Hazard":
-                        var h_table = await App.CloudService.GetTableAsync<Hazard>();
-                        var h_items = await h_table.ReadAllItemsAsync();
-                        h_items.OrderByDescending(I => I.CreatedAt);
-                        var i = h_items.Last();
-                        detailVar = new HazardDetailViewPage(i);
+                    //case "Hazard":
+                    //    var h_table = await App.CloudService.GetTableAsync<Hazard>();
+                    //    var h_items = await h_table.ReadAllItemsAsync();
+                    //    h_items.OrderByDescending(I => I.CreatedAt);
+                    //    var i = h_items.Last();
+                    //    detailVar = new HazardDetailViewPage(i);
                         //detailVar = (HazardDetailViewPage)Activator.CreateInstance(listitem.TargetType, i);
 
-                        break;
+                        //break;
                 }
                 
                 Detail = detailVar;

@@ -12,21 +12,20 @@ namespace PreStart.ViewModels
     {
         public Hazard Hazard { get; set; }
 
-        public Task Task;
+        //public Task Task;
 
         public HazardFormViewModel(Hazard hazard)
         {
             Hazard = hazard;
-            //TaskId = Hazard.TaskId;
         }
 
-        public HazardFormViewModel(Models.Task task)
-        {
-            Hazard = new Hazard
-            {
-                TaskId = task.Id
-            };
-        }
+        //public HazardFormViewModel(Models.Task task)
+        //{
+        //    Hazard = new Hazard
+        //    {
+        //        TaskId = task.Id
+        //    };
+        //}
 
 
 
@@ -49,9 +48,6 @@ namespace PreStart.ViewModels
 
                 //Add Current Prestart to the table
                 await table.CreateItemAsync(Hazard);
-
-
-
 
                 //Sync with online table
                 await App.CloudService.SyncOfflineCacheAsync();

@@ -71,7 +71,7 @@
             <Label Text="Risk After:"></Label>
             <StackLayout Orientation="Horizontal">
               
-               <Label x:Name="LabelRiskAfter" Text="1" HeightRequest="30" WidthRequest="55Xa" VerticalOptions="CenterAndExpand"></Label>
+               <Label x:Name="LabelRiskAfter" Text="1" HeightRequest="30" WidthRequest="55" VerticalOptions="CenterAndExpand"></Label>
       
               <Slider x:Name="SliderRiskAfter"     Maximum="25" Minimum="1" Value="{Binding Hazard.RiskAfter}" 
                      HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Slider>
@@ -82,7 +82,7 @@
   
 
           <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+            <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
           </StackLayout>
 </StackLayout>
 </ContentPage>
