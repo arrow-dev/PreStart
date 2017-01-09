@@ -5,13 +5,14 @@
              x:Class="PreStart.Pages.TaskDetailPage">
  <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
    <Label Text="Task Description:"></Label>
-   <Label Text="{Binding Task.Description}" ></Label>
+   <Label Text="{Binding Task.Description}"></Label>
    <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
      <Label Text="Hazards:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
-     <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" FontSize="20"></Button>
+     <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" FontSize="20" Command="{Binding NewCommand}"></Button>
    </StackLayout>
    <ListView ItemsSource="{Binding Hazards}"
-              RowHeight="50">
+              RowHeight="50"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
      <ListView.ItemTemplate>
        <DataTemplate>
          <ViewCell>

@@ -1,5 +1,4 @@
 ﻿using PreStart.Abstractions;
-using PreStart.Pages;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -15,7 +14,27 @@ namespace PreStart.ViewModels
         public TaskManagerViewModel(string prestartId)
         {
             PrestartId = prestartId;
-            GetTasksAsync();
+            //GetTasksAsync();
+        }
+
+        Task selectedItem;
+        public Task SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                if (IsBusy)
+                {
+                    return;
+                }
+                SetProperty(ref selectedItem, value, "SelectedItem");
+                if (selectedItem != null)
+                {
+                    //When an item is selected from the list then navigate to the details page passing the selected item through.
+                    Application.Current.MainPage.Navigation.PushAsync(new Pages.TaskDetailPage(selectedItem));
+                    SelectedItem = null;
+                }
+            }
         }
 
         private string taskName;
@@ -46,6 +65,40 @@ namespace PreStart.ViewModels
             }
         }
 
+        //Command refreshCommand;
+
+        //public Command RefreshCommand
+        //    => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
+
+        //async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        //{
+        //    if (IsBusy)
+        //        return;
+        //    IsBusy = true;
+
+        //    try
+        //    {
+        //        var table = await App.CloudService.GetTableAsync<Task>();
+        //        var items = await table.ReadAllItemsAsync();
+        //        Tasks.Clear();
+        //        foreach (var item in items)
+        //        {
+        //            if (item.PrestartId == PrestartId)
+        //            {
+        //                Tasks.Add(item);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine($"{ex.Message}");
+        //    }
+        //    finally
+        //    {
+        //        IsBusy = false;
+        //    }
+        //}
+
         Command newCommand;
 
         public Command NewCommand
@@ -63,7 +116,6 @@ namespace PreStart.ViewModels
                 var task = await table.CreateItemAsync(new Task {Description = taskName, PrestartId = PrestartId});
                 Tasks.Add(task);
                 await App.CloudService.SyncOfflineCacheAsync();
-                await Application.Current.MainPage.Navigation.PushAsync(new TaskDetailPage(task));
             }
             catch (Exception ex)
             {

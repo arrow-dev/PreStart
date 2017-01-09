@@ -3,24 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PreStart.Pages.TaskManagerPage"
              x:Name="TaskManager"
-             Title="Task Manager">
+             Title="Task Manager"
+             Appearing="TaskManagerPage_OnAppearing">
   <StackLayout>
     
-    <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
-      <Label Text="Tasks:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
-      <Button x:Name="AddBtn" Text="+" VerticalOptions="Center" Clicked="AddBtn_OnClick" FontSize="20"></Button>
+    <StackLayout Orientation="Horizontal" Padding="40,20,40,20">
+      <Label Text="Tasks:" TextColor="#0099c7" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
+      <Button x:Name="AddBtn" BackgroundColor="#0099c7" Text="+" TextColor="White" VerticalOptions="Center" Clicked="AddBtn_OnClick" FontSize="20"></Button>
     </StackLayout>
     <StackLayout x:Name="EditContainer" IsVisible="False" Padding="40,0,40,0">
       <Editor x:Name="Editor" Text="{Binding TaskName, Mode=TwoWay}" HeightRequest="200"></Editor>
-      <Button Text="Save" Clicked="AddBtn_OnClick" Command="{Binding NewCommand}"></Button>
+      <Button Text="Save" BackgroundColor="#ff671b"  TextColor="White" Clicked="AddBtn_OnClick" Command="{Binding NewCommand}"></Button>
     </StackLayout>
     <ListView ItemsSource="{Binding Tasks}"
-              RowHeight="50">
+              RowHeight="50"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding Description}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"></Label>
+            <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
+              <Label Text="{Binding Description}" TextColor="#0099c7" HorizontalOptions="StartAndExpand" VerticalOptions="Center"></Label>
               <Button Text="DELETE" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name= TaskManager}}" CommandParameter="{Binding Id}"></Button>
             </StackLayout>
           </ViewCell>
