@@ -1,4 +1,9 @@
-﻿using PreStart.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using PreStart.Models;
 using PreStart.ViewModels;
 using Xamarin.Forms;
 
@@ -12,6 +17,8 @@ namespace PreStart.Pages
             BindingContext = new HazardFormViewModel(hazard);
             SliderRiskBefore.ValueChanged += OnSliderRiskBeforeChanged;
             SliderRiskAfter.ValueChanged += OnSliderRiskAfterChanged;
+
+           
         }
 
         private void OnSliderRiskAfterChanged(object sender, ValueChangedEventArgs e)

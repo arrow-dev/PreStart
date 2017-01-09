@@ -11,21 +11,20 @@ namespace PreStart.ViewModels
     {
         public Hazard Hazard { get; set; }
 
-        public Task Task;
+        //public Task Task;
 
         public HazardFormViewModel(Hazard hazard)
         {
             Hazard = hazard;
-            //TaskId = Hazard.TaskId;
         }
 
-        public HazardFormViewModel(Models.Task task)
-        {
-            Hazard = new Hazard
-            {
-                TaskId = task.Id
-            };
-        }
+        //public HazardFormViewModel(Models.Task task)
+        //{
+        //    Hazard = new Hazard
+        //    {
+        //        TaskId = task.Id
+        //    };
+        //}
 
         Command doneCommand;
 

@@ -11,7 +11,5 @@ namespace PreStart.Pages
             InitializeComponent();
             BindingContext = new HazardDetailViewModel(hazard);
         }
-
-       
     }
 }
