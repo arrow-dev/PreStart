@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             x:Class="PreStart.Pages.PrestartForm3">
+             x:Class="PreStart.Pages.PrestartForm3"
+             Title="Prestart Part 3">
 
   <StackLayout VerticalOptions="Center">
     <StackLayout>

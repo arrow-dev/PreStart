@@ -3,19 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart.Pages;assembly=PreStart"
              x:Class="PreStart.Pages.Menu"
-  MasterBehavior="Popover">
+             MasterBehavior="Popover">
   <MasterDetailPage.Master>
-    <ContentPage Title="Menu">
-      <StackLayout>
-        <Button Text="Option 1"></Button>
-        <Button Text="Option 2"></Button>
-        <Button Text="Option 3"></Button>
-        <Button Text="Option 4"></Button>
-      </StackLayout>
-    </ContentPage>
+      <ContentPage Title="Menu"> 
+        <StackLayout>
+          <Button Text="Site Selection" Clicked="Site_Select_Button_OnClicked"></Button>
+          <Button Text="Prestart Meeting" Clicked="Prestart_Button_OnClicked"></Button>
+          <Button Text="Task Manager" Clicked="Task_Manager_Button_OnClicked"></Button>
+        </StackLayout>
+      </ContentPage>
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
-    <local:PrestartForm1></local:PrestartForm1>
+    <local:SiteListPage/>
   </MasterDetailPage.Detail>
-
 </MasterDetailPage>

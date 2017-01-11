@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PreStart.Models;
+﻿using PreStart.Models;
 using PreStart.ViewModels;
+using System;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
@@ -41,11 +37,11 @@ namespace PreStart.Pages
                         detailVar = (PrestartForm1) Activator.CreateInstance(listitem.TargetType);
                         break;
                     case "Task":
-                        var table = await App.CloudService.GetTableAsync<Prestart>();
-                        var items = await table.ReadAllItemsAsync();
-                        prestartItems.OrderByDescending(I => I.CreatedAt);
-                        var item = prestartItems.Last();
-                        detailVar = (TaskManagerPage)Activator.CreateInstance(listitem.TargetType, item.Id);
+                        //var table = await App.CloudService.GetTableAsync<Prestart>();
+                        //var items = await table.ReadAllItemsAsync();
+                        //prestartItems.OrderByDescending(I => I.CreatedAt);
+                        //var item = prestartItems.Last();
+                        detailVar = (TaskManagerPage)Activator.CreateInstance(listitem.TargetType, Helpers.Settings.DefaultSiteSetting);
                         break;
                     //case "Hazard":
                     //    var h_table = await App.CloudService.GetTableAsync<Hazard>();

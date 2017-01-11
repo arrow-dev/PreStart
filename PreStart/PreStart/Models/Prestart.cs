@@ -1,7 +1,5 @@
-﻿using System;
-using PreStart.Abstractions;
+﻿using PreStart.Abstractions;
 using PropertyChanged;
-using Xamarin.Forms;
 
 namespace PreStart.Models
 {
@@ -18,7 +16,7 @@ namespace PreStart.Models
 
         public string Department { get; set; }
 
-        public string Project { get; set; }
+        public string SiteId { get; set; }
 
         public string JobNumber { get; set; }
 
@@ -69,10 +67,5 @@ namespace PreStart.Models
         public bool SpecialistPpeRequired { get; set; }
 
         public bool ErosionAndSedimentControlImplemented { get; set; }
-
-        public static implicit operator Page(Prestart v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
