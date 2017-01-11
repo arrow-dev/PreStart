@@ -57,7 +57,7 @@
       <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, Mode=TwoWay}"/>
       <Label  Text="Project / Site:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Project, Mode=TwoWay}"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteId, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">

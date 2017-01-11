@@ -28,7 +28,7 @@ namespace PreStart.Pages
 
             if (SiteSelected)
             {
-                Detail = new PrestartForm1();
+                Detail = new PrestartManagerPage(Helpers.Settings.DefaultSiteSetting);
                 IsPresented = false;
             }
         }

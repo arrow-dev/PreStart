@@ -100,6 +100,7 @@
     <Compile Include="ViewModels\PrestartForm2ViewModel.cs" />
     <Compile Include="ViewModels\PrestartForm3ViewModel.cs" />
     <Compile Include="ViewModels\PrestartForm4ViewModel.cs" />
+    <Compile Include="ViewModels\PrestartManagerViewModel.cs" />
     <Compile Include="ViewModels\SiteListPageViewModel.cs" />
     <Compile Include="ViewModels\TaskDetailViewModel.cs" />
     <Compile Include="ViewModels\TaskManagerViewModel.cs" />

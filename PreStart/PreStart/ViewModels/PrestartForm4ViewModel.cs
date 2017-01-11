@@ -1,6 +1,5 @@
 ﻿using PreStart.Abstractions;
 using PreStart.Models;
-using PreStart.Pages;
 using System;
 using System.Diagnostics;
 using Xamarin.Forms;
@@ -41,7 +40,7 @@ namespace PreStart.ViewModels
                 await App.CloudService.SyncOfflineCacheAsync();
                 
                 //Navigate to the task manager
-                Application.Current.MainPage = new NavigationPage(new TaskManagerPage(Prestart.Id));
+                Application.Current.MainPage.Navigation.PopToRootAsync();
             }
             catch (Exception ex)
             {

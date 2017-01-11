@@ -7,17 +7,11 @@ namespace PreStart.Pages
 {
     public partial class PrestartForm1 : ContentPage
     {
-       
-        public PrestartForm1()
-        {
-            InitializeComponent();
-            BindingContext = new PrestartForm1ViewModel();
-        }
 
-        public PrestartForm1(Prestart prestart)
+        public PrestartForm1(string id)
         {
             InitializeComponent();
-            BindingContext = new PrestartForm1ViewModel(prestart);
+            BindingContext = new PrestartForm1ViewModel(new Prestart { SiteId = id });
         }
 
         
