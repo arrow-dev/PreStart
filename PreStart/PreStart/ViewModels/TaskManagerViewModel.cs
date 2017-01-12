@@ -9,11 +9,11 @@ namespace PreStart.ViewModels
 {
     public class TaskManagerViewModel : BaseViewModel
     {
-        public string PrestartId;
+        public string SiteId;
 
-        public TaskManagerViewModel(string prestartId)
+        public TaskManagerViewModel(string siteId)
         {
-            PrestartId = prestartId;
+            SiteId = siteId;
             //GetTasksAsync();
         }
 
@@ -58,7 +58,7 @@ namespace PreStart.ViewModels
             Tasks.Clear();
             foreach (var item in items)
             {
-                if (item.PrestartId == PrestartId)
+                if (item.SiteId == SiteId)
                 {
                     Tasks.Add(item);
                 }
@@ -113,7 +113,7 @@ namespace PreStart.ViewModels
             try
             {
                 var table = await App.CloudService.GetTableAsync<Task>();
-                var task = await table.CreateItemAsync(new Task {Description = taskName, PrestartId = PrestartId});
+                var task = await table.CreateItemAsync(new Task {Description = taskName, SiteId = SiteId});
                 Tasks.Add(task);
                 await App.CloudService.SyncOfflineCacheAsync();
             }

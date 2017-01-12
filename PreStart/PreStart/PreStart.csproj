@@ -42,8 +42,10 @@
     <Compile Include="App.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
     <Compile Include="Behaviors\BehaviorsTest.cs" />
+    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Hazard.cs" />
     <Compile Include="Models\Prestart.cs" />
+    <Compile Include="Models\Site.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Pages\DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
@@ -60,6 +62,9 @@
     <Compile Include="Pages\MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PrestartForm1.xaml.cs">
       <DependentUpon>PrestartForm1.xaml</DependentUpon>
     </Compile>
@@ -74,6 +79,9 @@
     </Compile>
     <Compile Include="Pages\PrestartManagerPage.xaml.cs">
       <DependentUpon>PrestartManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SiteListPage.xaml.cs">
+      <DependentUpon>SiteListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TaskDetailPage.xaml.cs">
       <DependentUpon>TaskDetailPage.xaml</DependentUpon>
@@ -92,6 +100,8 @@
     <Compile Include="ViewModels\PrestartForm2ViewModel.cs" />
     <Compile Include="ViewModels\PrestartForm3ViewModel.cs" />
     <Compile Include="ViewModels\PrestartForm4ViewModel.cs" />
+    <Compile Include="ViewModels\PrestartManagerViewModel.cs" />
+    <Compile Include="ViewModels\SiteListPageViewModel.cs" />
     <Compile Include="ViewModels\TaskDetailViewModel.cs" />
     <Compile Include="ViewModels\TaskManagerViewModel.cs" />
   </ItemGroup>
@@ -122,6 +132,14 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
@@ -225,6 +243,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\DemoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SiteListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Menu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

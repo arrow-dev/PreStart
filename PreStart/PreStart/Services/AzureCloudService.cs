@@ -35,6 +35,7 @@ namespace PreStart.Services
             var prestartTable = await GetTableAsync<Prestart>(); await prestartTable.PullAsync();
             var taskTable = await GetTableAsync<Models.Task>(); await taskTable.PullAsync();
             var hazardTable = await GetTableAsync<Hazard>(); await hazardTable.PullAsync();
+            var siteTable = await GetTableAsync<Site>(); await siteTable.PullAsync();
         }
 
         async Task InitializeAsync()
@@ -49,6 +50,7 @@ namespace PreStart.Services
             store.DefineTable<Prestart>();
             store.DefineTable<Models.Task>();
             store.DefineTable<Hazard>();
+            store.DefineTable<Site>();
 
             // Actually create the store and update the schema
             await Client.SyncContext.InitializeAsync(store);

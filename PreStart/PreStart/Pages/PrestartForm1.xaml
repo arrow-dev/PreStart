@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
-             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:behaviors1="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm1"
-             Padding="{x:Static local:Template.PagePadding}">
+             Padding="{x:Static local:Template.PagePadding}"
+             Title="Prestart Part 1">
 
   <StackLayout>
 
@@ -59,7 +57,7 @@
       <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, Mode=TwoWay}"/>
       <Label  Text="Project / Site:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Project, Mode=TwoWay}"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteId, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
