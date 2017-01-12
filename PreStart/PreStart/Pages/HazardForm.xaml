@@ -29,19 +29,37 @@
           </StackLayout>
    
 
-        
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-           
+  
+  
+          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk Before:"></Label>
-            
             <StackLayout Orientation="Horizontal">
-              
-              <Label x:Name="LabelRiskBefore"  HeightRequest="30" WidthRequest="55" Text="1" VerticalOptions="CenterAndExpand" ></Label>
-              
-                <Slider x:Name="SliderRiskBefore" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="25" Minimum="1" Value="{Binding Hazard.RiskBefore}" ></Slider>
+               <Label x:Name="LabelRiskBefore" HeightRequest="30" WidthRequest="55" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskBefore}"></Label>
+               <Button x:Name="RiskBeforeBtn" Text="+" Clicked="RiskBeforeBtn_OnClick"></Button>
+            </StackLayout>
+          </StackLayout>
+
+
+
+          <StackLayout x:Name="riskbeforeslider" VerticalOptions="Center" IsVisible="False">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Consequence Level:"></Label>
+                <StackLayout Orientation="Horizontal">
+                  <Label x:Name="RBPCL" Text="Insignificant" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
+                  <Slider x:Name="RBSliderPCL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+                </StackLayout>
             </StackLayout>
 
+
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Likelihood Level:"></Label>
+                <StackLayout Orientation="Horizontal">
+                  <Label x:Name="RBPLL" Text="Rare" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
+                  <Slider x:Name="RBSliderPLL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+                </StackLayout>
+            </StackLayout>
           </StackLayout>
+          
 
 
         
@@ -64,25 +82,40 @@
           </StackLayout>
         
 
-
-
-
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk After:"></Label>
             <StackLayout Orientation="Horizontal">
-              
-               <Label x:Name="LabelRiskAfter" Text="1" HeightRequest="30" WidthRequest="55" VerticalOptions="CenterAndExpand"></Label>
-      
-              <Slider x:Name="SliderRiskAfter"     Maximum="25" Minimum="1" Value="{Binding Hazard.RiskAfter}" 
-                     HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Slider>
+               <Label x:Name="LabelRiskAfter" HeightRequest="30" WidthRequest="55" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskAfter}"></Label>
+               <Button x:Name="RiskAfterBtn" Text="+" Clicked="RiskAfterBtn_OnClick"></Button>
+            </StackLayout>
+          </StackLayout>
+
+
+          <StackLayout x:Name="riskafterslider" VerticalOptions="Center" IsVisible="False">
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Consequence Level:"></Label>
+              <StackLayout Orientation="Horizontal">
+                <Label x:Name="RAPCL" Text="Insignificant" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
+                <Slider x:Name="RASliderPCL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+              </StackLayout>
             </StackLayout>
 
 
+            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Likelihood Level:"></Label>
+              <StackLayout Orientation="Horizontal">
+                <Label x:Name="RAPLL" Text="Rare" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
+                <Slider x:Name="RASliderPLL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+              </StackLayout>
+            </StackLayout>
           </StackLayout>
-  
 
+
+          
           <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
             <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
           </StackLayout>
+
+
 </StackLayout>
 </ContentPage>

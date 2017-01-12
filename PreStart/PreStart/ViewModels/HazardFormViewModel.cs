@@ -2,6 +2,7 @@
 using PreStart.Models;
 using System;
 using System.Diagnostics;
+using PreStart.Pages;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
 
@@ -11,22 +12,13 @@ namespace PreStart.ViewModels
     {
         public Hazard Hazard { get; set; }
 
-        //public Task Task;
-
         public HazardFormViewModel(Hazard hazard)
         {
             Hazard = hazard;
         }
+        
 
-        //public HazardFormViewModel(Models.Task task)
-        //{
-        //    Hazard = new Hazard
-        //    {
-        //        TaskId = task.Id
-        //    };
-        //}
-
-        Command doneCommand;
+        private Command doneCommand;
 
         public Command DoneCommand
             => doneCommand ?? (doneCommand = new Command(async () => await ExecuteDoneCommand()));
@@ -39,17 +31,17 @@ namespace PreStart.ViewModels
 
             try
             {
-                //Get Prestart sync table context
+                //Get Hazard sync table context
                 var table = await App.CloudService.GetTableAsync<Hazard>();
 
-                //Add Current Prestart to the table
+                //Add Current Hazard to the table
                 await table.CreateItemAsync(Hazard);
 
                 //Sync with online table
                 await App.CloudService.SyncOfflineCacheAsync();
 
                 //Navigate to the task manager
-               await Application.Current.MainPage.Navigation.PopAsync(true);
+                await Application.Current.MainPage.Navigation.PopAsync(true);
             }
             catch (Exception ex)
             {
@@ -60,6 +52,12 @@ namespace PreStart.ViewModels
                 IsBusy = false;
             }
         }
+
+
+
+
+
+
 
     }
 }
