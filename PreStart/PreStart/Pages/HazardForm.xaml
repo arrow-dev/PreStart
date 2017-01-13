@@ -18,14 +18,14 @@
 
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
             <Label Text="Hazard Description:" ></Label>
-            <Editor Text="{Binding Hazard.Description}"></Editor>
+            <Editor Text="{Binding Hazard.Description, Mode=TwoWay}"></Editor>
           </StackLayout>
        
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
         
             <Label Text="What could go wrong?:"></Label>
-            <Editor VerticalOptions="Center" HeightRequest="100" Text="{Binding Hazard.Repercussion}"></Editor>
+            <Editor VerticalOptions="Center" HeightRequest="100" Text="{Binding Hazard.Repercussion, Mode=TwoWay}"></Editor>
           </StackLayout>
    
 
@@ -34,7 +34,7 @@
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk Before:"></Label>
             <StackLayout Orientation="Horizontal">
-               <Label x:Name="LabelRiskBefore" HeightRequest="30" WidthRequest="55" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskBefore}"></Label>
+               <Label x:Name="LabelRiskBefore" HeightRequest="30" WidthRequest="75" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskBefore, Mode=TwoWay}"></Label>
                <Button x:Name="RiskBeforeBtn" Text="+" Clicked="RiskBeforeBtn_OnClick"></Button>
             </StackLayout>
           </StackLayout>
@@ -85,7 +85,7 @@
           <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk After:"></Label>
             <StackLayout Orientation="Horizontal">
-               <Label x:Name="LabelRiskAfter" HeightRequest="30" WidthRequest="55" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskAfter}"></Label>
+               <Label x:Name="LabelRiskAfter" HeightRequest="30" WidthRequest="75" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskAfter, Mode=TwoWay}"></Label>
                <Button x:Name="RiskAfterBtn" Text="+" Clicked="RiskAfterBtn_OnClick"></Button>
             </StackLayout>
           </StackLayout>
