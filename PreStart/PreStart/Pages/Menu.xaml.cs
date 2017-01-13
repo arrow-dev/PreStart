@@ -6,15 +6,10 @@ namespace PreStart.Pages
 {
     public partial class Menu : MasterDetailPage
     {
-        private bool SiteSelected;
 
         public Menu()
         {
             InitializeComponent();
-            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
-            {
-                SiteSelected = true;
-            }
         }
 
         private void Site_Select_Button_OnClicked(object sender, EventArgs e)
@@ -26,7 +21,7 @@ namespace PreStart.Pages
         private void Prestart_Button_OnClicked(object sender, EventArgs e)
         {
 
-            if (SiteSelected)
+            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
             {
                 Detail = new PrestartManagerPage(Helpers.Settings.DefaultSiteSetting);
                 IsPresented = false;
@@ -35,7 +30,7 @@ namespace PreStart.Pages
 
         private void Task_Manager_Button_OnClicked(object sender, EventArgs e)
         {
-            if (SiteSelected)
+            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
             {
                 Detail = new TaskManagerPage(Helpers.Settings.DefaultSiteSetting);
                 IsPresented = false;
