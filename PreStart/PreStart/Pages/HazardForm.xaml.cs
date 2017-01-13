@@ -13,13 +13,12 @@ namespace PreStart.Pages
     public partial class HazardForm : ContentPage
     {
         private int StepValue;
-
-        public Hazard Hazard;
+        
         public HazardForm(Hazard hazard)
         {
             InitializeComponent();
-            Hazard = hazard;
-            BindingContext = new HazardFormViewModel(Hazard);
+            BindingContext = new HazardFormViewModel(hazard);
+            
             RBSliderPCL.ValueChanged += RBPclOnSliderChanged;
             RBSliderPLL.ValueChanged += RBPllOnSliderChanged;
             RASliderPCL.ValueChanged += RAPclOnSliderChanged;
@@ -230,28 +229,28 @@ namespace PreStart.Pages
             {
                 label.BackgroundColor = Color.Green;
                 label.TextColor = Color.Black;
-                label.Text = "Low " + a;
+                label.Text = "LOW";
             }
 
             if (a >= 7 && a <= 15)
             {
                 label.BackgroundColor = Color.Yellow;
                 label.TextColor = Color.Black;
-                label.Text = "Med " + a;
+                label.Text = "MEDIUM";
             }
 
             if (a >= 16 && a <= 22)
             {
                 label.TextColor = Color.Black;
                 label.BackgroundColor = Color.Red;
-                label.Text = "High " + a;
+                label.Text = "HIGH";
             }
 
             if (a >= 23 && a <= 25)
             {
                 label.BackgroundColor = Color.Black;
                 label.TextColor = Color.White;
-                label.Text = "Ext " + a;
+                label.Text = "EXTREME";
             }
 
         }
