@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+using Plugin.Connectivity;
 using PreStart.Abstractions;
 using PreStart.Models;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace PreStart.Services
         public async Task SyncOfflineCacheAsync()
         {
             await InitializeAsync();
+
+            if (!(await CrossConnectivity.Current.IsRemoteReachable(Client.MobileAppUri.Host, 443)))
+            {
+                return;
+            }
 
             // Push the Operations Queue to the mobile backend
             await Client.SyncContext.PushAsync();
