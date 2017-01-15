@@ -30,11 +30,11 @@ namespace PreStart.ViewModels
             try
             {
                 //Get Prestart sync table context
-                var table =  await App.CloudService.GetTableAsync<Prestart>();
+               var table =  await App.CloudService.GetTableAsync<Prestart>();
 
                 //Add Current Prestart to the table
                 await table.CreateItemAsync(Prestart);
-                var data = await table.ReadAllItemsAsync();
+               var data = await table.ReadAllItemsAsync();
 
                 //Sync with online table
                 await App.CloudService.SyncOfflineCacheAsync();
