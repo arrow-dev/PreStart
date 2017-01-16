@@ -3,13 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.HazardForm">
+  
 <StackLayout VerticalOptions="Center">
+  
+
     <StackLayout>
-    <Label Text ="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}"
+      <Label Text ="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}"
            HorizontalTextAlignment="Center"></Label>
-    <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
+      <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
            HorizontalTextAlignment="Center"></Label>
-  </StackLayout>
+    </StackLayout>
+
+  <ScrollView Orientation="Vertical">
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+  
 
   <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
     <BoxView HeightRequest="1" Color="Silver"></BoxView>
@@ -116,6 +123,8 @@
             <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
           </StackLayout>
 
-
+    </StackLayout>
+  </ScrollView>
 </StackLayout>
+  
 </ContentPage>
