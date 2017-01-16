@@ -91,5 +91,27 @@ namespace PreStart.ViewModels
                 IsBusy = false;
             }
         }
+
+
+        Prestart selectedItem;
+        public Prestart SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                if (IsBusy)
+                {
+                    return;
+                }
+                SetProperty(ref selectedItem, value, "SelectedItem");
+                if (selectedItem != null)
+                {
+                    //When an item is selected from the list then navigate to the details page passing the selected item through.
+                    Application.Current.MainPage.Navigation.PushAsync(new Pages.PrestartDetail(selectedItem));
+                    SelectedItem = null;
+                }
+            }
+        }
+
     }
 }
