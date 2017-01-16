@@ -22,7 +22,7 @@ namespace PreStart.ViewModels
         public async void GetSitesAsync()
         {
             var salesForce = new SalesforceDataService();
-            var response = await salesForce.GetLocationData();
+            var response = await salesForce.GetData<Location>("select+id,name+from+location__c");
             var items = response.records;
             //await App.CloudService.SyncOfflineCacheAsync();
             //var table = await App.CloudService.GetTableAsync<Site>();

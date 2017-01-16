@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+
 using Plugin.Connectivity;
 using PreStart.Abstractions;
 using PreStart.Models;

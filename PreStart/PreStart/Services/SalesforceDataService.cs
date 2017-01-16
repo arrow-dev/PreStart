@@ -10,7 +10,7 @@ namespace PreStart.Services
 {
     class SalesforceDataService
     {
-        public async Task<SaleForceResponse<Location>> GetLocationData()
+        public async Task<SaleForceResponse<T>> GetData<T>(string query)
         {
             var client = new HttpClient();
 
@@ -32,16 +32,16 @@ namespace PreStart.Services
             string oauthToken = (string) obj["access_token"];
             string serviceUrl = (string) obj["instance_url"];
 
-            string locationQuery = "select+id,name+from+location__c";
-            locationQuery = serviceUrl + "/services/data/v25.0/query?q=" + locationQuery;
-            HttpRequestMessage requestRegion = new HttpRequestMessage(HttpMethod.Get, locationQuery);
-            requestRegion.Headers.Add("Authorization", "Bearer " + oauthToken);
-            requestRegion.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage responseLocations = await client.SendAsync(requestRegion);
-            string resultLocations = await responseLocations.Content.ReadAsStringAsync();
-            var test = JsonConvert.DeserializeObject<SaleForceResponse<Location>>(resultLocations);
+            
+            var salesforceQuery = serviceUrl + "/services/data/v25.0/query?q=" + query;
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, salesforceQuery);
+            request.Headers.Add("Authorization", "Bearer " + oauthToken);
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response= await client.SendAsync(request);
+            string result = await response.Content.ReadAsStringAsync();
+            var data = JsonConvert.DeserializeObject<SaleForceResponse<T>>(result);
 
-            return test;
+            return data;
         }
     }
 }
