@@ -1,5 +1,6 @@
 ﻿using PreStart.Abstractions;
 using PreStart.Models;
+using PreStart.Services;
 using System.Collections.ObjectModel;
 
 namespace PreStart.ViewModels
@@ -11,8 +12,8 @@ namespace PreStart.ViewModels
             GetSitesAsync();
         }
 
-        private ObservableCollection<Site> _sites = new ObservableCollection<Site>();
-        public ObservableCollection<Site> Sites
+        private ObservableCollection<Location> _sites = new ObservableCollection<Location>();
+        public ObservableCollection<Location> Sites
         {
             get { return _sites; }
             set { SetProperty(ref _sites, value, "Sites");}
@@ -20,18 +21,25 @@ namespace PreStart.ViewModels
 
         public async void GetSitesAsync()
         {
-            await App.CloudService.SyncOfflineCacheAsync();
-            var table = await App.CloudService.GetTableAsync<Site>();
-            var items = await table.ReadAllItemsAsync();
+            var salesForce = new SalesforceDataService();
+            var response = await salesForce.GetLocationData();
+            var items = response.records;
+            //await App.CloudService.SyncOfflineCacheAsync();
+            //var table = await App.CloudService.GetTableAsync<Site>();
+            //var items = await table.ReadAllItemsAsync();
             Sites.Clear();
             foreach (var item in items)
             {
                 Sites.Add(item);
+                if (item.Id == Helpers.Settings.DefaultSiteSetting)
+                {
+                    SelectedItem = item;
+                }
             }
         }
 
-        Site selectedItem;
-        public Site SelectedItem
+        Location selectedItem;
+        public Location SelectedItem
         {
             get { return selectedItem; }
             set
@@ -44,7 +52,6 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     Helpers.Settings.DefaultSiteSetting = selectedItem.Id;
-                    SelectedItem = null;
                 }
             }
         }
