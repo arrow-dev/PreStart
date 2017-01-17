@@ -41,6 +41,7 @@
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
+    <Compile Include="Behaviors\OnAppearingToCommandBehavior.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Hazard.cs" />
