@@ -67,7 +67,7 @@
       <StackLayout Orientation="Horizontal" VerticalOptions="Center">
         <Label  Text="Department:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
                WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department}"/>
         <Label  Text="Project / Site:" TextColor="{x:Static local:Template.fhBlue}"
                WidthRequest="150" VerticalOptions="Center"/>
         <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Project }"/>
@@ -76,25 +76,25 @@
       <StackLayout Orientation="Horizontal" VerticalOptions="Center">
         <Label  Text="Job Number:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
                WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber}"/>
         <Label  Text="STMS:" TextColor="{x:Static local:Template.fhBlue}"
                WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber}"/>
       </StackLayout>
 
       <StackLayout Orientation="Horizontal" VerticalOptions="Center">
         <Label  Text="Person in Charge of Site:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
                WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager}"/>
         <Label  Text="Site First Aider:" TextColor="{x:Static local:Template.fhBlue}"
                WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider}"/>
       </StackLayout>
 
       <StackLayout Orientation="Horizontal" VerticalOptions="Center">
         <Label  Text="TMP:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
                WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber}"/>
         <Label  Text="Certificate Number:" TextColor="{x:Static local:Template.fhBlue}"
                WidthRequest="150" VerticalOptions="Center"/>
         <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber }"/>
@@ -103,10 +103,10 @@
       <StackLayout Orientation="Horizontal" VerticalOptions="Center">
         <Label  Text="Quarry Manager in Charge(if applicable):" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
                WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager}"/>
         <Label  Text="Emergency Response:" TextColor="{x:Static local:Template.fhBlue}"
                WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, }"/>
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan}"/>
       </StackLayout>
 
 

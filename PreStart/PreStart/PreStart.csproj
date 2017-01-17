@@ -40,6 +40,7 @@
     <Compile Include="Abstractions\ICloudTable.cs" />
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="Behaviors\EditorValidatorBehavior.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
     <Compile Include="Behaviors\OnAppearingToCommandBehavior.cs" />
     <Compile Include="Config.cs" />
