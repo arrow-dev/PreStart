@@ -47,7 +47,6 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Prestart.cs" />
     <Compile Include="Models\SaleForceResponse.cs" />
-    <Compile Include="Models\Site.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Pages\DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
