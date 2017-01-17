@@ -27,7 +27,7 @@ namespace PreStart.ViewModels
             }
         }
 
-        private void filter(string query)
+        public void filter(string query)
         {
             var filteredSites = AllSites.Where(s => s.Name.ToLower().Contains(query.ToLower())).ToList();
             Sites.Clear();
