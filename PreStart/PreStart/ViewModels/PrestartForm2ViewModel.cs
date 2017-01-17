@@ -5,7 +5,6 @@ using System;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
-using System.Threading.Tasks;
 
 namespace PreStart.ViewModels
 {
@@ -24,7 +23,7 @@ namespace PreStart.ViewModels
         Command nextCommand;
 
         public Command NextCommand
-            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand()));
+            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand(), () => false));
 
         async Task ExecuteNextCommand()
         {

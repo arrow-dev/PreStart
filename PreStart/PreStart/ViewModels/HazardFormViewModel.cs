@@ -31,6 +31,14 @@ namespace PreStart.ViewModels
 
             try
             {
+
+
+
+
+
+
+
+
                 //Get Hazard sync table context
                 var table = await App.CloudService.GetTableAsync<Hazard>();
 
@@ -42,6 +50,11 @@ namespace PreStart.ViewModels
 
                 //Navigate to the task manager
                 await Application.Current.MainPage.Navigation.PopAsync(true);
+
+
+
+
+
             }
             catch (Exception ex)
             {
