@@ -2,22 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
+             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm1"
              Padding="{x:Static local:Template.PagePadding}"
              Title="Prestart Part 1">
 
- 
-
-
-
-  
-  
-  
-  
-  
   <StackLayout>
-
- 
 
 
 
@@ -43,21 +33,29 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Contract Name:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractName, Mode=TwoWay}" x:Name="entryContractName"></Entry>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractName, Mode=TwoWay}" >
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="ContractNameEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
       <Label  Text="Contract Number:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractNumber, Mode=TwoWay}" x:Name="entryContractNumber" />
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="ContractNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
     </StackLayout>
 
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Location:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}" x:Name="entryLocation"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}"/>
 
       <Label  Text="Location Number:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.LotNo, Mode=TwoWay}" x:Name="entryLotNo"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.LotNo, Mode=TwoWay}"/>
     </StackLayout>
 
 
@@ -65,65 +63,63 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Department:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, Mode=TwoWay}" x:Name="entryDepartment"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, Mode=TwoWay}"/>
       <Label  Text="Project / Site:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteId, Mode=TwoWay}" x:Name="entrySiteId"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteId, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Job Number:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, Mode=TwoWay}" x:Name="entryJobNumber"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, Mode=TwoWay}"/>
       <Label  Text="STMS:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber, Mode=TwoWay}" x:Name="entryStmsNumber"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Person in Charge of Site:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, Mode=TwoWay}" x:Name="entrySiteManager"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, Mode=TwoWay}"/>
       <Label  Text="Site First Aider:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}" x:Name="entrySiteFirstAider"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="TMP:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber, Mode=TwoWay}" x:Name="entryTmpNumber"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber, Mode=TwoWay}"/>
       <Label  Text="Certificate Number:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}" x:Name="entryCertificateNumber"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Quarry Manager in Charge(if applicable):" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, Mode=TwoWay}" x:Name="entryQuarryManager"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, Mode=TwoWay}"/>
       <Label  Text="Emergency Response:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}" x:Name="entryEmergencyPlan"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}"/>
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-      
-      <Button TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" x:Name="btnNext" Command="{Binding NextCommand}">
-
-
-    
-      
-            </Button>
+      <Button  TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}" IsEnabled="False">
+        <Button.Triggers>
+          <MultiTrigger TargetType="Button">
+            <MultiTrigger.Conditions>
+              <BindingCondition Binding="{Binding Source={x:Reference ContractNameEntryBehavior}, Path=IsValid}" Value="true"/>
+              <BindingCondition Binding="{Binding Source={x:Reference ContractNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            </MultiTrigger.Conditions>
+          <Setter Property="IsEnabled" Value="True"/>
+          </MultiTrigger>
+        </Button.Triggers>
+      </Button>
     </StackLayout>
 
   </StackLayout>
-
-
-
-
-
-
 
 
 </ContentPage>

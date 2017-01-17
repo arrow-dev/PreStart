@@ -5,6 +5,12 @@
              x:Class="PreStart.Pages.SiteListPage"
              Title="Select Your Site">
   <StackLayout Padding="0,20,0,20">
+    
+    
+    <Entry Placeholder="Search site"
+           Text="{Binding SearchText, Mode=TwoWay}"></Entry>
+    
+
     <ListView ItemsSource="{Binding Sites}"
               RowHeight="50"
               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">

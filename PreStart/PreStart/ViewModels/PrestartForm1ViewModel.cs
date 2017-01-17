@@ -43,7 +43,6 @@ namespace PreStart.ViewModels
         }
 
         Command preFillCommand;
-
         public Command PreFillCommand
             => preFillCommand ?? (preFillCommand = new Command(async () => await ExecutePreFillCommand()));
 
@@ -73,8 +72,6 @@ namespace PreStart.ViewModels
                 Prestart.QuarryManager = item.QuarryManager;
                 Prestart.SiteManager = item.SiteManager;
                 Prestart.StmsNumber = item.StmsNumber;
-                
-
             }
             catch (Exception ex)
             {
@@ -87,9 +84,8 @@ namespace PreStart.ViewModels
         }
 
         Command nextCommand;
-
         public Command NextCommand
-            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand()));
+            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand(), () => false));
 
         async Task ExecuteNextCommand()
         {
@@ -99,8 +95,6 @@ namespace PreStart.ViewModels
 
             try
             {
-
-               
                 await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm2(Prestart));
             }
             catch (Exception ex)
@@ -136,15 +130,8 @@ namespace PreStart.ViewModels
             }
             get
             {
-               
                 return dateString;
-                
             }
-
-            
         }
-
-
-    
     }
 }
