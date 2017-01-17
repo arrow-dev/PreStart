@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
+             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm1"
              Padding="{x:Static local:Template.PagePadding}"
              Title="Prestart Part 1">
@@ -32,10 +33,18 @@
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
       <Label  Text="Contract Name:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractName, Mode=TwoWay}" />
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractName, Mode=TwoWay}" >
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="ContractNameEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
       <Label  Text="Contract Number:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
-      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractNumber, Mode=TwoWay}"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="ContractNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
     </StackLayout>
 
 
@@ -97,16 +106,20 @@
     </StackLayout>
 
     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-      <Button TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}"></Button>
+      <Button  TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}" IsEnabled="False">
+        <Button.Triggers>
+          <MultiTrigger TargetType="Button">
+            <MultiTrigger.Conditions>
+              <BindingCondition Binding="{Binding Source={x:Reference ContractNameEntryBehavior}, Path=IsValid}" Value="true"/>
+              <BindingCondition Binding="{Binding Source={x:Reference ContractNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            </MultiTrigger.Conditions>
+          <Setter Property="IsEnabled" Value="True"/>
+          </MultiTrigger>
+        </Button.Triggers>
+      </Button>
     </StackLayout>
 
   </StackLayout>
-
-
-
-
-
-
 
 
 </ContentPage>
