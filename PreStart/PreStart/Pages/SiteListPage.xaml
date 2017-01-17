@@ -5,20 +5,11 @@
              x:Class="PreStart.Pages.SiteListPage"
              Title="Select Your Site">
   <StackLayout Padding="0,20,0,20">
-    <Entry Text="{Binding SearchText, Mode=TwoWay}"></Entry>
     
-    <SearchBar x:Name="SiteSearchBar"
-               Placeholder="Search site"
-               TextChanged="OnSearchBarTextChanged"
-               SearchButtonPressed="OnSearchBarButtonPressed" />
-
-
-    <ScrollView x:Name="resultsScroll"
-                VerticalOptions="FillAndExpand">
-            <StackLayout x:Name="resultsStack"/>
-    </ScrollView>
-
-
+    
+    <Entry Placeholder="Search site"
+           Text="{Binding SearchText, Mode=TwoWay}"></Entry>
+    
 
     <ListView ItemsSource="{Binding Sites}"
               RowHeight="50"
