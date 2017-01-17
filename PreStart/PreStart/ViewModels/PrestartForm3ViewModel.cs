@@ -20,7 +20,7 @@ namespace PreStart.ViewModels
         Command nextCommand;
 
         public Command NextCommand
-            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand()));
+            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand(), () => false));
 
         async Task ExecuteNextCommand()
         {

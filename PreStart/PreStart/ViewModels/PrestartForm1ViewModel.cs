@@ -2,7 +2,6 @@
 using PreStart.Models;
 using PreStart.Pages;
 using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using Xamarin.Forms;
@@ -15,26 +14,9 @@ namespace PreStart.ViewModels
         
         public Prestart Prestart { get; set; }
 
-        public ObservableCollection<Site> Sites { get; set; }
-
         public PrestartForm1ViewModel()
         {
             Prestart = new Prestart();
-            LoadSites();
-        }
-
-        private void LoadSites()
-        {
-            //Temporary, need to hook up to db!
-            Sites = new ObservableCollection<Site>
-            {
-                new Site {Name = "Cycleway", Id = "01de9f41-d2df-4ef9-8465-bfa8487d4c60" },
-                new Site {Name = "Motorway", Id = "39b2418a-07b5-4740-9464-3eb2a6a4e342" },
-                new Site {Name = "Quarry", Id = "518a6a69-b5eb-4f35-867c-15509db3aad4" },
-                new Site {Name = "Northern Intersection", Id = "65d67dfe-40d1-4a63-9ac0-0d7428501d53" },
-                new Site {Name = "Stadium", Id = "9e36e726-c7d7-49ab-9af5-412fe66f9404" },
-                new Site {Name = "Yard", Id = "dc4a8495-3a2d-49d2-ae7c-16157ee7e20e" },
-            };
         }
 
         public PrestartForm1ViewModel(Prestart prestart)
@@ -43,7 +25,6 @@ namespace PreStart.ViewModels
         }
 
         Command preFillCommand;
-
         public Command PreFillCommand
             => preFillCommand ?? (preFillCommand = new Command(async () => await ExecutePreFillCommand()));
 
@@ -73,8 +54,6 @@ namespace PreStart.ViewModels
                 Prestart.QuarryManager = item.QuarryManager;
                 Prestart.SiteManager = item.SiteManager;
                 Prestart.StmsNumber = item.StmsNumber;
-                
-
             }
             catch (Exception ex)
             {
@@ -87,9 +66,8 @@ namespace PreStart.ViewModels
         }
 
         Command nextCommand;
-
         public Command NextCommand
-            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand()));
+            => nextCommand ?? (nextCommand = new Command(async () => await ExecuteNextCommand(), () => false));
 
         async Task ExecuteNextCommand()
         {
@@ -99,8 +77,6 @@ namespace PreStart.ViewModels
 
             try
             {
-
-               
                 await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm2(Prestart));
             }
             catch (Exception ex)
@@ -136,15 +112,8 @@ namespace PreStart.ViewModels
             }
             get
             {
-               
                 return dateString;
-                
             }
-
-            
         }
-
-
-    
     }
 }

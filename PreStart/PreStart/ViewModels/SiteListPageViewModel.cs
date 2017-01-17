@@ -17,7 +17,6 @@ namespace PreStart.ViewModels
         }
 
         private string searchText;
-
         public string SearchText
         {
             get { return searchText; }

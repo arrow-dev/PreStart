@@ -41,14 +41,12 @@
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
-    <Compile Include="Behaviors\BehaviorsTest.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Hazard.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Prestart.cs" />
     <Compile Include="Models\SaleForceResponse.cs" />
-    <Compile Include="Models\Site.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Pages\DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
