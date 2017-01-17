@@ -28,7 +28,7 @@ namespace PreStart.ViewModels
             }
         }
 
-        public void filter(string query)
+        private void filter(string query)
         {
             var filteredSites = AllSites.Where(s => s.Name.ToLower().Contains(query.ToLower())).ToList();
             Sites.Clear();
@@ -77,6 +77,7 @@ namespace PreStart.ViewModels
                 SetProperty(ref selectedItem, value, "SelectedItem");
                 if (selectedItem != null)
                 {
+                    
                     Helpers.Settings.DefaultSiteSetting = selectedItem.Id;
                 }
             }

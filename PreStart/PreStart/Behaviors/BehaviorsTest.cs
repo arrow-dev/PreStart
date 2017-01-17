@@ -1,20 +1,36 @@
 ﻿
+using System;
 using Xamarin.Forms;
 
 namespace PreStart.Behaviors
 {
 
-    public class BehaviorsTest : Behavior<Entry>
+    public class BehaviorsTest : Behavior<Editor>
     {
+        //an IsValid property that is backed by a bindable property
+        //it is a read-only bindable property.
+        private static readonly BindablePropertyKey IsvalidPropertyKey =
+            BindableProperty.CreateReadOnly("isValid",
+                typeof(bool),
+                typeof(BehaviorsTest),
+                false);
 
+        public static readonly BindableProperty IsValidProperty =
+            IsvalidPropertyKey.BindableProperty;
 
-        protected override void OnAttachedTo(Entry entry)
+        public bool IsValid
+        {
+            private set { SetValue(IsvalidPropertyKey, value);}
+            get { return (bool) GetValue(IsValidProperty); }
+        }
+
+        protected override void OnAttachedTo(Editor entry)
         {
             entry.TextChanged += OnEntryTextChanged;
             base.OnAttachedTo(entry);
 
         }
-        protected override void OnDetachingFrom(Entry entry)
+        protected override void OnDetachingFrom(Editor entry)
         {
             entry.TextChanged -= OnEntryTextChanged;
             base.OnDetachingFrom(entry);
@@ -22,21 +38,19 @@ namespace PreStart.Behaviors
         }
 
         // Behavior implementation
-        private void OnEntryTextChanged(object sender, TextChangedEventArgs args)
+        void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
+            Editor editor = (Editor) sender;
+            IsValid = IsValidForm(editor.Text);
+        }
 
-            string empty = "";
-            bool isValid = true;
-            if (args.ToString().Length != empty.Length & isValid)
+        bool IsValidForm(string str)
+        {
+            if (String.IsNullOrEmpty(str))
             {
-                ((Entry) sender).BackgroundColor = Color.Red;
-                isValid = false;
+                return false;
             }
-            else
-            {
-                ((Entry)sender).BackgroundColor = Color.Aqua;
-                isValid = true;
-            }
+            return true;
 
         }
     }

@@ -11,7 +11,8 @@
            Text="{Binding SearchText, Mode=TwoWay}"></Entry>
     
 
-    <ListView ItemsSource="{Binding Sites}"
+    <ListView x:Name="listview"
+              ItemsSource="{Binding Sites}"
               RowHeight="50"
               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
       <ListView.ItemTemplate>
