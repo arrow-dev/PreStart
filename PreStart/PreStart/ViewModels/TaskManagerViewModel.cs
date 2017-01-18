@@ -92,8 +92,8 @@ namespace PreStart.ViewModels
         Command newCommand;
 
         public Command NewCommand
-            => newCommand ?? (newCommand = new Command(async () => await ExecuteNewCommand()));
-
+            => newCommand ?? (newCommand = new Command(async () => await ExecuteNewCommand(),  () => false));
+        // Not working
         async System.Threading.Tasks.Task ExecuteNewCommand()
         {
             if (IsBusy)
