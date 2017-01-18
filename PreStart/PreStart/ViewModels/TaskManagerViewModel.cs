@@ -14,7 +14,6 @@ namespace PreStart.ViewModels
         public TaskManagerViewModel(string siteId)
         {
             SiteId = siteId;
-            //GetTasksAsync();
         }
 
         Task selectedItem;
@@ -65,39 +64,30 @@ namespace PreStart.ViewModels
             }
         }
 
-        //Command refreshCommand;
+        Command refreshCommand;
 
-        //public Command RefreshCommand
-        //    => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
+        public Command RefreshCommand
+            => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
 
-        //async System.Threading.Tasks.Task ExecuteRefreshCommand()
-        //{
-        //    if (IsBusy)
-        //        return;
-        //    IsBusy = true;
+        async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
 
-        //    try
-        //    {
-        //        var table = await App.CloudService.GetTableAsync<Task>();
-        //        var items = await table.ReadAllItemsAsync();
-        //        Tasks.Clear();
-        //        foreach (var item in items)
-        //        {
-        //            if (item.PrestartId == PrestartId)
-        //            {
-        //                Tasks.Add(item);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"{ex.Message}");
-        //    }
-        //    finally
-        //    {
-        //        IsBusy = false;
-        //    }
-        //}
+            try
+            {
+                GetTasksAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
 
         Command newCommand;
 

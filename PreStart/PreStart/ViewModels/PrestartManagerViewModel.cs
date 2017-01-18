@@ -38,8 +38,31 @@ namespace PreStart.ViewModels
                 }
             }
         }
-        Command newCommand;
+        Command refreshCommand;
+        public Command RefreshCommand
+            => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
 
+        async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                GetPrestarts(Id);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        Command newCommand;
         public Command NewCommand
             => newCommand ?? (newCommand = new Command(async () => await ExecuteNewCommand()));
 

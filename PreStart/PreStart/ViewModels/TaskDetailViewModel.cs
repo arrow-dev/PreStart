@@ -4,7 +4,6 @@ using PreStart.Pages;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using PreStart;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -39,6 +38,30 @@ namespace PreStart.ViewModels
                 {
                     Hazards.Add(item);
                 }
+            }
+        }
+        Command refreshCommand;
+
+        public Command RefreshCommand
+            => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
+
+        async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                GetHazardsAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 
