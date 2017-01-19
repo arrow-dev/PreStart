@@ -7,7 +7,7 @@
              x:Class="PreStart.Pages.PrestartForm3"
              Title="Prestart Part 3">
 
-  <StackLayout VerticalOptions="Center">
+  <StackLayout >
     <StackLayout>
 
       <!-- Use styles instead of all the markup extension here?? -->
