@@ -12,8 +12,7 @@ namespace PreStart
         public App()
         {
             CloudService = new AzureCloudService();
-            MainPage = new NavigationPage(new Menu());
-
+            MainPage = new Menu();
         }
 
         protected override void OnStart()

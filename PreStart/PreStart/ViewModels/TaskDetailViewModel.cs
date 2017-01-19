@@ -15,7 +15,7 @@ namespace PreStart.ViewModels
             get { return task; }
             set { SetProperty(ref task, value, "Task");} }
 
-        public TaskDetailViewModel(Task task)
+        public TaskDetailViewModel(Task task, INavigation navigation) : base(navigation)
         {
             Task = task;
         }
@@ -79,7 +79,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Application.Current.MainPage.Navigation.PushAsync(new Pages.HazardDetailViewPage(selectedItem));
+                    Navigation.PushAsync(new Pages.HazardDetailViewPage(selectedItem));
                     SelectedItem = null;
                 }
             }
@@ -97,7 +97,7 @@ namespace PreStart.ViewModels
             IsBusy = true;
             try
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
+                await Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
             }
             catch (Exception ex)
             {

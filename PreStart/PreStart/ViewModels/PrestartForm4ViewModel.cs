@@ -11,7 +11,7 @@ namespace PreStart.ViewModels
     {
         public Prestart Prestart { get; set; }
 
-        public PrestartForm4ViewModel(Prestart prestart)
+        public PrestartForm4ViewModel(Prestart prestart, INavigation navigation) : base(navigation)
         {
             Prestart = prestart;
         }
@@ -40,7 +40,7 @@ namespace PreStart.ViewModels
                 await App.CloudService.SyncOfflineCacheAsync();
                 
                 //Navigate to the task manager
-                Application.Current.MainPage.Navigation.PopToRootAsync();
+                await Navigation.PopToRootAsync();
             }
             catch (Exception ex)
             {

@@ -11,7 +11,7 @@ namespace PreStart.ViewModels
     {
         public string SiteId;
 
-        public TaskManagerViewModel(string siteId)
+        public TaskManagerViewModel(string siteId, INavigation navigation) : base(navigation)
         {
             SiteId = siteId;
         }
@@ -30,7 +30,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Application.Current.MainPage.Navigation.PushAsync(new Pages.TaskDetailPage(selectedItem));
+                    Navigation.PushAsync(new Pages.TaskDetailPage(selectedItem));
                     SelectedItem = null;
                 }
             }

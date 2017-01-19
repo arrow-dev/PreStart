@@ -12,7 +12,7 @@ namespace PreStart.ViewModels
     {
         public Prestart Prestart { get; set; }
 
-        public PrestartForm3ViewModel(Prestart prestart)
+        public PrestartForm3ViewModel(Prestart prestart, INavigation navigation) : base(navigation)
         {
             Prestart = prestart;
         }
@@ -30,7 +30,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm4(Prestart));
+                await Navigation.PushAsync(new PrestartForm4(Prestart));
             }
             catch (Exception ex)
             {

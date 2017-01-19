@@ -14,12 +14,12 @@ namespace PreStart.ViewModels
         
         public Prestart Prestart { get; set; }
 
-        public PrestartForm1ViewModel()
+        public PrestartForm1ViewModel(INavigation navigation) : base(navigation)
         {
             Prestart = new Prestart();
         }
 
-        public PrestartForm1ViewModel(Prestart prestart)
+        public PrestartForm1ViewModel(Prestart prestart, INavigation navigation) : base(navigation)
         {
             Prestart = prestart;
         }
@@ -77,7 +77,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new PrestartForm2(Prestart));
+                await Navigation.PushAsync(new PrestartForm2(Prestart));
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace PreStart.ViewModels
         private static string fixdate(DateTime a)
         {
            
-            string temp = String.Format("{0:d/M/yyyy}", a);
+            string temp = string.Format("{0:d/M/yyyy}", a);
             return temp;
         }
 

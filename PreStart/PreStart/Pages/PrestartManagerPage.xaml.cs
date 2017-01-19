@@ -8,7 +8,7 @@ namespace PreStart.Pages
         public PrestartManagerPage(string id)
         {
             InitializeComponent();
-            BindingContext = new PrestartManagerViewModel(id);
+            BindingContext = new PrestartManagerViewModel(id, Navigation);
         }
     }
 }

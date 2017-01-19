@@ -2,7 +2,6 @@
 using PreStart.Models;
 using System;
 using System.Diagnostics;
-using PreStart.Pages;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
 
@@ -12,7 +11,7 @@ namespace PreStart.ViewModels
     {
         public Hazard Hazard { get; set; }
 
-        public HazardFormViewModel(Hazard hazard)
+        public HazardFormViewModel(Hazard hazard, INavigation navigation) : base(navigation)
         {
             Hazard = hazard;
         }
@@ -49,11 +48,7 @@ namespace PreStart.ViewModels
                 await App.CloudService.SyncOfflineCacheAsync();
 
                 //Navigate to the task manager
-                await Application.Current.MainPage.Navigation.PopAsync(true);
-
-
-
-
+                await Navigation.PopAsync(true);
 
             }
             catch (Exception ex)

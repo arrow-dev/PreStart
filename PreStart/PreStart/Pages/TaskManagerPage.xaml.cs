@@ -9,7 +9,7 @@ namespace PreStart.Pages
         public TaskManagerPage(string id)
         {
             InitializeComponent();
-            BindingContext = new TaskManagerViewModel(id);
+            BindingContext = new TaskManagerViewModel(id, Navigation);
         }
 
         private void AddBtn_OnClick(object sender, EventArgs e)

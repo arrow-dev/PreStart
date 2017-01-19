@@ -9,7 +9,7 @@ namespace PreStart.Pages
         public SiteListPage()
         {
             InitializeComponent();
-            BindingContext = new SiteListPageViewModel();
+            BindingContext = new SiteListPageViewModel(Navigation);
             listview.ItemTapped += Listview_OnItemTapped;
         }
 

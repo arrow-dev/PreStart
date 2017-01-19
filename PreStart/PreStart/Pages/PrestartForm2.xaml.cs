@@ -10,7 +10,7 @@ namespace PreStart.Pages
         public PrestartForm2(Prestart prestart)
         {
             InitializeComponent();
-            BindingContext = new PrestartForm2ViewModel(prestart);
+            BindingContext = new PrestartForm2ViewModel(prestart, Navigation);
         }
     }
 }

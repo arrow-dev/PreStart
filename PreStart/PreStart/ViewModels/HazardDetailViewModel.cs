@@ -10,7 +10,7 @@ namespace PreStart.ViewModels
     {  
         public Hazard Hazard { get; set; }
 
-        public HazardDetailViewModel(Hazard hazard)
+        public HazardDetailViewModel(Hazard hazard, INavigation navigation) : base(navigation)
         {
             this.Hazard = hazard;
 

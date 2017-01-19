@@ -9,7 +9,7 @@ namespace PreStart.Pages
         public TaskDetailPage(Task task)
         {
             InitializeComponent();
-            BindingContext = new TaskDetailViewModel(task);
+            BindingContext = new TaskDetailViewModel(task, Navigation);
         }
     }
 }

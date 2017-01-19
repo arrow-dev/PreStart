@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PreStart.Models;
+﻿using PreStart.Models;
 using PreStart.ViewModels;
 using Xamarin.Forms;
 
@@ -15,7 +10,7 @@ namespace PreStart.Pages
         {
             InitializeComponent();
 
-            BindingContext = new PrestartDetailViewModel(prestart);
+            BindingContext = new PrestartDetailViewModel(prestart, Navigation);
         }
     }
 }

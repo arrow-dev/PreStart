@@ -20,7 +20,7 @@ namespace PreStart.ViewModels
 
         private string Id;
 
-        public PrestartManagerViewModel(string id)
+        public PrestartManagerViewModel(string id, INavigation navigation) : base(navigation)
         {
             Id = id;
         }
@@ -74,7 +74,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                App.Current.MainPage.Navigation.PushAsync(new PrestartForm1(Id));
+                await Navigation.PushAsync(new PrestartForm1(Id));
             }
             catch (Exception ex)
             {
@@ -130,7 +130,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Application.Current.MainPage.Navigation.PushAsync(new Pages.PrestartDetail(selectedItem));
+                    Navigation.PushAsync(new Pages.PrestartDetail(selectedItem));
                     SelectedItem = null;
                 }
             }

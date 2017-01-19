@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PreStart.Models;
+﻿using PreStart.Models;
 using PreStart.ViewModels;
+using System;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
@@ -17,7 +12,7 @@ namespace PreStart.Pages
         public HazardForm(Hazard hazard)
         {
             InitializeComponent();
-            BindingContext = new HazardFormViewModel(hazard);
+            BindingContext = new HazardFormViewModel(hazard, Navigation);
             
             RBSliderPCL.ValueChanged += RBPclOnSliderChanged;
             RBSliderPLL.ValueChanged += RBPllOnSliderChanged;

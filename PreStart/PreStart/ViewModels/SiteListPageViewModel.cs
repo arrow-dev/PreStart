@@ -4,6 +4,7 @@ using PreStart.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace PreStart.ViewModels
 {
@@ -11,7 +12,7 @@ namespace PreStart.ViewModels
     {
         private IEnumerable<Location> AllSites;
 
-        public SiteListPageViewModel()
+        public SiteListPageViewModel(INavigation navigation) : base(navigation)
         {
             GetSitesAsync();
         }
