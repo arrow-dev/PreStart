@@ -50,9 +50,6 @@ namespace PreStart.ViewModels
             var salesForce = new SalesforceDataService();
             var response = await salesForce.GetData<Location>("select+id,name+from+location__c+where+country__c='New_Zealand'");
             AllSites = response.records.OrderBy(i => i.Name);
-            //await App.CloudService.SyncOfflineCacheAsync();
-            //var table = await App.CloudService.GetTableAsync<Site>();
-            //var items = await table.ReadAllItemsAsync();
             Sites.Clear();
             foreach (var item in AllSites)
             {
