@@ -28,6 +28,10 @@ namespace PreStart
             new Thickness(40, 0, 40, 20);
 
 
+        public static readonly Thickness StackLayoutTitle =
+            new Thickness(40, 0, 20, 10);
+
+
         public static readonly Color fhBlue = Color.FromHex("#0099C7");
 
         public static readonly Color fhOrange = Color.FromHex("#FF671B");

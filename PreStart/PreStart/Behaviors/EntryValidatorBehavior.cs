@@ -33,14 +33,23 @@ namespace PreStart.Behaviors
         {
             var entry = ((Entry) sender);
             IsValid = IsValidEntry(entry.Text);
+            int maxlength = 50;
+
+            if (entry.Text.Length >= maxlength)
+                ((Entry)sender).Text = e.NewTextValue.Substring(0, maxlength);
         }
 
         bool IsValidEntry(string entryText)
         {
-            if (String.IsNullOrEmpty(entryText) | String.IsNullOrWhiteSpace(entryText))
+
+
+
+            if (String.IsNullOrEmpty(entryText) | String.IsNullOrWhiteSpace(entryText) )
             {
                 return false;
             }
+
+
 
             return true;
         }
