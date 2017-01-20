@@ -102,6 +102,7 @@
     <Compile Include="Services\AzureCloudTable.cs" />
     <Compile Include="Services\SalesforceDataService.cs" />
     <Compile Include="Template.cs" />
+    <Compile Include="ValueConverters\DateTimeToString.cs" />
     <Compile Include="ViewModels\HazardDetailViewModel.cs" />
     <Compile Include="ViewModels\HazardFormViewModel.cs" />
     <Compile Include="ViewModels\MasterPageItem.cs" />

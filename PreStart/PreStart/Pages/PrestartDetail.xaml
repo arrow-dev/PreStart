@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:controls="clr-namespace:PreStart.ViewModels;assembly=PreStart"
+             xmlns:valueConverters="clr-namespace:PreStart.ValueConverters;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartDetail"  
              Padding="{x:Static local:Template.PagePadding}">
+<ContentPage.Resources>
+  <ResourceDictionary>
+    <valueConverters:DateTimeToString x:Key="DateTimeToString"/>
+    
 
+  </ResourceDictionary>
+</ContentPage.Resources>
   
   <ScrollView>
     <StackLayout>
@@ -32,7 +39,7 @@
         <Label FontSize="Small" TextColor="Black"
              VerticalOptions="Center"
                HorizontalOptions="FillAndExpand"
-               Text="{ Binding CreatedAt }"/>
+               Text="{ Binding CreatedAt, Converter={StaticResource DateTimeToString }}"/>
 
       </StackLayout>
 
