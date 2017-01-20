@@ -33,7 +33,7 @@ namespace PreStart.Behaviors
         {
             var entry = ((Entry) sender);
             IsValid = IsValidEntry(entry.Text);
-            int maxlength = 17;
+            int maxlength = 50;
 
             if (entry.Text.Length >= maxlength)
                 ((Entry)sender).Text = e.NewTextValue.Substring(0, maxlength);
