@@ -56,13 +56,9 @@ namespace PreStart.Pages
             }
         }
 
-
-        private void OnSliderChanged(ValueChangedEventArgs e, Slider slider1, Slider slider2, Label siderlabel, Label risklabel)
+        //PCL label switch
+        private void PCLSwitch(int a, Label risklabel)
         {
-            StepValue = 1;
-            var newStep = Math.Round(e.NewValue / StepValue);
-            slider1.Value = newStep * StepValue;
-            int a = Convert.ToInt32(e.NewValue);
             switch (a)
             {
                 case 1:
@@ -81,6 +77,49 @@ namespace PreStart.Pages
                     risklabel.Text = "Catastrophic";
                     break;
             }
+        }
+
+        //PLL label switch
+        private void PLLSwitch(int a, Label risklabel)
+        {
+            switch (a)
+            {
+                case 1:
+                    risklabel.Text = "Rare";
+                    break;
+                case 2:
+                    risklabel.Text = "Unlikely";
+                    break;
+                case 3:
+                    risklabel.Text = "Possible";
+                    break;
+                case 4:
+                    risklabel.Text = "Likely";
+                    break;
+                case 5:
+                    risklabel.Text = "Almost Certain";
+                    break;
+            }
+        }
+
+
+        private void OnSliderChanged(ValueChangedEventArgs e, Slider slider1, Slider slider2, Label siderlabel, Label risklabel)
+        {
+            StepValue = 1;
+            var newStep = Math.Round(e.NewValue / StepValue);
+            slider1.Value = newStep * StepValue;
+            int a = Convert.ToInt32(e.NewValue);
+            //check if the label is PCL or PLL
+            //apply different label switch
+            if (risklabel == RAPCL || risklabel == RBPCL)
+            {
+                PCLSwitch(a, risklabel);
+            }
+            else
+            {
+                PLLSwitch(a, risklabel);
+            }
+            
             SetRiskLabelColor(siderlabel, slider1, slider2);
         }
 

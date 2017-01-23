@@ -1,6 +1,7 @@
-﻿
-using System;
+﻿using System;
 using Xamarin.Forms;
+
+
 
 namespace PreStart.Behaviors
 {
@@ -20,8 +21,8 @@ namespace PreStart.Behaviors
 
         public bool IsValid
         {
-            private set { SetValue(IsvalidPropertyKey, value);}
-            get { return (bool) GetValue(IsValidProperty); }
+            private set { SetValue(IsvalidPropertyKey, value); }
+            get { return (bool)GetValue(IsValidProperty); }
         }
 
         protected override void OnAttachedTo(Editor entry)
@@ -40,13 +41,13 @@ namespace PreStart.Behaviors
         // Behavior implementation
         void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
-            Editor editor = (Editor) sender;
+            Editor editor = (Editor)sender;
             IsValid = IsValidForm(editor.Text);
         }
 
         bool IsValidForm(string str)
         {
-            if (String.IsNullOrEmpty(str))
+            if (String.IsNullOrEmpty(str) | String.IsNullOrWhiteSpace(str))
             {
                 return false;
             }

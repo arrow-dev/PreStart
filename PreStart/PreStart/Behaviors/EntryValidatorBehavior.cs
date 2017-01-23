@@ -5,8 +5,13 @@ namespace PreStart.Behaviors
 {
     public class EntryValidatorBehavior : Behavior<Entry>
     {
-        static readonly BindablePropertyKey IsValidPropertyKey = 
-            BindableProperty.CreateReadOnly("IsValid", typeof(bool),typeof(EntryValidatorBehavior), false);
+        //an IsValid property that is backed by a bindable property
+        //it is a read-only bindable property.
+        private static readonly BindablePropertyKey IsValidPropertyKey =
+            BindableProperty.CreateReadOnly("isValid",
+                typeof(bool),
+                typeof(BehaviorsTest),
+                false);
 
         public static readonly BindableProperty IsValidProperty =
             IsValidPropertyKey.BindableProperty;

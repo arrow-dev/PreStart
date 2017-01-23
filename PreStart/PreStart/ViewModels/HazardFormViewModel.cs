@@ -21,7 +21,7 @@ namespace PreStart.ViewModels
         private Command doneCommand;
 
         public Command DoneCommand
-            => doneCommand ?? (doneCommand = new Command(async () => await ExecuteDoneCommand()));
+            => doneCommand ?? (doneCommand = new Command(async () => await ExecuteDoneCommand(),()=> false));
 
         async Task ExecuteDoneCommand()
         {
@@ -31,14 +31,6 @@ namespace PreStart.ViewModels
 
             try
             {
-
-
-
-
-
-
-
-
                 //Get Hazard sync table context
                 var table = await App.CloudService.GetTableAsync<Hazard>();
 
