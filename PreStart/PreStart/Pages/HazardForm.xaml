@@ -7,31 +7,32 @@
              
              
   <StackLayout VerticalOptions="Center">
-  
-    
-  
-    
-
     <StackLayout>
-      <Label Text ="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}"
-           HorizontalTextAlignment="Center"></Label>
-      <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
-           HorizontalTextAlignment="Center"></Label>
+      <Label Text ="STAY SAFE" 
+             TextColor="Red" 
+             Font="{x:Static local:Template.TitleFont}"
+            HorizontalTextAlignment="Center"/>
+      <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" 
+             Font="{x:Static local:Template.ParaFont}"
+             HorizontalTextAlignment="Center"/>
     </StackLayout>
   
         
 
     <ScrollView Orientation="Vertical">
-      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+      <StackLayout Orientation="Vertical" 
+                   VerticalOptions="FillAndExpand">
   
 
       <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
-        <BoxView HeightRequest="1" Color="Silver"></BoxView>
+        <BoxView HeightRequest="1" 
+                 Color="Silver"/>
       </StackLayout>
 
 
-      <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-         <Label Text="Hazard Description:"></Label>
+      <StackLayout Orientation="Vertical" 
+                   Padding="{x:Static local:Template.StackLayoutSection}">
+         <Label Text="Hazard Description:"/>
          <Editor Text="{Binding Hazard.Description, Mode=TwoWay}">
             <Editor.Behaviors>
               <toolkit:EditorValidatorBehavior x:Name="validForm1"/>
@@ -40,147 +41,182 @@
       </StackLayout>
        
 
-        <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-        
-            <Label Text="What could go wrong?:"></Label>
-            <Editor VerticalOptions="Center" HeightRequest="100" Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
-              <Editor.Behaviors>
-                <toolkit:EditorValidatorBehavior x:Name="validForm2"/>
-              </Editor.Behaviors>
-      
-      
+      <StackLayout Orientation="Vertical" 
+                   Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="What could go wrong?:"/>
+            <Editor VerticalOptions="Center" 
+                    HeightRequest="100" 
+                    Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
+            <Editor.Behaviors>
+                 <toolkit:EditorValidatorBehavior x:Name="validForm2"/>
+            </Editor.Behaviors>
             </Editor>
-          </StackLayout>
+       </StackLayout>
    
-
-  
-  
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="Risk Before:"></Label>
+       <StackLayout Orientation="Vertical" 
+                    Padding="{x:Static local:Template.StackLayoutSection}">
+          <Label Text="Risk Before:"/>
             <StackLayout Orientation="Horizontal">
-               <Label x:Name="LabelRiskBefore" HeightRequest="30" WidthRequest="75" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskBefore, Mode=TwoWay}"></Label>
-               <Button x:Name="RiskBeforeBtn" Text="+" Clicked="RiskBeforeBtn_OnClick"></Button>
+               <Label x:Name="LabelRiskBefore" 
+                      HeightRequest="30" 
+                      WidthRequest="75" 
+                      VerticalOptions="CenterAndExpand" 
+                      Text="{Binding Hazard.RiskBefore, Mode=TwoWay}"/>
+               <Button x:Name="RiskBeforeBtn" 
+                       Text="+" 
+                       Clicked="RiskBeforeBtn_OnClick"/>
             </StackLayout>
-          </StackLayout>
+        </StackLayout>
 
 
-
-          <StackLayout x:Name="riskbeforeslider" VerticalOptions="Center" IsVisible="False">
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-              <Label Text="Potential Consequence Level:"></Label>
+        <StackLayout x:Name="riskbeforeslider" 
+                     VerticalOptions="Center" 
+                     IsVisible="False">
+           <StackLayout Orientation="Vertical" 
+                        Padding="{x:Static local:Template.StackLayoutSection}">
+              <Label Text="Potential Consequence Level:"/>
                 <StackLayout Orientation="Horizontal">
-                  <Label x:Name="RBPCL" Text="Insignificant" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
-                  <Slider x:Name="RBSliderPCL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+                  <Label x:Name="RBPCL" 
+                         Text="Insignificant" 
+                         HeightRequest="30" 
+                         WidthRequest="150" 
+                         VerticalOptions="CenterAndExpand"/>
+                  <Slider x:Name="RBSliderPCL" 
+                          HorizontalOptions="FillAndExpand" 
+                          VerticalOptions="Center"  
+                          Maximum="5" 
+                          Minimum="1"/>
                 </StackLayout>
             </StackLayout>
 
 
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-              <Label Text="Potential Likelihood Level:"></Label>
+            <StackLayout Orientation="Vertical" 
+                         Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Likelihood Level:"/>
                 <StackLayout Orientation="Horizontal">
-                  <Label x:Name="RBPLL" Text="Rare" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
-                  <Slider x:Name="RBSliderPLL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+                  <Label x:Name="RBPLL" 
+                         Text="Rare" 
+                         HeightRequest="30" 
+                         WidthRequest="150" 
+                         VerticalOptions="CenterAndExpand"/>
+                  <Slider x:Name="RBSliderPLL" 
+                          HorizontalOptions="FillAndExpand" 
+                          VerticalOptions="Center"  
+                          Maximum="5" 
+                          Minimum="1"/>
                 </StackLayout>
             </StackLayout>
-          </StackLayout>
+         </StackLayout>
           
 
 
         
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
             <Label>
               <Label.FormattedText>
                 <FormattedString>
                   <Span Text="How will you "/>
-                  <Span Text="Eliminate" FontAttributes="Bold"></Span>
-                  <Span Text=", "></Span>
-                  <Span Text="Isolate" FontAttributes="Bold"></Span>
-                  <Span Text=", or "></Span>
-                  <Span Text="Minimise " FontAttributes="Bold"></Span>
-                  <Span Text="the hazard? How can I make it safe?"></Span>
+                  <Span Text="Eliminate" 
+                        FontAttributes="Bold"/>
+                  <Span Text=", "/>
+                  <Span Text="Isolate" 
+                        FontAttributes="Bold"/>
+                  <Span Text=", or "/>
+                  <Span Text="Minimise " 
+                        FontAttributes="Bold"/>
+                  <Span Text="the hazard? How can I make it safe?"/>
                 </FormattedString>
               </Label.FormattedText>
-
             </Label>
-            <Editor VerticalOptions="Center" Text="{Binding Hazard.Response, Mode=TwoWay}"  HeightRequest="100">
+            
+            <Editor VerticalOptions="Center" 
+                    Text="{Binding Hazard.Response, Mode=TwoWay}"  
+                    HeightRequest="100">
                 <Editor.Behaviors>
-                <toolkit:EditorValidatorBehavior x:Name="validForm3"/>
-              </Editor.Behaviors>        
-      
-      
+                    <toolkit:EditorValidatorBehavior x:Name="validForm3"/>
+                </Editor.Behaviors>    
             </Editor>
           </StackLayout>
         
 
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="Risk After:"></Label>
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="Risk After:"/>
             <StackLayout Orientation="Horizontal">
-               <Label x:Name="LabelRiskAfter" HeightRequest="30" WidthRequest="75" VerticalOptions="CenterAndExpand" Text="{Binding Hazard.RiskAfter, Mode=TwoWay}"></Label>
-               <Button x:Name="RiskAfterBtn" Text="+" Clicked="RiskAfterBtn_OnClick"></Button>
+               <Label x:Name="LabelRiskAfter" 
+                      HeightRequest="30" 
+                      WidthRequest="75" 
+                      VerticalOptions="CenterAndExpand" 
+                      Text="{Binding Hazard.RiskAfter, Mode=TwoWay}"/>
+               <Button x:Name="RiskAfterBtn" 
+                       Text="+" 
+                       Clicked="RiskAfterBtn_OnClick"/>
             </StackLayout>
           </StackLayout>
 
 
-          <StackLayout x:Name="riskafterslider" VerticalOptions="Center" IsVisible="False">
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-              <Label Text="Potential Consequence Level:"></Label>
+          <StackLayout x:Name="riskafterslider" 
+                       VerticalOptions="Center" 
+                       IsVisible="False">
+            <StackLayout Orientation="Vertical" 
+                         Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Consequence Level:"/>
               <StackLayout Orientation="Horizontal">
-                <Label x:Name="RAPCL" Text="Insignificant" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
-                <Slider x:Name="RASliderPCL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+                <Label x:Name="RAPCL" 
+                       Text="Insignificant" 
+                       HeightRequest="30" 
+                       WidthRequest="150" 
+                       VerticalOptions="CenterAndExpand" />
+                <Slider x:Name="RASliderPCL" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="Center" 
+                        Maximum="5" 
+                        Minimum="1"/>
               </StackLayout>
             </StackLayout>
 
 
-            <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-              <Label Text="Potential Likelihood Level:"></Label>
+            <StackLayout Orientation="Vertical" 
+                         Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Likelihood Level:"/>
               <StackLayout Orientation="Horizontal">
-                <Label x:Name="RAPLL" Text="Rare" HeightRequest="30" WidthRequest="150" VerticalOptions="CenterAndExpand" ></Label>
-                <Slider x:Name="RASliderPLL" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Maximum="5" Minimum="1"></Slider>
+                <Label x:Name="RAPLL" 
+                       Text="Rare" 
+                       HeightRequest="30" 
+                       WidthRequest="150" 
+                       VerticalOptions="CenterAndExpand"/>
+                <Slider x:Name="RASliderPLL" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="Center"  
+                        Maximum="5" 
+                        Minimum="1"/>
               </StackLayout>
             </StackLayout>
           </StackLayout>
 
 
           
-          <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+          <StackLayout Orientation="Vertical" 
+                       VerticalOptions="Center" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
             <Button Text="Save" 
                     TextColor="White" 
                     BackgroundColor="Blue" 
                     HorizontalOptions="Center"
-                    Command="{Binding DoneCommand}"
-                    >
-              
+                    Command="{Binding DoneCommand}">
               <Button.Triggers>
                 <MultiTrigger TargetType="Button">
-                  
                     <MultiTrigger.Conditions>
                       <BindingCondition Binding="{Binding Source={x:Reference validForm1}, Path=IsValid}" Value="true"></BindingCondition>
                       <BindingCondition Binding="{Binding Source={x:Reference validForm2}, Path=IsValid}" Value="true"></BindingCondition>
                       <BindingCondition Binding="{Binding Source={x:Reference validForm3}, Path=IsValid}" Value="true"></BindingCondition>
                     </MultiTrigger.Conditions>
                     <Setter Property="IsEnabled" Value="true"/>
-                  
                 </MultiTrigger>
               </Button.Triggers>
-  
-
             </Button>
-          
-      
-      
-      
           </StackLayout>
-      
-      
-      
-          
-              
-            
-          
-          
-
-          
-
     </StackLayout>
   </ScrollView>
 </StackLayout>
