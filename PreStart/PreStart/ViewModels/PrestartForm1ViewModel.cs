@@ -39,14 +39,14 @@ namespace PreStart.ViewModels
                 //Get yesterday's form and prefill some properties
                 var table = await App.CloudService.GetTableAsync<Prestart>();
                 var items = await table.ReadAllItemsAsync();
-                items.OrderByDescending(I => I.CreatedAt);
+                items.Where(p => p.SiteId == Prestart.SiteId).OrderByDescending(I => I.CreatedAt);
                 var item = items.Last();
                 Prestart.Department = item.Department;
                 Prestart.ContractName = item.ContractName;
                 Prestart.ContractNumber = item.ContractNumber;
                 Prestart.Location = item.Location;
                 Prestart.LotNo = item.LotNo;
-                Prestart.SiteId = item.SiteId;
+                Prestart.EmergencyPlan = item.EmergencyPlan;
                 Prestart.JobNumber = item.JobNumber;
                 Prestart.TmpNumber = item.TmpNumber;
                 Prestart.SiteFirstAider = item.SiteFirstAider;
