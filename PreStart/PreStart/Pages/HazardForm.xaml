@@ -3,18 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:toolkit="clr-namespace:PreStart.Behaviors;assembly=PreStart"
-             
-             
-             
              x:Class="PreStart.Pages.HazardForm">
-
-  
-  
-    
-  
-
-    
-<StackLayout VerticalOptions="Center">
+             
+             
+  <StackLayout VerticalOptions="Center">
   
     
   
@@ -29,27 +21,23 @@
   
         
 
-  <ScrollView Orientation="Vertical">
-    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <ScrollView Orientation="Vertical">
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
   
 
-  <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
-    <BoxView HeightRequest="1" Color="Silver"></BoxView>
-    </StackLayout>
+      <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
+        <BoxView HeightRequest="1" Color="Silver"></BoxView>
+      </StackLayout>
 
 
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
-            <Label Text="Hazard Description:"></Label>
-            <Editor Text="{Binding Hazard.Description, Mode=TwoWay}">
-              <Editor.Behaviors>
-                <toolkit:BehaviorsTest x:Name="validForm1"/>
-              </Editor.Behaviors>
-      
-      
-      
-        
-            </Editor>
-          </StackLayout>
+      <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
+         <Label Text="Hazard Description:"></Label>
+         <Editor Text="{Binding Hazard.Description, Mode=TwoWay}">
+            <Editor.Behaviors>
+              <toolkit:EditorValidatorBehavior x:Name="validForm1"/>
+            </Editor.Behaviors>
+         </Editor>
+      </StackLayout>
        
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
@@ -57,7 +45,7 @@
             <Label Text="What could go wrong?:"></Label>
             <Editor VerticalOptions="Center" HeightRequest="100" Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
               <Editor.Behaviors>
-                <toolkit:BehaviorsTest x:Name="validForm2"/>
+                <toolkit:EditorValidatorBehavior x:Name="validForm2"/>
               </Editor.Behaviors>
       
       
@@ -116,7 +104,7 @@
             </Label>
             <Editor VerticalOptions="Center" Text="{Binding Hazard.Response, Mode=TwoWay}"  HeightRequest="100">
                 <Editor.Behaviors>
-                <toolkit:BehaviorsTest x:Name="validForm3"/>
+                <toolkit:EditorValidatorBehavior x:Name="validForm3"/>
               </Editor.Behaviors>        
       
       

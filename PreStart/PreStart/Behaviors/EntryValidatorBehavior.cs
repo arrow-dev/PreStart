@@ -10,7 +10,7 @@ namespace PreStart.Behaviors
         private static readonly BindablePropertyKey IsValidPropertyKey =
             BindableProperty.CreateReadOnly("isValid",
                 typeof(bool),
-                typeof(BehaviorsTest),
+                typeof(EditorValidatorBehavior),
                 false);
 
         public static readonly BindableProperty IsValidProperty =

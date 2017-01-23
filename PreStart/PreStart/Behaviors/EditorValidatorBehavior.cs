@@ -6,8 +6,11 @@ namespace PreStart.Behaviors
 {
     class EditorValidatorBehavior : Behavior<Editor>
     {
-        static readonly BindablePropertyKey IsValidPropertyKey =
-            BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(EditorValidatorBehavior), false);
+        private static readonly BindablePropertyKey IsValidPropertyKey =
+            BindableProperty.CreateReadOnly("IsValid", 
+                typeof(bool), 
+                typeof(EditorValidatorBehavior), 
+                false);
 
         public static readonly BindableProperty IsValidProperty =
             IsValidPropertyKey.BindableProperty;

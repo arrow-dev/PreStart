@@ -42,7 +42,6 @@
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Behaviors\BehaviorBase.cs" />
-    <Compile Include="Behaviors\BehaviorsTest.cs" />
     <Compile Include="Behaviors\EditorValidatorBehavior.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
     <Compile Include="Behaviors\EventToCommandBehavior.cs" />
