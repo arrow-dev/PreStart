@@ -13,7 +13,4 @@
         </StackLayout>
       </ContentPage>
   </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <local:SiteListPage/>
-  </MasterDetailPage.Detail>
 </MasterDetailPage>

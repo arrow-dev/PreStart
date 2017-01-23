@@ -11,7 +11,7 @@ namespace PreStart.Pages
         public PrestartForm1(string id)
         {
             InitializeComponent();
-            BindingContext = new PrestartForm1ViewModel(new Prestart { SiteId = id });
+            BindingContext = new PrestartForm1ViewModel(new Prestart { SiteId = id }, Navigation);
         }
 
 

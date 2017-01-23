@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:controls="clr-namespace:PreStart.ViewModels;assembly=PreStart"
+             xmlns:valueConverters="clr-namespace:PreStart.ValueConverters;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartDetail"  
              Padding="{x:Static local:Template.PagePadding}">
+<ContentPage.Resources>
+  <ResourceDictionary>
+    <valueConverters:DateTimeToString x:Key="DateTimeToString"/>
+    
 
+  </ResourceDictionary>
+</ContentPage.Resources>
   
   <ScrollView>
     <StackLayout>
@@ -24,27 +31,44 @@
       <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
       <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
 
-      <StackLayout Orientation="Horizontal">
+      <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+           
         <Label  Text="Date:" TextColor="{x:Static local:Template.fhBlue}"
-                WidthRequest="150" VerticalOptions="Center"/>
-        <Label FontSize="14" TextColor="Black"
-               WidthRequest="150" VerticalOptions="Center"
+              VerticalOptions="Center"/>
+      
+        <Label FontSize="Small" TextColor="Black"
+             VerticalOptions="Center"
                HorizontalOptions="FillAndExpand"
-               Text="{Binding DateString, Mode=OneWay}"/>
-
-
-
+               Text="{ Binding CreatedAt, Converter={StaticResource DateTimeToString }}"/>
 
       </StackLayout>
 
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-        <Label  Text="Contract Name:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
+
+      <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+        <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"></BoxView>
+
+      </StackLayout>
+
+      <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
+          <Label Text="Prestart Part 1" FontSize="Medium"></Label>
+      </StackLayout>
+      
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+
+      
+        
+        <Label  Text="Contract Name:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
+         
         <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractName }" />
 
+      </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+        
         <Label  Text="Contract Number:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
+               VerticalOptions="Center"/>
         <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractNumber }"/>
+    
       </StackLayout>
 
 
@@ -52,110 +76,147 @@
 
 
 
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-        <Label  Text="Location:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+        
+        <Label  Text="Location:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center" />
+             
         <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location }"/>
 
-        <Label  Text="Location Number:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
+        </StackLayout>
+
+    <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+
+      <Label  Text="Location Number:" TextColor="{x:Static local:Template.fhBlue}"
+               VerticalOptions="Center"/>
+        
         <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.LotNo }"/>
+   
+    </StackLayout>
+
+
+
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+
+        <Label  Text="Department:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"/>
+           
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department}"/>
+
+      
+        </StackLayout>
+
+   
+
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+        
+        <Label  Text="Job Number:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center" />
+               
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber}"/>
+    
       </StackLayout>
+    
+    
+    <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+      
+      <Label  Text="STMS:" TextColor="{x:Static local:Template.fhBlue}"
+                  VerticalOptions="Center"/>
+      <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber}"/>
+      
+    </StackLayout>
 
-
-
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-        <Label  Text="Department:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, }"/>
-        <Label  Text="Project / Site:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Project }"/>
-      </StackLayout>
-
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-        <Label  Text="Job Number:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, }"/>
-        <Label  Text="STMS:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber }"/>
-      </StackLayout>
-
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label  Text="Person in Charge of Site:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, }"/>
-        <Label  Text="Site First Aider:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider }"/>
+             />
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager}"/>
+        
+        
+       
       </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+      <Label  Text="Site First Aider:" TextColor="{x:Static local:Template.fhBlue}"
+                     VerticalOptions="Center"/>
+      <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider}"/>
+    </StackLayout>
 
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label  Text="TMP:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber }"/>
-        <Label  Text="Certificate Number:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber }"/>
+            />
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber}"/>
+ 
       </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+      <Label  Text="Certificate Number:" TextColor="{x:Static local:Template.fhBlue}"
+            VerticalOptions="Center"/>
+      <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber }"/>
+    </StackLayout>
 
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+      <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label  Text="Quarry Manager in Charge(if applicable):" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
-               WidthRequest="150"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, }"/>
-        <Label  Text="Emergency Response:" TextColor="{x:Static local:Template.fhBlue}"
-               WidthRequest="150" VerticalOptions="Center"/>
-        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, }"/>
+              />
+        <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager}"/>
+
       </StackLayout>
+    
+    <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+      
+      <Label  Text="Emergency Response:" TextColor="{x:Static local:Template.fhBlue}"
+             VerticalOptions="Center"/>
+      <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan}"/>
+   
+    </StackLayout>
 
 
-      <StackLayout Padding="0, 20, 0, 0"></StackLayout>
-
+      <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+        <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"></BoxView>
+    
+</StackLayout>
+      
+     <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
+       <Label Text="Prestart Part 2" FontSize="Medium"></Label>
+     </StackLayout>
 
 
 
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}"  >
         <Label Text="What is the Plan for the day?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.Plan,}" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.Plan,}" VerticalOptions="Center" />
       </StackLayout>
 
 
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label Text="Who is Doing what on this site?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.Doing, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.Doing, }" VerticalOptions="Center"/>
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
         <Label Text="What Plant &amp; Equipment do we require?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.PlantEquipment, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.PlantEquipment, }" VerticalOptions="Center" />
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
         <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"
                TextColor="{x:Static local:Template.fhBlue}"/>
 
-        <Label Text="{Binding Prestart.SpecialRequirements, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.SpecialRequirements, }" VerticalOptions="Center" />
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
         <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"
                TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.HoldPoints, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.HoldPoints, }" VerticalOptions="Center"/>
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}"  >
         <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"
                  TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.QualityChecks, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.QualityChecks, }" VerticalOptions="Center"/>
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"
               TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.MinimumProductivityRequirements, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.MinimumProductivityRequirements, }" VerticalOptions="Center" />
       </StackLayout>
 
 
@@ -164,25 +225,35 @@
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label Text="What 'problems' did we have yesterday?" VerticalOptions="Center"
                TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.Problems, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.Problems, }" VerticalOptions="Center" />
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label Text="What opportunities for improvement were identified?" VerticalOptions="Center"
                  TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.Improvements, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.Improvements, }" VerticalOptions="Center" />
       </StackLayout>
 
       <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label Text="What will we do differently today?" VerticalOptions="Center"
                TextColor="{x:Static local:Template.fhBlue}"/>
-        <Label Text="{Binding Prestart.Differences, }" VerticalOptions="Center" HeightRequest="100"/>
+        <Label Text="{Binding Prestart.Differences, }" VerticalOptions="Center"/>
 
       </StackLayout>
 
 
+      <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
+        <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"></BoxView>
+
+      </StackLayout>
 
 
+      <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
+        <Label Text="Prestart Part 3" FontSize="Medium"></Label>
+      </StackLayout>
+  
+        <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
+      </StackLayout>
 
       <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
         <Label Text="Is everyone fit for work?" HorizontalOptions="Center"

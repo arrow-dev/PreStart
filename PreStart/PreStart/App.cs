@@ -9,11 +9,13 @@ namespace PreStart
     {
         public static ICloudService CloudService { get; set; }
 
+        public static SalesforceDataService SalesforceDataService { get; set; }
+
         public App()
         {
             CloudService = new AzureCloudService();
-            MainPage = new NavigationPage(new Menu());
-            
+            SalesforceDataService = new SalesforceDataService();
+            MainPage = new Menu();
         }
 
         protected override void OnStart()

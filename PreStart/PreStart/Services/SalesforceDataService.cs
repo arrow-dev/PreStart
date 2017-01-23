@@ -1,19 +1,36 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using PreStart.Abstractions;
 using PreStart.Models;
+using SQLite;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace PreStart.Services
 {
-    class SalesforceDataService
+    public class SalesforceDataService
     {
-        public async Task<SaleForceResponse<T>> GetData<T>(string query)
-        {
-            var client = new HttpClient();
+        public  SQLiteAsyncConnection LocalData { get; set; }
 
+        public HttpClient Client { get; set; }
+
+        public SalesforceDataService()
+        {
+            LocalData = new SQLiteAsyncConnection(DependencyService.Get<IFileHelper>().GetLocalFilePath("salesforcedata.db")); 
+            Initialize();
+            Client = new HttpClient();
+        }
+
+        private void Initialize()
+        {
+            LocalData.CreateTableAsync<Location>();
+        }
+
+        public async Task<SaleForceResponse<T>> GetOnlineData<T>(string query)
+        {
             Dictionary<string, string> myContent = new Dictionary<string, string>();
             myContent.Add("grant_type", "password");
             myContent.Add("client_id", Config.ConsumerKey);
@@ -24,7 +41,7 @@ namespace PreStart.Services
             HttpContent content = new FormUrlEncodedContent(myContent);
 
             HttpResponseMessage message =
-                await client.PostAsync("https://test.salesforce.com/services/oauth2/token", content);
+                await Client.PostAsync("https://test.salesforce.com/services/oauth2/token", content);
 
             string responseString = await message.Content.ReadAsStringAsync();
             JObject obj = JObject.Parse(responseString);
@@ -37,7 +54,7 @@ namespace PreStart.Services
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, salesforceQuery);
             request.Headers.Add("Authorization", "Bearer " + oauthToken);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response= await client.SendAsync(request);
+            HttpResponseMessage response= await Client.SendAsync(request);
             string result = await response.Content.ReadAsStringAsync();
             var data = JsonConvert.DeserializeObject<SaleForceResponse<T>>(result);
 

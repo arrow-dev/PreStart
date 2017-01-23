@@ -6,12 +6,10 @@ namespace PreStart.Pages
 {
     public partial class TaskManagerPage : ContentPage
     {
-        private TaskManagerViewModel ViewModel;
         public TaskManagerPage(string id)
         {
             InitializeComponent();
-            ViewModel = new TaskManagerViewModel(id);
-            BindingContext = ViewModel;
+            BindingContext = new TaskManagerViewModel(id, Navigation);
         }
 
         private void AddBtn_OnClick(object sender, EventArgs e)
@@ -27,11 +25,6 @@ namespace PreStart.Pages
                 EditContainer.IsVisible = false;
                 Editor.Text = String.Empty;
             }
-        }
-
-        private void TaskManagerPage_OnAppearing(object sender, EventArgs e)
-        {
-            ViewModel.GetTasksAsync();
         }
     }
 }

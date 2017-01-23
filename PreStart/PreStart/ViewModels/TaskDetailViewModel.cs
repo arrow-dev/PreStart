@@ -4,7 +4,6 @@ using PreStart.Pages;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using PreStart;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -16,7 +15,7 @@ namespace PreStart.ViewModels
             get { return task; }
             set { SetProperty(ref task, value, "Task");} }
 
-        public TaskDetailViewModel(Task task)
+        public TaskDetailViewModel(Task task, INavigation navigation) : base(navigation)
         {
             Task = task;
         }
@@ -41,6 +40,30 @@ namespace PreStart.ViewModels
                 }
             }
         }
+        Command refreshCommand;
+
+        public Command RefreshCommand
+            => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
+
+        async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+
+            try
+            {
+                GetHazardsAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
 
         Hazard selectedItem;
         public Hazard SelectedItem
@@ -56,7 +79,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Application.Current.MainPage.Navigation.PushAsync(new Pages.HazardDetailViewPage(selectedItem));
+                    Navigation.PushAsync(new Pages.HazardDetailViewPage(selectedItem));
                     SelectedItem = null;
                 }
             }
@@ -74,7 +97,7 @@ namespace PreStart.ViewModels
             IsBusy = true;
             try
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
+                await Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
             }
             catch (Exception ex)
             {

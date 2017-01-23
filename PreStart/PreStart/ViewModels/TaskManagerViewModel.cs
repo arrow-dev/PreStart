@@ -11,10 +11,9 @@ namespace PreStart.ViewModels
     {
         public string SiteId;
 
-        public TaskManagerViewModel(string siteId)
+        public TaskManagerViewModel(string siteId, INavigation navigation) : base(navigation)
         {
             SiteId = siteId;
-            //GetTasksAsync();
         }
 
         Task selectedItem;
@@ -31,7 +30,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Application.Current.MainPage.Navigation.PushAsync(new Pages.TaskDetailPage(selectedItem));
+                    Navigation.PushAsync(new Pages.TaskDetailPage(selectedItem));
                     SelectedItem = null;
                 }
             }
@@ -65,45 +64,36 @@ namespace PreStart.ViewModels
             }
         }
 
-        //Command refreshCommand;
+        Command refreshCommand;
 
-        //public Command RefreshCommand
-        //    => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
+        public Command RefreshCommand
+            => refreshCommand ?? (refreshCommand = new Command(async () => await ExecuteRefreshCommand()));
 
-        //async System.Threading.Tasks.Task ExecuteRefreshCommand()
-        //{
-        //    if (IsBusy)
-        //        return;
-        //    IsBusy = true;
+        async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
 
-        //    try
-        //    {
-        //        var table = await App.CloudService.GetTableAsync<Task>();
-        //        var items = await table.ReadAllItemsAsync();
-        //        Tasks.Clear();
-        //        foreach (var item in items)
-        //        {
-        //            if (item.PrestartId == PrestartId)
-        //            {
-        //                Tasks.Add(item);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"{ex.Message}");
-        //    }
-        //    finally
-        //    {
-        //        IsBusy = false;
-        //    }
-        //}
+            try
+            {
+                GetTasksAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
 
         Command newCommand;
 
         public Command NewCommand
-            => newCommand ?? (newCommand = new Command(async () => await ExecuteNewCommand()));
-
+            => newCommand ?? (newCommand = new Command(async () => await ExecuteNewCommand(),  () => false));
+        // Not working
         async System.Threading.Tasks.Task ExecuteNewCommand()
         {
             if (IsBusy)

@@ -9,7 +9,7 @@ namespace PreStart.Pages
         public HazardDetailViewPage(Hazard hazard)
         {
             InitializeComponent();
-            BindingContext = new HazardDetailViewModel(hazard);
+            BindingContext = new HazardDetailViewModel(hazard, Navigation);
         }
     }
 }

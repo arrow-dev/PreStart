@@ -1,9 +1,9 @@
 ﻿using PreStart.Abstractions;
 using PreStart.Models;
-using PreStart.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace PreStart.ViewModels
 {
@@ -11,9 +11,9 @@ namespace PreStart.ViewModels
     {
         private IEnumerable<Location> AllSites;
 
-        public SiteListPageViewModel()
+        public SiteListPageViewModel(INavigation navigation) : base(navigation)
         {
-            GetSitesAsync();
+            Sync();
         }
 
         private string searchText;
@@ -44,14 +44,25 @@ namespace PreStart.ViewModels
             set { SetProperty(ref _sites, value, "Sites");}
         }
 
-        public async void GetSitesAsync()
+        public async void Sync()
         {
-            var salesForce = new SalesforceDataService();
-            var response = await salesForce.GetData<Location>("select+id,name+from+location__c+where+country__c='New_Zealand'");
-            AllSites = response.records.OrderBy(i => i.Name);
-            //await App.CloudService.SyncOfflineCacheAsync();
-            //var table = await App.CloudService.GetTableAsync<Site>();
-            //var items = await table.ReadAllItemsAsync();
+            var response = await App.SalesforceDataService.GetOnlineData<Location>("select+id,name+from+location__c+where+country__c='New_Zealand'");
+            var remote = response.records.ToList();
+            var local = await App.SalesforceDataService.LocalData.Table<Location>().ToListAsync();
+            
+            foreach (var item in remote)
+            {
+                if (!local.Exists(i => i.Id == item.Id))
+                {
+                    await App.SalesforceDataService.LocalData.InsertAsync(item);
+                }
+            }
+            GetLocalSitesAsync();
+        }
+
+        public async void GetLocalSitesAsync()
+        {
+            AllSites = await App.SalesforceDataService.LocalData.Table<Location>().OrderBy(l => l.Name).ToListAsync();
             Sites.Clear();
             foreach (var item in AllSites)
             {

@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using Xamarin.Forms;
 
 
 namespace PreStart.Abstractions
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public BaseViewModel(INavigation navigation)
+        {
+            Navigation = navigation;
+        }
+        public INavigation Navigation { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
         string _propTitle = string.Empty;
         bool _propIsBusy;
