@@ -26,8 +26,9 @@
                   <MultiTrigger TargetType="Button">
                   <MultiTrigger.Conditions>
                     <BindingCondition Binding="{Binding Source={x:Reference TaskNameEditorBehavior}, Path=IsValid}" Value="True"/>
-             
                   </MultiTrigger.Conditions>
+                  <Setter Property="IsEnabled"
+                          Value="true"/>  
                   </MultiTrigger>
                 </Button.Triggers>
         </Button>

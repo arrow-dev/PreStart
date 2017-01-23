@@ -2,28 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
-             xmlns:controls="clr-namespace:PreStart.ViewModels;assembly=PreStart"
              xmlns:valueConverters="clr-namespace:PreStart.ValueConverters;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartDetail"  
              Padding="{x:Static local:Template.PagePadding}">
 <ContentPage.Resources>
   <ResourceDictionary>
     <valueConverters:DateTimeToString x:Key="DateTimeToString"/>
-    
-
   </ResourceDictionary>
 </ContentPage.Resources>
   
   <ScrollView>
     <StackLayout>
-
-
-
-
-      <!-- Use styles instead of all the markup extension here?? -->
-
-
-
 
       <Label Text="PRE-START MEETING RECORD" TextColor="{x:Static local:Template.fhBlue}"
              Font="{x:Static local:Template.TitleFont}"

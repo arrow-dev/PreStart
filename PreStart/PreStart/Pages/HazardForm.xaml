@@ -201,8 +201,8 @@
                        VerticalOptions="Center" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
             <Button Text="Save" 
-                    TextColor="White" 
-                    BackgroundColor="Blue" 
+                    TextColor="White"
+                    BackgroundColor="{x:Static local:Template.fhOrange}" 
                     HorizontalOptions="Center"
                     Command="{Binding DoneCommand}">
               <Button.Triggers>

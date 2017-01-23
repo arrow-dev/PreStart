@@ -2,51 +2,93 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
-             x:Class="PreStart.Pages.HazardDetailViewPage">
+             x:Class="PreStart.Pages.HazardDetailViewPage"
+             Padding="{x:Static local:Template.PagePadding}">
+
+
   
+
   <TableView Intent="Form">
     <TableRoot>
       <TableSection>
         
+        <TextCell>
+          <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
+            <Label Text="Hazrad Detail"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"/>
+          </StackLayout>
+        </TextCell>
+        
         <ViewCell>
-          <StackLayout Orientation="Vertical"  >
-            <Label Text="HazardName" HorizontalOptions="Center" ></Label>
-            <Label Text="{Binding Hazard.Description}"></Label>
+          <StackLayout Orientation="Vertical"
+                       Padding="{x:Static local:Template.StackLayoutTitle}">
+            <Label Text="Hazard Name"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+            <Label BackgroundColor="White"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"
+                   Text="{Binding Hazard.Description}"></Label>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="What could go wrong?"></Label>
-            <Label VerticalOptions="Center" Text="{Binding Hazard.Repercussion}" ></Label>
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="What could go wrong?"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+            <Label BackgroundColor="White"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center" 
+                   Text="{Binding Hazard.Repercussion}" />
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="Risk Before"></Label>
-  
-              <Label x:Name="LabelRiskBefore" Text="{Binding Hazard.RiskBefore}"></Label>
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="Risk Before"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+              <Label x:Name="LabelRiskBefore"
+                     BackgroundColor="White"  
+                     HorizontalOptions="FillAndExpand" 
+                     VerticalOptions="Center"
+                     Text="{Binding Hazard.RiskBefore}"/>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"></Label>
-            <Label VerticalOptions="Center"  Text="{Binding Hazard.Response}"></Label>
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+            <Label BackgroundColor="White"  
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="Center"  
+                   Text="{Binding Hazard.Response}"/>
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
-            <Label Text="Risk After"></Label>
-              <Label x:Name="LabelRiskAfter" Text="{Binding Hazard.RiskAfter}"></Label>     
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="Risk After"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+              <Label x:Name="LabelRiskAfter"
+                     BackgroundColor="White"  
+                     HorizontalOptions="FillAndExpand" 
+                     VerticalOptions="Center"
+                     Text="{Binding Hazard.RiskAfter}"/>     
           </StackLayout>
         </ViewCell>
 
         <ViewCell>
-          <StackLayout Orientation="Vertical" VerticalOptions="Center">
-            <Button Text="Save" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center"></Button>
+          <StackLayout Orientation="Vertical" 
+                       VerticalOptions="Center">
+            <Button Text="Save" 
+                    TextColor="White" 
+                    BackgroundColor="Blue" 
+                    HorizontalOptions="Center"/>
           </StackLayout>
         </ViewCell>
 
