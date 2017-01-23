@@ -208,11 +208,15 @@
               <Button.Triggers>
                 <MultiTrigger TargetType="Button">
                     <MultiTrigger.Conditions>
-                      <BindingCondition Binding="{Binding Source={x:Reference validForm1}, Path=IsValid}" Value="true"></BindingCondition>
-                      <BindingCondition Binding="{Binding Source={x:Reference validForm2}, Path=IsValid}" Value="true"></BindingCondition>
-                      <BindingCondition Binding="{Binding Source={x:Reference validForm3}, Path=IsValid}" Value="true"></BindingCondition>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm1}, Path=IsValid}" 
+                                        Value="true"/>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm2}, Path=IsValid}" 
+                                        Value="true"/>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm3}, Path=IsValid}" 
+                                        Value="true"/>
                     </MultiTrigger.Conditions>
-                    <Setter Property="IsEnabled" Value="true"/>
+                    <Setter Property="IsEnabled" 
+                            Value="true"/>
                 </MultiTrigger>
               </Button.Triggers>
             </Button>
