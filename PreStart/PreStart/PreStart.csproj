@@ -49,7 +49,6 @@
     <Compile Include="Config.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Hazard.cs" />
-    <Compile Include="Models\LocalData.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Prestart.cs" />
     <Compile Include="Models\SaleForceResponse.cs" />
