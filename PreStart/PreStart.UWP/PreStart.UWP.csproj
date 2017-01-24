@@ -148,11 +148,6 @@
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="SignaturePad.Forms.UWP">
-      <HintPath>..\..\..\SignaturePad\src\SignaturePad.Forms.UWP\bin\Debug\SignaturePad.Forms.UWP.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
