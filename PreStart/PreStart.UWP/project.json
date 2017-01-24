@@ -7,7 +7,7 @@
     "Xam.Plugin.Connectivity": "2.3.0",
     "Xam.Plugins.Settings": "2.5.1",
     "Xamarin.Controls.SignaturePad.Forms": "1.4.0",
-    "Xamarin.Forms": "2.3.3.175"
+    "Xamarin.Forms": "2.3.3.180"
   },
   "frameworks": {
     "uap10.0": {}
