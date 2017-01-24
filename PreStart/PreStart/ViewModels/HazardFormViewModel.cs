@@ -15,7 +15,6 @@ namespace PreStart.ViewModels
         {
             Hazard = hazard;
         }
-        
 
         private Command doneCommand;
 

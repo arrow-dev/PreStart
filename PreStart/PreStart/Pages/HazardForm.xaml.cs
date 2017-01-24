@@ -25,28 +25,28 @@ namespace PreStart.Pages
 
         private void RiskBeforeBtn_OnClick(object sender, EventArgs e)
         {
-            if (RiskBeforeBtn.Text == "+")
+            if (RiskBeforeBtn.Text == "RATE")
             {
-                RiskBeforeBtn.Text = "-";
+                RiskBeforeBtn.Text = "HIDE";
                 riskbeforeslider.IsVisible = true;
             }
             else
             {
-                RiskBeforeBtn.Text = "+";
+                RiskBeforeBtn.Text = "RATE";
                 riskbeforeslider.IsVisible = false;
             }
         }
 
         private void RiskAfterBtn_OnClick(object sender, EventArgs e)
         {
-            if (RiskAfterBtn.Text == "+")
+            if (RiskAfterBtn.Text == "RATE")
             {
-                RiskAfterBtn.Text = "-";
+                RiskAfterBtn.Text = "HIDE";
                 riskafterslider.IsVisible = true;
             }
             else
             {
-                RiskAfterBtn.Text = "+";
+                RiskAfterBtn.Text = "RATE";
                 riskafterslider.IsVisible = false;
             }
         }
@@ -261,14 +261,14 @@ namespace PreStart.Pages
 
             if (a < 7)
             {
-                label.BackgroundColor = Color.Green;
+                //label.BackgroundColor = Color.Green;
                 label.TextColor = Color.Black;
                 label.Text = "LOW";
             }
 
             if (a >= 7 && a <= 15)
             {
-                label.BackgroundColor = Color.Yellow;
+                //label.BackgroundColor = Color.Yellow;
                 label.TextColor = Color.Black;
                 label.Text = "MEDIUM";
             }
@@ -276,13 +276,13 @@ namespace PreStart.Pages
             if (a >= 16 && a <= 22)
             {
                 label.TextColor = Color.Black;
-                label.BackgroundColor = Color.Red;
+                //label.BackgroundColor = Color.Red;
                 label.Text = "HIGH";
             }
 
             if (a >= 23 && a <= 25)
             {
-                label.BackgroundColor = Color.Black;
+                //label.BackgroundColor = Color.Black;
                 label.TextColor = Color.White;
                 label.Text = "EXTREME";
             }

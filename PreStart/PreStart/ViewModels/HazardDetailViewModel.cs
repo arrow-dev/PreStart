@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using PreStart.Abstractions;
 using PreStart.Models;
+using PreStart.Pages;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -28,7 +29,7 @@ namespace PreStart.ViewModels
             IsBusy = true;
             try
             {
-                //Implementation goes here
+                await Navigation.PushAsync(new HazardForm(Hazard));
             }
             catch (Exception ex)
             {
