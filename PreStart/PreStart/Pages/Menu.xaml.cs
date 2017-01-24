@@ -10,12 +10,12 @@ namespace PreStart.Pages
         public Menu()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new SiteListPage());
+            Detail = new PrestartNavigationPage(new SiteListPage());
         }
 
         private void Site_Select_Button_OnClicked(object sender, EventArgs e)
         {
-            Detail = new NavigationPage(new SiteListPage());
+            Detail = new PrestartNavigationPage(new SiteListPage());
             IsPresented = false;
         }
 
@@ -24,7 +24,7 @@ namespace PreStart.Pages
 
             if (Helpers.Settings.DefaultSiteSetting != string.Empty)
             {
-                Detail = new NavigationPage(new PrestartManagerPage(Helpers.Settings.DefaultSiteSetting));
+                Detail = new PrestartNavigationPage(new PrestartManagerPage(Helpers.Settings.DefaultSiteSetting));
                 IsPresented = false;
             }
         }
@@ -33,7 +33,7 @@ namespace PreStart.Pages
         {
             if (Helpers.Settings.DefaultSiteSetting != string.Empty)
             {
-                Detail = new NavigationPage(new TaskManagerPage(Helpers.Settings.DefaultSiteSetting));
+                Detail = new PrestartNavigationPage(new TaskManagerPage(Helpers.Settings.DefaultSiteSetting));
                 IsPresented = false;
             }
         }

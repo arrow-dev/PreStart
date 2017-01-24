@@ -88,6 +88,7 @@
     <Compile Include="Pages\PrestartManagerPage.xaml.cs">
       <DependentUpon>PrestartManagerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PrestartNavigationPage.cs" />
     <Compile Include="Pages\SiteListPage.xaml.cs">
       <DependentUpon>SiteListPage.xaml</DependentUpon>
     </Compile>
