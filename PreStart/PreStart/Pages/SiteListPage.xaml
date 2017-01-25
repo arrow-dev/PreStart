@@ -8,7 +8,17 @@
     
     
     <Entry Placeholder="Search site"
-           Text="{Binding SearchText, Mode=TwoWay}"></Entry>
+           Text="{Binding SearchText, Mode=TwoWay}">
+      <Entry.Triggers>
+        <DataTrigger TargetType="Entry"
+                     Binding="{Binding IsBusy}"
+                     Value="True">
+          <Setter Property="IsEnabled" Value="False"></Setter>
+        </DataTrigger>
+        
+      </Entry.Triggers>
+    </Entry>
+    <ActivityIndicator IsVisible="{Binding IsBusy}"></ActivityIndicator>
     
 
     <ListView x:Name="listview"

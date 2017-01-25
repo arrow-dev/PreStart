@@ -1,7 +1,10 @@
-﻿using PreStart.Abstractions;
+﻿using Plugin.Connectivity;
+using PreStart.Abstractions;
 using PreStart.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -17,6 +20,7 @@ namespace PreStart.ViewModels
         }
 
         private string searchText;
+
         public string SearchText
         {
             get { return searchText; }
@@ -38,30 +42,56 @@ namespace PreStart.ViewModels
         }
 
         private ObservableCollection<Location> _sites = new ObservableCollection<Location>();
+
         public ObservableCollection<Location> Sites
         {
             get { return _sites; }
-            set { SetProperty(ref _sites, value, "Sites");}
+            set { SetProperty(ref _sites, value, "Sites"); }
         }
 
         public async void Sync()
         {
-            var response = await App.SalesforceDataService.GetOnlineData<Location>("select+id,name+from+location__c+where+country__c='New_Zealand'");
-            var remote = response.records.ToList();
-            var local = await App.SalesforceDataService.LocalData.Table<Location>().ToListAsync();
-            
-            foreach (var item in remote)
+            if (IsBusy)
             {
-                if (!local.Exists(i => i.Id == item.Id))
-                {
-                    await App.SalesforceDataService.LocalData.InsertAsync(item);
-                }
+                return;
             }
-            GetLocalSitesAsync();
+            IsBusy = true;
+            try
+            {
+                if (await CrossConnectivity.Current.IsRemoteReachable("https://test.salesforce.com", 443))
+                {
+                    var response =
+                    await
+                        App.SalesforceDataService.GetOnlineData<Location>(
+                            "select+id,name+from+location__c+where+country__c='New_Zealand'");
+                    var remote = response.records.ToList();
+                    var local = await App.SalesforceDataService.LocalData.Table<Location>().ToListAsync();
+
+                    foreach (var item in remote)
+                    {
+                        if (!local.Exists(i => i.Id == item.Id))
+                        {
+                            await App.SalesforceDataService.LocalData.InsertAsync(item);
+                        }
+                    }
+                }
+                
+                GetLocalSitesAsync();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+            
         }
 
         public async void GetLocalSitesAsync()
         {
+            IsBusy = true;
             AllSites = await App.SalesforceDataService.LocalData.Table<Location>().OrderBy(l => l.Name).ToListAsync();
             Sites.Clear();
             foreach (var item in AllSites)
@@ -72,6 +102,7 @@ namespace PreStart.ViewModels
                     SelectedItem = item;
                 }
             }
+            IsBusy = false;
         }
 
         Location selectedItem;
