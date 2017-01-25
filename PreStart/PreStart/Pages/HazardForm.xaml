@@ -11,7 +11,7 @@
     </ResourceDictionary>
   </ContentPage.Resources>             
              
-  <StackLayout VerticalOptions="Center">
+  <StackLayout>
     <StackLayout>
       <Label Text="HAZARD"
              TextColor="{x:Static local:Template.fhBlue}"
