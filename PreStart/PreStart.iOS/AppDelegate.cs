@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.WindowsAzure;
 
 using Foundation;
 using UIKit;
@@ -23,6 +24,8 @@ namespace PreStart.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
