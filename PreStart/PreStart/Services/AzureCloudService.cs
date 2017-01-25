@@ -34,7 +34,7 @@ namespace PreStart.Services
 
             // Push the Operations Queue to the mobile backend
             
-                await Client.SyncContext.PushAsync();
+            await Client.SyncContext.PushAsync();
             
             
             

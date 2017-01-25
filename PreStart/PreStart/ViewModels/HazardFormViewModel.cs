@@ -1,7 +1,7 @@
-﻿using PreStart.Abstractions;
+﻿using Microsoft.WindowsAzure.MobileServices.Sync;
+using Newtonsoft.Json.Linq;
+using PreStart.Abstractions;
 using PreStart.Models;
-using System;
-using System.Diagnostics;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
 
@@ -33,22 +33,41 @@ namespace PreStart.ViewModels
                 var table = await App.CloudService.GetTableAsync<Hazard>();
 
                 //Add Current Hazard to the table
-                await table.CreateItemAsync(Hazard);
+                if (Hazard.Id == null)
+                {
+                    await table.CreateItemAsync(Hazard);
+                }
+                else
+                {
+                    await table.UpdateItemAsync(Hazard);
+                }
+                
 
                 //Sync with online table
                 await App.CloudService.SyncOfflineCacheAsync();
 
-                //Navigate to the task manager
-                await Navigation.PopAsync(true);
-
             }
-            catch (Exception ex)
+            catch (MobileServicePushFailedException ex)
             {
-                Debug.WriteLine($"{ex.Message}");
+                if (ex.PushResult != null)
+                {
+                    foreach (var error in ex.PushResult.Errors)
+                    {
+                        var serverItem = error.Result.ToObject<Hazard>();
+                        var localItem = error.Item.ToObject<Hazard>();
+
+                        localItem.Version = serverItem.Version;
+                        await error.UpdateOperationAsync(JObject.FromObject(localItem));
+                    }
+                }
             }
             finally
             {
                 IsBusy = false;
+
+
+                //Navigate to the task manager
+                await Navigation.PopAsync(true);
             }
         }
 
