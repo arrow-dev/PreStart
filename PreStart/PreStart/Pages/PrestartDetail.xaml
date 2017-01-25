@@ -28,7 +28,7 @@
         <Label FontSize="Small" TextColor="Black"
              VerticalOptions="Center"
                HorizontalOptions="FillAndExpand"
-               Text="{ Binding CreatedAt, Converter={StaticResource DateTimeToString }}"/>
+               Text="{ Binding Prestart.CreatedAt, Converter = { StaticResource DateTimeToString } }"/>
 
       </StackLayout>
 
