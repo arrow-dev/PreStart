@@ -20,19 +20,12 @@
     
 
 
-  <TableView Intent="Form">
-    <TableRoot>
-      <TableSection>
-        
-        <TextCell>
           <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
             <Label Text="Hazrad Detail"
                    FontSize="Medium"
                    HorizontalOptions="Center"/>
           </StackLayout>
-        </TextCell>
-        
-        <ViewCell>
+
           <StackLayout Orientation="Vertical"
                        Padding="{x:Static local:Template.StackLayoutTitle}">
             <Label Text="Hazard Name"
@@ -42,9 +35,7 @@
                    VerticalOptions="Center"
                    Text="{Binding Hazard.Description}"></Label>
           </StackLayout>
-        </ViewCell>
 
-        <ViewCell>
           <StackLayout Orientation="Vertical" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="What could go wrong?"
@@ -54,9 +45,7 @@
                    VerticalOptions="Center" 
                    Text="{Binding Hazard.Repercussion}" />
           </StackLayout>
-        </ViewCell>
 
-        <ViewCell>
           <StackLayout Orientation="Vertical" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk Before"
@@ -67,9 +56,7 @@
                      VerticalOptions="Center"
                      Text="{Binding Hazard.RiskBefore}"/>
           </StackLayout>
-        </ViewCell>
 
-        <ViewCell>
           <StackLayout Orientation="Vertical" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?"
@@ -79,9 +66,7 @@
                    VerticalOptions="Center"  
                    Text="{Binding Hazard.Response}"/>
           </StackLayout>
-        </ViewCell>
 
-        <ViewCell>
           <StackLayout Orientation="Vertical" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="Risk After"
@@ -92,9 +77,7 @@
                      VerticalOptions="Center"
                      Text="{Binding Hazard.RiskAfter}"/>     
           </StackLayout>
-        </ViewCell>
 
-        <ViewCell>
           <StackLayout Orientation="Vertical" 
                        VerticalOptions="Center">
             <Button Text="EDIT" 
@@ -103,11 +86,7 @@
                     HorizontalOptions="Center"
                     Command="{Binding EditCommand}"/>
           </StackLayout>
-        </ViewCell>
 
-      </TableSection>
-    </TableRoot>
-  </TableView>
       </StackLayout>
 
 </ContentPage>
