@@ -3,13 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.HazardDetailViewPage"
+             Title="Hazard Record"
              Padding="{x:Static local:Template.PagePadding}">
 
     <StackLayout>
-        <Label Text="HAZARD RECORD" 
-               TextColor="{x:Static local:Template.fhBlue}"
-               Font="{x:Static local:Template.TitleFont}"
-               HorizontalOptions="Center"/>
         <Label Text="STAY SAFE" 
                TextColor="Red" 
                Font="{x:Static local:Template.TitleFont}" 
@@ -17,15 +14,7 @@
         <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" 
                Font="{x:Static local:Template.ParaFont}" 
                HorizontalTextAlignment="Center"/>
-    
-
-
-          <StackLayout Padding="{x:Static local:Template.StackLayoutTitle}">
-            <Label Text="Hazrad Detail"
-                   FontSize="Medium"
-                   HorizontalOptions="Center"/>
-          </StackLayout>
-
+  
           <StackLayout Orientation="Vertical"
                        Padding="{x:Static local:Template.StackLayoutTitle}">
             <Label Text="Hazard Name"
