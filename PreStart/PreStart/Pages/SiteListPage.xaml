@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              x:Class="PreStart.Pages.SiteListPage"
-             Title="Select Your Site">
+             Title="Select Your Location">
   <StackLayout Padding="0,20,0,20">
     
     
-    <Entry Placeholder="Search site"
+    <Entry Placeholder="Search Locations"
            Text="{Binding SearchText, Mode=TwoWay}">
       <Entry.Triggers>
         <DataTrigger TargetType="Entry"

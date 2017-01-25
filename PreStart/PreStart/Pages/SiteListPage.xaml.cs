@@ -18,7 +18,7 @@ namespace PreStart.Pages
         void Listview_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             var item = (Location)e.Item;
-            DisplayAlert("Site Selected", item.Name + " is your default site.", "OK");
+            DisplayAlert("Location Selected", item.Name + " is now your default location.", "OK");
         }
     }
 }
