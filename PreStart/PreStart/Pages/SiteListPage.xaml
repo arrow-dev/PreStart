@@ -28,7 +28,7 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="40,0,40,0">
+            <StackLayout Padding="40,0,40,0" VerticalOptions="Center">
               <Label Text="{Binding Name}" TextColor="{x:Static local:Template.fhBlue}"></Label>
             </StackLayout>
           </ViewCell>

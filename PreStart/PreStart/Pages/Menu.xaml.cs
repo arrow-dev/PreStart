@@ -37,5 +37,10 @@ namespace PreStart.Pages
                 IsPresented = false;
             }
         }
+
+        private void Sync_Button_OnClicked(object sender, EventArgs e)
+        {
+            App.CloudService.SyncOfflineCacheAsync();
+        }
     }
 }
