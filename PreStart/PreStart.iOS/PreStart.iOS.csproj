@@ -151,18 +151,6 @@
       <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SignaturePad, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Controls.SignaturePad.1.4.0\lib\Xamarin.iOS\SignaturePad.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SignaturePad.Forms, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Controls.SignaturePad.Forms.1.4.0\lib\Xamarin.iOS\SignaturePad.Forms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SignaturePad.Forms.iOS, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Controls.SignaturePad.Forms.1.4.0\lib\Xamarin.iOS\SignaturePad.Forms.iOS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\sqlite-net-pcl.1.3.1\lib\netstandard1.1\SQLite-net.dll</HintPath>
       <Private>True</Private>
@@ -218,6 +206,12 @@
     <ProjectReference Include="..\PreStart\PreStart.csproj">
       <Project>{91b2c061-faac-414c-9e64-e195e348cf2e}</Project>
       <Name>PreStart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SignaturePad\SignaturePad.Forms.iOS\SignaturePad.Forms.iOS.csproj">
+      <Project>{b12d20aa-0edf-4903-b385-bb8090848532}</Project>
+      <Name>SignaturePad.Forms.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

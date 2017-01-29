@@ -2,6 +2,10 @@
 // SignaturePad.cs: User Control subclass for Windows Phone to allow users to draw their signature on 
 //				   the device to be captured as an image or vector.
 //
+// Author:
+//   Timothy Risi (timothy.risi@gmail.com)
+//
+// Copyright (C) 2012 Timothy Risi
 //
 using Microsoft.Graphics.Canvas;
 using System;
