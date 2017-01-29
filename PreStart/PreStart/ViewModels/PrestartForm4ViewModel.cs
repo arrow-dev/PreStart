@@ -34,7 +34,6 @@ namespace PreStart.ViewModels
 
                 //Add Current Prestart to the table
                 await table.CreateItemAsync(Prestart);
-               var data = await table.ReadAllItemsAsync();
 
                 //Sync with online table
                 await App.CloudService.SyncOfflineCacheAsync();

@@ -29,6 +29,7 @@ namespace PreStart.ViewModels
 
             try
             {
+                
                 //Get Hazard sync table context
                 var table = await App.CloudService.GetTableAsync<Hazard>();
 
