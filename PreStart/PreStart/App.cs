@@ -15,7 +15,7 @@ namespace PreStart
         {
             CloudService = new AzureCloudService();
             SalesforceDataService = new SalesforceDataService();
-            MainPage = new Test();
+            MainPage = new Menu();
         }
 
         protected override void OnStart()
