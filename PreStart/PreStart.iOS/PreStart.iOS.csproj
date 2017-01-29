@@ -207,12 +207,6 @@
       <Project>{91b2c061-faac-414c-9e64-e195e348cf2e}</Project>
       <Name>PreStart</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SignaturePad\SignaturePad.Forms.iOS\SignaturePad.Forms.iOS.csproj">
-      <Project>{b12d20aa-0edf-4903-b385-bb8090848532}</Project>
-      <Name>SignaturePad.Forms.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
