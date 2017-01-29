@@ -138,6 +138,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SignaturePad\SignaturePad.Forms.UWP\SignaturePad.Forms.UWP.csproj">
+      <Project>{ba531734-7754-4ec9-b55f-6a131409d2d9}</Project>
+      <Name>SignaturePad.Forms.UWP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PreStart\PreStart.csproj">
       <Project>{91b2c061-faac-414c-9e64-e195e348cf2e}</Project>
       <Name>PreStart</Name>

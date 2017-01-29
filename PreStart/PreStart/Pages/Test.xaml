@@ -4,6 +4,12 @@
              xmlns:s="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
              x:Class="PreStart.Pages.Test">
   <StackLayout>
-    
+    <s:SignaturePadView x:Name="padView"
+                                HeightRequest="150" WidthRequest="240"
+                                BackgroundColor="White"
+                                CaptionText="Caption This" CaptionTextColor="Black"
+                                ClearText="Clear Me!" ClearTextColor="Red"
+                                PromptText="Prompt Here" PromptTextColor="Red"
+                                SignatureLineColor="Aqua" StrokeColor="Black" StrokeWidth="2" />
   </StackLayout>
 </ContentPage>
