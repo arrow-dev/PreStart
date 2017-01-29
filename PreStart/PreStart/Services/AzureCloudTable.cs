@@ -48,7 +48,7 @@ namespace PreStart.Services
         }
 
         public async Task<T> UpdateItemAsync(T item)
-        {
+        { 
             await Table.UpdateAsync(item);
             return item;
         }
