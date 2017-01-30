@@ -115,8 +115,8 @@ namespace PreStart.ViewModels
         }
 
 
-        Prestart selectedItem;
-        public Prestart SelectedItem
+        SignOn selectedItem;
+        public SignOn SelectedItem
         {
             get { return selectedItem; }
             set
@@ -129,7 +129,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    //Navigation.PushAsync(new Pages.SignOnDetail(selectedItem));
+                    Navigation.PushAsync(new Pages.SignOnDetailPage(selectedItem));
                     SelectedItem = null;
                 }
             }
