@@ -94,6 +94,9 @@
       <DependentUpon>SignOnManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\SignOnManagerViewModel.cs" />
+    <Compile Include="Pages\SignaturePage.xaml.cs">
+      <DependentUpon>SignaturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SiteListPage.xaml.cs">
       <DependentUpon>SiteListPage.xaml</DependentUpon>
     </Compile>
@@ -316,6 +319,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SignOnManager.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SignaturePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
