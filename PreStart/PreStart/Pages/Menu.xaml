@@ -10,7 +10,7 @@
           <Button Text="Site Selection" Clicked="Site_Select_Button_OnClicked"></Button>
           <Button Text="Prestart Manager" Clicked="Prestart_Button_OnClicked"></Button>
           <Button Text="Task Manager" Clicked="Task_Manager_Button_OnClicked"></Button>
-          <Button Text="Sync Offline Data" Clicked="Sync_Button_OnClicked"></Button>
+          <Button Text="Sign In" Clicked="Sign_In_Button_OnClicked"></Button>
         </StackLayout>
       </ContentPage>
   </MasterDetailPage.Master>
