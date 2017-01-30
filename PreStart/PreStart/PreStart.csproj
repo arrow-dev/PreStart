@@ -96,6 +96,7 @@
     <Compile Include="Pages\SignOnManager.xaml.cs">
       <DependentUpon>SignOnManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\SignOnFormViewModel.cs" />
     <Compile Include="ViewModels\SignOnDetailPageViewModel.cs" />
     <Compile Include="ViewModels\SignOnManagerViewModel.cs" />
     <Compile Include="Pages\SignaturePage.xaml.cs">

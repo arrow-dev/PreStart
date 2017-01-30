@@ -12,13 +12,13 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Behaviors>
-    <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"></behaviors:EventToCommandBehavior>
+    <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"/>
   </ContentPage.Behaviors>
 
   <StackLayout>
     <StackLayout Orientation="Horizontal" Padding="40,20,40,20">
-      <Label Text="Sign In's:" TextColor="#0099c7" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
-      <Button x:Name="AddBtn" BackgroundColor="#0099c7" Text="+" TextColor="White" VerticalOptions="Center" FontSize="20" Command="{Binding NewCommand}"></Button>
+      <Label Text="Sign In Record:" TextColor="#0099c7" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"/>
+      <Button x:Name="AddBtn" BackgroundColor="#0099c7" Text="+" TextColor="White" VerticalOptions="Center" FontSize="20" Command="{Binding NewCommand}"/>
     </StackLayout>
     <ListView ItemsSource="{Binding SignOns}"
               RowHeight="50"
@@ -27,9 +27,15 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
-              <Label Text="{Binding CreatedAt, Converter = {StaticResource DateTimeToString} }" TextColor="#0099c7" VerticalOptions="Center"></Label>
-              <Label Text="{Binding Name}" TextColor="#0099c7" HorizontalOptions="StartAndExpand" VerticalOptions="Center"></Label>
-              <Button Text="DELETE" BackgroundColor="Red" TextColor="White" VerticalOptions="Center" Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name= SignOnManagerPage}}" CommandParameter="{Binding Id}"></Button>
+              <Label Text="{Binding CreatedAt, Converter = {StaticResource DateTimeToString} }" TextColor="#0099c7" VerticalOptions="Center"/>
+              <Label Text="{Binding Name}" TextColor="#0099c7" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+              <Button Text="DELETE" 
+                      BackgroundColor="Red" 
+                      TextColor="White" VerticalOptions="Center" 
+                      Command="{Binding Path = BindingContext.DeleteCommand, 
+                                Source={x:Reference 
+                                Name= SignOnManagerPage}}" 
+                      CommandParameter="{Binding Id}"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

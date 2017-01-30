@@ -3,6 +3,7 @@ using PreStart.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using PreStart.Pages;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -73,7 +74,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                //await Navigation.PushAsync(new SignOnForm(Id));
+                await Navigation.PushAsync(new SignaturePage(new SignOn{SiteId = Id}));
             }
             catch (Exception ex)
             {
@@ -129,7 +130,8 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Navigation.PushAsync(new Pages.SignOnDetailPage(selectedItem));
+                    //Navigation.PushAsync(new Pages.SignOnDetail(selectedItem));
+                    //Navigation.PushAsync(new SignaturePage(selectedItem));
                     SelectedItem = null;
                 }
             }
