@@ -18,5 +18,6 @@ namespace PreStart.Models
         public bool SiteInductionComplete { get; set; }
         public string InductionNumber { get; set; }
         public bool AgreeToTerms { get; set; }
+        public byte[] Signature { get; set; }
     }
 }
