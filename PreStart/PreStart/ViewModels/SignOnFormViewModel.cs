@@ -15,7 +15,7 @@ namespace PreStart.ViewModels
 {
     public class SignOnFormViewModel : BaseViewModel
     {
-        private SignOn SignOn { get; set; }
+        public SignOn SignOn { get; set; }
 
         public SignOnFormViewModel(SignOn signOn, INavigation navigation) : base(navigation)
         {
@@ -41,13 +41,14 @@ namespace PreStart.ViewModels
                 if (SignOn.Id == null)
                 {
                     await signon_form_table.CreateItemAsync(SignOn);
-                    await App.CloudService.SyncOfflineCacheAsync();
+
                 }
                 else
                 {
                     await signon_form_table.UpdateItemAsync(SignOn);
-                    await App.CloudService.SyncOfflineCacheAsync();
                 }
+
+                await App.CloudService.SyncOfflineCacheAsync();
             }
             catch (MobileServicePushFailedException ex)
             {

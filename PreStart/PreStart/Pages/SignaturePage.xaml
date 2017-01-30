@@ -26,41 +26,72 @@
                              HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <Label  Text="Employee Name:" 
+                            TextColor="{x:Static local:Template.fhBlue}" 
+                            VerticalOptions="Center"
+                            WidthRequest="150"/>
+                    <Entry BackgroundColor="White"  
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="Center" 
+                           Text="{Binding SignOn.Name, Mode=TwoWay}">
+                    </Entry>
+                    <Label  Text="Employer:" 
+                            TextColor="{x:Static local:Template.fhBlue}"
+                            WidthRequest="150" 
+                            VerticalOptions="Center"/>
+                    <Entry BackgroundColor="White"  
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="Center" 
+                           Text="{Binding SignOn.Employer, Mode=TwoWay}">
+                    </Entry>
+                </StackLayout>
+
+
                 <StackLayout Orientation="Horizontal">
                     <Label Text="High Visible Vest" 
                            HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
                            TextColor="{x:Static local:Template.fhBlue}"/>
-                    <Switch HorizontalOptions="EndAndExpand"  
+                    <Switch HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Center"
                             IsToggled="{Binding SignOn.HiVis, Mode=TwoWay}"/>
                 </StackLayout>
-
+                
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Laced Safety Boots" 
                            HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
                            TextColor="{x:Static local:Template.fhBlue}"/>
-                    <Switch HorizontalOptions="EndAndExpand"  
+                    <Switch HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Center"
                             IsToggled="{Binding SignOn.SafetyBoots, Mode=TwoWay}"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Gloves" 
                            HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
                            TextColor="{x:Static local:Template.fhBlue}"/>
-                    <Switch HorizontalOptions="EndAndExpand"  
+                    <Switch HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Center"
                             IsToggled="{Binding SignOn.Gloves, Mode=TwoWay}"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Hard Hat" 
                            HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
                            TextColor="{x:Static local:Template.fhBlue}"/>
-                    <Switch HorizontalOptions="EndAndExpand"  
+                    <Switch HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Center"
                             IsToggled="{Binding SignOn.HardHat, Mode=TwoWay}"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Hearing Protection" 
                            HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
                            TextColor="{x:Static local:Template.fhBlue}"/>
                     <Switch HorizontalOptions="EndAndExpand"  
                             IsToggled="{Binding SignOn.HearingProtection, Mode=TwoWay}"/>
@@ -69,26 +100,33 @@
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Safety Glasses" 
                            HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
                            TextColor="{x:Static local:Template.fhBlue}"/>
                     <Switch HorizontalOptions="EndAndExpand"  
                             IsToggled="{Binding SignOn.SafetyGlasses, Mode=TwoWay}"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Site Induction Complete(Induction number if applicable)" 
+                    <Label Text="Site Induction Complete" 
                            HorizontalOptions="StartAndExpand"
-                           TextColor="{x:Static local:Template.fhBlue}"/>
-                    <Switch HorizontalOptions="EndAndExpand"  
-                            IsToggled="{Binding SignOn.SiteInductionComplete, Mode=TwoWay}"/>
-                    <Label Text="Induction Number"
-                           HorizontalOptions="End"
                            VerticalOptions="Center"
-                           TextColor="{x:Static local:Template.fhBlue}"
-                           WidthRequest="150"/>
+                           TextColor="{x:Static local:Template.fhBlue}"/>
+                    <Switch HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Center"
+                            IsToggled="{Binding SignOn.SiteInductionComplete, Mode=TwoWay}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label  Text="Induction Number"
+                            TextColor="{x:Static local:Template.fhBlue}" 
+                            VerticalOptions="Center"
+                            WidthRequest="150"/>
                     <Entry BackgroundColor="White"  
-                           HorizontalOptions="FillAndExpand" 
-                           VerticalOptions="Center" 
-                           Text="{Binding SigOn.InductionNumber, Mode=TwoWay}"/>
+                           HorizontalOptions="EndAndExpand" 
+                           VerticalOptions="Center"
+                           Placeholder="if applicable"
+                           Text="{Binding SignOn.InductionNumber, Mode=TwoWay}">
+                    </Entry>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical"
