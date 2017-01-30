@@ -38,9 +38,13 @@ namespace PreStart.Pages
             }
         }
 
-        private void Sync_Button_OnClicked(object sender, EventArgs e)
+        private void Sign_In_Button_OnClicked(object sender, EventArgs e)
         {
-            App.CloudService.SyncOfflineCacheAsync();
+            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
+            {
+                Detail = new PrestartNavigationPage(new SignOnManager(Helpers.Settings.DefaultSiteSetting));
+                IsPresented = false;
+            }
         }
     }
 }

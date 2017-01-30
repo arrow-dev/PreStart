@@ -90,6 +90,10 @@
       <DependentUpon>PrestartManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PrestartNavigationPage.cs" />
+    <Compile Include="Pages\SignOnManager.xaml.cs">
+      <DependentUpon>SignOnManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SignOnManagerViewModel.cs" />
     <Compile Include="Pages\SignaturePage.xaml.cs">
       <DependentUpon>SignaturePage.xaml</DependentUpon>
     </Compile>
@@ -312,6 +316,12 @@
       <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
       <Name>SignaturePad.Forms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SignOnManager.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SignaturePage.xaml">
