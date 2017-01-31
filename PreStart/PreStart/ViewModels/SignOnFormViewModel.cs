@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.WindowsAzure.MobileServices.Sync;
+﻿using Microsoft.WindowsAzure.MobileServices.Sync;
 using Newtonsoft.Json.Linq;
 using PreStart.Abstractions;
 using PreStart.Models;
+using SignaturePad.Forms;
+using System.IO;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -17,9 +13,22 @@ namespace PreStart.ViewModels
     {
         public SignOn SignOn { get; set; }
 
-        public SignOnFormViewModel(SignOn signOn, INavigation navigation) : base(navigation)
+        private SignaturePadView SignaturePad { get; set; }
+
+        public SignOnFormViewModel(SignOn signOn, INavigation navigation, SignaturePadView signaturePadView) : base(navigation)
         {
             SignOn = signOn;
+            SignaturePad = signaturePadView;
+        }
+
+        public async Task<byte[]> GetSigBytes()
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                var stream = await SignaturePad.GetImageStreamAsync(SignatureImageFormat.Png);
+                stream.CopyTo(memoryStream);
+                return memoryStream.ToArray();
+            }
         }
 
         Command agreeCommand;
@@ -34,6 +43,7 @@ namespace PreStart.ViewModels
 
             try
             {
+                SignOn.Signature = await GetSigBytes();
                 //update the online table
                 //Get the online table
                 var signon_form_table = await App.CloudService.GetTableAsync<SignOn>();
