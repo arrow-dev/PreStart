@@ -130,8 +130,8 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    //Navigation.PushAsync(new Pages.SignOnDetail(selectedItem));
-                    //Navigation.PushAsync(new SignaturePage(selectedItem));
+                    Navigation.PushAsync(new SignOnDetailPage(selectedItem));
+                    
                     SelectedItem = null;
                 }
             }

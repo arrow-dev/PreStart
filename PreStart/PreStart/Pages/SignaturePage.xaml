@@ -117,7 +117,7 @@
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label  Text="Induction Number"
+                    <Label  Text="Site Induction Number"
                             TextColor="{x:Static local:Template.fhBlue}" 
                             VerticalOptions="Center"
                             WidthRequest="150"/>
