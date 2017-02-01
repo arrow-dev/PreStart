@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=Prestart"
+             xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm2"
              Title="Prestart Part 2">
 
@@ -22,72 +23,72 @@
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}"  >
           <Label Text="What is the Plan for the day?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}" ></Label>
-          <Editor Text="{Binding Prestart.Plan, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-            <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.Plan, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="PlanEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
 
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
           <Label Text="Who is Doing what on this site?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"></Label>
-          <Editor Text="{Binding Prestart.Doing, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-            <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.Doing, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="DoingEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
           <Label Text="What Plant &amp; Equipment do we require?" VerticalOptions="Center" TextColor="{x:Static local:Template.fhBlue}"></Label>
-          <Editor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-            <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="PlantEquipmentEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
           <Label Text="What special requirements do we need to get the job done safely?" VerticalOptions="Center"
                  TextColor="{x:Static local:Template.fhBlue}"></Label>
 
-          <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-            <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="SpecialRequirementsEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}" >
           <Label Text="When are the hold points for reassessing the Task?" VerticalOptions="Center"
                  TextColor="{x:Static local:Template.fhBlue}"></Label>
-          <Editor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-            <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="HoldPointsEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}"  >
           <Label Text="What Quality Checks need to be completed, by who and where?" VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}" ></Label>
-          <Editor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-            <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="QualityChecksPlanEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" Padding="{x:Static local:Template.StackLayoutSection}">
           <Label Text="What are the minimum productivity targets for the day?" VerticalOptions="Center"
                 TextColor="{x:Static local:Template.fhBlue}"   ></Label>
-          <Editor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
-                      <Editor.Behaviors>
+          <customControls:BorderedEditor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}" VerticalOptions="Center" HeightRequest="100">
+            <customControls:BorderedEditor.Behaviors>
               <behaviors:EditorValidatorBehavior x:Name="MinimumProductivityRequirementsEditorBehavior"/>
-            </Editor.Behaviors>
-          </Editor>
+            </customControls:BorderedEditor.Behaviors>
+          </customControls:BorderedEditor>
         </StackLayout>
 
 

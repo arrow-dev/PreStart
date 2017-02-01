@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
+             xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm1"
              Padding="{x:Static local:Template.PagePadding}"
              Title="Prestart Part 1">
@@ -78,12 +79,7 @@
         </Entry.Behaviors>
       </Entry>
       
-      
-      
- 
-
-   
-      
+     
       <Label  Text="Job Number:" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
       
@@ -157,10 +153,6 @@
         </Entry.Behaviors>
       </Entry>
       
-  
-
- 
-      
       <Label  Text="Quarry Manager in Charge(if applicable):" TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"
              WidthRequest="150"/>
       
@@ -175,11 +167,11 @@
       <Label  Text="Emergency Response:" TextColor="{x:Static local:Template.fhBlue}"
              WidthRequest="150" VerticalOptions="Center"/>
 
-      <Editor BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}">
-        <Editor.Behaviors>
+      <customControls:BorderedEditor BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}">
+        <customControls:BorderedEditor.Behaviors>
           <behaviors:EditorValidatorBehavior x:Name="EmergencyPlanEntryBehavior"/>
-        </Editor.Behaviors>
-      </Editor>
+        </customControls:BorderedEditor.Behaviors>
+      </customControls:BorderedEditor>
 
     </StackLayout>
 

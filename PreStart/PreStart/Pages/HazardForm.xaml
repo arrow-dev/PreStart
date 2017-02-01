@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
              xmlns:toolkit="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              xmlns:valueConverters="clr-namespace:PreStart.ValueConverters;assembly=PreStart"
+             xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              x:Class="PreStart.Pages.HazardForm">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -41,11 +42,11 @@
                    Padding="{x:Static local:Template.StackLayoutSection}">
          <Label Text="Hazard Description:"
                 TextColor="{x:Static local:Template.fhBlue}"/>
-         <Editor Text="{Binding Hazard.Description, Mode=TwoWay}">
-            <Editor.Behaviors>
+         <customControls:BorderedEditor Text="{Binding Hazard.Description, Mode=TwoWay}">
+            <customControls:BorderedEditor.Behaviors>
               <toolkit:EditorValidatorBehavior x:Name="validForm1"/>
-            </Editor.Behaviors>
-         </Editor>
+            </customControls:BorderedEditor.Behaviors>
+         </customControls:BorderedEditor>
       </StackLayout>
        
 
@@ -53,13 +54,17 @@
                    Padding="{x:Static local:Template.StackLayoutSection}">
             <Label Text="What could go wrong?"
                    TextColor="{x:Static local:Template.fhBlue}"/>
-            <Editor VerticalOptions="Center" 
-                    HeightRequest="100" 
-                    Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
-            <Editor.Behaviors>
-                 <toolkit:EditorValidatorBehavior x:Name="validForm2"/>
-            </Editor.Behaviors>
-            </Editor>
+        
+            <customControls:BorderedEditor VerticalOptions="Center" 
+                                           HeightRequest="100" 
+                                           Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
+              
+                          <customControls:BorderedEditor.Behaviors>
+                                <toolkit:EditorValidatorBehavior x:Name="validForm2"/>
+                          </customControls:BorderedEditor.Behaviors>
+              
+            </customControls:BorderedEditor>
+        
        </StackLayout>
    
        <StackLayout Orientation="Vertical" 
@@ -147,13 +152,13 @@
               </Label.FormattedText>
             </Label>
             
-            <Editor VerticalOptions="Center" 
+            <customControls:BorderedEditor VerticalOptions="Center" 
                     Text="{Binding Hazard.Response, Mode=TwoWay}"  
                     HeightRequest="100">
-                <Editor.Behaviors>
+                <customControls:BorderedEditor.Behaviors>
                     <toolkit:EditorValidatorBehavior x:Name="validForm3"/>
-                </Editor.Behaviors>    
-            </Editor>
+                </customControls:BorderedEditor.Behaviors>    
+            </customControls:BorderedEditor>
           </StackLayout>
 
 

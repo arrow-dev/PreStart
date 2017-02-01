@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BorderedEditorRenderer.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Main.cs" />
@@ -209,6 +210,16 @@
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
+    <ProjectReference Include="..\..\SignaturePad\SignaturePad.Forms\SignaturePad.Forms.csproj">
+      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
+      <Name>SignaturePad.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SignaturePad\SignaturePad.iOS\SignaturePad.iOS.csproj">
+      <Project>{bef71536-787b-431f-ac7f-a6469710d11f}</Project>
+      <Name>SignaturePad.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\PreStart\PreStart.csproj">
       <Project>{91b2c061-faac-414c-9e64-e195e348cf2e}</Project>
       <Name>PreStart</Name>
@@ -216,6 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <BundleResource Include="Resources\red-x.png" />
+    <BundleResource Include="Resources\tick-icon.png" />
+    <BundleResource Include="Resources\fulton-hogan.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

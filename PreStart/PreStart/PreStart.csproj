@@ -45,6 +45,7 @@
     <Compile Include="Behaviors\EditorValidatorBehavior.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
     <Compile Include="Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="CustomControls\BorderedEditor.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Hazard.cs" />
