@@ -65,6 +65,9 @@
     <Compile Include="Pages\HazardForm.xaml.cs">
       <DependentUpon>HazardForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
@@ -328,6 +331,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SignOnDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

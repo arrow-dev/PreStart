@@ -10,7 +10,7 @@ namespace PreStart.Pages
         public Menu()
         {
             InitializeComponent();
-            Detail = new PrestartNavigationPage(new SiteListPage());
+            Detail = new PrestartNavigationPage(new HomePage());
         }
 
         private void Site_Select_Button_OnClicked(object sender, EventArgs e)

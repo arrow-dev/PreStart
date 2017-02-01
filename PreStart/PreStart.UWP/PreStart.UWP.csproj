@@ -114,6 +114,7 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fulton-hogan.jpg" />
     <Content Include="red-x.png" />
     <Content Include="tick-icon.png" />
     <Content Include="meeting.png" />
