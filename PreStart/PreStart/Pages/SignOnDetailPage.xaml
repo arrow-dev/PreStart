@@ -20,6 +20,7 @@
         <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" 
                Font="{x:Static local:Template.ParaFont}" 
                HorizontalTextAlignment="Center"/>
+      <ActivityIndicator  IsRunning="{Binding IsBusy}" />
 
 
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">

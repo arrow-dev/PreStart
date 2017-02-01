@@ -18,7 +18,7 @@
         
       </Entry.Triggers>
     </Entry>
-    <ActivityIndicator IsVisible="{Binding IsBusy}"></ActivityIndicator>
+    <ActivityIndicator IsRunning="{Binding IsBusy}"></ActivityIndicator>
     
 
     <ListView x:Name="listview"

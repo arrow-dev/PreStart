@@ -20,6 +20,7 @@
       <Label Text="Sign In Record:" TextColor="#0099c7" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"/>
       <Button x:Name="AddBtn" BackgroundColor="#0099c7" Text="+" TextColor="White" VerticalOptions="Center" FontSize="20" Command="{Binding NewCommand}"/>
     </StackLayout>
+    
     <ListView ItemsSource="{Binding SignOns}"
               RowHeight="50"
               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
