@@ -19,14 +19,16 @@
         <ScrollView Orientation="Vertical">
             <StackLayout Orientation="Vertical" 
                          VerticalOptions="FillAndExpand"
-                         Padding="{x:Static local:Template.PagePadding}">
+                         >
                 <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
                     <BoxView HeightRequest="1" 
                              Color="Silver"
                              HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}"
+                             VerticalOptions="Center">
                     <Label  Text="Employee Name:" 
                             TextColor="{x:Static local:Template.fhBlue}" 
                             VerticalOptions="Center"
@@ -48,7 +50,8 @@
                 </StackLayout>
 
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="High Visible Vest" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -58,7 +61,8 @@
                             IsToggled="{Binding SignOn.HiVis, Mode=TwoWay}"/>
                 </StackLayout>
                 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="Laced Safety Boots" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -68,7 +72,8 @@
                             IsToggled="{Binding SignOn.SafetyBoots, Mode=TwoWay}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="Gloves" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -78,7 +83,8 @@
                             IsToggled="{Binding SignOn.Gloves, Mode=TwoWay}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="Hard Hat" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -88,7 +94,8 @@
                             IsToggled="{Binding SignOn.HardHat, Mode=TwoWay}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="Hearing Protection" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -97,7 +104,8 @@
                             IsToggled="{Binding SignOn.HearingProtection, Mode=TwoWay}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="Safety Glasses" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -106,7 +114,8 @@
                             IsToggled="{Binding SignOn.SafetyGlasses, Mode=TwoWay}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label Text="Site Induction Complete" 
                            HorizontalOptions="StartAndExpand"
                            VerticalOptions="Center"
@@ -116,7 +125,8 @@
                             IsToggled="{Binding SignOn.SiteInductionComplete, Mode=TwoWay}"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             Padding="{x:Static local:Template.StackLayoutSection}">
                     <Label  Text="Site Induction Number"
                             TextColor="{x:Static local:Template.fhBlue}" 
                             VerticalOptions="Center"
@@ -130,7 +140,7 @@
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical"
-                             Padding="0, 70, 0, 0">
+                             Padding="40, 40, 40, 20">
                     <Label Text="I have read and understood the emergency response plan for operational and site specific hazards and controls that are relevent to me."
                            HorizontalOptions="CenterAndExpand"
                            VerticalTextAlignment="Center"
