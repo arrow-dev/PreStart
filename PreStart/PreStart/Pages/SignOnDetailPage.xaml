@@ -23,21 +23,24 @@
       <ActivityIndicator  IsRunning="{Binding IsBusy}" />
 
 
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label  Text="Employee Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
                 <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Name }" />
             </StackLayout> 
 
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label  Text="Employer Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
                 <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Employer }" />
             </StackLayout> 
 
-            <StackLayout Orientation="Vertical" 
+            <StackLayout Orientation="Horizontal"  VerticalOptions="Center"
                      Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label Text="High Visible Vest"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}"/>
-                <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image  HorizontalOptions="EndAndExpand"  
+                        VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
                     <Image.Triggers>
                         <DataTrigger TargetType="Image" Binding="{Binding SignOn.HiVis}" Value="True">
                             <Setter Property="Image.Source" Value="tick-icon.png"/>
@@ -49,9 +52,11 @@
                 </Image>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical" 
+            <StackLayout Orientation="Horizontal" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label Text="Laced Safety Boots"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}"/>
                 <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                     <Image.Triggers>
@@ -65,9 +70,11 @@
                 </Image>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical" 
+            <StackLayout Orientation="Horizontal" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label Text="Gloves"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}"/>
                 <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                     <Image.Triggers>
@@ -81,9 +88,11 @@
                 </Image>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical" 
+            <StackLayout Orientation="Horizontal" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label Text="Hard Hat"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}"/>
                 <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                     <Image.Triggers>
@@ -97,9 +106,11 @@
                 </Image>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical" 
+            <StackLayout Orientation="Horizontal" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label Text="Hearing Protection"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}"/>
                 <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                     <Image.Triggers>
@@ -114,9 +125,11 @@
             </StackLayout>
 
 
-            <StackLayout Orientation="Vertical" 
+            <StackLayout Orientation="Horizontal" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
                 <Label Text="Safety Glasses"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"
                    TextColor="{x:Static local:Template.fhBlue}"/>
                 <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                     <Image.Triggers>
@@ -132,7 +145,7 @@
 
             <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
 
-                <Label  Text="Site Induction Complete" HorizontalOptions="StartAndExpand"
+                <Label  Text="Site Induction Complete" HorizontalOptions="StartAndExpand" VerticalOptions="Center"
                 TextColor="{x:Static local:Template.fhBlue}"></Label>
 
 
