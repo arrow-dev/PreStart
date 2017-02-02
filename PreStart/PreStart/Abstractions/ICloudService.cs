@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using PreStart.Models;
+using System.Threading.Tasks;
+using Task = System.Threading.Tasks.Task;
 
 namespace PreStart.Abstractions
 {
@@ -9,5 +11,7 @@ namespace PreStart.Abstractions
         Task SyncOfflineCacheAsync();
 
         Task LoginAsync();
+
+        Task<AppServiceIdentity> GetIdentityAsync();
     }
 }

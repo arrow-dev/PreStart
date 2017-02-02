@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -21,6 +22,9 @@ namespace PreStart.Pages
             try
             {
                 await App.CloudService.LoginAsync();
+                var identity = await App.CloudService.GetIdentityAsync();
+                var name = identity.UserClaims.FirstOrDefault(c => c.Type.Equals("name")).Value;
+                await DisplayAlert("Welcome", "Welcome to Prestart " + name, "OK");
             }
             catch (Exception ex)
             {

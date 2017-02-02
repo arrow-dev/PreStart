@@ -3,6 +3,8 @@ using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Plugin.Connectivity;
 using PreStart.Abstractions;
 using PreStart.Models;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
@@ -52,6 +54,27 @@ namespace PreStart.Services
         {
             var loginProvider = DependencyService.Get<ILoginProvider>();
             return loginProvider.LoginAsync(Client);
+        }
+
+        private List<AppServiceIdentity> identities = null;
+
+        public async Task<AppServiceIdentity> GetIdentityAsync()
+        {
+            if (Client.CurrentUser == null || Client.CurrentUser?.MobileServiceAuthenticationToken == null)
+            {
+                throw new InvalidOperationException("Not Authenticated");
+            }
+
+            if (identities == null)
+            {
+                identities = await Client.InvokeApiAsync<List<AppServiceIdentity>>("/.auth/me");
+            }
+
+            if (identities.Count > 0)
+            {
+                return identities[0];
+            }
+            return null;
         }
 
         async Task InitializeAsync()

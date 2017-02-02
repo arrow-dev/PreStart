@@ -49,6 +49,7 @@
     <Compile Include="CustomControls\BorderedEditor.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Models\AppServiceIdentity.cs" />
     <Compile Include="Models\Hazard.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Prestart.cs" />
