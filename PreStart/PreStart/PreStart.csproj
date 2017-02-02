@@ -39,6 +39,7 @@
     <Compile Include="Abstractions\ICloudService.cs" />
     <Compile Include="Abstractions\ICloudTable.cs" />
     <Compile Include="Abstractions\IFileHelper.cs" />
+    <Compile Include="Abstractions\ILoginProvider.cs" />
     <Compile Include="Abstractions\TableData.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Behaviors\BehaviorBase.cs" />

@@ -91,6 +91,7 @@
     <Compile Include="BorderedEditorRenderer.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="iOSLoginProvider.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="app.config" />

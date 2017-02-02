@@ -4,6 +4,7 @@ using Plugin.Connectivity;
 using PreStart.Abstractions;
 using PreStart.Models;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
 
 namespace PreStart.Services
@@ -45,6 +46,12 @@ namespace PreStart.Services
             var taskTable =     await GetTableAsync<Models.Task>();  await taskTable.PullAsync();
             var hazardTable =   await GetTableAsync<Hazard>();       await hazardTable.PullAsync();
             var signOnTable =   await GetTableAsync<SignOn>();       await signOnTable.PullAsync();
+        }
+
+        public Task LoginAsync()
+        {
+            var loginProvider = DependencyService.Get<ILoginProvider>();
+            return loginProvider.LoginAsync(Client);
         }
 
         async Task InitializeAsync()
