@@ -14,7 +14,7 @@
         <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" 
                Font="{x:Static local:Template.ParaFont}" 
                HorizontalTextAlignment="Center"/>
-        <ActivityIndicator  IsRunning="{Binding IsBusy}" />
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
 
 
         <ScrollView Orientation="Vertical">

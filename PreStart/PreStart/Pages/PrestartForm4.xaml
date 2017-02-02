@@ -12,7 +12,7 @@
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
     <!-- Use styles instead of all the markup extension here?? -->
-    <ActivityIndicator  IsRunning="{Binding IsBusy}" ></ActivityIndicator>
+    <ActivityIndicator  IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" ></ActivityIndicator>
 
 
     <StackLayout Orientation="Horizontal">
