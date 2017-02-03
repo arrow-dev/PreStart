@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart.Pages;assembly=PreStart"
              x:Class="PreStart.Pages.Menu"
-             MasterBehavior="Popover">
+             MasterBehavior="Popover"
+             IsGestureEnabled="False">
   <MasterDetailPage.Master>
       <ContentPage Title="Menu"> 
         <StackLayout>
