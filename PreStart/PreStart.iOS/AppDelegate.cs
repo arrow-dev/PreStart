@@ -24,6 +24,7 @@ namespace PreStart.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+           
             var t = typeof(SignaturePad.Forms.iOS.SignaturePadRenderer);
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);

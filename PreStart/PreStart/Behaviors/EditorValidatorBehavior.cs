@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace PreStart.Behaviors
 {
-    class EditorValidatorBehavior : Behavior<Editor>
+    public class EditorValidatorBehavior : Behavior<Editor>
     {
         private static readonly BindablePropertyKey IsValidPropertyKey =
             BindableProperty.CreateReadOnly("IsValid", 

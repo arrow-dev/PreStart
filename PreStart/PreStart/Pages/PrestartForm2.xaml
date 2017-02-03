@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart;assembly=PreStart"
-             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=Prestart"
+             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm2"
              Title="Prestart Part 2">
