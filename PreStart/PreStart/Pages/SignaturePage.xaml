@@ -139,47 +139,46 @@
                            Text="{Binding SignOn.InductionNumber, Mode=TwoWay}">
                     </Entry>
                 </StackLayout>
-
-                <StackLayout Orientation="Vertical"
-                             Padding="40, 40, 40, 20">
-                    <Label Text="I have read and understood the emergency response plan for operational and site specific hazards and controls that are relevent to me."
-                           HorizontalOptions="CenterAndExpand"
-                           VerticalTextAlignment="Center"
-                           TextColor="{x:Static local:Template.fhGrey}"/>
-                    <Label Text="I agree to abide to these"
-                           HorizontalOptions="CenterAndExpand"
-                           VerticalTextAlignment="Center"
-                           TextColor="{x:Static local:Template.fhGrey}"/>
-                    <Label Text="AT ALL TIME ON SITE"
-                           HorizontalOptions="CenterAndExpand"
-                           VerticalTextAlignment="Center"
-                           TextColor="Red"/>
-
-
-                    <signaturePad:SignaturePadView x:Name="padView"
-                                    HorizontalOptions="Center"
-                                    HeightRequest="200"
-                                    WidthRequest="280"
-                                    BackgroundColor="White"
-                                    ClearText="Clear Me!"
-                                    ClearTextColor="Black"
-                                    PromptText=" "
-                                    SignatureLineColor="Black"
-                                    StrokeColor="Black"
-                                    StrokeWidth="2"
-                                    />
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical" 
-                             VerticalOptions="Center">
-                    <Button Text="I agree" 
-                            TextColor="White" 
-                            BackgroundColor="{x:Static local:Template.fhOrange}" 
-                            HorizontalOptions="Center" 
-                            Command="{Binding AgreeCommand}"/>
-                </StackLayout>
             </StackLayout>
         </ScrollView>
+   <StackLayout Orientation="Vertical"
+                             Padding="40, 40, 40, 20">
+     <Label Text="I have read and understood the emergency response plan for operational and site specific hazards and controls that are relevent to me."
+            HorizontalOptions="CenterAndExpand"
+            VerticalTextAlignment="Center"
+            TextColor="{x:Static local:Template.fhGrey}"/>
+     <Label Text="I agree to abide to these"
+            HorizontalOptions="CenterAndExpand"
+            VerticalTextAlignment="Center"
+            TextColor="{x:Static local:Template.fhGrey}"/>
+     <Label Text="AT ALL TIME ON SITE"
+            HorizontalOptions="CenterAndExpand"
+            VerticalTextAlignment="Center"
+            TextColor="Red"/>
+
+
+     <signaturePad:SignaturePadView x:Name="padView"
+                     HorizontalOptions="Center"
+                     HeightRequest="200"
+                     WidthRequest="280"
+                     BackgroundColor="White"
+                     ClearText="Clear Me!"
+                     ClearTextColor="Black"
+                     PromptText=" "
+                     SignatureLineColor="Black"
+                     StrokeColor="Black"
+                     StrokeWidth="2"
+                                    />
+   </StackLayout>
+
+   <StackLayout Orientation="Vertical"
+                VerticalOptions="Center">
+     <Button Text="I agree"
+             TextColor="White"
+             BackgroundColor="{x:Static local:Template.fhOrange}"
+             HorizontalOptions="Center"
+             Command="{Binding AgreeCommand}"/>
+   </StackLayout>
 </StackLayout>
 
 
