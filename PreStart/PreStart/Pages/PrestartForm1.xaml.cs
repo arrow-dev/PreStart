@@ -1,6 +1,4 @@
-﻿
-using PreStart.Models;
-using PreStart.ViewModels;
+﻿using PreStart.ViewModels;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
@@ -8,10 +6,10 @@ namespace PreStart.Pages
     public partial class PrestartForm1 : ContentPage
     {
 
-        public PrestartForm1(string id)
+        public PrestartForm1()
         {
             InitializeComponent();
-            BindingContext = new PrestartForm1ViewModel(new Prestart { SiteId = id }, Navigation);
+            BindingContext = new PrestartForm1ViewModel(Navigation);
         }
 
 

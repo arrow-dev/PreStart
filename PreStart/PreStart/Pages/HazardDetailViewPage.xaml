@@ -14,10 +14,20 @@
         <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" 
                Font="{x:Static local:Template.ParaFont}" 
                HorizontalTextAlignment="Center"/>
+
+      <StackLayout Orientation="Vertical"
+                       Padding="{x:Static local:Template.StackLayoutTitle}">
+        <Label Text="What is the Task?"
+               TextColor="{x:Static local:Template.fhBlue}"/>
+        <Label BackgroundColor="White"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"
+               Text="{Binding Hazard.Task}"></Label>
+      </StackLayout>
   
           <StackLayout Orientation="Vertical"
                        Padding="{x:Static local:Template.StackLayoutTitle}">
-            <Label Text="Hazard Name"
+            <Label Text="What is the Hazard?"
                    TextColor="{x:Static local:Template.fhBlue}"/>
             <Label BackgroundColor="White"
                    HorizontalOptions="FillAndExpand"

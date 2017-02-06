@@ -45,7 +45,6 @@ namespace PreStart.Services
 
             // Pull each sync table
             var prestartTable = await GetTableAsync<Prestart>();     await prestartTable.PullAsync();
-            var taskTable =     await GetTableAsync<Models.Task>();  await taskTable.PullAsync();
             var hazardTable =   await GetTableAsync<Hazard>();       await hazardTable.PullAsync();
             var signOnTable =   await GetTableAsync<SignOn>();       await signOnTable.PullAsync();
         }
@@ -87,7 +86,6 @@ namespace PreStart.Services
             var store = new MobileServiceSQLiteStore("offlinecache.db");
             // Define the database schema
             store.DefineTable<Prestart>();
-            store.DefineTable<Models.Task>();
             store.DefineTable<Hazard>();
             store.DefineTable<SignOn>();
 

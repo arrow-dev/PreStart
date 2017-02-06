@@ -38,6 +38,17 @@
                  Color="Silver"/>
       </StackLayout>
 
+      <StackLayout Orientation="Vertical"
+                  Padding="{x:Static local:Template.StackLayoutSection}">
+        <Label Text="Task:"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+        <customControls:BorderedEditor Text="{Binding Hazard.Task, Mode=TwoWay}">
+          <customControls:BorderedEditor.Behaviors>
+            <toolkit:EditorValidatorBehavior x:Name="validForm0"/>
+          </customControls:BorderedEditor.Behaviors>
+        </customControls:BorderedEditor>
+      </StackLayout>
+
 
       <StackLayout Orientation="Vertical" 
                    Padding="{x:Static local:Template.StackLayoutSection}">
@@ -239,6 +250,8 @@
               <Button.Triggers>
                 <MultiTrigger TargetType="Button">
                     <MultiTrigger.Conditions>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm0}, Path=IsValid}"
+                                        Value="true"/>
                       <BindingCondition Binding="{Binding Source={x:Reference validForm1}, Path=IsValid}" 
                                         Value="true"/>
                       <BindingCondition Binding="{Binding Source={x:Reference validForm2}, Path=IsValid}" 

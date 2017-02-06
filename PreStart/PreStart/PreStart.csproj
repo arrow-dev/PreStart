@@ -55,13 +55,6 @@
     <Compile Include="Models\Prestart.cs" />
     <Compile Include="Models\SaleForceResponse.cs" />
     <Compile Include="Models\SignOn.cs" />
-    <Compile Include="Models\Task.cs" />
-    <Compile Include="Pages\DemoPage.xaml.cs">
-      <DependentUpon>DemoPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DetailPage.xaml.cs">
-      <DependentUpon>DetailPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\HazardDetailViewPage.xaml.cs">
       <DependentUpon>HazardDetailViewPage.xaml</DependentUpon>
     </Compile>
@@ -70,9 +63,6 @@
     </Compile>
     <Compile Include="Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MasterPage.xaml.cs">
-      <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
@@ -102,6 +92,9 @@
     <Compile Include="Pages\SignOnManager.xaml.cs">
       <DependentUpon>SignOnManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Tabs.xaml.cs">
+      <DependentUpon>Tabs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValueConverters\ByteToImageFieldConverter.cs" />
     <Compile Include="ViewModels\SignOnFormViewModel.cs" />
     <Compile Include="ViewModels\SignOnDetailPageViewModel.cs" />
@@ -112,12 +105,6 @@
     <Compile Include="Pages\SiteListPage.xaml.cs">
       <DependentUpon>SiteListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TaskDetailPage.xaml.cs">
-      <DependentUpon>TaskDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TaskManagerPage.xaml.cs">
-      <DependentUpon>TaskManagerPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AzureCloudService.cs" />
     <Compile Include="Services\AzureCloudTable.cs" />
@@ -127,7 +114,6 @@
     <Compile Include="ValueConverters\DateTimeToString.cs" />
     <Compile Include="ViewModels\HazardDetailViewModel.cs" />
     <Compile Include="ViewModels\HazardFormViewModel.cs" />
-    <Compile Include="ViewModels\MasterPageItem.cs" />
     <Compile Include="ViewModels\PrestartDetailViewModel.cs" />
     <Compile Include="ViewModels\PrestartForm1ViewModel.cs" />
     <Compile Include="ViewModels\PrestartForm2ViewModel.cs" />
@@ -135,8 +121,6 @@
     <Compile Include="ViewModels\PrestartForm4ViewModel.cs" />
     <Compile Include="ViewModels\PrestartManagerViewModel.cs" />
     <Compile Include="ViewModels\SiteListPageViewModel.cs" />
-    <Compile Include="ViewModels\TaskDetailViewModel.cs" />
-    <Compile Include="ViewModels\TaskManagerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -232,18 +216,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\TaskManagerPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\TaskDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\HazardForm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -274,24 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\PrestartManagerPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\MasterPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\DetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\DemoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -340,6 +294,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Tabs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

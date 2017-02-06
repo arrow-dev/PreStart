@@ -13,6 +13,6 @@
       <ColumnDefinition Width="*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
       <Image Source="fulton-hogan.jpg"  Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center"></Image>
-      <Button Text="Login" Grid.Row="2" TextColor="{x:Static local:Template.fhOrange}" FontSize="72" HorizontalOptions="Center" Clicked="Button_OnClicked"></Button>
+      <Button Text="Create Prestart" Grid.Row="2" TextColor="{x:Static local:Template.fhOrange}" FontSize="72" HorizontalOptions="Center" Clicked="Button_OnClicked"></Button>
   </Grid>
 </ContentPage>

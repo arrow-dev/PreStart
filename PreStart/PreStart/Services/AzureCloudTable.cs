@@ -1,7 +1,6 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 using PreStart.Abstractions;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,20 +9,16 @@ namespace PreStart.Services
     public class AzureCloudTable<T> : ICloudTable<T> where T : TableData
     {
         IMobileServiceSyncTable<T> Table;
-        IMobileServiceTable<T> HistoricTable;
 
         public AzureCloudTable(MobileServiceClient client)
         {
             Table = client.GetSyncTable<T>();
-            HistoricTable = client.GetTable<T>();
         }
 
         public async Task PullAsync()
         {
             var queryName = $"incsync_{typeof(T).Name}";
-            var query = Table.CreateQuery()
-                .Where(r => r.CreatedAt < DateTimeOffset.Now.AddDays(-14));
-            await Table.PullAsync(queryName, query);
+            await Table.PullAsync(queryName, Table.CreateQuery());
         }
 
         public async Task<T> CreateItemAsync(T item)

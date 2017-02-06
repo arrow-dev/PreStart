@@ -1,9 +1,9 @@
 ﻿using PreStart.Abstractions;
 using PreStart.Models;
+using PreStart.Pages;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using PreStart.Pages;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -32,7 +32,7 @@ namespace PreStart.ViewModels
             SignOns.Clear();
             foreach (var item in items)
             {
-                if (item.SiteId == id)
+                if (item.PrestartId == id)
                 {
                     SignOns.Add(item);
                 }
@@ -74,7 +74,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                await Navigation.PushAsync(new SignaturePage(new SignOn{SiteId = Id}));
+                await Navigation.PushAsync(new SignaturePage(new SignOn{PrestartId = Id}));
             }
             catch (Exception ex)
             {

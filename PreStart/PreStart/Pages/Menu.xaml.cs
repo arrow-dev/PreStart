@@ -29,15 +29,6 @@ namespace PreStart.Pages
             }
         }
 
-        private void Task_Manager_Button_OnClicked(object sender, EventArgs e)
-        {
-            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
-            {
-                Detail = new PrestartNavigationPage(new TaskManagerPage(Helpers.Settings.DefaultSiteSetting));
-                IsPresented = false;
-            }
-        }
-
         private void Sign_In_Button_OnClicked(object sender, EventArgs e)
         {
             if (Helpers.Settings.DefaultSiteSetting != string.Empty)

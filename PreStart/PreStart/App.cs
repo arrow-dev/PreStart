@@ -15,8 +15,7 @@ namespace PreStart
         {
             CloudService = new AzureCloudService();
             SalesforceDataService = new SalesforceDataService();
-            MainPage = new Menu();
-            CloudService.SyncOfflineCacheAsync();
+            MainPage = new Tabs();
         }
 
         protected override void OnStart()

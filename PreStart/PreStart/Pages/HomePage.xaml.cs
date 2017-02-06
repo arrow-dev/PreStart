@@ -38,7 +38,7 @@ namespace PreStart.Pages
 
         private void Button_OnClicked(object sender, EventArgs e)
         {
-            ExecuteLoginCommand();
+            Navigation.PushAsync(new PrestartForm1());
         }
     }
 }

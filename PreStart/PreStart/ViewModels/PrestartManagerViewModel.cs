@@ -74,7 +74,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                await Navigation.PushAsync(new PrestartForm1(Id));
+                await Navigation.PushAsync(new PrestartForm1());
             }
             catch (Exception ex)
             {
