@@ -6,7 +6,6 @@ namespace PreStart.Models
     [ImplementPropertyChanged]
     public class SignOn : TableData
     {
-        public string SiteId { get; set; }
         public string Name { get; set; }
         public string Employer { get; set; }
         public bool HiVis { get; set; }
@@ -19,5 +18,6 @@ namespace PreStart.Models
         public string InductionNumber { get; set; }
         public bool AgreeToTerms { get; set; }
         public byte[] Signature { get; set; }
+        public string PrestartId { get; set; }
     }
 }
