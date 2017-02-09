@@ -5,6 +5,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace PreStart.ViewModels
 {
@@ -18,24 +19,23 @@ namespace PreStart.ViewModels
             set { SetProperty(ref preStarts, value , "Prestarts");}
         }
 
-        private string Id;
+        
 
-        public PrestartManagerViewModel(string id, INavigation navigation) : base(navigation)
+        public PrestartManagerViewModel(INavigation navigation) : base(navigation)
         {
-            Id = id;
+           
         }
 
-        public async void GetPrestarts(string id)
+        public async void GetPrestarts()
         {
             var table = await App.CloudService.GetTableAsync<Prestart>();
             var items = await table.ReadAllItemsAsync();
             Prestarts.Clear();
             foreach (var item in items)
             {
-                if (item.SiteId == id)
-                {
+                
                     Prestarts.Add(item);
-                }
+                
             }
         }
         Command refreshCommand;
@@ -50,7 +50,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                GetPrestarts(Id);
+                GetPrestarts();
             }
             catch (Exception ex)
             {
@@ -74,7 +74,15 @@ namespace PreStart.ViewModels
 
             try
             {
-                await Navigation.PushAsync(new PrestartForm1(Id));
+                
+                //var tempMenu = new Menu();
+                //tempMenu.ListView.SelectedItem = "Meeting Room";
+                //await App.Current.MainPage.Navigation.PopToRootAsync();
+                //await Navigation.PushAsync(tempMenu);
+                var tempForm = new PrestartForm1();
+                await Navigation.PushAsync(tempForm);
+
+
             }
             catch (Exception ex)
             {
@@ -102,7 +110,7 @@ namespace PreStart.ViewModels
                 var table = await App.CloudService.GetTableAsync<Prestart>();
                 var prestart = await table.ReadItemAsync(id);
                 await table.DeleteItemAsync(prestart);
-                GetPrestarts(Id);
+                GetPrestarts();
                 await App.CloudService.SyncOfflineCacheAsync();
             }
             catch (Exception ex)

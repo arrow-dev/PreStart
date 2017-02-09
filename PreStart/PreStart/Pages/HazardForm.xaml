@@ -5,7 +5,8 @@
              xmlns:toolkit="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              xmlns:valueConverters="clr-namespace:PreStart.ValueConverters;assembly=PreStart"
              xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
-             x:Class="PreStart.Pages.HazardForm">
+             x:Class="PreStart.Pages.HazardForm"
+             Title="HAZARD FORM">
   <ContentPage.Resources>
     <ResourceDictionary>
       <valueConverters:ColorConverter x:Key="ColorConverter"/>
@@ -14,10 +15,7 @@
              
   <StackLayout>
     <StackLayout>
-      <Label Text="HAZARD"
-             TextColor="{x:Static local:Template.fhBlue}"
-             Font="{x:Static local:Template.TitleFont}"
-             HorizontalOptions="Center"/>
+      
       <Label Text="STAY SAFE"
              TextColor="Red"
              Font="{x:Static local:Template.TitleFont}"

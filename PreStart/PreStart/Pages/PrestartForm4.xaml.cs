@@ -1,4 +1,5 @@
-﻿using PreStart.Models;
+﻿using System;
+using PreStart.Models;
 using PreStart.ViewModels;
 using Xamarin.Forms;
 
@@ -11,5 +12,10 @@ namespace PreStart.Pages
 			InitializeComponent ();
 			BindingContext = new PrestartForm4ViewModel(prestart, Navigation);
 		}
+
+	    private void Button_OnClicked(object sender, EventArgs e)
+	    {
+	        DisplayAlert("Next", "Discuss tasks", "OK");
+	    }
 	}
 }

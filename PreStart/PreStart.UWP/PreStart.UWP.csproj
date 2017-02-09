@@ -115,8 +115,11 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="form.png" />
     <Content Include="fulton-hogan.jpg" />
+    <Content Include="hazard.png" />
     <Content Include="red-x.png" />
+    <Content Include="signon.png" />
     <Content Include="tick-icon.png" />
     <Content Include="meeting.png" />
     <Content Include="Properties\Default.rd.xml" />

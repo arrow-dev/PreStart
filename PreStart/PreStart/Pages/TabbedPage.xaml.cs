@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace PreStart.Pages
 {
-    public partial class DetailPage : ContentPage
+    public partial class TabbedPage : Xamarin.Forms.TabbedPage
     {
-        public DetailPage()
+        public TabbedPage()
         {
             InitializeComponent();
         }

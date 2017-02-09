@@ -8,10 +8,10 @@ namespace PreStart.Pages
     public partial class PrestartForm1 : ContentPage
     {
 
-        public PrestartForm1(string id)
+        public PrestartForm1()
         {
             InitializeComponent();
-            BindingContext = new PrestartForm1ViewModel(new Prestart { SiteId = id }, Navigation);
+            BindingContext = new PrestartForm1ViewModel(new Prestart() , Navigation);
         }
 
 

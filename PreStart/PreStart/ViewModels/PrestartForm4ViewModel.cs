@@ -2,6 +2,9 @@
 using PreStart.Models;
 using System;
 using System.Diagnostics;
+using Windows.System.Display;
+using Windows.UI.Notifications;
+using PreStart.Pages;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
 
@@ -13,6 +16,7 @@ namespace PreStart.ViewModels
 
         public PrestartForm4ViewModel(Prestart prestart, INavigation navigation) : base(navigation)
         {
+            
             Prestart = prestart;
         }
 
@@ -30,16 +34,21 @@ namespace PreStart.ViewModels
             try
             {
                 //Get Prestart sync table context
-               var table =  await App.CloudService.GetTableAsync<Prestart>();
+                
+                var table =  await App.CloudService.GetTableAsync<Prestart>();
 
                 //Add Current Prestart to the table
+                
                 await table.CreateItemAsync(Prestart);
 
                 //Sync with online table
-                await App.CloudService.SyncOfflineCacheAsync();
                 
+                await App.CloudService.SyncOfflineCacheAsync();
+     
                 //Navigate to the task manager
-                await Navigation.PopToRootAsync();
+                await Navigation.PopToRootAsync(true);
+
+
             }
             catch (Exception ex)
             {
@@ -48,6 +57,7 @@ namespace PreStart.ViewModels
             finally
             {
                 IsBusy = false;
+                
             }
         }
         

@@ -5,17 +5,17 @@
              xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
              xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              x:Class="PreStart.Pages.PrestartForm2"
-             Title="Prestart Part 2">
+             Title="PRESTART Part 2">
 
   <StackLayout Orientation="Vertical">
 
 
 
     <!-- Use styles instead of all the markup extension here?? -->
-
+    <ProgressBar Progress="0.4"></ProgressBar>
     <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
     <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
-
+    
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
 

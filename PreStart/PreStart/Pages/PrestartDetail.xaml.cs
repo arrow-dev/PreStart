@@ -6,6 +6,11 @@ namespace PreStart.Pages
 {
     public partial class PrestartDetail : ContentPage
     {
+        public PrestartDetail()
+        {
+            InitializeComponent();
+        }
+
         public PrestartDetail(Prestart prestart)
         {
             InitializeComponent();

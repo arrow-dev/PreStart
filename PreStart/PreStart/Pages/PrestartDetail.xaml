@@ -13,13 +13,6 @@
   
   <ScrollView>
     <StackLayout>
-
-      <Label Text="PRE-START MEETING RECORD" TextColor="{x:Static local:Template.fhBlue}"
-             Font="{x:Static local:Template.TitleFont}"
-             HorizontalOptions="Center"/>
-      <Label Text="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}" HorizontalTextAlignment="Center"></Label>
-      <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}" HorizontalTextAlignment="Center"></Label>
-
       <StackLayout Orientation="Horizontal" Padding="{x:Static local:Template.StackLayoutSection}">
            
         <Label  Text="Date:" TextColor="{x:Static local:Template.fhBlue}"

@@ -5,10 +5,10 @@ namespace PreStart.Pages
 {
     public partial class PrestartManagerPage : ContentPage
     {
-        public PrestartManagerPage(string id)
+        public PrestartManagerPage()
         {
             InitializeComponent();
-            BindingContext = new PrestartManagerViewModel(id, Navigation);
+            BindingContext = new PrestartManagerViewModel(Navigation);
         }
     }
 }

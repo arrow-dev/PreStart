@@ -32,13 +32,13 @@ namespace PreStart.ViewModels
             var table = await App.CloudService.GetTableAsync<Hazard>();
             var items = await table.ReadAllItemsAsync();
             Hazards.Clear();
-            foreach (var item in items)
-            {
-                if (item.TaskId == Task.Id)
-                {
-                    Hazards.Add(item);
-                }
-            }
+            //foreach (var item in items)
+            //{
+            //    if (item.TaskId == Task.Id)
+            //    {
+            //        Hazards.Add(item);
+            //    }
+            //}
         }
         Command refreshCommand;
 
@@ -95,18 +95,18 @@ namespace PreStart.ViewModels
             if (IsBusy)
                 return;
             IsBusy = true;
-            try
-            {
-                await Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"{ex.Message}");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            //try
+            //{
+            //    await Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
+            //}
+            //catch (Exception ex)
+            //{
+            //    Debug.WriteLine($"{ex.Message}");
+            //}
+            //finally
+            //{
+            //    IsBusy = false;
+            //}
         }
 
 

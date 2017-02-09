@@ -6,13 +6,16 @@
              MasterBehavior="Popover"
              IsGestureEnabled="False">
   <MasterDetailPage.Master>
-      <ContentPage Title="Menu"> 
-        <StackLayout>
-          <Button Text="Site Selection" Clicked="Site_Select_Button_OnClicked"></Button>
-          <Button Text="Prestart Manager" Clicked="Prestart_Button_OnClicked"></Button>
-          <Button Text="Task Manager" Clicked="Task_Manager_Button_OnClicked"></Button>
-          <Button Text="Sign In" Clicked="Sign_In_Button_OnClicked"></Button>
-        </StackLayout>
+      <ContentPage Title="Menu">
+        <ListView x:Name="ButtonList">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <Label Text="{Binding .}"/>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
       </ContentPage>
   </MasterDetailPage.Master>
 </MasterDetailPage>

@@ -9,10 +9,10 @@ namespace PreStart.Pages
     {
         private int StepValue;
         
-        public HazardForm(Hazard hazard)
+        public HazardForm()
         {
             InitializeComponent();
-            BindingContext = new HazardFormViewModel(hazard, Navigation);
+            BindingContext = new HazardFormViewModel(Navigation);
             
             RBSliderPCL.ValueChanged += RBPclOnSliderChanged;
             RBSliderPLL.ValueChanged += RBPllOnSliderChanged;

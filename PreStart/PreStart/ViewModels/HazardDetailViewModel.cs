@@ -17,28 +17,28 @@ namespace PreStart.ViewModels
 
         }
         //Edit Command
-        Command editCommand;
+        //Command editCommand;
        
-        public Command EditCommand
-            => editCommand ?? (editCommand = new Command(async () => await ExecuteEditCommand()));
+        //public Command EditCommand
+        //    => editCommand ?? (editCommand = new Command(async () => await ExecuteEditCommand()));
 
-        async System.Threading.Tasks.Task ExecuteEditCommand()
-        {
-            if (IsBusy)
-                return;
-            IsBusy = true;
-            try
-            {
-                await Navigation.PushAsync(new HazardForm(Hazard));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"{ex.Message}");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
+        //async System.Threading.Tasks.Task ExecuteEditCommand()
+        //{
+        //    if (IsBusy)
+        //        return;
+        //    IsBusy = true;
+        //    try
+        //    {
+        //        await Navigation.PushAsync(new HazardForm(Hazard));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine($"{ex.Message}");
+        //    }
+        //    finally
+        //    {
+        //        IsBusy = false;
+        //    }
+        //}
     }
 }

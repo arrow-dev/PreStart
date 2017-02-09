@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PreStart.Pages;assembly=PreStart"
+             x:Class="PreStart.Pages.TabbedPage">
+
+  <local:PrestartManagerPage Title="Prestart Form" Icon="form.png"/>
+  <local:HazardDetailViewPage Title="Hazard" Icon="hazard.png"/>
+  <local:SignOnDetailPage Title="Sign On" Icon="signon.png"/>
+   
+
+</TabbedPage>

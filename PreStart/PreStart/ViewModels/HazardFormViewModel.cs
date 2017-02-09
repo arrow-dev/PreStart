@@ -11,9 +11,9 @@ namespace PreStart.ViewModels
     {
         public Hazard Hazard { get; set; }
 
-        public HazardFormViewModel(Hazard hazard, INavigation navigation) : base(navigation)
+        public HazardFormViewModel(INavigation navigation) : base(navigation)
         {
-            Hazard = hazard;
+            Hazard = new Hazard();
         }
 
         private Command doneCommand;
@@ -65,10 +65,9 @@ namespace PreStart.ViewModels
             finally
             {
                 IsBusy = false;
-
-
+                
                 //Navigate to the task manager
-                await Navigation.PopAsync(true);
+                await Navigation.PopToRootAsync(true);
             }
         }
 

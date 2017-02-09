@@ -6,6 +6,11 @@ namespace PreStart.Pages
 {
     public partial class HazardDetailViewPage : ContentPage
     {
+        public HazardDetailViewPage()
+        {
+            InitializeComponent();
+        }
+
         public HazardDetailViewPage(Hazard hazard)
         {
             InitializeComponent();

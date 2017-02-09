@@ -6,14 +6,14 @@
              xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="PreStart.Pages.PrestartForm3"
-             Title="Prestart Part 3">
+             Title="PREASTART Part 3">
 
   <StackLayout >
     <StackLayout>
 
       <!-- Use styles instead of all the markup extension here?? -->
 
-
+      <ProgressBar Progress="0.6"></ProgressBar>
       <Label Text ="STAY SAFE" TextColor="Red" Font="{x:Static local:Template.TitleFont}"
              HorizontalTextAlignment="Center"></Label>
       <Label Text ="What am I Doing? What could go Wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"

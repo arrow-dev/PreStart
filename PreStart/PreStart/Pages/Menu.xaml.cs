@@ -1,50 +1,53 @@
 ﻿
 using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace PreStart.Pages
 {
     public partial class Menu : MasterDetailPage
     {
-
+        public ListView ListView { get { return ButtonList; } }
         public Menu()
         {
             InitializeComponent();
             Detail = new PrestartNavigationPage(new HomePage());
+
+            var buttons = new ObservableCollection<string> { "Log Book", "Meeting Room" };
+            ButtonList.SetBinding(ListView.ItemsSourceProperty, new Binding("."));
+            ButtonList.BindingContext = buttons;
+            ButtonList.ItemSelected += ButtonList_OnItemSelected;
         }
 
-        private void Site_Select_Button_OnClicked(object sender, EventArgs e)
+        private async void ButtonList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Detail = new PrestartNavigationPage(new SiteListPage());
-            IsPresented = false;
-        }
+            var demopage = new NavigationPage(new TabbedPage());
 
-        private void Prestart_Button_OnClicked(object sender, EventArgs e)
-        {
-
-            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
+            if (e.SelectedItem == null)
             {
-                Detail = new PrestartNavigationPage(new PrestartManagerPage(Helpers.Settings.DefaultSiteSetting));
-                IsPresented = false;
+                return;
             }
-        }
-
-        private void Task_Manager_Button_OnClicked(object sender, EventArgs e)
-        {
-            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
+            if (e.SelectedItem.ToString() == "Meeting Room")
             {
-                Detail = new PrestartNavigationPage(new TaskManagerPage(Helpers.Settings.DefaultSiteSetting));
-                IsPresented = false;
+                var action = await DisplayActionSheet("Start Meeting:", "Cancel", null, "1. Prestart Form", "2. Hazard Form", "3. Sign-On Form");
+                switch (action)
+                {
+                    case "1. Prestart Form":
+                        Detail = new NavigationPage(new PrestartForm1());
+                        break;
+                    case "2. Hazard Form":
+                        Detail = new NavigationPage(new HazardForm());
+                        break;
+                    case "3. Sign-On Form":
+                        Detail = new NavigationPage(new SignaturePage());
+                        break;
+                }
             }
-        }
-
-        private void Sign_In_Button_OnClicked(object sender, EventArgs e)
-        {
-            if (Helpers.Settings.DefaultSiteSetting != string.Empty)
+            else
             {
-                Detail = new PrestartNavigationPage(new SignOnManager(Helpers.Settings.DefaultSiteSetting));
-                IsPresented = false;
+                Detail = demopage;
             }
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

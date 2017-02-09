@@ -6,8 +6,12 @@ namespace PreStart.Pages
 {
     public partial class SignaturePage : ContentPage
     {
-        
 
+        public SignaturePage()
+        {
+            InitializeComponent();
+            BindingContext = new SignOnFormViewModel(Navigation, padView);
+        }
         public SignaturePage(SignOn signOn)
         {
             InitializeComponent();

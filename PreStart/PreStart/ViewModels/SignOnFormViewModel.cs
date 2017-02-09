@@ -15,6 +15,11 @@ namespace PreStart.ViewModels
 
         private SignaturePadView SignaturePad { get; set; }
 
+        public SignOnFormViewModel(INavigation navigation, SignaturePadView signaturePadView) : base(navigation)
+        {
+            SignOn = new SignOn();
+            SignaturePad = signaturePadView;
+        }
         public SignOnFormViewModel(SignOn signOn, INavigation navigation, SignaturePadView signaturePadView) : base(navigation)
         {
             SignOn = signOn;

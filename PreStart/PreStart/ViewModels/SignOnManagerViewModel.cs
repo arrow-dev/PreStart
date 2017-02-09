@@ -30,13 +30,13 @@ namespace PreStart.ViewModels
             var table = await App.CloudService.GetTableAsync<SignOn>();
             var items = await table.ReadAllItemsAsync();
             SignOns.Clear();
-            foreach (var item in items)
-            {
-                if (item.SiteId == id)
-                {
-                    SignOns.Add(item);
-                }
-            }
+            //foreach (var item in items)
+            //{
+            //    if (item.SiteId == id)
+            //    {
+            //        SignOns.Add(item);
+            //    }
+            //}
         }
         Command refreshCommand;
         public Command RefreshCommand
@@ -72,18 +72,18 @@ namespace PreStart.ViewModels
                 return;
             IsBusy = true;
 
-            try
-            {
-                await Navigation.PushAsync(new SignaturePage(new SignOn{SiteId = Id}));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"{ex.Message}");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            //try
+            //{
+            //    await Navigation.PushAsync(new SignaturePage(new SignOn{SiteId = Id}));
+            //}
+            //catch (Exception ex)
+            //{
+            //    Debug.WriteLine($"{ex.Message}");
+            //}
+            //finally
+            //{
+            //    IsBusy = false;
+            //}
         }
 
         Command deleteCommand;

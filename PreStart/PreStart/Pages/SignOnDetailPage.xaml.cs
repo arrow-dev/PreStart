@@ -7,6 +7,12 @@ namespace PreStart.Pages
 {
     public partial class SignOnDetailPage : ContentPage
     {
+        public SignOnDetailPage()
+        {
+            InitializeComponent();
+            
+        }
+
         public SignOnDetailPage(SignOn signOn)
         {
             InitializeComponent();
