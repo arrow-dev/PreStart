@@ -34,19 +34,27 @@ namespace PreStart.ViewModels
             try
             {
                 //Get Prestart sync table context
-                
-                var table =  await App.CloudService.GetTableAsync<Prestart>();
+                var table = await App.CloudService.GetTableAsync<Prestart>();
 
                 //Add Current Prestart to the table
-                
                 await table.CreateItemAsync(Prestart);
 
-                //Sync with online table
-                
+                //Sync local database
                 await App.CloudService.SyncOfflineCacheAsync();
-     
+
                 //Navigate to the task manager
-                await Navigation.PopToRootAsync(true);
+                var action = await App.Current.MainPage.DisplayActionSheet("Prestart Form Saved", "Cancel", null, "Back to Main Page", "Go to Hazard Form");
+
+                switch (action)
+                {
+                    case "Back to Main Page":
+                        await Navigation.PopToRootAsync(true);
+                        break;
+                    case "Go to Hazard Form":
+                        //Go to hazard form
+                        await Navigation.PushAsync(new HazardForm());
+                        break;
+                }
 
 
             }

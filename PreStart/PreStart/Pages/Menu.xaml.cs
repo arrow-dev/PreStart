@@ -32,6 +32,7 @@ namespace PreStart.Pages
             if (e.SelectedItem.ToString() == "Hazard Register/Sign On")
             {
                 Detail = carouselpage;
+                IsPresented = false;
             }
             else if (e.SelectedItem.ToString() == "Meeting Room")
             {
@@ -40,15 +41,18 @@ namespace PreStart.Pages
                 {
                     case "Prestart Form":
                         Detail = new NavigationPage(new PrestartForm1());
+                        IsPresented = false;
                         break;
                     case "Hazard Form":
                         Detail = new NavigationPage(new HazardForm());
+                        IsPresented = false;
                         break;
                 }
             }
             else 
             {
                 Detail = demopage;
+                IsPresented = false;
             }
             ((ListView)sender).SelectedItem = null;
         }

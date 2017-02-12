@@ -13,9 +13,6 @@ namespace PreStart.Pages
 			BindingContext = new PrestartForm4ViewModel(prestart, Navigation);
 		}
 
-	    private void Button_OnClicked(object sender, EventArgs e)
-	    {
-	        DisplayAlert("Next", "Discuss tasks", "OK");
-	    }
+	  
 	}
 }
