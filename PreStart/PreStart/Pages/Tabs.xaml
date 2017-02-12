@@ -3,5 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PreStart.Pages;assembly=PreStart"
              x:Class="PreStart.Pages.Tabs">
-  <local:PrestartDetail/>
+  <NavigationPage> Title="Tab 1"><Label Text="Tab1"></Label></NavigationPage>
+  <ContentPage Title="Tab 2"><Label Text="Tab2"></Label></ContentPage>
+  <ContentPage Title="Tab 3"><Label Text="Tab3"></Label></ContentPage>
+  <ContentPage Title="Tab 4"><Label Text="Tab4"></Label></ContentPage>
 </TabbedPage>
