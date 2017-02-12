@@ -41,6 +41,7 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout Orientation="Horizontal" Padding="40,0,40,0">
+              
               <Label Text="{Binding Description}" 
                      TextColor="#0099c7" 
                      HorizontalOptions="StartAndExpand" 

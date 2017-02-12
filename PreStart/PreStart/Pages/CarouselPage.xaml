@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:PreStart.Pages;assembly=PreStart"
+
+             x:Class="PreStart.Pages.CarouselPage">
+
+  <pages:PrestartDetail Title="Prestart Detail" />
+  <pages:HazardDetailViewPage Title="Hazard Detail" />
+  <pages:SignOnDetailPage Title="Sign Detail" />
+
+</CarouselPage>

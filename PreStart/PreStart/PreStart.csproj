@@ -56,6 +56,9 @@
     <Compile Include="Models\SaleForceResponse.cs" />
     <Compile Include="Models\SignOn.cs" />
     <Compile Include="Models\Task.cs" />
+    <Compile Include="Pages\CarouselPage.xaml.cs">
+      <DependentUpon>CarouselPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HazardDetailViewPage.xaml.cs">
       <DependentUpon>HazardDetailViewPage.xaml</DependentUpon>
     </Compile>
@@ -321,6 +324,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\TabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CarouselPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
