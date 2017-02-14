@@ -42,20 +42,9 @@ namespace PreStart.ViewModels
                 //Sync local database
                 await App.CloudService.SyncOfflineCacheAsync();
 
-                //Navigate to the task manager
-                var action = await App.Current.MainPage.DisplayActionSheet("Prestart Form Saved", "Cancel", null, "Back to Main Page", "Go to Hazard Form");
-
-                switch (action)
-                {
-                    case "Back to Main Page":
-                        await Navigation.PopToRootAsync(true);
-                        break;
-                    case "Go to Hazard Form":
-                        //Go to hazard form
-                        await Navigation.PushAsync(new HazardForm());
-                        break;
-                }
-
+                //Navigate to the log book prestart manager
+                await Navigation.PushAsync(new PrestartManagerPage());
+                
 
             }
             catch (Exception ex)

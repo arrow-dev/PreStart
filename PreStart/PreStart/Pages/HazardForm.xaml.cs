@@ -20,9 +20,7 @@ namespace PreStart.Pages
             RASliderPLL.ValueChanged += RAPllOnSliderChanged;
             
         }
-
         
-
         private void RiskBeforeBtn_OnClick(object sender, EventArgs e)
         {
             if (RiskBeforeBtn.Text == "RATE")
@@ -96,8 +94,7 @@ namespace PreStart.Pages
                     break;
             }
         }
-
-
+        
         private void OnSliderChanged(ValueChangedEventArgs e, Slider slider1, Slider slider2, Label siderlabel, Label risklabel)
         {
             StepValue = 1;
@@ -288,8 +285,6 @@ namespace PreStart.Pages
             }
 
         }
-
-
-
+        
     }
 }

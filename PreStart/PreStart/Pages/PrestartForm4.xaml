@@ -67,7 +67,7 @@
 
 
     <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="0,0,0, 150">
-      <Button Text="Done" TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="Center" Clicked="Button_OnClicked" Command="{Binding DoneCommand}"></Button>
+      <Button Text="Done" TextColor="White" BackgroundColor="{x:Static local:Template.fhOrange}" HorizontalOptions="Center" Command="{Binding DoneCommand}"></Button>
     </StackLayout>
   </StackLayout>
 </ContentPage>

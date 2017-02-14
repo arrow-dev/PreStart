@@ -5,7 +5,7 @@
 
              x:Class="PreStart.Pages.CarouselPage">
 
-  <pages:PrestartDetail Title="Prestart Detail" />
+  <pages:PrestartDetail Title="Prestart Detail"/>
   <pages:HazardDetailViewPage Title="Hazard Detail" />
   <pages:SignOnDetailPage Title="Sign Detail" />
 

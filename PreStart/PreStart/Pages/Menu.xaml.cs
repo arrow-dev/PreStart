@@ -22,8 +22,8 @@ namespace PreStart.Pages
 
         private async void ButtonList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var demopage = new NavigationPage(new TabbedPage());
-            var carouselpage = new NavigationPage(new CarouselPage());
+            //var demopage = new NavigationPage(new TabbedPage());
+            //var carouselpage = new NavigationPage(new CarouselPage());
 
             if (e.SelectedItem == null)
             {
@@ -31,7 +31,7 @@ namespace PreStart.Pages
             }
             if (e.SelectedItem.ToString() == "Hazard Register/Sign On")
             {
-                Detail = carouselpage;
+                Detail = new NavigationPage(new CarouselPage());
                 IsPresented = false;
             }
             else if (e.SelectedItem.ToString() == "Meeting Room")
@@ -51,7 +51,7 @@ namespace PreStart.Pages
             }
             else 
             {
-                Detail = demopage;
+                Detail = new NavigationPage(new TabbedPage());
                 IsPresented = false;
             }
             ((ListView)sender).SelectedItem = null;
