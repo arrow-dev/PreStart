@@ -138,6 +138,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
+                    Helpers.Settings.SelectedPrestartId = SelectedItem.Id;
                     Navigation.PushAsync(new Pages.PrestartDetail(selectedItem));
                     SelectedItem = null;
                 }

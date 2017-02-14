@@ -8,23 +8,18 @@ using Xamarin.Forms;
 
 namespace PreStart.ViewModels
 {
-    public class TaskDetailViewModel : BaseViewModel
+    public class HazardManagerViewModel : BaseViewModel
     {
-        private Task task;
-        public Task Task {
-            get { return task; }
-            set { SetProperty(ref task, value, "Task");} }
-
-        public TaskDetailViewModel(Task task, INavigation navigation) : base(navigation)
+        public HazardManagerViewModel(INavigation navigation) : base(navigation)
         {
-            Task = task;
+
         }
 
         private ObservableCollection<Hazard> hazards = new ObservableCollection<Hazard>();
         public ObservableCollection<Hazard> Hazards
         {
             get { return hazards; }
-            set { SetProperty(ref hazards, value, "Tasks"); }
+            set { SetProperty(ref hazards, value, "Hazards"); }
         }
 
         public async void GetHazardsAsync()
@@ -32,14 +27,12 @@ namespace PreStart.ViewModels
             var table = await App.CloudService.GetTableAsync<Hazard>();
             var items = await table.ReadAllItemsAsync();
             Hazards.Clear();
-            //foreach (var item in items)
-            //{
-            //    if (item.TaskId == Task.Id)
-            //    {
-            //        Hazards.Add(item);
-            //    }
-            //}
+            foreach (var item in items)
+            {
+                Hazards.Add(item);
+            }
         }
+
         Command refreshCommand;
 
         public Command RefreshCommand
@@ -95,18 +88,18 @@ namespace PreStart.ViewModels
             if (IsBusy)
                 return;
             IsBusy = true;
-            //try
-            //{
-            //    await Navigation.PushAsync(new HazardForm(new Hazard {TaskId = Task.Id}));
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine($"{ex.Message}");
-            //}
-            //finally
-            //{
-            //    IsBusy = false;
-            //}
+            try
+            {
+                await Navigation.PushAsync(new HazardForm());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
 

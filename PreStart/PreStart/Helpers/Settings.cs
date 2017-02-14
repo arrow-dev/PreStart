@@ -21,13 +21,16 @@ namespace PreStart.Helpers
 
     #region Setting Constants
 
-    private const string SiteKey = "site_key";
-    private static readonly string SiteDefault = string.Empty;
+        private const string SiteKey = "site_key";
+        private static readonly string SiteDefault = string.Empty;
+
+        private const string PrestartKey = "prestart_key";
+        private static readonly string PrestartDefault = string.Empty;
 
     #endregion
 
 
-    public static string DefaultSiteSetting
+        public static string DefaultSiteSetting
     {
       get
       {
@@ -39,5 +42,20 @@ namespace PreStart.Helpers
       }
     }
 
-  }
+        
+
+
+    public static string SelectedPrestartId
+    {
+        get
+        {
+            return AppSettings.GetValueOrDefault<string>(PrestartKey, PrestartDefault);
+        }
+        set
+        {
+            AppSettings.AddOrUpdateValue<string>(PrestartKey, value);
+        }
+    }
+
+    }
 }
