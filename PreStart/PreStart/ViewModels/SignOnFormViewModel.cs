@@ -65,9 +65,17 @@ namespace PreStart.ViewModels
                 //await App.CloudService.SyncOfflineCacheAsync();
 
                 var table = await App.CloudService.GetTableAsync<SignOn>();
-                
-                await table.CreateItemAsync(SignOn);
-                
+
+                if (SignOn.Id == null)
+                {
+                    await table.CreateItemAsync(SignOn);
+                }
+                else
+                {
+                    await table.UpdateItemAsync(SignOn);
+                }
+                await App.CloudService.SyncOfflineCacheAsync();
+
                 await App.CloudService.SyncOfflineCacheAsync();
                 
                 await Navigation.PushAsync(new SignOnManager());
@@ -90,7 +98,7 @@ namespace PreStart.ViewModels
             finally
             {
                 IsBusy = false;
-               // await Navigation.PushAsync(new HomePage());
+                await Navigation.PushAsync(new HomePage());
 
             }
         }
