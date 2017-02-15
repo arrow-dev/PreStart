@@ -67,14 +67,14 @@
                      Text="{Binding Hazard.RiskAfter}"/>     
           </StackLayout>
 
-          <StackLayout Orientation="Vertical" 
+          <!--<StackLayout Orientation="Vertical" 
                        VerticalOptions="Center">
             <Button Text="EDIT" 
                     BackgroundColor="#ff671b"  
                     TextColor="White" 
                     HorizontalOptions="Center"
                     Command="{Binding EditCommand}"/>
-          </StackLayout>
+          </StackLayout>-->
 
       </StackLayout>
 

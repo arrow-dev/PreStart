@@ -109,8 +109,8 @@
     <Compile Include="Pages\SiteListPage.xaml.cs">
       <DependentUpon>SiteListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TaskDetailPage.xaml.cs">
-      <DependentUpon>TaskDetailPage.xaml</DependentUpon>
+    <Compile Include="Pages\HazardManagerPage.xaml.cs">
+      <DependentUpon>HazardManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AzureCloudService.cs" />
@@ -224,7 +224,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\TaskDetailPage.xaml">
+    <EmbeddedResource Include="Pages\HazardManagerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

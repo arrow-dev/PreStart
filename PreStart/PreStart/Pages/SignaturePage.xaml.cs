@@ -12,10 +12,10 @@ namespace PreStart.Pages
             InitializeComponent();
             BindingContext = new SignOnFormViewModel(Navigation, padView);
         }
-        public SignaturePage(SignOn signOn)
-        {
-            InitializeComponent();
-            BindingContext = new SignOnFormViewModel(signOn, Navigation, padView);
-        }
+        //public SignaturePage(SignOn signOn)
+        //{
+        //    InitializeComponent();
+        //    BindingContext = new SignOnFormViewModel(signOn, Navigation, padView);
+        //}
     }
 }

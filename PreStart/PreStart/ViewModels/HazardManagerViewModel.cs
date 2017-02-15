@@ -72,7 +72,7 @@ namespace PreStart.ViewModels
                 if (selectedItem != null)
                 {
                     //When an item is selected from the list then navigate to the details page passing the selected item through.
-                    Navigation.PushAsync(new Pages.HazardDetailViewPage(selectedItem));
+                    Navigation.PushAsync(new HazardDetailViewPage(selectedItem));
                     SelectedItem = null;
                 }
             }

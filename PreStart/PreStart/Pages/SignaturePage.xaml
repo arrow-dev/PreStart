@@ -14,7 +14,7 @@
         <Label Text="What am I Doing? What could go Wrong? How could I do it Safer?" 
                Font="{x:Static local:Template.ParaFont}" 
                HorizontalTextAlignment="Center"/>
-        <ActivityIndicator  IsRunning="{Binding IsBusy}" />
+        <!--<ActivityIndicator  IsRunning="{Binding IsBusy}" />-->
 
 
         <ScrollView Orientation="Vertical">
@@ -167,8 +167,7 @@
                      PromptText=" "
                      SignatureLineColor="Black"
                      StrokeColor="Black"
-                     StrokeWidth="2"
-                                    />
+                     StrokeWidth="2"/>
    </StackLayout>
 
    <StackLayout Orientation="Vertical"

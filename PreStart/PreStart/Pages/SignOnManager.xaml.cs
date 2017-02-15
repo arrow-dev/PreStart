@@ -5,10 +5,10 @@ namespace PreStart.Pages
 {
     public partial class SignOnManager : ContentPage
     {
-        public SignOnManager(string id)
+        public SignOnManager()
         {
             InitializeComponent();
-            BindingContext = new SignOnManagerViewModel(id, Navigation);
+            BindingContext = new SignOnManagerViewModel(Navigation);
         }
     }
 }

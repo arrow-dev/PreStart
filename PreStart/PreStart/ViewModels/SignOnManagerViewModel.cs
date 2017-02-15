@@ -10,9 +10,9 @@ namespace PreStart.ViewModels
 {
     public class SignOnManagerViewModel : BaseViewModel
     {
-        public SignOnManagerViewModel(string id, INavigation navigation) : base(navigation)
+        public SignOnManagerViewModel(INavigation navigation) : base(navigation)
         {
-            Id = id;
+            
         }
 
         ObservableCollection<SignOn> signOns = new ObservableCollection<SignOn>();
@@ -23,20 +23,17 @@ namespace PreStart.ViewModels
             set { SetProperty(ref signOns, value, "SignOns"); }
         }
 
-        private string Id;
-
-        public async void GetSignOns(string id)
+        public async void GetSignOns()
         {
             var table = await App.CloudService.GetTableAsync<SignOn>();
             var items = await table.ReadAllItemsAsync();
             SignOns.Clear();
-            //foreach (var item in items)
-            //{
-            //    if (item.SiteId == id)
-            //    {
-            //        SignOns.Add(item);
-            //    }
-            //}
+            foreach (var item in items)
+            {
+               
+                    SignOns.Add(item);
+                
+            }
         }
         Command refreshCommand;
         public Command RefreshCommand
@@ -50,7 +47,7 @@ namespace PreStart.ViewModels
 
             try
             {
-                GetSignOns(Id);
+                GetSignOns();
             }
             catch (Exception ex)
             {
@@ -72,18 +69,18 @@ namespace PreStart.ViewModels
                 return;
             IsBusy = true;
 
-            //try
-            //{
-            //    await Navigation.PushAsync(new SignaturePage(new SignOn{SiteId = Id}));
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine($"{ex.Message}");
-            //}
-            //finally
-            //{
-            //    IsBusy = false;
-            //}
+            try
+            {
+                await Navigation.PushAsync(new SignaturePage());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         Command deleteCommand;
@@ -102,7 +99,7 @@ namespace PreStart.ViewModels
                 var table = await App.CloudService.GetTableAsync<SignOn>();
                 var signOn = await table.ReadItemAsync(id);
                 await table.DeleteItemAsync(signOn);
-                GetSignOns(Id);
+                GetSignOns();
                 await App.CloudService.SyncOfflineCacheAsync();
             }
             catch (Exception ex)

@@ -5,6 +5,7 @@ using PreStart.Models;
 using SignaturePad.Forms;
 using System.IO;
 using System.Threading.Tasks;
+using PreStart.Pages;
 using Xamarin.Forms;
 
 namespace PreStart.ViewModels
@@ -20,11 +21,11 @@ namespace PreStart.ViewModels
             SignOn = new SignOn();
             SignaturePad = signaturePadView;
         }
-        public SignOnFormViewModel(SignOn signOn, INavigation navigation, SignaturePadView signaturePadView) : base(navigation)
-        {
-            SignOn = signOn;
-            SignaturePad = signaturePadView;
-        }
+        //public SignOnFormViewModel(SignOn signOn, INavigation navigation, SignaturePadView signaturePadView) : base(navigation)
+        //{
+        //    SignOn = signOn;
+        //    SignaturePad = signaturePadView;
+        //}
 
         public async Task<byte[]> GetSigBytes()
         {
@@ -38,9 +39,9 @@ namespace PreStart.ViewModels
 
         Command agreeCommand;
         public Command AgreeCommand
-            => agreeCommand ?? (agreeCommand = new Command(async () => await ExecuteRefreshCommand()));
+            => agreeCommand ?? (agreeCommand = new Command(async () => await ExecuteCommand()));
 
-        async System.Threading.Tasks.Task ExecuteRefreshCommand()
+        async System.Threading.Tasks.Task ExecuteCommand()
         {
             if (IsBusy)
                 return;
@@ -51,19 +52,26 @@ namespace PreStart.ViewModels
                 SignOn.Signature = await GetSigBytes();
                 //update the online table
                 //Get the online table
-                var signon_form_table = await App.CloudService.GetTableAsync<SignOn>();
+                //var table = await App.CloudService.GetTableAsync<SignOn>();
                 //Add the current item to the table
-                if (SignOn.Id == null)
-                {
-                    await signon_form_table.CreateItemAsync(SignOn);
+                //if (SignOn.Id == null)
+                //{
+                //    await table.CreateItemAsync(SignOn);
+                //}
+                //else
+                //{
+                //    await table.UpdateItemAsync(SignOn);
+                //}
+                //await App.CloudService.SyncOfflineCacheAsync();
 
-                }
-                else
-                {
-                    await signon_form_table.UpdateItemAsync(SignOn);
-                }
-
+                var table = await App.CloudService.GetTableAsync<SignOn>();
+                
+                await table.CreateItemAsync(SignOn);
+                
                 await App.CloudService.SyncOfflineCacheAsync();
+                
+                await Navigation.PushAsync(new SignOnManager());
+
             }
             catch (MobileServicePushFailedException ex)
             {
@@ -71,8 +79,8 @@ namespace PreStart.ViewModels
                 {
                     foreach (var error in ex.PushResult.Errors)
                     {
-                        var serverItem = error.Result.ToObject<Hazard>();
-                        var localItem = error.Item.ToObject<Hazard>();
+                        var serverItem = error.Result.ToObject<SignOn>();
+                        var localItem = error.Item.ToObject<SignOn>();
 
                         localItem.Version = serverItem.Version;
                         await error.UpdateOperationAsync(JObject.FromObject(localItem));
@@ -82,8 +90,8 @@ namespace PreStart.ViewModels
             finally
             {
                 IsBusy = false;
-                //Pop the current page and navigate back to the sign on record page
-                await Navigation.PopAsync(true);
+               // await Navigation.PushAsync(new HomePage());
+
             }
         }
     }

@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using PreStart.Abstractions;
 using PreStart.Models;
+using PreStart.Pages;
 using Xamarin.Forms;
 using Task = System.Threading.Tasks.Task;
 
@@ -43,7 +44,6 @@ namespace PreStart.ViewModels
                     await table.UpdateItemAsync(Hazard);
                 }
                 
-
                 //Sync with online table
                 await App.CloudService.SyncOfflineCacheAsync();
 
@@ -67,7 +67,8 @@ namespace PreStart.ViewModels
                 IsBusy = false;
                 
                 //Navigate to the task manager
-                await Navigation.PopToRootAsync(true);
+                await Navigation.PushAsync(new HazardManagerPage());
+                //await Navigation.PopToRootAsync(true);
             }
         }
 

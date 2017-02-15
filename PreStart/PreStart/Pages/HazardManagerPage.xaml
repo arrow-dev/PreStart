@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:PreStart.Behaviors;assembly=PreStart"
+             x:Class="PreStart.Pages.HazardManagerPage"
+             x:Name="HazardManager"
+             Title="Hazard Manager">
+  <ContentPage.Behaviors>
+    <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"/>
+  </ContentPage.Behaviors>
+  
+ <StackLayout>
+   <StackLayout Orientation="Horizontal" Padding="40,20,40,20">
+     <Label Text="Hazards:" TextColor="#0099c7" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="20"></Label>
+     <Button x:Name="AddBtn" BackgroundColor="#0099c7" Text="+" TextColor="White" VerticalOptions="Center" FontSize="20" Command="{Binding AddHazard}"></Button>
+   </StackLayout>
+   
+   <ListView ItemsSource="{Binding Hazards}"
+              RowHeight="50"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+              >
+     <ListView.ItemTemplate>
+       <DataTemplate>
+         <ViewCell>
+           <!--<StackLayout Orientation="Horizontal" Padding="40,0,40,0">
+             <Label Text="{Binding Description}"
+                     TextColor="#0099c7"
+                     HorizontalOptions="StartAndExpand"
+                     VerticalOptions="Center"/>
+             <Button Text="DELETE" 
+                     BackgroundColor="Red" 
+                     TextColor="White" 
+                     VerticalOptions="Center" 
+                     Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name=HazardManager}}" 
+                     CommandParameter="{Binding Id}"/>
+           </StackLayout>-->
+           
+           <Grid>
+             <Grid.RowDefinitions>
+               <RowDefinition Height="*"/>
+               <RowDefinition Height="*"/>
+             </Grid.RowDefinitions>
+             <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="*"/>
+               <ColumnDefinition Width="*"/>
+             </Grid.ColumnDefinitions>
+             
+             <Label Text="Hazard Description" TextColor="#0099c7" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+             <Label Text="{Binding Description}" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+             <Label Text="Risk Before" TextColor="#0099c7"  HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+             <Label Text="{Binding RiskBefore}" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+             <Label Text="Risk After" TextColor="#0099c7" HorizontalOptions="Center" Grid.Row="0" Grid.Column="2"/>
+             <Label Text="{Binding RiskAfter}" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
+             <Button Text="DELETE"
+                     BackgroundColor="Red"
+                     TextColor="White"
+                     VerticalOptions="Center"
+                     Command="{Binding Path = BindingContext.DeleteCommand, Source={x:Reference Name=HazardManager}}"
+                     CommandParameter="{Binding Id}" HorizontalOptions="CenterAndExpand"
+                     Grid.Row="0" Grid.Column="3" Grid.RowSpan="2"/>
+           </Grid>
+           
+         </ViewCell>
+       </DataTemplate>
+     </ListView.ItemTemplate>
+   </ListView>
+   
+ </StackLayout>
+  </ContentPage>
