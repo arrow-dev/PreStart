@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace PreStart.ValueConverters
+namespace Prestart.ValueConverters
 {
     class ColorConverter : IValueConverter
     {
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Color labelBckColor = Color.Transparent;
@@ -33,8 +28,7 @@ namespace PreStart.ValueConverters
                         break;
                 }
             }
-        
-            
+
             return labelBckColor;
         }
 

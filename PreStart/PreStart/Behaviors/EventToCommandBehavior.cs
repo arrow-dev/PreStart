@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace PreStart.Behaviors
+namespace Prestart.Behaviors
 {
     public class EventToCommandBehavior : BehaviorBase<VisualElement>
     {

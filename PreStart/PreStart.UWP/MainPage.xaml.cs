@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace PreStart.UWP
+namespace Prestart.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace PreStart.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new PreStart.App());
+            LoadApplication(new Prestart.App());
         }
     }
 }

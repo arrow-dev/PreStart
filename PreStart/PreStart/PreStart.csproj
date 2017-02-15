@@ -2,17 +2,17 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91B2C061-FAAC-414C-9E64-E195E348CF2E}</ProjectGuid>
+    <ProjectGuid>{E06C514F-967D-4EB1-895B-81B6E6A4673F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PreStart</RootNamespace>
-    <AssemblyName>PreStart</AssemblyName>
+    <RootNamespace>Prestart</RootNamespace>
+    <AssemblyName>Prestart</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -35,120 +35,111 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\BaseViewModel.cs" />
     <Compile Include="Abstractions\ICloudService.cs" />
     <Compile Include="Abstractions\ICloudTable.cs" />
-    <Compile Include="Abstractions\IFileHelper.cs" />
-    <Compile Include="Abstractions\ILoginProvider.cs" />
+    <Compile Include="Abstractions\PrestartBaseViewModel.cs" />
     <Compile Include="Abstractions\TableData.cs" />
-    <Compile Include="App.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Behaviors\BehaviorBase.cs" />
     <Compile Include="Behaviors\EditorValidatorBehavior.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
     <Compile Include="Behaviors\EventToCommandBehavior.cs" />
-    <Compile Include="CustomControls\BorderedEditor.cs" />
-    <Compile Include="Config.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Models\AppServiceIdentity.cs" />
-    <Compile Include="Models\Hazard.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Prestart.cs" />
-    <Compile Include="Models\SaleForceResponse.cs" />
-    <Compile Include="Models\SignOn.cs" />
-    <Compile Include="Pages\HazardDetailViewPage.xaml.cs">
-      <DependentUpon>HazardDetailViewPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\HazardForm.xaml.cs">
-      <DependentUpon>HazardForm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Menu.xaml.cs">
-      <DependentUpon>Menu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartDetail.xaml.cs">
-      <DependentUpon>PrestartDetail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartForm1.xaml.cs">
-      <DependentUpon>PrestartForm1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartForm2.xaml.cs">
-      <DependentUpon>PrestartForm2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartForm3.xaml.cs">
-      <DependentUpon>PrestartForm3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartForm4.xaml.cs">
-      <DependentUpon>PrestartForm4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartManagerPage.xaml.cs">
-      <DependentUpon>PrestartManagerPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PrestartNavigationPage.cs" />
-    <Compile Include="Pages\SignOnDetailPage.xaml.cs">
-      <DependentUpon>SignOnDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SignOnManager.xaml.cs">
-      <DependentUpon>SignOnManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Tabs.xaml.cs">
-      <DependentUpon>Tabs.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Hazard.cs" />
+    <Compile Include="Model\Prestart.cs" />
+    <Compile Include="Template.cs" />
     <Compile Include="ValueConverters\ByteToImageFieldConverter.cs" />
-    <Compile Include="ViewModels\SignOnFormViewModel.cs" />
-    <Compile Include="ViewModels\SignOnDetailPageViewModel.cs" />
-    <Compile Include="ViewModels\SignOnManagerViewModel.cs" />
-    <Compile Include="Pages\SignaturePage.xaml.cs">
-      <DependentUpon>SignaturePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SiteListPage.xaml.cs">
-      <DependentUpon>SiteListPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ValueConverters\ColorConverter.cs" />
+    <Compile Include="ValueConverters\DateTimeToString.cs" />
+    <Compile Include="ViewModel\HazardFormViewModel.cs" />
+    <Compile Include="ViewModel\HazardManagerViewModel.cs" />
+    <Compile Include="ViewModel\PrestartDetailViewModel.cs" />
+    <Compile Include="ViewModel\PrestartForm1ViewModel.cs" />
+    <Compile Include="ViewModel\PrestartForm2ViewModel.cs" />
+    <Compile Include="ViewModel\PrestartForm3ViewModel.cs" />
+    <Compile Include="ViewModel\PrestartForm4ViewModel.cs" />
+    <Compile Include="ViewModel\PrestartManagerViewModel.cs" />
+    <Compile Include="Model\SignOn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AzureCloudService.cs" />
     <Compile Include="Services\AzureCloudTable.cs" />
-    <Compile Include="Services\SalesforceDataService.cs" />
-    <Compile Include="Template.cs" />
-    <Compile Include="ValueConverters\ColorConverter.cs" />
-    <Compile Include="ValueConverters\DateTimeToString.cs" />
-    <Compile Include="ViewModels\HazardDetailViewModel.cs" />
-    <Compile Include="ViewModels\HazardFormViewModel.cs" />
-    <Compile Include="ViewModels\PrestartDetailViewModel.cs" />
-    <Compile Include="ViewModels\PrestartForm1ViewModel.cs" />
-    <Compile Include="ViewModels\PrestartForm2ViewModel.cs" />
-    <Compile Include="ViewModels\PrestartForm3ViewModel.cs" />
-    <Compile Include="ViewModels\PrestartForm4ViewModel.cs" />
-    <Compile Include="ViewModels\PrestartManagerViewModel.cs" />
-    <Compile Include="ViewModels\SiteListPageViewModel.cs" />
+    <Compile Include="ViewModel\SignOnFormViewModel.cs" />
+    <Compile Include="ViewModel\SignOnManagerViewModel.cs" />
+    <Compile Include="View\HazardDetail.xaml.cs">
+      <DependentUpon>HazardDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HazardForm.xaml.cs">
+      <DependentUpon>HazardForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HazardManager.xaml.cs">
+      <DependentUpon>HazardManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartDetail.xaml.cs">
+      <DependentUpon>PrestartDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartForm.xaml.cs">
+      <DependentUpon>PrestartForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartForm1.xaml.cs">
+      <DependentUpon>PrestartForm1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartForm2.xaml.cs">
+      <DependentUpon>PrestartForm2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartForm3.xaml.cs">
+      <DependentUpon>PrestartForm3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartForm4.xaml.cs">
+      <DependentUpon>PrestartForm4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartManager.xaml.cs">
+      <DependentUpon>PrestartManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrestartNavigationPage.cs" />
+    <Compile Include="View\SignOnDetail.xaml.cs">
+      <DependentUpon>SignOnDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignOnForm.xaml.cs">
+      <DependentUpon>SignOnForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignOnManager.xaml.cs">
+      <DependentUpon>SignOnManager.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartForm1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartForm2.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.WindowsAzure.Mobile, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.3.0.3\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid\Microsoft.WindowsAzure.Mobile.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Mobile, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.3.1.0\lib\portable-win+net45+wp8+wpa81+monotouch+monoandroid\Microsoft.WindowsAzure.Mobile.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.3.0.3\lib\portable-win+net45+wp8+wpa81+monotouch10+monoandroid10+xamarinios10\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Mobile.SQLiteStore, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.Mobile.Client.SQLiteStore.3.1.0\lib\portable-win+net45+wp8+wpa81+monotouch10+monoandroid10+xamarinios10\Microsoft.WindowsAzure.Mobile.SQLiteStore.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="MvvmHelpers, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Refractored.MvvmHelpers.1.2.2\lib\portable-net45+wp80+win8+wpa81\MvvmHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Plugin.Connectivity, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -159,20 +150,12 @@
       <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.3.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
+    <Reference Include="Plugin.Settings, Version=2.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.4\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PropertyChanged.Fody.1.52.1\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\sqlite-net-pcl.1.3.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.4\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
@@ -199,9 +182,6 @@
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Foundation.UniversalApiContract">
-      <HintPath>C:\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\3.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.180\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -216,54 +196,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\HazardForm.xaml">
+    <EmbeddedResource Include="View\Main.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\HazardDetailViewPage.xaml">
+    <EmbeddedResource Include="View\PrestartForm1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartForm3.xaml">
+    <EmbeddedResource Include="View\PrestartManager.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartForm4.xaml">
+    <EmbeddedResource Include="View\PrestartForm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
-    <Content Include="meeting.png" />
-    <Content Include="swap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartManagerPage.xaml">
+    <EmbeddedResource Include="View\PrestartDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\SiteListPage.xaml">
+    <EmbeddedResource Include="View\HazardManager.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\Menu.xaml">
+    <EmbeddedResource Include="View\HazardDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PrestartDetail.xaml">
+    <EmbeddedResource Include="View\HazardForm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\SignOnManager.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\SignOnForm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\SignOnDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\PrestartForm2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\PrestartForm3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\PrestartForm4.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Menu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -274,46 +291,14 @@
       <Name>SignaturePad.Forms</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\SignOnManager.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\SignaturePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\SignOnDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Tabs.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Import Project="..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
-  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace PreStart.iOS
+namespace Prestart.iOS
 {
     public class Application
     {

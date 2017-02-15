@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
+             x:Class="Prestart.View.PrestartForm1"
+             Title="Contract Information">
+  <StackLayout>
+    <Label Text="Progress:" TextColor="#FF671B" Margin="10"/>
+    <ProgressBar Progress="0.1"/>
+    <ScrollView>
+      <StackLayout>
+        <StackLayout Padding="20">
+          <Label Text="Contract Name"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.ContractName, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Contract Number"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.ContractNumber, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Location"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.Location, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Lot Number"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.LotNo, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Department"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.Department, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Project/Site"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.SiteId, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Person in Charge of Site"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.SiteManager, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Quarry Manager in Charge (if applicable)"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.QuarryManager, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="STMS"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.StmsNumber, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Job Number"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.JobNumber, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="TMP Number"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.TmpNumber, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Site First Aider"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Certificate Number"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Entry Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}"
+                 FontSize="Medium"
+                 BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Site Plan / Emergency Response"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Editor Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                 BackgroundColor="White"/>
+        </StackLayout>
+        
+        <StackLayout Padding="20">
+          <Button Text="Next"
+                TextColor="White"
+                FontSize="Large"
+                BackgroundColor="#FF671B"
+                Command="{Binding NextCommand}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        </StackLayout>
+        
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+  
+  <!--<StackLayout>
+
+
+
+    --><!-- Use styles instead of all the markup extension here?? --><!--
+
+    <Label Text="PRE-START MEETING RECORD" TextColor="#0099C7"
+           FontSize="Large"
+           HorizontalOptions="Center"/>
+    <Label Text="STAY SAFE" TextColor="Red" FontSize="Large" HorizontalTextAlignment="Center"></Label>
+    <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" FontSize="Small" HorizontalTextAlignment="Center"></Label>
+
+    <StackLayout Orientation="Horizontal">
+      <Label  Text="Date:" TextColor="#0099C7"
+              WidthRequest="150" VerticalOptions="Center"/>
+      <Label FontSize="14" TextColor="Black"
+             WidthRequest="150" VerticalOptions="Center"
+             HorizontalOptions="FillAndExpand"
+             Text="{Binding DateString, Mode=OneWay}"/>
+      <Button Text="Prefill" TextColor="White" BackgroundColor="Teal" VerticalOptions="Center" Command="{Binding PreFillCommand}"/>
+    </StackLayout>
+
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+      <Label  Text="Contract Name:" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractName, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="ContractNameEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+      <Label  Text="Contract Number:" TextColor="#0099C7"
+             WidthRequest="150" VerticalOptions="Center"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.ContractNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="ContractNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+    </StackLayout>
+
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+      <Label  Text="Location:" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Location, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="LocationEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+      <Label  Text="Location Number:" TextColor="#0099C7"
+             WidthRequest="150" VerticalOptions="Center"/>
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.LotNo, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="LotNoEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+    </StackLayout>
+
+
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+      <Label  Text="Department:" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.Department, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="DepartmentEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+
+      <Label  Text="Job Number:" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.JobNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="JobNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+      <Label  Text="STMS:" TextColor="#0099C7"
+             WidthRequest="150" VerticalOptions="Center"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.StmsNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="StmsNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+
+
+
+      <Label  Text="Person in Charge of Site:" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteManager, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="SiteManagerEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+      <Label  Text="Site First Aider:" TextColor="#0099C7"
+               WidthRequest="150" VerticalOptions="Center"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="SiteFirstAiderEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+
+
+
+      <Label  Text="TMP:" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.TmpNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="TmpNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+      <Label  Text="Certificate Number:" TextColor="#0099C7"
+             WidthRequest="150" VerticalOptions="Center"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}">
+        <Entry.Behaviors>
+          <behaviors:EntryValidatorBehavior x:Name="CertificateNumberEntryBehavior"/>
+        </Entry.Behaviors>
+      </Entry>
+
+      <Label  Text="Quarry Manager in Charge(if applicable):" TextColor="#0099C7" VerticalOptions="Center"
+             WidthRequest="150"/>
+
+      <Entry BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.QuarryManager, Mode=TwoWay}">
+
+      </Entry>
+
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+
+      <Label  Text="Emergency Response:" TextColor="#0099C7"
+             WidthRequest="150" VerticalOptions="Center"/>
+
+      <Editor HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}">
+        <Editor.Behaviors>
+          <behaviors:EditorValidatorBehavior x:Name="EmergencyPlanEntryBehavior"/>
+        </Editor.Behaviors>
+      </Editor>
+
+    </StackLayout>
+
+
+
+    <Button TextColor="White" BackgroundColor="#FF671B" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="START MEETING" Command="{Binding NextCommand}" IsEnabled="False">
+      <Button.Triggers>
+        <MultiTrigger TargetType="Button">
+
+          <MultiTrigger.Conditions>
+            <BindingCondition Binding="{Binding Source={x:Reference ContractNameEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference ContractNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference LocationEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference LotNoEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference DepartmentEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference JobNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference StmsNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference SiteManagerEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference SiteFirstAiderEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference TmpNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference CertificateNumberEntryBehavior}, Path=IsValid}" Value="true"/>
+            <BindingCondition Binding="{Binding Source={x:Reference EmergencyPlanEntryBehavior}, Path=IsValid}" Value="true"/>
+          </MultiTrigger.Conditions>
+
+          <Setter Property="IsEnabled" Value="True"/>
+        </MultiTrigger>
+      </Button.Triggers>
+    </Button>
+
+  </StackLayout>-->
+</ContentPage>

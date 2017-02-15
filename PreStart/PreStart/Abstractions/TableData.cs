@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PreStart.Abstractions
+namespace Prestart.Abstractions
 {
     public abstract class TableData
     {

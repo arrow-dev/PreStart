@@ -1,56 +1,48 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
-using Microsoft.WindowsAzure.MobileServices.Sync;
-using PreStart.Abstractions;
+using Prestart.Abstractions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PreStart.Services
+namespace Prestart.Services
 {
     public class AzureCloudTable<T> : ICloudTable<T> where T : TableData
     {
-        IMobileServiceSyncTable<T> Table;
+        MobileServiceClient client;
+        IMobileServiceTable<T> table;
 
         public AzureCloudTable(MobileServiceClient client)
         {
-            Table = client.GetSyncTable<T>();
+            this.client = client;
+            this.table = client.GetTable<T>();
         }
 
-        public async Task PullAsync()
-        {
-            var queryName = $"incsync_{typeof(T).Name}";
-            await Table.PullAsync(queryName, Table.CreateQuery());
-        }
-
+        #region ICloudTable implementation
         public async Task<T> CreateItemAsync(T item)
         {
-            await Table.InsertAsync(item);
+            await table.InsertAsync(item);
             return item;
         }
 
         public async Task DeleteItemAsync(T item)
         {
-            await Table.DeleteAsync(item);
+            await table.DeleteAsync(item);
         }
 
         public async Task<ICollection<T>> ReadAllItemsAsync()
         {
-            return await Table.ToListAsync();
-        }
-
-        public Task<ICollection<T>> ReadItemsAsync(int start, int count)
-        {
-            throw new System.NotImplementedException();
+            return await table.ToListAsync();
         }
 
         public async Task<T> ReadItemAsync(string id)
         {
-            return await Table.LookupAsync(id);
+            return await table.LookupAsync(id);
         }
 
         public async Task<T> UpdateItemAsync(T item)
-        { 
-            await Table.UpdateAsync(item);
+        {
+            await table.UpdateAsync(item);
             return item;
         }
+        #endregion
     }
 }

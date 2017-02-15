@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.WindowsAzure;
+
 using Foundation;
 using UIKit;
 
-namespace PreStart.iOS
+namespace Prestart.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -23,10 +23,8 @@ namespace PreStart.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-           
-            var t = typeof(SignaturePad.Forms.iOS.SignaturePadRenderer);
             LoadApplication(new App());
+
             return base.FinishedLaunching(app, options);
         }
     }

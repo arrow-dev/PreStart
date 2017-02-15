@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prestart.View.PrestartForm2"
+             Title="Prestart">
+  <StackLayout>
+    <Label Text="Progress:" TextColor="#FF671B" Margin="10"/>
+    <ProgressBar Progress="0.4"/>
+    <ScrollView>
+      <StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What is the &quot;Plan&quot; for the day?"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Editor Text="{Binding Prestart.Plan, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="Who is &quot;Doing&quot; what on this site?"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Editor Text="{Binding Prestart.Doing, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What Plant &amp; Equipment do we require?"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Editor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What special requirements do we need to get the job done safely?"
+                 FontSize="Large"
+                 TextColor="#0099C7"/>
+          <Label Text="(e.g. Permits, Work procedures, licences, permitted activities &amp; / or consent requirements, quick hitch, ROP&apos;s elevated work platform, spill kits, silt or dust controls etc.)"
+                 FontSize="Small"
+                 TextColor="#0099C7"/>
+          <Editor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+        
+        <StackLayout Padding="20">
+          <Button Text="Next"
+                TextColor="White"
+                BackgroundColor="#FF671B"
+                Command="{Binding NextCommand}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+        </StackLayout>
+
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</ContentPage>

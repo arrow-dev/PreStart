@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
+             x:Class="Prestart.View.HazardManager"
+             Title="Hazards">
+  <ContentPage.Behaviors>
+    <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"/>
+  </ContentPage.Behaviors>
+
+  <StackLayout>
+    <ListView CachingStrategy="RecycleElement"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              ItemsSource="{Binding Items}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RowHeight="50"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout HorizontalOptions="FillAndExpand"
+                         Orientation="Horizontal"
+                         Padding="20,10,20,10"
+                         VerticalOptions="CenterAndExpand">
+              <Label HorizontalOptions="FillAndExpand"
+                     Text="{Binding Description}"
+                     TextColor="#272832" />
+              <Label Text="Other Information"
+                     TextColor="#272832"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout HorizontalOptions="Center"
+                 Orientation="Horizontal"
+                 Padding="20">
+      <Button BackgroundColor="#FF671B"
+              Command="{Binding AddNewItemCommand}"
+              Text="New Hazard"
+              TextColor="White" />
+    </StackLayout>
+  </StackLayout>
+  
+</ContentPage>

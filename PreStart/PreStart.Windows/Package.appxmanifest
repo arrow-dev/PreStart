@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
 
-  <Identity Name="214d7299-bf87-432c-82bc-be9ab0230dd9"
+  <Identity Name="85c24a1a-89d5-46aa-af7c-20f0c7d228f6"
             Publisher="CN=4rrowDev"
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>PreStart.Windows</DisplayName>
+    <DisplayName>Prestart.Windows</DisplayName>
     <PublisherDisplayName>4rrowDev</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="PreStart.Windows.App">
+        EntryPoint="Prestart.Windows.App">
       <m2:VisualElements
-          DisplayName="PreStart.Windows"
+          DisplayName="Prestart.Windows"
           Square150x150Logo="Assets\Logo.png"
           Square30x30Logo="Assets\SmallLogo.png"
-          Description="PreStart.Windows"
+          Description="Prestart.Windows"
           ForegroundText="light"
           BackgroundColor="#464646">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />

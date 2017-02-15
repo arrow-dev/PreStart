@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
-namespace PreStart
+namespace Prestart
 {
     static class Template
     {
@@ -24,7 +19,7 @@ namespace PreStart
         public static readonly Color ForegroundColor =
             Device.OnPlatform(Color.Black, Color.White, Color.White);
 
-        public static readonly  Thickness StackLayoutSection =
+        public static readonly Thickness StackLayoutSection =
             new Thickness(40, 0, 40, 20);
 
 

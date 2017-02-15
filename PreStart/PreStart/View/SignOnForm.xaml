@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Prestart;assembly=Prestart"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="Prestart.View.SignOnForm"
+             Title="Sign On">
+  <StackLayout>
+    <ScrollView x:Name="Form">
+      <StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     Padding="20">
+          <Label  Text="Employee Name:"
+                  TextColor="{x:Static local:Template.fhBlue}"
+                  VerticalOptions="Center"
+                  WidthRequest="150"/>
+          <Entry BackgroundColor="White"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="Center"
+                 Text="{Binding SignOn.Name, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     Padding="20">
+          <Label  Text="Employer:"
+                  TextColor="{x:Static local:Template.fhBlue}"
+                  WidthRequest="150"
+                  VerticalOptions="Center"/>
+          <Entry BackgroundColor="White"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Center"
+                  Text="{Binding SignOn.Employer, Mode=TwoWay}"/>
+        </StackLayout>
+
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="High Visible Vest"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  VerticalOptions="Center"
+                  IsToggled="{Binding SignOn.HiVis, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="Laced Safety Boots"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  VerticalOptions="Center"
+                  IsToggled="{Binding SignOn.SafetyBoots, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="Gloves"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  VerticalOptions="Center"
+                  IsToggled="{Binding SignOn.Gloves, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="Hard Hat"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  VerticalOptions="Center"
+                  IsToggled="{Binding SignOn.HardHat, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="Hearing Protection"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  IsToggled="{Binding SignOn.HearingProtection, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="Safety Glasses"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  IsToggled="{Binding SignOn.SafetyGlasses, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label Text="Site Induction Complete"
+                  HorizontalOptions="StartAndExpand"
+                  VerticalOptions="Center"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+          <Switch HorizontalOptions="EndAndExpand"
+                  VerticalOptions="Center"
+                  IsToggled="{Binding SignOn.SiteInductionComplete, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                      Padding="20">
+          <Label  Text="Site Induction Number"
+                  TextColor="{x:Static local:Template.fhBlue}"
+                  VerticalOptions="Center"
+                  WidthRequest="150"/>
+          <Entry BackgroundColor="White"
+                  HorizontalOptions="EndAndExpand"
+                  VerticalOptions="Center"
+                  Placeholder="if applicable"
+                  Text="{Binding SignOn.InductionNumber, Mode=TwoWay}"/>
+        </StackLayout>
+        
+        <StackLayout Padding="20">
+          <Button Text="Ok" TextColor="White" BackgroundColor="#FF671B" HorizontalOptions="Center" Clicked="Button_OnClicked"/>
+        </StackLayout>
+        
+      </StackLayout>
+    </ScrollView>
+  
+    <StackLayout x:Name="SigPad" IsVisible="False" Orientation="Vertical"
+                                Padding="40, 40, 40, 20">
+      <Label Text="I have read and understood the emergency response plan for operational and site specific hazards and controls that are relevent to me. I agree to abide by these"
+             HorizontalOptions="CenterAndExpand"
+             VerticalTextAlignment="Center"
+             TextColor="{x:Static local:Template.fhGrey}"/>
+      <Label Text="AT ALL TIMES ON SITE"
+             HorizontalOptions="CenterAndExpand"
+             VerticalTextAlignment="Center"
+             TextColor="Red"/>
+
+
+      <forms:SignaturePadView x:Name="padView"
+                      HorizontalOptions="Center"
+                      HeightRequest="200"
+                      WidthRequest="280"
+                      BackgroundColor="White"
+                      ClearText="Clear Me!"
+                      ClearTextColor="Black"
+                      PromptText=" "
+                      SignatureLineColor="Black"
+                      StrokeColor="Black"
+                      StrokeWidth="2"/>
+      
+      <StackLayout Orientation="Vertical"
+                   VerticalOptions="Center"
+                   Padding="20">
+        <Button Text="I agree"
+                TextColor="White"
+                BackgroundColor="{x:Static local:Template.fhOrange}"
+                HorizontalOptions="Center"
+                Command="{Binding AgreeCommand}"/>
+      </StackLayout>
+      
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

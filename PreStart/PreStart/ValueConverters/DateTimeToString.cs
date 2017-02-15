@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace PreStart.ValueConverters
+namespace Prestart.ValueConverters
 {
     class DateTimeToString : IValueConverter
     {
@@ -10,9 +10,8 @@ namespace PreStart.ValueConverters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is DateTimeOffset)
-            {
                 return ((DateTimeOffset)value).DateTime.ToString();
-            }
+
             return "";
         }
 

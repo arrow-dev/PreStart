@@ -1,15 +1,14 @@
 ﻿using System;
-
 using Xamarin.Forms;
 
-namespace PreStart.Behaviors
+namespace Prestart.Behaviors
 {
     public class EditorValidatorBehavior : Behavior<Editor>
     {
         private static readonly BindablePropertyKey IsValidPropertyKey =
-            BindableProperty.CreateReadOnly("IsValid", 
-                typeof(bool), 
-                typeof(EditorValidatorBehavior), 
+            BindableProperty.CreateReadOnly("IsValid",
+                typeof(bool),
+                typeof(EditorValidatorBehavior),
                 false);
 
         public static readonly BindableProperty IsValidProperty =
