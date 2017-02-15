@@ -33,7 +33,7 @@ namespace Prestart.ViewModel
                 SetProperty(ref selectedItem, value, "SelectedItem");
                 if (selectedItem != null)
                 {
-                    //Navigate to SignOnDetail
+                    Navigation.PushAsync(new SignOnDetail(selectedItem));
                     SelectedItem = null;
                 }
             }

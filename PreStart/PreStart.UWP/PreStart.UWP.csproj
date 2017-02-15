@@ -130,18 +130,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SignaturePad\SignaturePad.Forms.UWP\SignaturePad.Forms.UWP.csproj">
-      <Project>{ba531734-7754-4ec9-b55f-6a131409d2d9}</Project>
-      <Name>SignaturePad.Forms.UWP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SignaturePad\SignaturePad.Forms\SignaturePad.Forms.csproj">
-      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
-      <Name>SignaturePad.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SignaturePad\SignaturePad.UWP\SignaturePad.UWP.csproj">
-      <Project>{c0411de7-3fe0-412b-a706-e6ccd2171ccd}</Project>
-      <Name>SignaturePad.UWP</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Prestart\Prestart.csproj">
       <Project>{41bfe436-dbd5-481d-88d9-2ffe1b16b590}</Project>
       <Name>Prestart</Name>

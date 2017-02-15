@@ -6,12 +6,6 @@ namespace Prestart.ViewModel
 {
     class PrestartDetailViewModel : PrestartBaseViewModel
     {
-        public PrestartDetailViewModel(INavigation nav)
-        {
-            Navigation = nav;
-            GetSelectedPrestart();
-        }
-
         Model.Prestart prestart;
         public Model.Prestart Prestart
         {
@@ -21,6 +15,12 @@ namespace Prestart.ViewModel
             }
 
             set { SetProperty(ref prestart, value, "Prestart"); }
+        }
+
+        public PrestartDetailViewModel(INavigation nav)
+        {
+            Navigation = nav;
+            GetSelectedPrestart();
         }
 
         async void GetSelectedPrestart()

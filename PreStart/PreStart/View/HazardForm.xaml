@@ -64,12 +64,12 @@
                    TextColor="{x:Static local:Template.fhBlue}"/>
         
             <Editor VerticalOptions="Center" 
-                                           HeightRequest="100" 
-                                           Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
+                    HeightRequest="100" 
+                    Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
               
-                          <Editor.Behaviors>
-                                <behaviors:EditorValidatorBehavior x:Name="validForm2"/>
-                          </Editor.Behaviors>
+              <Editor.Behaviors>
+                    <behaviors:EditorValidatorBehavior x:Name="validForm2"/>
+              </Editor.Behaviors>
               
             </Editor>
         

@@ -33,7 +33,7 @@ namespace Prestart.ViewModel
                 SetProperty(ref selectedItem, value, "SelectedItem");
                 if (selectedItem != null)
                 {
-                    //Navigate to hazard detail
+                    Navigation.PushAsync(new HazardDetail(SelectedItem));
                     SelectedItem = null;
                 }
             }

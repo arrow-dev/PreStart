@@ -1,7 +1,174 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
+             xmlns:local="clr-namespace:Prestart;assembly=Prestart"
              x:Class="Prestart.View.SignOnDetail"
              Title="Sign On Details">
-  <Label Text="SignOn details go here" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.Resources>
+    <ResourceDictionary>
+            <valueConverters:ByteToImageFieldConverter x:Key="bic" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+    <ScrollView>
+      <StackLayout>
+        <Label Text="STAY SAFE" 
+               TextColor="Red" 
+               Font="{x:Static local:Template.TitleFont}" 
+               HorizontalTextAlignment="Center"/>
+        <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" 
+               Font="{x:Static local:Template.ParaFont}" 
+               HorizontalTextAlignment="Center"/>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20">
+            <Label  Text="Employee Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
+            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Name }" />
+        </StackLayout> 
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20">
+            <Label  Text="Employer Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
+            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Employer }" />
+        </StackLayout> 
+
+        <StackLayout Orientation="Horizontal"  VerticalOptions="Center"
+                  Padding="20">
+            <Label Text="High Visible Vest"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+            <Image  HorizontalOptions="EndAndExpand"  
+                    VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.HiVis}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.HiVis}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" 
+                    Padding="20">
+            <Label Text="Laced Safety Boots"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+            <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.SafetyBoots}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.SafetyBoots}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" 
+                    Padding="20">
+            <Label Text="Gloves"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+            <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.Gloves}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.Gloves}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" 
+                    Padding="20">
+            <Label Text="Hard Hat"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+            <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.HardHat}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.HardHat}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" 
+                    Padding="20">
+            <Label Text="Hearing Protection"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+            <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.HearingProtection}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.HearingProtection}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackLayout>
+
+
+        <StackLayout Orientation="Horizontal" 
+                    Padding="20">
+            <Label Text="Safety Glasses"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+            <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.SafetyGlasses}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.SafetyGlasses}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Padding="20">
+
+            <Label  Text="Site Induction Complete" HorizontalOptions="StartAndExpand" VerticalOptions="Center"
+            TextColor="{x:Static local:Template.fhBlue}"></Label>
+
+
+            <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
+                <Image.Triggers>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.SiteInductionComplete}" Value="True">
+                        <Setter Property="Image.Source" Value="tickicon.png"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Image" Binding="{Binding SignOn.SiteInductionComplete}" Value="False">
+                        <Setter Property="Image.Source" Value="xicon.png"/>
+                    </DataTrigger>
+                </Image.Triggers>
+            </Image>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="20">
+            <Label  Text="Induction Number: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
+            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.InductionNumber }" />
+        </StackLayout>
+
+
+        <Image Source="{Binding SignOn.Signature, Converter={StaticResource bic}}"/>
+
+      </StackLayout>
+    </ScrollView>
 </ContentPage>

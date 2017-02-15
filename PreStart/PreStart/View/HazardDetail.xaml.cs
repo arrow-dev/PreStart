@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Prestart.Model;
+using Prestart.ViewModel;
 using Xamarin.Forms;
 
 namespace Prestart.View
 {
     public partial class HazardDetail : ContentPage
     {
-        public HazardDetail()
+        public HazardDetail(Hazard haz)
         {
             InitializeComponent();
+            BindingContext = new HazardDetailViewModel(Navigation, haz);
         }
     }
 }
