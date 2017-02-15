@@ -197,6 +197,22 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SignaturePad\src\SignaturePad.Forms.iOS\SignaturePad.Forms.iOS.csproj">
+      <Project>{b12d20aa-0edf-4903-b385-bb8090848532}</Project>
+      <Name>SignaturePad.Forms.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SignaturePad\src\SignaturePad.Forms\SignaturePad.Forms.csproj">
+      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
+      <Name>SignaturePad.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SignaturePad\src\SignaturePad.iOS\SignaturePad.iOS.csproj">
+      <Project>{bef71536-787b-431f-ac7f-a6469710d11f}</Project>
+      <Name>SignaturePad.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\Prestart\Prestart.csproj">
       <Project>{41bfe436-dbd5-481d-88d9-2ffe1b16b590}</Project>
       <Name>Prestart</Name>

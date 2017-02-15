@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -188,6 +188,18 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SignaturePad\src\SignaturePad.Android\SignaturePad.Android.csproj">
+      <Project>{f1a16cb9-a759-42c8-8f0b-3c9698a55336}</Project>
+      <Name>SignaturePad.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SignaturePad\src\SignaturePad.Forms.Droid\SignaturePad.Forms.Droid.csproj">
+      <Project>{1d5482f6-aa89-422c-9e34-88a8a1ad8ab6}</Project>
+      <Name>SignaturePad.Forms.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SignaturePad\src\SignaturePad.Forms\SignaturePad.Forms.csproj">
+      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
+      <Name>SignaturePad.Forms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prestart\Prestart.csproj">
       <Project>{41bfe436-dbd5-481d-88d9-2ffe1b16b590}</Project>
       <Name>Prestart</Name>
