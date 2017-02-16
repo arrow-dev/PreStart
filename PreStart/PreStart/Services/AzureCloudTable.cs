@@ -1,4 +1,5 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
+using Microsoft.WindowsAzure.MobileServices.Sync;
 using Prestart.Abstractions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,19 +8,23 @@ namespace Prestart.Services
 {
     public class AzureCloudTable<T> : ICloudTable<T> where T : TableData
     {
-        MobileServiceClient client;
-        IMobileServiceTable<T> table;
+        
+        IMobileServiceSyncTable<T> table;
 
         public AzureCloudTable(MobileServiceClient client)
         {
-            this.client = client;
-            this.table = client.GetTable<T>();
+            this.table = client.GetSyncTable<T>();
         }
         
         public async Task<T> CreateItemAsync(T item)
         {
             await table.InsertAsync(item);
             return item;
+        }
+
+        public Task<T> UpsertItemAsync(T item)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task DeleteItemAsync(T item)
@@ -46,6 +51,17 @@ namespace Prestart.Services
                 }
             }
             return allItems;
+        }
+
+        public Task<ICollection<T>> ReadItemsAsync(int start, int count)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task PullAsync()
+        {
+            string queryName = $"incsync_{typeof(T).Name}";
+            await table.PullAsync(queryName, table.CreateQuery());
         }
 
         public async Task<T> ReadItemAsync(string id)

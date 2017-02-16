@@ -1,7 +1,9 @@
-﻿namespace Prestart.Abstractions
+﻿using System.Threading.Tasks;
+
+namespace Prestart.Abstractions
 {
     public interface ICloudService
     {
-        ICloudTable<T> GetTable<T>() where T : TableData;
+        Task<ICloudTable<T>> GetTableAsync<T>() where T : TableData;
     }
 }

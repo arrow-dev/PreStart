@@ -50,7 +50,7 @@ namespace Prestart.ViewModel
 
             try
             {
-                var table = App.CloudService.GetTable<Hazard>();
+                var table = await App.CloudService.GetTableAsync<Hazard>();
                 var list = await table.ReadAllItemsAsync();
                 Items.Clear();
                 foreach (var item in list)

@@ -26,7 +26,7 @@ namespace Prestart.ViewModel
         async void GetSelectedPrestart()
         {
             
-            var table = App.CloudService.GetTable<Model.Prestart>();
+            var table = await App.CloudService.GetTableAsync<Model.Prestart>();
             Prestart = await table.ReadItemAsync(Settings.SelectedPrestartId);
             
         }

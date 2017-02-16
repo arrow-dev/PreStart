@@ -37,7 +37,7 @@ namespace Prestart.ViewModel
 
             try
             {
-                await App.CloudService.GetTable<Model.Prestart>().CreateItemAsync(Prestart);
+                await App.CloudService.GetTableAsync<Model.Prestart>().Result.CreateItemAsync(Prestart);
                 await Application.Current.MainPage.DisplayAlert("Alert", "Data Saved", "OK");
                 await Navigation.PopToRootAsync(true);
             }
