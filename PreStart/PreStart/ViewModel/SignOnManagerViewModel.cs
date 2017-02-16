@@ -51,7 +51,7 @@ namespace Prestart.ViewModel
             try
             {
                 var table = await App.CloudService.GetTableAsync<SignOn>();
-                var list = await table.ReadAllItemsAsync();
+                var list = await table.ReadItemsAfterDateAsync(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
                 Items.Clear();
                 foreach (var item in list)
                     Items.Add(item);

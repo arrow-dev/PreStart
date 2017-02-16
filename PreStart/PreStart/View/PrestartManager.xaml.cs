@@ -1,4 +1,6 @@
-﻿using Prestart.ViewModel;
+﻿using Prestart.Helpers;
+using Prestart.ViewModel;
+using System;
 using Xamarin.Forms;
 
 namespace Prestart.View

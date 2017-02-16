@@ -46,6 +46,7 @@
     <Compile Include="Behaviors\EditorValidatorBehavior.cs" />
     <Compile Include="Behaviors\EntryValidatorBehavior.cs" />
     <Compile Include="Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Model\Hazard.cs" />
     <Compile Include="Model\Prestart.cs" />
