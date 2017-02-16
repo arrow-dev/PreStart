@@ -60,6 +60,11 @@ namespace Prestart.Services
             throw new System.NotImplementedException();
         }
 
+        public async Task<ICollection<T>> ReadItemsAfterDateAsync(DateTime dateTime)
+        {
+            return await table.Where(i => i.DateCreated.Date > dateTime.Date).ToListAsync();
+        }
+
         public async Task PullAsync()
         {
             string queryName = $"incsync_{typeof(T).Name}";
