@@ -49,7 +49,7 @@ namespace Prestart.Services
             // Push the Operations Queue to the mobile backend
             await client.SyncContext.PushAsync();
 
-            // Pull each sync table
+            //Pull each sync table
             //var prestartTable = await GetTableAsync<Model.Prestart>(); await prestartTable.PullAsync();
             //var hazardTable = await GetTableAsync<Model.Hazard>(); await hazardTable.PullAsync();
             //var signOnTable = await GetTableAsync<Model.SignOn>(); await signOnTable.PullAsync();

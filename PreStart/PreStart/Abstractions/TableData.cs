@@ -8,5 +8,6 @@ namespace Prestart.Abstractions
         public DateTimeOffset? UpdatedAt { get; set; }
         public DateTimeOffset? CreatedAt { get; set; }
         public byte[] Version { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

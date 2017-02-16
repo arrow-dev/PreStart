@@ -1,6 +1,7 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 using Prestart.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace Prestart.Services
         
         public async Task<T> CreateItemAsync(T item)
         {
+            item.DateCreated = DateTime.Now;
             await table.InsertAsync(item);
             return item;
         }

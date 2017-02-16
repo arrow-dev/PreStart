@@ -54,6 +54,7 @@ namespace Prestart.ViewModel
 
             try
             {
+                await App.CloudService.SyncOfflineCacheAsync();
                 var table = await App.CloudService.GetTableAsync<Model.Prestart>();
                 var list = await table.ReadAllItemsAsync();
                 Items.Clear();
