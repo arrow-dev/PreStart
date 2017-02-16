@@ -40,7 +40,7 @@ namespace Prestart.Services
             var hasMore = true;
             while (hasMore)
             {
-                var pageOfItems = await table.OrderByDescending(i => i.CreatedAt).Skip(allItems.Count).Take(pageSize).ToListAsync();
+                var pageOfItems = await table.Skip(allItems.Count).Take(pageSize).ToListAsync();
                 if (pageOfItems.Count > 0)
                 {
                     allItems.AddRange(pageOfItems);

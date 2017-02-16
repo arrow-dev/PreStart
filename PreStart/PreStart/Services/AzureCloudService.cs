@@ -1,6 +1,8 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
+using Plugin.Connectivity;
 using Prestart.Abstractions;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Prestart.Services
@@ -37,6 +39,12 @@ namespace Prestart.Services
         public async Task SyncOfflineCacheAsync()
         {
             await InitializeAsync();
+
+            if (!(await CrossConnectivity.Current.IsRemoteReachable(client.MobileAppUri.Host, 443)))
+            {
+                Debug.WriteLine($"Cannot connect to {client.MobileAppUri} right now - offline");
+                return;
+            }
 
             // Push the Operations Queue to the mobile backend
             await client.SyncContext.PushAsync();
