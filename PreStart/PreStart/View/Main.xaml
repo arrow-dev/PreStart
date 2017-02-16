@@ -4,8 +4,7 @@
             xmlns:local="clr-namespace:Prestart.View;assembly=Prestart"
             x:Class="Prestart.View.Main"
             BarBackgroundColor="#0099C7"
-            BarTextColor="White"
-            Icon="">
+            BarTextColor="White">
   
   <local:PrestartDetail/>
   
