@@ -5,8 +5,7 @@
             x:Class="Prestart.View.Main"
             BarBackgroundColor="#0099C7"
             BarTextColor="White"
-            Icon=""
-            CurrentPageChanged="Main_OnCurrentPageChanged">
+            Icon="">
   
   <local:PrestartDetail/>
   

@@ -8,6 +8,7 @@ namespace Prestart.View
         public Main()
         {
             InitializeComponent();
+            CurrentPageChanged += Main_OnCurrentPageChanged;
         }
 
         private void Main_OnCurrentPageChanged(object sender, EventArgs e)
