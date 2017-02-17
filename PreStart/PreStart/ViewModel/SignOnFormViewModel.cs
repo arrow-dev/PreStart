@@ -62,6 +62,7 @@ namespace Prestart.ViewModel
             using (var memoryStream = new MemoryStream())
             {
                 var stream = await SignaturePad.GetImageStreamAsync(SignatureImageFormat.Png);
+                stream.Position = 0;
                 stream.CopyTo(memoryStream);
                 return memoryStream.ToArray();
             }
