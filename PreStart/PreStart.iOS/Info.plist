@@ -23,9 +23,9 @@
 	<key>MinimumOSVersion</key>
 	<string>6.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Prestart</string>
+	<string>PreStart</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.fultonhogan.Prestart</string>
+	<string>com.fultonhogan.PreStart</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>

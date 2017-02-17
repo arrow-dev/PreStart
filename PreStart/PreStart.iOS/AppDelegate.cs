@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
 using UIKit;
 
@@ -20,9 +17,12 @@ namespace Prestart.iOS
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             global::Xamarin.Forms.Forms.Init();
+            var t = typeof(SignaturePad.Forms.iOS.SignaturePadRenderer);
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
