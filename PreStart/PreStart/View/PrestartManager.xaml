@@ -2,11 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
+             xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
              x:Class="Prestart.View.PrestartManager" 
              Title="Prestart Log">
   <ContentPage.Behaviors>
     <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"/>
   </ContentPage.Behaviors>
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <valueConverters:DateTimeToString x:Key="DateTimeToString"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
   
   <StackLayout>
     <ListView CachingStrategy="RecycleElement"
@@ -14,21 +21,25 @@
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
               ItemsSource="{Binding Items}"
               RefreshCommand="{Binding RefreshCommand}"
-              RowHeight="50"
+              RowHeight="150"
               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout HorizontalOptions="FillAndExpand"
-                         Orientation="Horizontal"
-                         Padding="20,10,20,10"
-                         VerticalOptions="CenterAndExpand">
-              <Label HorizontalOptions="FillAndExpand"
-                     Text="{Binding ContractName}"
-                     TextColor="#272832" />
-              <Label Text="Other Information"
-                     TextColor="#272832"/>
-            </StackLayout>
+            <Grid Padding="20">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+
+              <Label Grid.Row="0" FontSize="Large" TextColor="#FF671B" Text="{Binding DateCreated, Converter={ StaticResource DateTimeToString }}"/>
+              <Label Grid.Row="1" FontSize="Medium" Text="{Binding ContractName}"/>
+              <Label Grid.Row="2" FontSize="Small" Text="{Binding Plan}" LineBreakMode="TailTruncation"/>
+            </Grid>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
