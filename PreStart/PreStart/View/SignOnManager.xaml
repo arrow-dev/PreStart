@@ -21,16 +21,16 @@
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
               ItemsSource="{Binding Items}"
               RefreshCommand="{Binding RefreshCommand}"
-              RowHeight="150"
+              HasUnevenRows="True"
               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <Grid Padding="20">
               <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
