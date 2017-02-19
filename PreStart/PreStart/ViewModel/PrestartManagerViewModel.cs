@@ -23,6 +23,13 @@ namespace Prestart.ViewModel
             set { SetProperty(ref items, value, "Items"); }
         }
 
+        bool showError;
+        public bool ShowError
+        {
+            get { return showError; }
+            set { SetProperty(ref showError, value, "ShowError"); }
+        }
+
         Model.Prestart selectedItem;
         public Model.Prestart SelectedItem
         {
@@ -56,6 +63,7 @@ namespace Prestart.ViewModel
             {
                 var table = await App.CloudService.GetTableAsync<Model.Prestart>();
                 var list = await table.ReadItemsAfterDateAsync(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
+                ShowError = list.Count == 0;
                 Items.Clear();
                 foreach (var item in list)
                     Items.Add(item);

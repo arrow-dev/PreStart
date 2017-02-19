@@ -16,6 +16,7 @@
   </ContentPage.Resources>
 
   <StackLayout>
+    <Label Text="Nobody has signed on yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
     <ListView CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"

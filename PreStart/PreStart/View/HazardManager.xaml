@@ -16,7 +16,9 @@
   </ContentPage.Resources>
 
   <StackLayout>
-    <ListView CachingStrategy="RecycleElement"
+      <Label Text="No Hazards have been identified yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
+    <ListView x:Name="ItemList"
+              CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
               ItemsSource="{Binding Items}"
