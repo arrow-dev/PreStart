@@ -23,7 +23,6 @@
              Font="{x:Static local:Template.ParaFont}"
              HorizontalTextAlignment="Center"/>
     </StackLayout>
-    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
     
     <ScrollView Orientation="Vertical">
       <StackLayout Orientation="Vertical" 
