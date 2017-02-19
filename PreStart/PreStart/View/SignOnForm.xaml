@@ -6,6 +6,7 @@
              x:Class="Prestart.View.SignOnForm"
              Title="Sign On">
   <StackLayout>
+    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
     <ScrollView x:Name="Form">
       <StackLayout>
         <StackLayout Orientation="Horizontal"

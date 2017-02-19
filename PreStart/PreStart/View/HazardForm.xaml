@@ -13,8 +13,8 @@
   </ContentPage.Resources>             
              
   <StackLayout>
+    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
     <StackLayout>
-      
       <Label Text="STAY SAFE"
              TextColor="Red"
              Font="{x:Static local:Template.TitleFont}"

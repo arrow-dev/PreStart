@@ -4,9 +4,11 @@
              x:Class="Prestart.View.PrestartForm4"
              Title="General Requirements">
   <StackLayout>
+    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
     <Label Text="Progress:" TextColor="#FF671B" Margin="10"/>
     <ProgressBar Progress="0.8"/>
     <ScrollView>
+      
       <StackLayout>
 
         <StackLayout Orientation="Horizontal" Padding="20">
