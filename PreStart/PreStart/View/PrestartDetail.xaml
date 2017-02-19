@@ -4,7 +4,8 @@
              xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
              xmlns:local="clr-namespace:Prestart;assembly=Prestart"
              x:Class="Prestart.View.PrestartDetail"
-             Title="Prestart Details">
+             Title="Prestart Details"
+             Icon="form.png">
   <ContentPage.Resources>
     <ResourceDictionary>
       <valueConverters:DateTimeToString x:Key="DateTimeToString"/>

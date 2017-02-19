@@ -4,7 +4,8 @@
              xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
              xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
              x:Class="Prestart.View.SignOnManager"
-             Title="Sign On">
+             Title="Sign On"
+             Icon="signon.png">
   <ContentPage.Behaviors>
     <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"/>
   </ContentPage.Behaviors>
