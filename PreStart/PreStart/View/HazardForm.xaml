@@ -237,8 +237,9 @@
           <StackLayout Orientation="Vertical" 
                        VerticalOptions="Center" 
                        Padding="{x:Static local:Template.StackLayoutSection}">
-            <Button Text="Save" 
+            <Button Text="Save"
                     TextColor="White"
+                    FontSize="Large"
                     BackgroundColor="{x:Static local:Template.fhOrange}" 
                     HorizontalOptions="Center"
                     Command="{Binding DoneCommand}">

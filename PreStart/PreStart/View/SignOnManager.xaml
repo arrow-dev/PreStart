@@ -52,6 +52,7 @@
       <Button BackgroundColor="#FF671B"
               Command="{Binding AddNewItemCommand}"
               Text="Sign On"
+              FontSize="Large"
               TextColor="White" />
     </StackLayout>
   </StackLayout>

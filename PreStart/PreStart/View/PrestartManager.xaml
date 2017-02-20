@@ -51,6 +51,7 @@
       <Button BackgroundColor="#FF671B"
               Command="{Binding AddNewItemCommand}"
               Text="New Prestart"
+              FontSize="Large"
               TextColor="White" />
     </StackLayout>
   </StackLayout>

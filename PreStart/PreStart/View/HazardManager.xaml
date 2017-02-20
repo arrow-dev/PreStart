@@ -55,6 +55,7 @@
       <Button BackgroundColor="#FF671B"
               Command="{Binding AddNewItemCommand}"
               Text="New Hazard"
+              FontSize="Large"
               TextColor="White" />
     </StackLayout>
   </StackLayout>

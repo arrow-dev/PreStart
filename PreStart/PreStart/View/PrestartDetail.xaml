@@ -14,8 +14,15 @@
   <StackLayout>
     <StackLayout x:Name="ErrorLayout" VerticalOptions="CenterAndExpand">
       <Label Text="You must select a Prestart in the Prestart Log."  VerticalOptions="Center" HorizontalOptions="Center"/>
-      <Button Text="Prestart Log" BackgroundColor="#FF671B" TextColor="White" Clicked="PrestartLogBtn_Clicked"  VerticalOptions="Center" HorizontalOptions="Center"/>
+      <Button Text="Prestart Log" 
+              BackgroundColor="#FF671B" 
+              TextColor="White"
+              FontSize="Large" 
+              Clicked="PrestartLogBtn_Clicked"  
+              VerticalOptions="Center" 
+              HorizontalOptions="Center"/>
     </StackLayout>
+    
     <ScrollView x:Name="Details">
       <StackLayout>
 

@@ -83,6 +83,7 @@
         <StackLayout Padding="20">
           <Button Text="Save"
                 TextColor="White"
+                FontSize="Large"
                 BackgroundColor="#FF671B"
                 Command="{Binding NextCommand}"
                 VerticalOptions="Center"

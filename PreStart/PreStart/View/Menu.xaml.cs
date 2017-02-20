@@ -8,7 +8,7 @@ namespace Prestart.View
         public Menu()
         {
             InitializeComponent();
-            Detail = new PrestartNavigationPage(new Main());
+            Detail = new PrestartNavigationPage(new PrestartManager());
         }
 
         private void SignOnButton_OnClicked(object sender, EventArgs e)

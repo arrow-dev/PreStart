@@ -75,6 +75,7 @@
         <StackLayout Padding="20">
           <Button Text="Next"
                 TextColor="White"
+                FontSize="Large"
                 BackgroundColor="#FF671B"
                 Command="{Binding NextCommand}"
                 VerticalOptions="Center"
