@@ -4,9 +4,9 @@ using Microsoft.WindowsAzure.MobileServices.Sync;
 using Newtonsoft.Json.Linq;
 using Plugin.Connectivity;
 using Prestart.Abstractions;
+using Prestart.Model;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Prestart.Model;
 
 namespace Prestart.Services
 {
@@ -58,14 +58,6 @@ namespace Prestart.Services
             {
                 if (ex.PushResult != null)
                 {
-                    if (ex.PushResult.Status == MobileServicePushStatus.Complete)
-                    {
-                        foreach (var error in ex.PushResult.Errors)
-                        {
-                            await CancelOperationAsync(error);
-                        }
-                        return;
-                    }
                     foreach (var error in ex.PushResult.Errors)
                     {
                         switch (error.TableName)
@@ -112,11 +104,6 @@ namespace Prestart.Services
 
             // Server Always Wins
             // await error.CancelAndDiscardItemAsync();
-        }
-
-        async Task CancelOperationAsync(MobileServiceTableOperationError error)
-        {
-            await error.CancelAndDiscardItemAsync();
         }
     }
 }

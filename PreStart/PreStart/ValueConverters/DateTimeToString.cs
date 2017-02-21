@@ -9,8 +9,8 @@ namespace Prestart.ValueConverters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is DateTimeOffset)
-                return ((DateTimeOffset) value).ToString("D");
+            if (value is DateTime)
+                return ((DateTime) value).ToString("D");
 
             return "No Date Found";
         }

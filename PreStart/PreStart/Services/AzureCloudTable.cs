@@ -20,7 +20,7 @@ namespace Prestart.Services
         public async Task<T> CreateItemAsync(T item)
         {
             item.Id = Guid.NewGuid().ToString();
-            item.DateCreated = DateTimeOffset.Now;
+            item.DateCreated = DateTime.Now;
             await table.InsertAsync(item);
             return item;
         }
