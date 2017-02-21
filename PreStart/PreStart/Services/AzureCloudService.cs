@@ -6,6 +6,7 @@ using Plugin.Connectivity;
 using Prestart.Abstractions;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Prestart.Model;
 
 namespace Prestart.Services
 {
@@ -32,8 +33,8 @@ namespace Prestart.Services
             var store = new MobileServiceSQLiteStore("offlinecache.db");
 
             store.DefineTable<Model.Prestart>();
-            store.DefineTable<Model.Hazard>();
-            store.DefineTable<Model.SignOn>();
+            store.DefineTable<Hazard>();
+            store.DefineTable<SignOn>();
 
             await client.SyncContext.InitializeAsync(store);
         }
@@ -57,6 +58,14 @@ namespace Prestart.Services
             {
                 if (ex.PushResult != null)
                 {
+                    if (ex.PushResult.Status == MobileServicePushStatus.Complete)
+                    {
+                        foreach (var error in ex.PushResult.Errors)
+                        {
+                            await CancelOperationAsync(error);
+                        }
+                        return;
+                    }
                     foreach (var error in ex.PushResult.Errors)
                     {
                         switch (error.TableName)
@@ -72,7 +81,9 @@ namespace Prestart.Services
                                 break;
                         }
                     }
+                    
                 }
+                
             }
 
             //Pull each sync table
@@ -101,6 +112,11 @@ namespace Prestart.Services
 
             // Server Always Wins
             // await error.CancelAndDiscardItemAsync();
+        }
+
+        async Task CancelOperationAsync(MobileServiceTableOperationError error)
+        {
+            await error.CancelAndDiscardItemAsync();
         }
     }
 }
