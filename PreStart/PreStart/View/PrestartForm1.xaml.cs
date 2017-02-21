@@ -10,5 +10,11 @@ namespace Prestart.View
             InitializeComponent();
             BindingContext = new PrestartForm1ViewModel(Navigation);
         }
+
+        public PrestartForm1(Model.Prestart prestart)
+        {
+           InitializeComponent();
+            BindingContext = new PrestartForm1ViewModel(Navigation, prestart); 
+        }
     }
 }

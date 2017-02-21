@@ -24,6 +24,12 @@ namespace Prestart.ViewModel
             Hazard = new Hazard {PrestartId = Settings.SelectedPrestartId};
         }
 
+        public HazardFormViewModel(INavigation nav, Hazard hazard)
+        {
+            Navigation = nav;
+            Hazard = hazard;
+        }
+
         Command doneCommand;
         public Command DoneCommand
             => doneCommand ?? (doneCommand = new Command(async () => await ExecuteDoneCommand()));
@@ -36,7 +42,8 @@ namespace Prestart.ViewModel
 
             try
             {
-                await App.CloudService.GetTableAsync<Hazard>().Result.CreateItemAsync(Hazard);
+                var table = await App.CloudService.GetTableAsync<Hazard>();
+                await table.UpsertItemAsync(Hazard);
                 await App.CloudService.SyncOfflineCacheAsync();
                 await Application.Current.MainPage.DisplayAlert("Alert", "Data Saved", "OK");
                 await Navigation.PopToRootAsync(true);

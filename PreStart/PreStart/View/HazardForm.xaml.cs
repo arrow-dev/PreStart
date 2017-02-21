@@ -1,4 +1,5 @@
-﻿using Prestart.ViewModel;
+﻿using Prestart.Model;
+using Prestart.ViewModel;
 using System;
 using Xamarin.Forms;
 
@@ -12,12 +13,20 @@ namespace Prestart.View
         {
             InitializeComponent();
             BindingContext = new HazardFormViewModel(Navigation);
-
             RBSliderPCL.ValueChanged += RBPclOnSliderChanged;
             RBSliderPLL.ValueChanged += RBPllOnSliderChanged;
             RASliderPCL.ValueChanged += RAPclOnSliderChanged;
             RASliderPLL.ValueChanged += RAPllOnSliderChanged;
+        }
 
+        public HazardForm(Hazard hazard)
+        {
+            InitializeComponent();
+            BindingContext = new HazardFormViewModel(Navigation, hazard);
+            RBSliderPCL.ValueChanged += RBPclOnSliderChanged;
+            RBSliderPLL.ValueChanged += RBPllOnSliderChanged;
+            RASliderPCL.ValueChanged += RAPclOnSliderChanged;
+            RASliderPLL.ValueChanged += RAPllOnSliderChanged;
         }
 
         private void RiskBeforeBtn_OnClick(object sender, EventArgs e)

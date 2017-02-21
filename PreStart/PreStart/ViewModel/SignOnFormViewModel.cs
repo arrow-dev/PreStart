@@ -41,7 +41,8 @@ namespace Prestart.ViewModel
             try
             {
                 SignOn.Signature = await GetSigBytesAsync();
-                await App.CloudService.GetTableAsync<SignOn>().Result.CreateItemAsync(SignOn);
+                var table = await App.CloudService.GetTableAsync<SignOn>();
+                await table.UpsertItemAsync(SignOn);
                 await App.CloudService.SyncOfflineCacheAsync();
                 await Application.Current.MainPage.DisplayAlert("Alert", "Data Saved", "OK");
                 await Navigation.PopToRootAsync(true);

@@ -1,5 +1,8 @@
 ﻿using Prestart.Abstractions;
 using Prestart.Model;
+using Prestart.View;
+using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Prestart.ViewModel
@@ -19,27 +22,27 @@ namespace Prestart.ViewModel
             Hazard = haz;
         }
 
-        //Command editCommand;
-        //public Command EditCommand
-        //    => editCommand ?? (editCommand = new Command(async () => await ExecuteEditCommand()));
+        Command editCommand;
+        public Command EditCommand
+            => editCommand ?? (editCommand = new Command(async () => await ExecuteEditCommand()));
 
-        //async System.Threading.Tasks.Task ExecuteEditCommand()
-        //{
-        //    if (IsBusy)
-        //        return;
-        //    IsBusy = true;
-        //    try
-        //    {
-        //        await Navigation.PushAsync(new HazardForm(Hazard));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine($"{ex.Message}");
-        //    }
-        //    finally
-        //    {
-        //        IsBusy = false;
-        //    }
-        //}
+        async System.Threading.Tasks.Task ExecuteEditCommand()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+            try
+            {
+                await Navigation.PushAsync(new HazardForm(Hazard));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
     }
 }

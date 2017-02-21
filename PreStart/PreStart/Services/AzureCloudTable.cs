@@ -25,9 +25,11 @@ namespace Prestart.Services
             return item;
         }
 
-        public Task<T> UpsertItemAsync(T item)
+        public async Task<T> UpsertItemAsync(T item)
         {
-            throw new System.NotImplementedException();
+            return (item.Id == null)
+                ? await CreateItemAsync(item)
+                : await UpdateItemAsync(item);
         }
 
         public async Task DeleteItemAsync(T item)

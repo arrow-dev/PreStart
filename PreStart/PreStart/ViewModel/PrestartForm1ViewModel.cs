@@ -15,6 +15,12 @@ namespace Prestart.ViewModel
             Navigation = nav;
         }
 
+        public PrestartForm1ViewModel(INavigation nav, Model.Prestart prestart)
+        {
+            Prestart = prestart;
+            Navigation = nav;
+        }
+
         Model.Prestart prestart;
         public Model.Prestart Prestart
         {
