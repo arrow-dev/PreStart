@@ -38,13 +38,13 @@ namespace Prestart.ViewModel
             set
             {
                 SetProperty(ref search, value, "Search");
-                Filter(Search);
+                Filter(Search, prestart => prestart.SiteManager);
             }
         }
 
-        private void Filter(string query)
+        private void Filter(string query, Func<Model.Prestart, string> prop )
         {
-            var filteredList = Items.Where(i => i.SiteManager.ToLower().Contains(query.ToLower())).ToList();
+            var filteredList = Items.Where(i => prop(i).ToLower().Contains(query.ToLower())).ToList();
             FilteredPrestarts.Clear();
             foreach (var item in filteredList)
             {
