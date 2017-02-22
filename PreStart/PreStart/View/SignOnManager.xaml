@@ -17,7 +17,29 @@
   </ContentPage.Resources>
 
   <StackLayout>
-    <Label Text="Nobody has signed on yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
+    <Label Text="Nobody has signed on yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"/>    
+    <Grid Padding="20">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Row="0" Grid.Column="0" FontSize="Small" Text="Contract Name: "/>
+      <Label Grid.Row="0" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractName}"/>
+      <Label Grid.Row="0" Grid.Column="2" FontSize="Small" Text="Location: "/>
+      <Label Grid.Row="0" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.Location}"/>
+      <Label Grid.Row="1" Grid.Column="0" FontSize="Small" Text="Contract Number: "/>
+      <Label Grid.Row="1" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractNumber}"/>
+      <Label Grid.Row="1" Grid.Column="2" FontSize="Small" Text="Location Number: "/>
+      <Label Grid.Row="1" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.LotNo}"/>
+    </Grid>
+
     <ListView CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -36,11 +58,14 @@
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
-              
-              
-              <Label Grid.Row="0" FontSize="Large" Text="{Binding Name}"/>
-              <Label Grid.Row="1" FontSize="Medium" Text="{Binding Employer, StringFormat=Employer : '{0:N}'}" LineBreakMode="TailTruncation"/>
+              <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" TextColor="#FF671B" Text="Sign On Time: "/>
+              <Label Grid.Row="0" Grid.Column="1" FontSize="Medium" Text="{Binding DateCreated, Converter={ StaticResource DateTimeToString }}"/>
+              <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Name: "/>
+              <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding Name}"/>
+              <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Prestart: "/>
+              <Label Grid.Row="2" Grid.Column="1" FontSize="Medium" Text="Contract goes here"/>
             </Grid>
           </ViewCell>
         </DataTemplate>

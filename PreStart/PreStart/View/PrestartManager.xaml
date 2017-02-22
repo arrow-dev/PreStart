@@ -32,14 +32,31 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
 
-              <Label Grid.Row="0" FontSize="Medium" TextColor="#FF671B" Text="{Binding ContractName, StringFormat=Contract Name : '{0:N}' }"/>
-              <Label Grid.Row="1" FontSize="Medium"  Text="{Binding SiteManager, StringFormat=Site Manager : '{0:N}'}" LineBreakMode="TailTruncation"/>
-              <Label Grid.Row="2" FontSize="Small" Text="{Binding Plan, StringFormat=Plan : '{0:N}'}"/>
+              <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="Large" TextColor="#FF671B" 
+                     Text="{Binding DateCreated, Converter={ StaticResource DateTimeToString }}"/>
+              <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Contract Name: "/>
+              <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding ContractName}"/>
+              <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Location: "/>
+              <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding Location}"/>
+              <Label Grid.Row="3" Grid.Column="0" FontSize="Medium" Text="Department: "/>
+              <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding Department}"/>
+              <Label Grid.Row="4" Grid.Column="0" FontSize="Medium" Text="Job Number: "/>
+              <Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding JobNumber}"/>
+              <Label Grid.Row="5" Grid.Column="0" FontSize="Medium" Text="Person in Charge: "/>
+              <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding SiteManager}"/>
+              <Label Grid.Row="6" Grid.Column="0" FontSize="Medium" Text="Plan: "/>
+              <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Small" Text="{Binding Plan}" LineBreakMode="TailTruncation"/>
             </Grid>
           </ViewCell>
         </DataTemplate>
