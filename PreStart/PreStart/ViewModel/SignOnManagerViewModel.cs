@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Prestart = Prestart.Model.Prestart;
 
 
 //using Prestart = Prestart.Model.Prestart;
@@ -73,15 +72,16 @@ namespace Prestart.ViewModel
             try
             {
                 await App.CloudService.SyncOfflineCacheAsync();
-                Prestart =
-                    await App.CloudService.GetTableAsync<Model.Prestart>()
-                        .Result.ReadItemAsync(Settings.SelectedPrestartId);
+                Prestart = await App.CloudService.GetTableAsync<Model.Prestart>().Result.ReadItemAsync(Settings.SelectedPrestartId);
                 var table = await App.CloudService.GetTableAsync<SignOn>();
                 var list = await table.ReadItemsAfterDateAsync(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
                 ShowError = list.Count == 0;
                 Items.Clear();
                 foreach (var item in list)
-                    Items.Add(item);
+                    if (item.PrestartId == Settings.SelectedPrestartId)
+                    {
+                        Items.Add(item);
+                    }
             }
             catch (Exception ex)
             {
