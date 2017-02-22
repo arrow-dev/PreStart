@@ -38,9 +38,9 @@
                 <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
               
-              <Label Grid.Row="0" FontSize="Large" TextColor="#FF671B" Text="{Binding DateCreated, Converter={ StaticResource DateTimeToString }}"/>
-              <Label Grid.Row="1" FontSize="Medium" Text="{Binding Name}"/>
-              <Label Grid.Row="2" FontSize="Small" Text="{Binding Employer}" LineBreakMode="TailTruncation"/>
+              
+              <Label Grid.Row="0" FontSize="Large" Text="{Binding Name}"/>
+              <Label Grid.Row="1" FontSize="Medium" Text="{Binding Employer, StringFormat=Employer : '{0:N}'}" LineBreakMode="TailTruncation"/>
             </Grid>
           </ViewCell>
         </DataTemplate>
