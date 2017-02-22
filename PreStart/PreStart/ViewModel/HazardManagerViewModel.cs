@@ -46,6 +46,15 @@ namespace Prestart.ViewModel
             }
         }
 
+
+        Model.Prestart _prestart;
+
+        public Model.Prestart Prestart
+        {
+            get { return _prestart; }
+            set { SetProperty(ref _prestart, value, "Prestart"); }
+        }
+
         Command refreshCmd;
         public Command RefreshCommand => refreshCmd ?? (refreshCmd = new Command(async () => await ExecuteRefreshCommand()));
 
@@ -58,6 +67,8 @@ namespace Prestart.ViewModel
             try
             {
                 await App.CloudService.SyncOfflineCacheAsync();
+                Prestart = await App.CloudService.GetTableAsync<Model.Prestart>()
+                        .Result.ReadItemAsync(Settings.SelectedPrestartId);
                 var table = await App.CloudService.GetTableAsync<Hazard>();
                 var list = await table.ReadItemsAfterDateAsync(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
                 ShowError = list.Count == 0;
