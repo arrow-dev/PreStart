@@ -114,5 +114,6 @@ namespace Prestart.ViewModel
                 await ExecuteRefreshCommand();
             });
         }
+
     }
 }

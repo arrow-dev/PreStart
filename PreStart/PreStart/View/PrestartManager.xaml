@@ -57,7 +57,7 @@
               <Label Grid.Row="5" Grid.Column="0" FontSize="Medium" Text="Person in Charge: "/>
               <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding SiteManager}"/>
               <Label Grid.Row="6" Grid.Column="0" FontSize="Medium" Text="Plan: "/>
-              <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Small" Text="{Binding Plan}" LineBreakMode="TailTruncation"/>
+              <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" Text="{Binding Plan}" LineBreakMode="TailTruncation"/>
             </Grid>
           </ViewCell>
         </DataTemplate>
