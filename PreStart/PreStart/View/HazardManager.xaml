@@ -17,6 +17,30 @@
   </ContentPage.Resources>
 
   <StackLayout>
+    <Label Text="No Hazards have been identified yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
+    <Grid Padding="20">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Row="0" Grid.Column="0" FontSize="Small" TextColor="#FF671B" Text="Contract Name: "/>
+      <Label Grid.Row="0" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractName}"/>
+      <Label Grid.Row="0" Grid.Column="2" FontSize="Small" TextColor="#FF671B" Text="Location: "/>
+      <Label Grid.Row="0" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.Location}"/>
+      <Label Grid.Row="1" Grid.Column="0" FontSize="Small" TextColor="#FF671B" Text="Contract Number: "/>
+      <Label Grid.Row="1" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractNumber}"/>
+      <Label Grid.Row="1" Grid.Column="2" FontSize="Small" TextColor="#FF671B" Text="Site: "/>
+      <Label Grid.Row="1" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.SiteId}"/>
+    </Grid>
+    
+    <ListView x:Name="ItemList"
       <Label Text="No Hazards have been identified yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
     <ListView x:Name="ItemList"
               CachingStrategy="RecycleElement"
