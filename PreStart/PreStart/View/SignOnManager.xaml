@@ -12,7 +12,7 @@
   
   <ContentPage.Resources>
     <ResourceDictionary>
-      <valueConverters:DateTimeToString x:Key="DateTimeToString"/>
+      <valueConverters:SignOnTimeConverter x:Key="SignOnTimeConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -36,8 +36,8 @@
       <Label Grid.Row="0" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.Location}"/>
       <Label Grid.Row="1" Grid.Column="0" FontSize="Small" Text="Contract Number: "/>
       <Label Grid.Row="1" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractNumber}"/>
-      <Label Grid.Row="1" Grid.Column="2" FontSize="Small" Text="Location Number: "/>
-      <Label Grid.Row="1" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.LotNo}"/>
+      <Label Grid.Row="1" Grid.Column="2" FontSize="Small" Text="Site: "/>
+      <Label Grid.Row="1" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.SiteId}"/>
     </Grid>
 
     <ListView CachingStrategy="RecycleElement"
@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
               <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" TextColor="#FF671B" Text="Sign On Time: "/>
-              <Label Grid.Row="0" Grid.Column="1" FontSize="Medium" Text="{Binding DateCreated, Converter={ StaticResource DateTimeToString }}"/>
+              <Label Grid.Row="0" Grid.Column="1" FontSize="Medium" Text="{Binding DateCreated, Converter={ StaticResource SignOnTimeConverter }}"/>
               <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Name: "/>
               <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding Name}"/>
               <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Prestart: "/>
