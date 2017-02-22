@@ -16,11 +16,12 @@
   </ContentPage.Resources>
   
   <StackLayout>
+    <Entry Placeholder="Search by Site Manager/Foreman" Text="{Binding Search, Mode=TwoWay}"/>
     <Label Text="Looks like there aren't any Prestarts yet for this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
     <ListView CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"
               IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-              ItemsSource="{Binding Items}"
+              ItemsSource="{Binding FilteredPrestarts}"
               RefreshCommand="{Binding RefreshCommand}"
               HasUnevenRows="True"
               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">

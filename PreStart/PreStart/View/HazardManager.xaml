@@ -17,7 +17,7 @@
   </ContentPage.Resources>
 
   <StackLayout>
-      <Label Text="No Hazards have been identified yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
+    <Label Text="No Hazards have been identified yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"/>
     <ListView x:Name="ItemList"
               CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"

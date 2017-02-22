@@ -27,8 +27,6 @@ namespace Prestart.ViewModel
             set { SetProperty(ref items, value, "Items"); }
         }
 
-        
-
         bool showError;
         public bool ShowError
         {
