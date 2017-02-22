@@ -63,7 +63,10 @@ namespace Prestart.ViewModel
                 ShowError = list.Count == 0;
                 Items.Clear();
                 foreach (var item in list)
-                    Items.Add(item);
+                    if (item.PrestartId == Settings.SelectedPrestartId)
+                    {
+                        Items.Add(item);
+                    }
             }
             catch (Exception ex)
             {
