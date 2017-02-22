@@ -16,7 +16,16 @@
   </ContentPage.Resources>
   
   <StackLayout>
-    <Entry Placeholder="Search by Site Manager/Foreman" Text="{Binding Search, Mode=TwoWay}"/>
+    <StackLayout Orientation="Horizontal">
+      <Entry Placeholder="Filter Results" Text="{Binding Search, Mode=TwoWay}" HorizontalOptions="FillAndExpand"/>
+      <Picker SelectedIndex="{Binding SelectedFilter, Mode=TwoWay}" WidthRequest="200">
+        <Picker.Items>
+          <x:String>Site Manager</x:String>
+          <x:String>Job Number</x:String>
+          <x:String>Contract Name</x:String>
+        </Picker.Items>
+      </Picker>
+    </StackLayout>
     <Label Text="Looks like there aren't any Prestarts yet for this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"></Label>
     <ListView CachingStrategy="RecycleElement"
               IsPullToRefreshEnabled="True"

@@ -68,7 +68,7 @@ namespace Prestart.ViewModel
             {
                 await App.CloudService.SyncOfflineCacheAsync();
                 Prestart = await App.CloudService.GetTableAsync<Model.Prestart>()
-                        .Result.ReadItemAsync(Settings.SelectedPrestartId);
+                                .Result.ReadItemAsync(Settings.SelectedPrestartId);
                 var table = await App.CloudService.GetTableAsync<Hazard>();
                 var list = await table.ReadItemsAfterDateAsync(DateTime.Now.StartOfWeek(DayOfWeek.Monday));
                 ShowError = list.Count == 0;
