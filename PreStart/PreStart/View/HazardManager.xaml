@@ -51,21 +51,71 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
+          
             <Grid Padding="20">
               <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                 <RowDefinition Height="Auto"/>
+               <RowDefinition Height="Auto"/>
+              
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+              <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="50"/>
               </Grid.ColumnDefinitions>
 
-              <Label Grid.Row="0" FontSize="Large" TextColor="#FF671B" Text="{Binding DateCreated, Converter={ StaticResource DateTimeToString }}"/>
-              <Label Grid.Row="1" FontSize="Medium" Text="{Binding Task}"/>
-              <Label Grid.Row="2" FontSize="Small" Text="{Binding Description}" LineBreakMode="TailTruncation"/>
-              <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Source="warning.png" Aspect="AspectFit"></Image>
+ 
+              
+                 <!--<Label Grid.Row="0" FontSize="Medium"  Text="{Binding  Task,  StringFormat=Task:'{0:N}'}" LineBreakMode="TailTruncation"/>-->
+
+              <Label Grid.Row="0" Grid.Column="0" FontSize="Medium"  Text="Task:" TextColor="#FF671B"  LineBreakMode="TailTruncation"/>
+              
+                    <Label Grid.Row="0"  Grid.Column="1" FontSize="Medium"  Text="{Binding Task}" TextColor="#FF671B" 
+                           LineBreakMode="TailTruncation"/>
+              
+              <!--<Label Grid.Row="1" FontSize="Medium"  Text="{Binding  Description,  StringFormat=Description:'{0:N}'}" LineBreakMode="TailTruncation"/>-->
+                     
+                     <Label Grid.Row="1" Grid.Column="0" FontSize="Medium"  Text="Hazard:" 
+                     LineBreakMode="TailTruncation"/>
+              
+                    <Label Grid.Row="1"  Grid.Column="1" FontSize="Medium"  Text="{Binding Description}" 
+                     LineBreakMode="TailTruncation"/>
+
+              <!--<Label Grid.Row="2" FontSize="Medium" Text="{Binding Repercussion, StringFormat=Consequence:'{0:N}'}" TextColor="Maroon"
+                     LineBreakMode="TailTruncation"/>-->
+              
+                 <Label Grid.Row="2" Grid.Column="0" FontSize="Medium"  Text="Consequence:" 
+                     LineBreakMode="TailTruncation"/>
+              
+                    <Label Grid.Row="2"  Grid.Column="1" FontSize="Medium"  Text="{Binding Repercussion}"
+                     LineBreakMode="TailTruncation"/>
+              
+               <!--<Label Grid.Row="3" FontSize="Medium" Text="{Binding Response,  StringFormat=Response:'{0:N}'}"  TextColor="Olive"
+                      LineBreakMode="TailTruncation"/>-->
+                 
+                    <Label Grid.Row="3" Grid.Column="0" FontSize="Medium"  Text="Response:" 
+                     LineBreakMode="TailTruncation"/>
+              
+                    <Label Grid.Row="3"  Grid.Column="1" FontSize="Medium"  Text="{Binding Response}"  
+                     LineBreakMode="TailTruncation"/>
+              
+              
+              <!--<Label Grid.Row="4" FontSize="Medium" Text="{Binding RiskAfter,  StringFormat=RiskAfter:'{0:N}'}" TextColor="Green"
+                     LineBreakMode="TailTruncation"/>-->
+                   
+                    <Label Grid.Row="4" Grid.Column="0" FontSize="Medium"  Text="Risk After:"
+                     LineBreakMode="TailTruncation"/>
+              
+                    <Label Grid.Row="4"  Grid.Column="1" FontSize="Medium"  Text="{Binding RiskAfter}" 
+                     LineBreakMode="TailTruncation"/>
+                  
+            
+              
+              <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" Source="warning.png" Aspect="AspectFit"></Image>
+            
             </Grid>
           </ViewCell>
         </DataTemplate>

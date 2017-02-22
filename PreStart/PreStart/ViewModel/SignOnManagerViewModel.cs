@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Prestart = Prestart.Model.Prestart;
 
 
 //using Prestart = Prestart.Model.Prestart;
@@ -27,8 +26,6 @@ namespace Prestart.ViewModel
             get { return items; }
             set { SetProperty(ref items, value, "Items"); }
         }
-
-        
 
         bool showError;
         public bool ShowError
@@ -80,7 +77,10 @@ namespace Prestart.ViewModel
                 ShowError = list.Count == 0;
                 Items.Clear();
                 foreach (var item in list)
-                    Items.Add(item);
+                    if (item.PrestartId == Settings.SelectedPrestartId)
+                    {
+                        Items.Add(item);
+                    }
             }
             catch (Exception ex)
             {

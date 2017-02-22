@@ -4,6 +4,7 @@ using Prestart.View;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -21,6 +22,34 @@ namespace Prestart.ViewModel
         {
             get { return items; }
             set { SetProperty(ref items, value, "Items"); }
+        }
+
+        ObservableCollection<Model.Prestart> filteredPrestarts = new ObservableCollection<Model.Prestart>();
+        public ObservableCollection<Model.Prestart> FilteredPrestarts
+        {
+            get { return filteredPrestarts; }
+            set { SetProperty(ref filteredPrestarts, value, "FilteredPrestarts"); }
+        }
+
+        string search;
+        public string Search
+        {
+            get { return search; }
+            set
+            {
+                SetProperty(ref search, value, "Search");
+                Filter(Search);
+            }
+        }
+
+        private void Filter(string query)
+        {
+            var filteredList = Items.Where(i => i.SiteManager.ToLower().Contains(query.ToLower())).ToList();
+            FilteredPrestarts.Clear();
+            foreach (var item in filteredList)
+            {
+                FilteredPrestarts.Add(item);
+            }
         }
 
         bool showError;
@@ -68,6 +97,11 @@ namespace Prestart.ViewModel
                 Items.Clear();
                 foreach (var item in list)
                     Items.Add(item);
+                foreach (var item in Items)
+                {
+                    FilteredPrestarts.Add(item);
+                }
+                ;
             }
             catch (Exception ex)
             {

@@ -23,20 +23,23 @@
 
 
         <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20">
-            <Label  Text="Employee Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
-            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Name }" />
+            <Label  Text="Employee Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center" FontSize="Medium" />
+            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Name }"
+                   FontSize="Medium" />
         </StackLayout> 
 
         <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="20">
-            <Label  Text="Employer Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
-            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Employer }" />
+            <Label  Text="Employer Name: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center" FontSize="Medium"  />
+            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.Employer }"
+                   FontSize="Medium" />
         </StackLayout> 
 
         <StackLayout Orientation="Horizontal"  VerticalOptions="Center"
                   Padding="20">
-            <Label Text="High Visible Vest"
+            <Label Text="High Visible Vest" 
+                   FontSize="Medium"
                     HorizontalOptions="StartAndExpand"
-                    VerticalOptions="Center"
+                    VerticalOptions="Center" 
                 TextColor="{x:Static local:Template.fhBlue}"/>
             <Image  HorizontalOptions="EndAndExpand"  
                     VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
@@ -53,7 +56,8 @@
 
         <StackLayout Orientation="Horizontal" 
                     Padding="20">
-            <Label Text="Laced Safety Boots"
+            <Label Text="Laced Safety Boots" 
+                   FontSize="Medium"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
                 TextColor="{x:Static local:Template.fhBlue}"/>
@@ -71,9 +75,10 @@
 
         <StackLayout Orientation="Horizontal" 
                     Padding="20">
-            <Label Text="Gloves"
+            <Label Text="Gloves" 
+                   FontSize="Medium"
                     HorizontalOptions="StartAndExpand"
-                    VerticalOptions="Center"
+                    VerticalOptions="Center" 
                 TextColor="{x:Static local:Template.fhBlue}"/>
             <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                 <Image.Triggers>
@@ -90,6 +95,7 @@
         <StackLayout Orientation="Horizontal" 
                     Padding="20">
             <Label Text="Hard Hat"
+                  FontSize="Medium"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
                 TextColor="{x:Static local:Template.fhBlue}"/>
@@ -110,6 +116,8 @@
             <Label Text="Hearing Protection"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
+                   FontSize="Medium"
+                   
                 TextColor="{x:Static local:Template.fhBlue}"/>
             <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                 <Image.Triggers>
@@ -129,6 +137,7 @@
             <Label Text="Safety Glasses"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
+                   FontSize="Medium"
                 TextColor="{x:Static local:Template.fhBlue}"/>
             <Image  HorizontalOptions="EndAndExpand"  HeightRequest="20" WidthRequest="20">
                 <Image.Triggers>
@@ -144,7 +153,7 @@
 
         <StackLayout Orientation="Horizontal" Padding="20">
 
-            <Label  Text="Site Induction Complete" HorizontalOptions="StartAndExpand" VerticalOptions="Center"
+            <Label  Text="Site Induction Complete" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Medium"
             TextColor="{x:Static local:Template.fhBlue}"></Label>
 
 
@@ -162,8 +171,9 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="20">
-            <Label  Text="Induction Number: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center"  />
-            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.InductionNumber }" />
+            <Label  Text="Induction Number: " TextColor="{x:Static local:Template.fhBlue}" VerticalOptions="Center" FontSize="Medium" />
+            <Label BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding SignOn.InductionNumber }"
+                   FontSize="Medium" />
         </StackLayout>
 
 
