@@ -16,8 +16,7 @@ namespace Prestart.ViewModel
             get { return hazard; }
             set { SetProperty(ref hazard, value, "Hazard"); }
         }
-
-
+        
         public HazardFormViewModel(INavigation nav)
         {
             Navigation = nav;
