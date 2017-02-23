@@ -17,6 +17,17 @@ namespace Prestart.ViewModel
             Navigation = nav;
         }
 
+        int selectedFilter;
+        public int SelectedFilter
+        {
+            get { return selectedFilter;}
+            set
+            {
+                SetProperty(ref selectedFilter, value, "SelectedFilter");
+                FilterHandler();
+            }
+        }
+
         ObservableCollection<Model.Prestart> items = new ObservableCollection<Model.Prestart>();
         public ObservableCollection<Model.Prestart> Items
         {
@@ -31,14 +42,30 @@ namespace Prestart.ViewModel
             set { SetProperty(ref filteredPrestarts, value, "FilteredPrestarts"); }
         }
 
-        string search;
+        private void FilterHandler()
+        {
+            switch (SelectedFilter)
+            {
+                case 0:
+                    Filter(Search, prestart => prestart.SiteManager);
+                    break;
+                case 1:
+                    Filter(Search, prestart => prestart.JobNumber);
+                    break;
+                case 2:
+                    Filter(Search, prestart => prestart.ContractName);
+                    break;
+            }
+        }
+
+        string search = String.Empty;
         public string Search
         {
             get { return search; }
             set
             {
                 SetProperty(ref search, value, "Search");
-                Filter(Search, prestart => prestart.SiteManager);
+                FilterHandler();
             }
         }
 
