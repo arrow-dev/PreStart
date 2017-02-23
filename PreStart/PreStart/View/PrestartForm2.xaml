@@ -24,7 +24,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.Doing, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -34,7 +33,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.PlantEquipment, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -47,7 +45,6 @@
                  FontSize="Small"
                  TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.SpecialRequirements, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>

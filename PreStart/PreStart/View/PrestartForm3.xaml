@@ -15,7 +15,6 @@
                   FontSize="Large"
                   TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -25,7 +24,6 @@
                   FontSize="Large"
                   TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -35,7 +33,6 @@
                   FontSize="Large"
                   TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.Problems, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -48,7 +45,6 @@
                   FontSize="Small"
                   TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.Improvements, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -58,7 +54,6 @@
                   FontSize="Large"
                   TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.Differences, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
@@ -68,7 +63,6 @@
                   FontSize="Large"
                   TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                   BackgroundColor="White"/>
         </StackLayout>
