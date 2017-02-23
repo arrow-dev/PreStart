@@ -60,11 +60,12 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
-              <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Medium" TextColor="#FF671B" Text="{Binding DateCreated, Converter={ StaticResource SignOnTimeConverter }}"/>
-              <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Name:"/>
-              <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding Name}" Margin="20,0,0,0"/>
-              <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Employer:"/>
-              <Label Grid.Row="2" Grid.Column="1" FontSize="Medium" Text="{Binding Employer}" Margin="20,0,0,0"/>
+              <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" TextColor="#FF671B" Text="Name:"/>
+              <Label Grid.Row="0" Grid.Column="1" FontSize="Medium" TextColor="#FF671B" Text="{Binding Name}" Margin="20,0,0,0"/>
+              <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Employer:"/>
+              <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding Employer}" Margin="20,0,0,0"/>
+              <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Sign on time:"/>
+              <Label Grid.Row="2" Grid.Column="1" FontSize="Medium" Text="{Binding DateCreated, Converter={ StaticResource SignOnTimeConverter }}" Margin="20,0,0,0"/>
             </Grid>
           </ViewCell>
         </DataTemplate>

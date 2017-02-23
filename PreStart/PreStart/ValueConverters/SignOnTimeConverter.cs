@@ -9,7 +9,7 @@ namespace Prestart.ValueConverters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is DateTime)
-                return ((DateTime)value).ToString("f");
+                return ((DateTime)value).ToString("g");
 
             return "No Date Found";
         }
