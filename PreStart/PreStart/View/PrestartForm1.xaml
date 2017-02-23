@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
+             xmlns:customControls="clr-namespace:PreStart.CustomControls;assembly=PreStart"
              x:Class="Prestart.View.PrestartForm1"
              Title="Contract Information">
   <StackLayout>
@@ -130,7 +130,7 @@
           <Label Text="Site Plan / Emergency Response"
                  FontSize="Large"
                  TextColor="#0099C7"/>
-          <Editor Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}"
+          <customControls:BorderedEditor Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}"
                   FontSize="Medium"
                   HeightRequest="200"
                  BackgroundColor="White"/>
