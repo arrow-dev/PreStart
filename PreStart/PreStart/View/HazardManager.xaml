@@ -39,6 +39,7 @@
       <Label Grid.Row="1" Grid.Column="2" FontSize="Small" TextColor="#FF671B" Text="Site: "/>
       <Label Grid.Row="1" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.SiteId}" Margin="20,0,0,0"/>
     </Grid>
+
     
     <ListView x:Name="ItemList"
               CachingStrategy="RecycleElement"
