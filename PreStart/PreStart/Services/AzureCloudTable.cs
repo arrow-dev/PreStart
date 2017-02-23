@@ -65,7 +65,7 @@ namespace Prestart.Services
 
         public async Task<ICollection<T>> ReadItemsAfterDateAsync(DateTime dateTime)
         {
-            return await table.Where(i => i.DateCreated >= dateTime).ToListAsync();
+            return await table.Where(i => i.DateCreated >= dateTime).OrderByDescending(i => i.DateCreated).ToListAsync();
         }
 
         public async Task PullAsync()
