@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:Prestart.CustomControls;assembly=Prestart"
+             x:Class="Prestart.View.PrestartForm3"
+             Title="Prestart Continued">
+  <StackLayout>
+    <Label Text="Progress:" TextColor="#FF671B" Margin="10"/>
+    <ProgressBar Progress="0.6"/>
+    <ScrollView>
+      <StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="When are the hold points for reassessing the Task?"
+                  FontSize="Large"
+                  TextColor="#0099C7"/>
+          <customControls:BorderedEditor Text="{Binding Prestart.HoldPoints, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What Quality Checks need to be completed, by who and where?"
+                  FontSize="Large"
+                  TextColor="#0099C7"/>
+          <customControls:BorderedEditor Text="{Binding Prestart.QualityChecks, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What &quot;problems&quot; did we have yesterday?"
+                  FontSize="Large"
+                  TextColor="#0099C7"/>
+          <customControls:BorderedEditor Text="{Binding Prestart.Problems, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What opportunities for improvement were identified?"
+                  FontSize="Large"
+                  TextColor="#0099C7"/>
+          <Label Text="(including energy or time efficiency, waste reduction, quality improvement etc.)"
+                  FontSize="Small"
+                  TextColor="#0099C7"/>
+          <customControls:BorderedEditor Text="{Binding Prestart.Improvements, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What will we do differently today?"
+                  FontSize="Large"
+                  TextColor="#0099C7"/>
+          <customControls:BorderedEditor Text="{Binding Prestart.Differences, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Label Text="What are the minimum Productivity Targets for the day?"
+                  FontSize="Large"
+                  TextColor="#0099C7"/>
+          <customControls:BorderedEditor Text="{Binding Prestart.MinimumProductivityRequirements, Mode=TwoWay}"
+                  FontSize="Medium"
+                  HeightRequest="200"
+                  BackgroundColor="White"/>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+          <Button Text="Next"
+                TextColor="White"
+                FontSize="Large"
+                BackgroundColor="#FF671B"
+                Command="{Binding NextCommand}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+        </StackLayout>
+
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</ContentPage>

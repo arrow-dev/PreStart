@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
+             xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
+             x:Class="Prestart.View.SignOnManager"
+             Title="Sign On"
+             Icon="signon.png">
+  <ContentPage.Behaviors>
+    <behaviors:EventToCommandBehavior EventName="Appearing" Command="{Binding RefreshCommand}"/>
+  </ContentPage.Behaviors>
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <valueConverters:SignOnTimeConverter x:Key="SignOnTimeConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout>
+    <Label Text="Nobody has signed on yet this week." FontSize="Large" TextColor="#0099C7" HorizontalOptions="Center" IsVisible="{Binding ShowError}"/>    
+    <Grid Padding="20">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label Grid.Row="0" Grid.Column="0" FontSize="Small" TextColor="#FF671B" Text="Contract Name: "/>
+      <Label Grid.Row="0" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractName}" Margin="20,0,0,0"/>
+      <Label Grid.Row="0" Grid.Column="2" FontSize="Small" TextColor="#FF671B" Text="Location: "/>
+      <Label Grid.Row="0" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.Location}" Margin="20,0,0,0"/>
+      <Label Grid.Row="1" Grid.Column="0" FontSize="Small" TextColor="#FF671B" Text="Contract Number: "/>
+      <Label Grid.Row="1" Grid.Column="1" FontSize="Small" Text="{Binding Prestart.ContractNumber}" Margin="20,0,0,0"/>
+      <Label Grid.Row="1" Grid.Column="2" FontSize="Small" TextColor="#FF671B" Text="Site: "/>
+      <Label Grid.Row="1" Grid.Column="3" FontSize="Small" Text="{Binding Prestart.SiteId}" Margin="20,0,0,0"/>
+    </Grid>
+
+    <ListView CachingStrategy="RecycleElement"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              ItemsSource="{Binding Items}"
+              RefreshCommand="{Binding RefreshCommand}"
+              HasUnevenRows="True"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid Padding="20">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" TextColor="#FF671B" Text="Name:"/>
+              <Label Grid.Row="0" Grid.Column="1" FontSize="Medium" TextColor="#FF671B" Text="{Binding Name}" Margin="20,0,0,0"/>
+              <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" Text="Employer:"/>
+              <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding Employer}" Margin="20,0,0,0"/>
+              <Label Grid.Row="2" Grid.Column="0" FontSize="Medium" Text="Sign on time:"/>
+              <Label Grid.Row="2" Grid.Column="1" FontSize="Medium" Text="{Binding DateCreated, Converter={ StaticResource SignOnTimeConverter }}" Margin="20,0,0,0"/>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <StackLayout HorizontalOptions="Center"
+                 Orientation="Horizontal"
+                 Padding="20">
+      <Button BackgroundColor="#FF671B"
+              Command="{Binding AddNewItemCommand}"
+              Text="Sign On"
+              FontSize="Large"
+              TextColor="White" />
+    </StackLayout>
+  </StackLayout>
+  
+</ContentPage>

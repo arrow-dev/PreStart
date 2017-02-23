@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Prestart;assembly=Prestart"
+             xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
+             xmlns:customControls="clr-namespace:Prestart.CustomControls;assembly=Prestart"
+             xmlns:behaviors="clr-namespace:Prestart.Behaviors;assembly=Prestart"
+             x:Class="Prestart.View.HazardForm"
+             Title="Hazard Form">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <valueConverters:ColorConverter x:Key="ColorConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>             
+             
+  <StackLayout>
+    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+    <StackLayout>
+      <Label Text="STAY SAFE"
+             TextColor="Red"
+             Font="{x:Static local:Template.TitleFont}"
+             HorizontalTextAlignment="Center"/>
+      <Label Text="What am I Doing? What could go wrong? How could I do it Safer?"
+             Font="{x:Static local:Template.ParaFont}"
+             HorizontalTextAlignment="Center"/>
+    </StackLayout>
+    
+    <ScrollView Orientation="Vertical">
+      <StackLayout Orientation="Vertical" 
+                   VerticalOptions="FillAndExpand">
+  
+
+      <StackLayout Padding="{x:Static local:Template.StackLayoutSection}">
+        <BoxView HeightRequest="1" 
+                 Color="Silver"/>
+      </StackLayout>
+        
+        <StackLayout Orientation="Vertical" 
+                   Padding="{x:Static local:Template.StackLayoutSection}">
+         <Label Text="Task Description:"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+          <customControls:BorderedEditor Text="{Binding Hazard.Task, Mode=TwoWay}">
+            <customControls:BorderedEditor>
+              <behaviors:EditorValidatorBehavior x:Name="validForm0"/>
+            </customControls:BorderedEditor>
+         </customControls:BorderedEditor>
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical" 
+                   Padding="{x:Static local:Template.StackLayoutSection}">
+         <Label Text="Hazard Description:"
+                TextColor="{x:Static local:Template.fhBlue}"/>
+        <customControls:BorderedEditor Text="{Binding Hazard.Description, Mode=TwoWay}">
+          <customControls:BorderedEditor>
+              <behaviors:EditorValidatorBehavior x:Name="validForm1"/>
+            </customControls:BorderedEditor>
+         </customControls:BorderedEditor>
+      </StackLayout>
+       
+
+      <StackLayout Orientation="Vertical" 
+                   Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label Text="What could go wrong?"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+
+        <customControls:BorderedEditor VerticalOptions="Center" 
+                    HeightRequest="100" 
+                    Text="{Binding Hazard.Repercussion, Mode=TwoWay}">
+
+          <customControls:BorderedEditor>
+                    <behaviors:EditorValidatorBehavior x:Name="validForm2"/>
+              </customControls:BorderedEditor>
+              
+            </customControls:BorderedEditor>
+        
+       </StackLayout>
+   
+       <StackLayout Orientation="Vertical" 
+                    Padding="{x:Static local:Template.StackLayoutSection}">
+         <StackLayout Orientation="Horizontal">
+           <Label Text="Risk Before"
+                  TextColor="{x:Static local:Template.fhBlue}"/>
+           <Button x:Name="RiskBeforeBtn"
+                   Text="RATE"
+                   TextColor="White"
+                   BackgroundColor="#0099c7"
+                   Clicked="RiskBeforeBtn_OnClick"/>
+         </StackLayout>
+         <Label x:Name="LabelRiskBefore"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                BackgroundColor="{Binding Hazard.RiskBefore, Converter={StaticResource ColorConverter}}"
+                Text="{Binding Hazard.RiskBefore, Mode=TwoWay}"/>
+       </StackLayout>
+
+
+        <StackLayout x:Name="riskbeforeslider" 
+                     VerticalOptions="Center" 
+                     IsVisible="False">
+           <StackLayout Orientation="Vertical" 
+                        Padding="{x:Static local:Template.StackLayoutSection}">
+              <Label Text="Potential Consequence Level:"
+                     TextColor="{x:Static local:Template.fhBlue}"/>
+                <StackLayout Orientation="Horizontal">
+                  <Label x:Name="RBPCL"
+                         Text="Insignificant"
+                         TextColor="{x:Static local:Template.fhBlue}"
+                         HeightRequest="30" 
+                         WidthRequest="150" 
+                         VerticalOptions="CenterAndExpand"/>
+                  <Slider x:Name="RBSliderPCL" 
+                          HorizontalOptions="FillAndExpand" 
+                          VerticalOptions="Center"  
+                          Maximum="5" 
+                          Minimum="1"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical" 
+                         Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Likelihood Level:"
+                     TextColor="{x:Static local:Template.fhBlue}"/>
+                <StackLayout Orientation="Horizontal">
+                  <Label x:Name="RBPLL" 
+                         Text="Rare" 
+                         TextColor="{x:Static local:Template.fhBlue}"
+                         HeightRequest="30" 
+                         WidthRequest="150" 
+                         VerticalOptions="CenterAndExpand"/>
+                  <Slider x:Name="RBSliderPLL"
+                          HorizontalOptions="FillAndExpand" 
+                          VerticalOptions="Center"  
+                          Maximum="5" 
+                          Minimum="1"/>
+                </StackLayout>
+            </StackLayout>
+         </StackLayout>
+          
+
+
+        
+          <StackLayout Orientation="Vertical" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Label>
+              <Label.FormattedText>
+                <FormattedString>
+                  <Span Text="How will you "/>
+                  <Span Text="Eliminate" 
+                        FontAttributes="Bold"/>
+                  <Span Text=", "/>
+                  <Span Text="Isolate" 
+                        FontAttributes="Bold"/>
+                  <Span Text=", or "/>
+                  <Span Text="Minimise " 
+                        FontAttributes="Bold"/>
+                  <Span Text="the hazard? How can I make it safe?"/>
+                </FormattedString>
+              </Label.FormattedText>
+            </Label>
+
+            <customControls:BorderedEditor VerticalOptions="Center" 
+                    Text="{Binding Hazard.Response, Mode=TwoWay}"  
+                    HeightRequest="100">
+              <customControls:BorderedEditor>
+                    <behaviors:EditorValidatorBehavior x:Name="validForm3"/>
+                </customControls:BorderedEditor>    
+            </customControls:BorderedEditor>
+          </StackLayout>
+
+
+        <StackLayout Orientation="Vertical"
+                  Padding="{x:Static local:Template.StackLayoutSection}">
+          <StackLayout Orientation="Horizontal">
+            <Label Text="Risk After"
+                   TextColor="{x:Static local:Template.fhBlue}"/>
+            <Button x:Name="RiskAfterBtn"
+                    Text="RATE"
+                    TextColor="White"
+                    BackgroundColor="#0099c7"
+                    Clicked="RiskAfterBtn_OnClick"/>
+          </StackLayout>
+          <Label x:Name="LabelRiskAfter"
+                 VerticalOptions="Center"
+                 HorizontalTextAlignment="Center"
+                 VerticalTextAlignment="Center"
+                 BackgroundColor="{Binding Hazard.RiskAfter, Converter={StaticResource ColorConverter}}"
+                 Text="{Binding Hazard.RiskAfter, Mode=TwoWay}"/>
+        </StackLayout>
+
+
+          <StackLayout x:Name="riskafterslider" 
+                       VerticalOptions="Center" 
+                       IsVisible="False">
+            <StackLayout Orientation="Vertical" 
+                         Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Consequence Level:"
+                     TextColor="{x:Static local:Template.fhBlue}"/>
+              <StackLayout Orientation="Horizontal">
+                <Label x:Name="RAPCL" 
+                       Text="Insignificant"
+                       TextColor="{x:Static local:Template.fhBlue}"
+                       HeightRequest="30" 
+                       WidthRequest="150" 
+                       VerticalOptions="CenterAndExpand" />
+                <Slider x:Name="RASliderPCL" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="Center" 
+                        Maximum="5" 
+                        Minimum="1"/>
+              </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical" 
+                         Padding="{x:Static local:Template.StackLayoutSection}" >
+              <Label Text="Potential Likelihood Level:"
+                     TextColor="{x:Static local:Template.fhBlue}"/>
+              <StackLayout Orientation="Horizontal">
+                <Label x:Name="RAPLL" 
+                       Text="Rare"
+                       TextColor="{x:Static local:Template.fhBlue}"
+                       HeightRequest="30" 
+                       WidthRequest="150" 
+                       VerticalOptions="CenterAndExpand"/>
+                <Slider x:Name="RASliderPLL" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="Center"  
+                        Maximum="5" 
+                        Minimum="1"/>
+              </StackLayout>
+            </StackLayout>
+          </StackLayout>
+
+
+          
+          <StackLayout Orientation="Vertical" 
+                       VerticalOptions="Center" 
+                       Padding="{x:Static local:Template.StackLayoutSection}">
+            <Button Text="Save"
+                    TextColor="White"
+                    FontSize="Large"
+                    BackgroundColor="{x:Static local:Template.fhOrange}" 
+                    HorizontalOptions="Center"
+                    Command="{Binding DoneCommand}">
+              <Button.Triggers>
+                <MultiTrigger TargetType="Button">
+                    <MultiTrigger.Conditions>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm0}, Path=IsValid}" 
+                                        Value="true"/>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm1}, Path=IsValid}" 
+                                        Value="true"/>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm2}, Path=IsValid}" 
+                                        Value="true"/>
+                      <BindingCondition Binding="{Binding Source={x:Reference validForm3}, Path=IsValid}" 
+                                        Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="IsEnabled" 
+                            Value="true"/>
+                </MultiTrigger>
+              </Button.Triggers>
+            </Button>
+          </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>
+</ContentPage>
