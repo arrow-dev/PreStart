@@ -1,7 +1,9 @@
 ﻿using Prestart.Abstractions;
+using PropertyChanged;
 
 namespace Prestart.Model
 {
+    [ImplementPropertyChanged]
     public class Hazard : TableData
     {
         public string Task { get; set; }

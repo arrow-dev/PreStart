@@ -11,7 +11,7 @@ namespace Prestart.ValueConverters
             Color labelBckColor = Color.Transparent;
             if (value != null)
             {
-                string label = value.ToString();
+                string label = value.ToString().ToUpper();
                 switch (label)
                 {
                     case "LOW":
