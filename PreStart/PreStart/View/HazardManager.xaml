@@ -13,6 +13,7 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <valueConverters:ColorConverter x:Key="ColorConverter"/>
+      <valueConverters:TextColorConverter x:Key="TextColorConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -91,7 +92,9 @@
                       LineBreakMode="TailTruncation"/>
 
               <Label Grid.Row="3"  Grid.Column="1" FontSize="Medium"  Text="{Binding RiskBefore}" HorizontalOptions="Start"
-                      LineBreakMode="TailTruncation" Margin="20,0,0,0" BackgroundColor="{Binding RiskBefore, Converter={StaticResource ColorConverter}}"/>
+                      LineBreakMode="TailTruncation" Margin="20,0,0,0" BackgroundColor="{Binding RiskBefore, Converter={StaticResource ColorConverter}}"
+                     TextColor="{Binding RiskBefore, Converter={StaticResource TextColorConverter}}"/>
+              
                  
               <Label Grid.Row="4" Grid.Column="0" FontSize="Medium"  Text="Response:" 
                       LineBreakMode="TailTruncation"/>
@@ -103,7 +106,8 @@
                       LineBreakMode="TailTruncation"/>
               
               <Label Grid.Row="5"  Grid.Column="1" FontSize="Medium"  Text="{Binding RiskAfter}" HorizontalOptions="Start"
-                      LineBreakMode="TailTruncation" Margin="20,0,0,0" BackgroundColor="{Binding RiskAfter, Converter={StaticResource ColorConverter}}"/>
+                      LineBreakMode="TailTruncation" Margin="20,0,0,0" BackgroundColor="{Binding RiskAfter, Converter={StaticResource ColorConverter}}"
+                     TextColor="{Binding RiskAfter, Converter={StaticResource TextColorConverter}}"/>
               
               <Image Grid.Row="0" Grid.RowSpan="6" Grid.Column="2" Source="warning.png" Aspect="AspectFit" VerticalOptions="CenterAndExpand"/>
             

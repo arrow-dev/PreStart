@@ -56,6 +56,7 @@
     <Compile Include="ValueConverters\ColorConverter.cs" />
     <Compile Include="ValueConverters\DateTimeToString.cs" />
     <Compile Include="ValueConverters\SignOnTimeConverter.cs" />
+    <Compile Include="ValueConverters\TextColorConverter.cs" />
     <Compile Include="ViewModel\HazardDetailViewModel.cs" />
     <Compile Include="ViewModel\HazardFormViewModel.cs" />
     <Compile Include="ViewModel\HazardManagerViewModel.cs" />
