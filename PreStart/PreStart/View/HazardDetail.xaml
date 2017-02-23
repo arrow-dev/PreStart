@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Prestart;assembly=Prestart"
+             xmlns:valueConverters="clr-namespace:Prestart.ValueConverters;assembly=Prestart"
+             x:Class="Prestart.View.HazardDetail"
+             Title="Hazard Details">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <valueConverters:ColorConverter x:Key="ColorConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <ScrollView>
+    <StackLayout>
+      <Label Text="STAY SAFE"
+             TextColor="Red"
+             Font="{x:Static local:Template.TitleFont}"
+             HorizontalTextAlignment="Center"/>
+      <Label Text="What am I Doing? What could go wrong? How could I do it Safer?" Font="{x:Static local:Template.ParaFont}"
+ HorizontalTextAlignment="Center" FontSize="Medium"/>
+
+      <StackLayout Orientation="Vertical"
+                   Padding="20">
+        <Label Text="Task:" TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
+        <Label BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Hazard.Task}"
+               FontSize="Medium" ></Label>
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical"
+                   Padding="20">
+        <Label Text="Hazard Name" TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
+        <Label BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Hazard.Description}"
+               FontSize="Medium" ></Label>
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical"
+                   Padding="20">
+        <Label Text="What could go wrong?" TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
+        <Label BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Hazard.Repercussion}"
+               FontSize="Medium" />
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical"
+                   Padding="20">
+        <Label Text="Risk Before"  TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
+        <Label x:Name="LabelRiskBefore" BackgroundColor="{Binding Hazard.RiskBefore, Converter={StaticResource ColorConverter}}" HorizontalOptions="Start"  VerticalOptions="Center"
+            FontSize="Medium"   Text="{Binding Hazard.RiskBefore}"/>
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical"
+                   Padding="20">
+        <Label Text="How will you Eliminate, Isolate, or Minimise the hazard? How can I make it safe?" FontSize="Medium"
+               TextColor="{x:Static local:Template.fhBlue}"/>
+        <Label BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding Hazard.Response}"
+           FontSize="Medium"    />
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical"
+                   Padding="20">
+        <Label Text="Risk After"  TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
+        <Label x:Name="LabelRiskAfter" BackgroundColor="{Binding Hazard.RiskAfter, Converter={StaticResource ColorConverter}}" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium"
+         Text="{Binding Hazard.RiskAfter}"/>
+      </StackLayout>
+
+      <StackLayout Orientation="Vertical"
+                   VerticalOptions="Center"
+                   Padding="20">
+        <Button Text="EDIT" BackgroundColor="#ff671b" TextColor="White" HorizontalOptions="Center" Command="{Binding EditCommand}"
+                FontSize="Medium" />
+      </StackLayout>
+
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
