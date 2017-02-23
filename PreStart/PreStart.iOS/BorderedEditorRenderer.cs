@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PreStart;
-using PreStart.CustomControls;
+﻿using Prestart.CustomControls;
 using PreStart.iOS;
 using UIKit;
 using Xamarin.Forms;
