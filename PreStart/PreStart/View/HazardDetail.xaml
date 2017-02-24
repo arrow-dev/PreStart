@@ -9,6 +9,7 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <valueConverters:ColorConverter x:Key="ColorConverter"/>
+      <valueConverters:TextColorConverter x:Key="TextColorConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
   
@@ -45,8 +46,10 @@
       <StackLayout Orientation="Vertical"
                    Padding="20">
         <Label Text="Risk Before"  TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
-        <Label x:Name="LabelRiskBefore" BackgroundColor="{Binding Hazard.RiskBefore, Converter={StaticResource ColorConverter}}" HorizontalOptions="Start"  VerticalOptions="Center"
-            FontSize="Medium"   Text="{Binding Hazard.RiskBefore}"/>
+        <Label x:Name="LabelRiskBefore" BackgroundColor="{Binding Hazard.RiskBefore, Converter={StaticResource ColorConverter}}" 
+               TextColor="{Binding Hazard.RiskBefore, Converter={StaticResource TextColorConverter}}"
+               HorizontalOptions="Start"  VerticalOptions="Center"
+               FontSize="Medium"   Text="{Binding Hazard.RiskBefore}"/>
       </StackLayout>
 
       <StackLayout Orientation="Vertical"
@@ -60,8 +63,10 @@
       <StackLayout Orientation="Vertical"
                    Padding="20">
         <Label Text="Risk After"  TextColor="{x:Static local:Template.fhBlue}" FontSize="Medium"/>
-        <Label x:Name="LabelRiskAfter" BackgroundColor="{Binding Hazard.RiskAfter, Converter={StaticResource ColorConverter}}" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium"
-         Text="{Binding Hazard.RiskAfter}"/>
+        <Label x:Name="LabelRiskAfter" BackgroundColor="{Binding Hazard.RiskAfter, Converter={StaticResource ColorConverter}}" 
+               TextColor="{Binding Hazard.RiskAfter, Converter={StaticResource TextColorConverter}}"
+               HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium"
+               Text="{Binding Hazard.RiskAfter}"/>
       </StackLayout>
 
       <StackLayout Orientation="Vertical"

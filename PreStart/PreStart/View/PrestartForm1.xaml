@@ -14,7 +14,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.ContractName, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -23,7 +22,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.ContractNumber, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -32,7 +30,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.Location, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -41,7 +38,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.LotNo, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -50,7 +46,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.Department, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -59,7 +54,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.SiteId, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -68,7 +62,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.SiteManager, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -77,7 +70,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.QuarryManager, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -86,7 +78,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.StmsNumber, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -95,7 +86,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.JobNumber, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -104,7 +94,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.TmpNumber, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -113,7 +102,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.SiteFirstAider, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -122,7 +110,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <Entry Text="{Binding Prestart.CertificateNumber, Mode=TwoWay}"
-                 FontSize="Medium"
                  BackgroundColor="White"/>
         </StackLayout>
 
@@ -131,7 +118,6 @@
                  FontSize="Large"
                  TextColor="#0099C7"/>
           <customControls:BorderedEditor Text="{Binding Prestart.EmergencyPlan, Mode=TwoWay}"
-                  FontSize="Medium"
                   HeightRequest="200"
                  BackgroundColor="White"/>
         </StackLayout>

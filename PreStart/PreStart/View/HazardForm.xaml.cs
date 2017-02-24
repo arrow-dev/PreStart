@@ -267,20 +267,20 @@ namespace Prestart.View
             if (a < 7)
             {
                 //label.BackgroundColor = Color.Green;
-                label.TextColor = Color.Black;
+                label.TextColor = Color.White;
                 label.Text = "LOW";
             }
 
             if (a >= 7 && a <= 15)
             {
                 //label.BackgroundColor = Color.Yellow;
-                label.TextColor = Color.Black;
+                label.TextColor = Color.Gray;
                 label.Text = "MEDIUM";
             }
 
             if (a >= 16 && a <= 22)
             {
-                label.TextColor = Color.Black;
+                label.TextColor = Color.White;
                 //label.BackgroundColor = Color.Red;
                 label.Text = "HIGH";
             }

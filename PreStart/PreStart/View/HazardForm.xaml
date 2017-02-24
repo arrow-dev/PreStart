@@ -10,9 +10,10 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <valueConverters:ColorConverter x:Key="ColorConverter"/>
+      <valueConverters:TextColorConverter x:Key="TextColorConverter"/>
     </ResourceDictionary>
-  </ContentPage.Resources>             
-             
+  </ContentPage.Resources>
+
   <StackLayout>
     <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
     <StackLayout>
@@ -91,7 +92,8 @@
                 HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center"
                 BackgroundColor="{Binding Hazard.RiskBefore, Converter={StaticResource ColorConverter}}"
-                Text="{Binding Hazard.RiskBefore, Mode=TwoWay}"/>
+                Text="{Binding Hazard.RiskBefore, Mode=TwoWay}"
+                TextColor="{Binding Hazard.RiskBefore, Converter={StaticResource TextColorConverter}}"/>
        </StackLayout>
 
 
@@ -186,7 +188,8 @@
                  HorizontalTextAlignment="Center"
                  VerticalTextAlignment="Center"
                  BackgroundColor="{Binding Hazard.RiskAfter, Converter={StaticResource ColorConverter}}"
-                 Text="{Binding Hazard.RiskAfter, Mode=TwoWay}"/>
+                 Text="{Binding Hazard.RiskAfter, Mode=TwoWay}"
+                 TextColor="{Binding Hazard.RiskAfter, Converter={StaticResource TextColorConverter}}"/>
         </StackLayout>
 
 
