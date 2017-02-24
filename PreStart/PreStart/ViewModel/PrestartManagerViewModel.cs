@@ -124,11 +124,9 @@ namespace Prestart.ViewModel
                 Items.Clear();
                 foreach (var item in list)
                     Items.Add(item);
+                FilteredPrestarts.Clear();
                 foreach (var item in Items)
-                {
                     FilteredPrestarts.Add(item);
-                }
-                ;
             }
             catch (Exception ex)
             {
